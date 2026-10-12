@@ -12,7 +12,7 @@ export function DesktopNavigation({ items }: { items: NavItem[] }) {
 }
 
 const topLink =
-  "inline-flex min-h-20 items-center gap-1.5 whitespace-nowrap px-3 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-white underline-offset-[10px] decoration-2 hover:underline aria-[current=page]:underline xl:px-4";
+  "inline-flex min-h-24 items-center gap-1.5 whitespace-nowrap px-3 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-white underline-offset-[10px] decoration-2 hover:underline aria-[current=page]:underline xl:px-4";
 
 /**
  * Uppercase menu with dropdowns, following behringeb5.com. Dropdowns open on

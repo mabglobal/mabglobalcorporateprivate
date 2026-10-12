@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="on-dark relative isolate flex min-h-[640px] flex-col overflow-hidden bg-navy-deep lg:h-[min(calc(100svh-5rem),56rem)] lg:min-h-[680px]"
+      className="on-dark relative isolate flex min-h-[640px] flex-col overflow-hidden bg-navy-deep lg:h-[min(calc(100svh-6rem),56rem)] lg:min-h-[680px]"
     >
       {/* The text column stays clear of the pediment and dome at desktop widths. */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-[46%] sm:h-[52%] lg:left-[18%] lg:right-auto lg:h-auto lg:w-[92%] lg:aspect-[3/1]">

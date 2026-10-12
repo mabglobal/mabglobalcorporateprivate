@@ -57,7 +57,7 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 
 ## Logo
 
-The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12. It was traced to vector with potrace into `src/config/logo.ts` (mark, mark without ®, and lockup with the tagline "Formation | Tax | Accounting | Investment | Business Advisory"). `public/images/brand/` holds navy SVG versions for structured data. The header uses the mark because the tagline is illegible at header size; the footer and the social image use the full lockup; the favicon and home screen icon use the letters without ®.
+The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12. It was traced to vector with potrace into `src/config/logo.ts` (mark, mark without ®, and lockup with the tagline "Formation | Tax | Accounting | Investment | Business Advisory"). `public/images/brand/` holds navy SVG versions for structured data. The header, the footer and the social image use the full lockup with the tagline (client decision, 2026-10-12; in the header the tagline is about 4 px tall); the favicon and home screen icon use the letters without ®.
 
 ## Images
 

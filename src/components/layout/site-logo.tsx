@@ -18,17 +18,25 @@ export function LogoArt({ variant, className }: { variant: LogoVariant; classNam
   );
 }
 
+const logoSizes = {
+  mark: "h-8 md:h-9",
+  header: "h-12 lg:h-16",
+  footer: "h-16 md:h-20",
+} as const;
+
 /**
- * The MAB logo linking home. The header shows the mark; the footer shows the
- * full lockup with the tagline, which is only legible at a larger size.
+ * The MAB logo linking home. Header and footer show the full lockup with the
+ * tagline (client decision, 2026-10-12); the mark alone remains available.
  */
 export function SiteLogo({
   tone = "light",
   variant = "mark",
+  size,
   className,
 }: {
   tone?: "light" | "dark";
   variant?: "mark" | "lockup";
+  size?: keyof typeof logoSizes;
   className?: string;
 }) {
   return (
@@ -40,7 +48,7 @@ export function SiteLogo({
         className,
       )}
     >
-      <LogoArt variant={variant} className={variant === "mark" ? "h-8 md:h-9" : "h-16 md:h-20"} />
+      <LogoArt variant={variant} className={logoSizes[size ?? (variant === "mark" ? "mark" : "footer")]} />
       <span className="sr-only">{siteConfig.name} home</span>
     </Link>
   );

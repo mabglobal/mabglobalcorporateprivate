@@ -20,7 +20,7 @@ export function Footer() {
     <footer className="border-t border-line bg-white">
       <div className="container-page grid gap-12 py-14 md:py-20 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <SiteLogo tone="light" variant="lockup" />
+          <SiteLogo tone="light" variant="lockup" size="footer" />
           <p className="mt-4 font-display text-title font-bold text-navy">{tagline}</p>
           <div className="mt-8 grid max-w-2xl gap-4 text-label text-navy">
             <p>

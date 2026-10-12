@@ -19,9 +19,9 @@ import { SiteLogo } from "./site-logo";
 export function Header() {
   return (
     <header className="on-dark sticky top-0 z-40 border-b border-white/10 bg-navy-deep">
-      <div className="container-page flex h-20 items-center justify-between gap-6">
+      <div className="container-page flex h-20 items-center justify-between gap-6 lg:h-24">
         <div className="flex items-center gap-6 xl:gap-10">
-          <SiteLogo tone="dark" />
+          <SiteLogo tone="dark" variant="lockup" size="header" />
           <nav aria-label="Main menu" className="hidden lg:block">
             <Suspense fallback={<NavigationList items={mainNavigation} />}>
               <DesktopNavigation items={mainNavigation} />
