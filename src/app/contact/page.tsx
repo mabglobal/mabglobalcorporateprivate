@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <h2 className="mt-6 text-title text-navy">Email</h2>
                 <a
                   href={mailtoHref}
-                  className="mt-2 inline-flex min-h-11 items-center whitespace-nowrap text-label font-medium text-navy underline underline-offset-4"
+                  className="mt-2 inline-flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4 [overflow-wrap:anywhere]"
                 >
                   {contactConfig.email}
                 </a>
