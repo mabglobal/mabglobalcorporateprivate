@@ -32,7 +32,7 @@ On 2026-10-12 the client asked to remove everything related to the United Kingdo
 
 ## USPTO and IRS
 
-On 2026-10-12 the client asked for the USPTO logo and an "EIN logo" (the EIN is issued by the IRS) labeled as agencies the firm works with, without a partner claim. The logos were not used: both agencies forbid third-party use of their logos and seals, and the USPTO warns the public about firms that use its insignia. The strip under the hero names them in plain text instead ("USPTO, Trademark Applications" and "IRS, EIN Applications") under "Official Filings We Help You Complete", with the note "MAB Global Partners is a private company with no affiliation to any government agency." Trademark applications by applicants domiciled outside the US must be filed by a US-licensed attorney; describe the trademark service as preparation support unless such an attorney files them.
+On 2026-10-12 the client asked for the USPTO logo and an "EIN logo" (the EIN is issued by the IRS) labeled as agencies the firm works with, without a partner claim. The logos were not used: both agencies forbid third-party use of their logos and seals, and the USPTO warns the public about firms that use its insignia. The client then asked on 2026-10-13 to drop the plain text mention as well, so the site names neither agency in the strip. Trademark applications by applicants domiciled outside the US must be filed by a US-licensed attorney; describe the trademark service as preparation support unless such an attorney files them.
 
 ## Bank and payment platform logos
 
