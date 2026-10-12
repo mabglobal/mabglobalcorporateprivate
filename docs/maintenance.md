@@ -52,4 +52,4 @@ Edit `src/styles/tokens.css` and `src/config/brand.ts` together; the unit test f
 
 ## Dependency updates
 
-Pin new versions that are at least two weeks old. After `npm update`, run `npm run verify` and `npm run test:e2e`. `npm audit` currently reports advisories in ESLint tooling only (`braces` via `eslint-config-next`); they do not reach the production bundle, and the suggested `--force` fix would downgrade the Next.js lint config.
+Pin new versions that are at least two weeks old. Update the lockfile with npm 11.19 or newer (`npx npm@11.19.0 install`), the version used by CI. Older npm releases on macOS omit Linux-only optional packages (`@emnapi/*`), which makes `npm ci` fail in CI. After `npm update`, run `npm run verify` and `npm run test:e2e`. `npm audit` currently reports advisories in ESLint tooling only (`braces` via `eslint-config-next`); they do not reach the production bundle, and the suggested `--force` fix would downgrade the Next.js lint config.
