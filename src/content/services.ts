@@ -82,7 +82,7 @@ const allServices: Service[] = [
     ],
     audience: [
       { title: "Brands Entering Europe", description: "Businesses planning UK and EU sales." },
-      { title: "Service Exporters", description: "Consultants and agencies with UK clients." },
+      { title: "Service Exporters", description: "Agencies serving UK clients." },
       { title: "Technology Companies", description: "Firms operating through a UK entity." },
       { title: "Exporters", description: "Manufacturers selling to UK buyers." },
     ],
@@ -96,7 +96,7 @@ const allServices: Service[] = [
     ],
     process: [
       { title: "Initial Consultation", description: "Share your market and ownership plans." },
-      { title: "Company Details", description: "Confirm the name and company officers." },
+      { title: "Company Details", description: "Confirm the name and officers." },
       { title: "Verification and Filing", description: "Verify identities and file the application." },
       { title: "After Formation", description: "Register for Corporation Tax on time." },
     ],
@@ -140,7 +140,7 @@ const allServices: Service[] = [
       "Bring federal and state duties together with Corporation Tax deadlines in one calendar and file ahead of every due date.",
     ],
     audience: [
-      { title: "Owners Living Abroad", description: "Owners who run US companies remotely." },
+      { title: "Owners Living Abroad", description: "Owners running US firms remotely." },
       { title: "Marketplace Sellers", description: "Businesses selling across many states." },
       { title: "UK Companies", description: "Firms that file Corporation Tax yearly." },
       { title: "Growing Businesses", description: "Teams that want a clear tax calendar." },
@@ -208,7 +208,7 @@ const allServices: Service[] = [
       { title: "Scope", description: "Share your volume and reporting needs." },
       { title: "Bookkeeping Setup", description: "Agree on accounts and file sharing." },
       { title: "Records and Reconciliation", description: "Record and reconcile each period." },
-      { title: "Reporting", description: "Receive reports and start year-end work." },
+      { title: "Reporting", description: "Get reports and plan year end." },
     ],
     considerations: [
       "Accounting scope and record frequency depend on transaction volume.",
@@ -243,7 +243,7 @@ const allServices: Service[] = [
     ],
     audience: [
       { title: "New Companies", description: "Companies that need an agent to file." },
-      { title: "Owners Outside the US", description: "Founders without an address in the state." },
+      { title: "Owners Outside the US", description: "Founders with no local address." },
       { title: "Multi-State Companies", description: "Businesses registered in several states." },
       { title: "Companies Switching Agents", description: "Owners who want a steadier service." },
     ],
@@ -345,7 +345,7 @@ const allServices: Service[] = [
       { title: "First-Time Expanders", description: "Firms choosing a country and structure." },
       { title: "E-Commerce Founders", description: "Brands launching on Amazon." },
       { title: "Companies Reviewing Structure", description: "Owners checking compliance abroad." },
-      { title: "Single-Topic Advice", description: "Founders who want one focused session." },
+      { title: "Single-Topic Advice", description: "Founders who need one session." },
     ],
     scope: [
       { title: "Market and Structure", description: "Compare US and UK options side by side." },

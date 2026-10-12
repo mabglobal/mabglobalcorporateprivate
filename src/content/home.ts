@@ -80,7 +80,7 @@ export const homeContent = {
       {
         icon: "globe",
         title: "International Expertise",
-        description: "Run US and UK steps with an expert team.",
+        description: "Run US and UK steps with experts.",
       },
       {
         icon: "layers",
