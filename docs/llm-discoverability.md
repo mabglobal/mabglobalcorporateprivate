@@ -44,7 +44,7 @@ Current decision: allow search, user-initiated and training agents on public mar
 
 ## Entity consistency
 
-Name, canonical URL, email, address, maps link and founder come from `src/config/site.ts` and `src/config/contact.ts` and are used unchanged in the footer, contact page, structured data, llms.txt and llms-full.txt. The about page and llms-full.txt share the same paragraphs from `src/content/about.ts`.
+Name, canonical URL, email, address and maps link come from `src/config/site.ts` and `src/config/contact.ts` and are used unchanged in the footer, contact page, structured data, llms.txt and llms-full.txt. The about page and llms-full.txt share the same paragraphs from `src/content/about.ts`.
 
 ## Maintenance
 

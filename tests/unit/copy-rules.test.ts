@@ -163,7 +163,7 @@ describe("copy rules", () => {
   });
 
   it("detects Title Case breaks", () => {
-    expect(titleCaseViolations("Invest in America With the Right Structure")).toEqual([]);
+    expect(titleCaseViolations("Invest in the United States With the Right Structure")).toEqual([]);
     expect(titleCaseViolations("One-to-One Sessions for eBay Sellers")).toEqual([]);
     expect(titleCaseViolations("Service scope")).toEqual(["scope"]);
     expect(titleCaseViolations("Year-end Preparation")).toEqual(["end"]);

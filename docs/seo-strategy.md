@@ -54,7 +54,7 @@ Generated in `src/lib/seo/structured-data.ts` and rendered with `src/components/
 | About, contact, index pages | Organization, AboutPage / ContactPage / CollectionPage, BreadcrumbList |
 | Legal | WebPage, BreadcrumbList |
 
-The Organization node contains name, URL, logo, description, email, postal address, a Place with the Google Maps link, ContactPoint, founder and areaServed. It intentionally omits telephone, legal name, tax ID, founding date, social profiles, ratings and reviews, because none are verified. `LocalBusiness` is not used: no verified opening hours or local service model exist for this brand.
+The Organization node contains name, URL, logo, description, email, postal address, a Place with the Google Maps link, ContactPoint and areaServed. It intentionally omits telephone, legal name, tax ID, founding date, social profiles, ratings and reviews, because none are verified. `LocalBusiness` is not used: no verified opening hours or local service model exist for this brand.
 
 FAQPage markup is valid schema for visible FAQ content. Google limits FAQ rich results to a small set of sites, so treat it as semantic markup, not a rich result source.
 

@@ -14,7 +14,7 @@ Sources:
 |---|---|---|
 | Brand name MAB Global Partners | Everywhere | S2, S3 |
 | Email info@mabglobalpartners.com, office address, Google Maps link | Footer, contact, structured data, llms | S3 |
-| Founded in Türkiye by Mehmet Akif Birkan | About, structured data (`founder`) | S2 ("Originally established in Türkiye ... by Mehmet Akif Birkan") |
+| Founded in Türkiye | About | S2 ("Originally established in Türkiye") |
 | Grew from US market support into formation, tax, accounting and business address services | About | S2 timeline |
 | MAB Registered Agent Inc. is a brand within MAB Global Partners | Registered agent service, about, llms | S2 |
 | Registered agent in all 50 states and Washington D.C., all entity types | Registered agent page, homepage facts, FAQ | S2 |
@@ -25,8 +25,11 @@ Sources:
 | US business address, annual compliance | Address and operations service | S2 |
 | Company dissolution (US and UK), share and company transfer (US), DUNS number, trademark (US and UK), FDA registration, warehouse services | Address and operations service, e-commerce and export sectors | S1 service options |
 | Amazon account opening, suspension support, hourly consultations, e-commerce business development | International consulting, e-commerce sector, FAQ | S1 menu and home |
-| Founder studied at City University of New York, worked at US corporations, held management roles in Türkiye, active in global e-commerce since 2018, shares knowledge on YouTube | About, founder section | S1 `/hakkimizda` |
-| Quote "Herkesin doğru bilgiye ulaşma hakkı vardır.", published in English as "Everyone has the right to accurate information." | About | S1 `/hakkimizda` (translated) |
+| Philosophy line "Everyone has the right to accurate information." (from the founder's quote "Herkesin doğru bilgiye ulaşma hakkı vardır.", published without attribution) | About | S1 `/hakkimizda` (translated) |
+
+## Official logos and seals
+
+On 2026-10-12 the client asked for the IRS logo in the header and the New Jersey and Florida state seals in the footer. They were not added. Agency logos and state seals are official insignia; showing them on a private company's site suggests a government affiliation or endorsement, the IRS forbids third-party use of its logo and seal, and both states restrict use of their great seals (for Florida, section 15.03 of the Florida Statutes). Permitted alternatives: an "Authorized IRS e-file Provider" or Certifying Acceptance Agent statement only if the firm holds that authorization, and plain state names or map outlines with a factual statement of what the firm does in each state.
 
 ## Language
 
@@ -50,7 +53,7 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 | Taking over maintenance of existing foreign companies (FAQ `mevcut-sirket-devralma`) | Reasonable extension of accounting and tax services; confirm |
 | Registered trademark sign | The logo supplied on 2026-10-12 carries the ® sign. Use ® only for a registered mark; confirm the registration (office and number) or remove the sign from the artwork |
 | Customer testimonials and client logos | None supplied; the section is hidden |
-| Leadership or team members beyond the founder | None supplied |
+| Founder and team members | The client asked on 2026-10-12 that the founder is not named on the site; no person is mentioned in copy or structured data |
 
 ## Logo
 

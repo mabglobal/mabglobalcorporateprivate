@@ -16,7 +16,7 @@ All public content lives in typed modules under `src/content`. Types are defined
 | `navigation.ts` | `NavItem[]` | Header, mobile menu, footer |
 | `testimonials.ts` | `Testimonial[]` | Homepage section, hidden while empty |
 
-Shared business facts (name, URL, email, address, maps link, founder) live in `src/config/site.ts` and `src/config/contact.ts`.
+Shared business facts (name, URL, email, address, maps link) live in `src/config/site.ts` and `src/config/contact.ts`.
 
 ## Publication status
 

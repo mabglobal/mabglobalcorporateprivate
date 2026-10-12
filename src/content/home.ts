@@ -10,7 +10,7 @@ import type { IconName, ProcessStep, TitledText } from "@/types/content";
  */
 export const homeContent = {
   hero: {
-    title: "Invest in America With the Right Company Structure",
+    title: "Invest in the United States With the Right Company Structure",
     proofPoints: ["Registered Agent in All 50 States and D.C.", "US and UK Company Formation"],
     description:
       "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom. Plan formation and registered agent services together with tax and accounting under one roof.",

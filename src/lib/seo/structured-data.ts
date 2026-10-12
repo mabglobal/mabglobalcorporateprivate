@@ -16,7 +16,7 @@ import type { Article, FaqItem, Service } from "@/types/content";
 import { absoluteUrl } from "./canonical";
 
 /**
- * Centralized JSON-LD generation. Entity facts (name, address, email, founder)
+ * Centralized JSON-LD generation. Entity facts (name, address, email)
  * come from src/config so structured data, footer, contact page and llms.txt
  * always agree. No ratings, reviews, legal identifiers or phone numbers are
  * emitted because none are verified.
@@ -70,7 +70,6 @@ export function organizationNode(): Organization {
       email: contactConfig.email,
       availableLanguage: ["English", "Turkish"],
     },
-    founder: { "@type": "Person", name: siteConfig.founderName },
     areaServed: [...countryNodes["us-uk"]],
     knowsAbout: [
       "US company formation",

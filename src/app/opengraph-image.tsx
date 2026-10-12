@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            Invest in America With the Right Structure
+            Invest in the United States With the Right Structure
           </div>
           <div style={{ display: "flex", fontSize: 30, fontWeight: 400, color: "rgba(255,255,255,0.75)" }}>
             {siteConfig.shortDescription}

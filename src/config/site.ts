@@ -24,7 +24,6 @@ export const siteConfig = {
     "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom with company formation and registered agent services along with tax and accounting support.",
   shortDescription:
     "Company formation and registered agent services with tax and accounting support in the US and UK.",
-  founderName: "Mehmet Akif Birkan",
   relatedBrands: [
     {
       name: "MAB Registered Agent Inc.",

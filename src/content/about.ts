@@ -14,7 +14,7 @@ export const aboutContent = {
     tag: "Company",
     title: "Company Overview",
     paragraphs: [
-      "Mehmet Akif Birkan founded MAB Global Partners in Türkiye to support entrepreneurs entering the US market.",
+      "MAB Global Partners was founded in Türkiye to support entrepreneurs entering the US market.",
       "The service range grew over time to cover company formation and tax along with accounting and business address services. Registered agent services run under the MAB Registered Agent Inc. brand.",
       "The Istanbul office coordinates formation and compliance work for the United States and the United Kingdom.",
     ],
@@ -22,8 +22,6 @@ export const aboutContent = {
   philosophy: {
     title: "Our Philosophy",
     quote: "Everyone has the right to accurate information.",
-    quoteName: "Mehmet Akif Birkan",
-    quoteRole: "Founder",
     paragraphs: [
       "Learn how international company processes work in plain language and understand the reason behind every decision.",
       "Our Insights guides draw on official sources and follow the same approach.",
@@ -52,14 +50,5 @@ export const aboutContent = {
       { title: "Follow a Calendar", description: "Plan every deadline from the start." },
       { title: "Know the Limits", description: "Official decisions are never promised." },
     ] satisfies TitledText[],
-  },
-  founder: {
-    tag: "Our Founder",
-    name: "Mehmet Akif Birkan",
-    role: "Founder",
-    paragraphs: [
-      "Mehmet Akif Birkan completed university studies at the City University of New York (CUNY) and worked at US corporations. Back in Türkiye Birkan held management roles at several companies.",
-      "Birkan entered global e-commerce in 2018 and shares knowledge and experience for free on a YouTube channel. The challenges of forming a first company became the starting point for this service.",
-    ],
   },
 } as const;

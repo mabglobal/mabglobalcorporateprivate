@@ -91,7 +91,6 @@ export function generateLlmsFullTxt(): string {
     "",
     ...aboutContent.introduction.paragraphs,
     "",
-    `Founder ${aboutContent.founder.name}.`,
     `Contact email ${contactConfig.email}.`,
     `Office address ${contactConfig.address.full}.`,
     `Canonical address ${absoluteUrl(routes.about)}`,

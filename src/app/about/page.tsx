@@ -27,7 +27,7 @@ const breadcrumb: BreadcrumbTrailItem[] = [
 ];
 
 export default function AboutPage() {
-  const { hero, introduction, philosophy, focus, approach, founder } = aboutContent;
+  const { hero, introduction, philosophy, focus, approach } = aboutContent;
   return (
     <>
       <JsonLd
@@ -81,10 +81,6 @@ export default function AboutPage() {
                 <blockquote className="text-heading text-white">
                   <p>&ldquo;{philosophy.quote}&rdquo;</p>
                 </blockquote>
-                <figcaption className="mt-4 text-label text-white">
-                  <span className="block font-medium">{philosophy.quoteName}</span>
-                  <span className="block">{philosophy.quoteRole}</span>
-                </figcaption>
               </figure>
             </div>
             <div className="grid content-end gap-4 lg:col-span-5 lg:col-start-8">
@@ -131,20 +127,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="founder-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
-        <div className="container-page grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <SectionHeading id="founder-title" tag={founder.tag} title={founder.name} />
-          </div>
-          <div className="grid gap-5 lg:col-span-7 lg:col-start-6">
-            {founder.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-lead text-ink">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
       <ContactBand />
     </>
   );
