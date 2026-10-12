@@ -46,9 +46,10 @@ test.describe("desktop navigation", () => {
     await expect(page.getByRole("navigation", { name: "Sayfa konumu" })).toContainText("Hizmetler");
   });
 
-  test("skip link moves focus to the main content", async ({ page }) => {
+  test("skip link moves focus to the main content", async ({ page, browserName }) => {
     await page.goto("/");
-    await page.keyboard.press("Tab");
+    // Safari moves focus to links with Option+Tab by default.
+    await page.keyboard.press(browserName === "webkit" ? "Alt+Tab" : "Tab");
     const skip = page.getByRole("link", { name: "İçeriğe geç" });
     await expect(skip).toBeFocused();
     await page.keyboard.press("Enter");

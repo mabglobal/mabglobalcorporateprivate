@@ -18,7 +18,9 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
-  "upgrade-insecure-requests",
+  // No upgrade-insecure-requests: all asset URLs are same-origin and the
+  // production host enforces HTTPS with HSTS. The directive made Safari request
+  // https://localhost for CSS and fonts when previewing a production build.
 ].join("; ");
 
 const securityHeaders = [

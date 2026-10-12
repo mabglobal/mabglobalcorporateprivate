@@ -21,8 +21,8 @@ jobs:
       - run: npm ci
       - name: Lint, typecheck, unit and integration tests, production build
         run: npm run verify
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
       - name: End-to-end tests
         run: npm run test:e2e
         env:
