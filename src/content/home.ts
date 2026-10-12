@@ -78,16 +78,6 @@ export const homeContent = {
         text: "Keep clean books and file your federal and state returns on time.",
       },
     ],
-    facts: [
-      [
-        { label: "Registered Agent States", value: "50" },
-        { label: "Focus Market", value: "US" },
-      ],
-      [
-        { label: "Service Areas", value: "6" },
-        { label: "Entity Types Served", value: "All" },
-      ],
-    ],
     linkLabel: "Learn About Us",
     imageAlt: "Close view of classical columns",
   },

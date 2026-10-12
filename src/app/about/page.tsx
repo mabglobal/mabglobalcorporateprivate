@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button-link";
-import { FactCards, FeaturePanel } from "@/components/ui/feature-panel";
+import { FeaturePanel } from "@/components/ui/feature-panel";
 import { IconTile } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
@@ -30,7 +30,7 @@ const breadcrumb: BreadcrumbTrailItem[] = [
 ];
 
 export default function AboutPage() {
-  const { hero, introduction, philosophy, focus, approach } = aboutContent;
+  const { hero, introduction, philosophy, approach } = aboutContent;
   return (
     <>
       <JsonLd
@@ -75,7 +75,6 @@ export default function AboutPage() {
             image={aboutColumns}
             imageAlt={homeContent.about.imageAlt}
             imageClassName="object-[50%_30%]"
-            details={<FactCards groups={homeContent.about.facts} />}
           />
         </div>
       </section>
@@ -102,22 +101,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="focus-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
-        <div className="container-page">
-          <SectionHeading id="focus-title" tag={focus.tag} title={focus.title} />
-          <ul className="mt-14 grid gap-4 md:grid-cols-2">
-            {focus.items.map((item) => (
-              <li key={item.title} className="frame rounded-card p-7 md:p-8">
-                <h3 className="text-title text-navy">{item.title}</h3>
-                <p data-single-line="" className="mt-2 text-label text-navy">
-                  {item.description}
-                </p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

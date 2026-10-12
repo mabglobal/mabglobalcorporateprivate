@@ -1,10 +1,10 @@
 import aboutColumns from "@/assets/images/about-columns.jpg";
 import { routes } from "@/config/routes";
 import { homeContent } from "@/content/home";
-import { FactCards, FeaturePanel } from "@/components/ui/feature-panel";
+import { FeaturePanel } from "@/components/ui/feature-panel";
 import { TextLink } from "@/components/ui/text-link";
 
-/** Company profile in the framed feature panel with verified figures. */
+/** Company profile in the framed feature panel. */
 export function AboutBlock() {
   const { about } = homeContent;
   return (
@@ -19,7 +19,6 @@ export function AboutBlock() {
           image={aboutColumns}
           imageAlt={about.imageAlt}
           imageClassName="object-[50%_30%]"
-          details={<FactCards groups={about.facts} />}
         />
       </div>
     </section>

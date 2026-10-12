@@ -27,20 +27,6 @@ export const aboutContent = {
       "Our Insights guides draw on official sources and follow the same approach.",
     ],
   },
-  focus: {
-    tag: "Market",
-    title: "United States Focus",
-    items: [
-      {
-        title: "Company Formation",
-        description: "LLC and corporation formation with registered agent and EIN support.",
-      },
-      {
-        title: "Tax and Accounting",
-        description: "Federal and state returns with bookkeeping and annual compliance.",
-      },
-    ] satisfies TitledText[],
-  },
   approach: {
     tag: "Approach",
     title: "Our Approach",
