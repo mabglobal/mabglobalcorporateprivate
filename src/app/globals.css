@@ -138,7 +138,7 @@
     margin-bottom: 0.5rem;
   }
   & li::marker {
-    color: var(--color-slate);
+    color: var(--color-navy);
   }
   & a {
     color: var(--color-navy);

@@ -5,7 +5,9 @@ import { siteConfig } from "@/config/site";
 import { footerNavigation, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
 
-const footerDescription = "Amerika ve İngiltere'de şirket kuruluşu, vergi, muhasebe ve registered agent danışmanlığı.";
+const footerDescription = "Company formation and tax support for the US and UK.";
+
+const footerLink = "inline-flex min-h-9 items-center text-label text-white underline-offset-4 hover:underline";
 
 /**
  * Navy footer band with the brand name set large, link columns and the legal
@@ -28,20 +30,17 @@ export function Footer() {
       <div className="container-page grid gap-12 pb-14 pt-4 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <p className="font-medium text-title text-white">{siteConfig.name}</p>
-          <p className="mt-3 max-w-xs text-label text-white/70">{footerDescription}</p>
+          <p className="mt-3 text-label text-white">{footerDescription}</p>
         </div>
 
         <div className="grid gap-10 sm:grid-cols-[1.15fr_0.7fr_1.35fr] lg:col-span-8">
           {footerNavigation.map((group) => (
             <nav key={group.title} aria-label={group.title}>
-              <h2 className="text-label text-white">{group.title}</h2>
+              <h2 className="text-label font-medium text-white">{group.title}</h2>
               <ul className="mt-4 grid gap-0.5">
                 {group.items.map((item) => (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="inline-flex min-h-9 items-center text-label text-white/70 transition-colors hover:text-white"
-                    >
+                    <Link href={item.href} className={footerLink}>
                       {item.label}
                     </Link>
                   </li>
@@ -51,17 +50,17 @@ export function Footer() {
           ))}
 
           <div>
-            <h2 className="text-label text-white">İletişim</h2>
+            <h2 className="text-label font-medium text-white">Contact</h2>
             <ul className="mt-4 grid gap-4 text-label">
               <li>
-                <a href={mailtoHref} className="inline-flex min-h-9 items-center whitespace-nowrap text-white/70 hover:text-white">
+                <a href={mailtoHref} className={`${footerLink} whitespace-nowrap`}>
                   {contactConfig.email}
                 </a>
               </li>
               <li>
-                <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="text-white">
                   <address className="not-italic">{contactConfig.address.full}</address>
-                  <span className="mt-2 inline-flex text-white underline underline-offset-4">Haritada görüntüleyin</span>
+                  <span className="mt-2 inline-flex text-white underline underline-offset-4">View on Map</span>
                 </a>
               </li>
             </ul>
@@ -70,16 +69,16 @@ export function Footer() {
       </div>
 
       <div className="container-page flex flex-col gap-4 pb-10 md:flex-row md:items-center md:justify-between">
-        <p className="text-caption text-white/70">
-          © <CopyrightYear /> {siteConfig.name}. Tüm hakları saklıdır.
+        <p className="text-caption text-white">
+          © <CopyrightYear /> {siteConfig.name}. All rights reserved.
         </p>
-        <nav aria-label="Yasal bilgiler">
+        <nav aria-label="Legal information">
           <ul className="flex flex-wrap gap-x-6 gap-y-1">
             {legalNavigation.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-9 items-center whitespace-nowrap text-caption text-white/70 hover:text-white"
+                  className="inline-flex min-h-9 items-center whitespace-nowrap text-caption text-white underline-offset-4 hover:underline"
                 >
                   {item.label}
                 </Link>

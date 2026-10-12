@@ -45,18 +45,17 @@ export interface ContactHandlerDeps {
   log?: (event: string, details: Record<string, unknown>) => void;
 }
 
-const fallback = `Talebinizi ${contactConfig.email} adresine e-posta ile de iletebilirsiniz.`;
+const fallback = `You can send your request by email to ${contactConfig.email} instead.`;
 
 export const contactErrorMessages: Record<ContactErrorCode, string> = {
-  invalid_request: `Talebiniz okunamadı. Lütfen sayfayı yenileyip tekrar deneyin. ${fallback}`,
-  forbidden_origin: `Talebiniz doğrulanamadı. Lütfen formu web sitemiz üzerinden gönderin. ${fallback}`,
-  payload_too_large: "Mesajınız çok uzun. Lütfen metni kısaltıp tekrar deneyin.",
-  validation_failed: "Lütfen işaretli alanları kontrol edin.",
-  rejected: `Talebiniz gönderilemedi. Lütfen birkaç saniye bekleyip tekrar deneyin. ${fallback}`,
-  rate_limited:
-    "Kısa süre içinde çok sayıda talep gönderildi. Lütfen birkaç dakika sonra tekrar deneyin.",
-  not_configured: `Form gönderimi şu anda kapalı. ${fallback}`,
-  delivery_failed: `Talebiniz şu anda iletilemedi. Lütfen daha sonra tekrar deneyin. ${fallback}`,
+  invalid_request: `Your request was unreadable. Please reload the page and try again. ${fallback}`,
+  forbidden_origin: `Your request failed verification. Please send the form from our website. ${fallback}`,
+  payload_too_large: "Your message is too long. Please shorten the text and try again.",
+  validation_failed: "Please check the highlighted fields.",
+  rejected: `Your request failed to send. Please wait a few seconds and try again. ${fallback}`,
+  rate_limited: "Too many requests arrived in a short time. Please try again in a few minutes.",
+  not_configured: `Form submission is currently unavailable. ${fallback}`,
+  delivery_failed: `Your request failed to reach us. Please try again later. ${fallback}`,
 };
 
 function json(body: ContactResponseBody, status: number, extra?: HeadersInit) {

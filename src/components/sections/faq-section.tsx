@@ -16,9 +16,9 @@ interface FaqSectionProps {
 
 export function FaqSection({
   items,
-  tag = "Sıkça sorulan sorular",
-  title = "Merak edilen konular",
-  description = "Merak edilen konuların kısa yanıtları.",
+  tag = "FAQ",
+  title = "Common Questions",
+  description = "Short answers to frequent questions.",
   padding = "full",
 }: FaqSectionProps) {
   if (items.length === 0) return null;
@@ -28,8 +28,8 @@ export function FaqSection({
         <div className="lg:col-span-4">
           <SectionHeading id="faq-title" tag={tag} title={title} description={description} />
           <div className="mt-6">
-            <p className="text-label text-slate">Sorunuzun yanıtını bulamadınız mı?</p>
-            <TextLink href={routes.contactForm}>Bize yazın</TextLink>
+            <p className="text-label text-navy">Have a question of your own?</p>
+            <TextLink href={routes.contactForm}>Write to Us</TextLink>
           </div>
         </div>
         <div className="lg:col-span-7 lg:col-start-6">

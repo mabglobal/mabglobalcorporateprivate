@@ -22,12 +22,14 @@ export function ProcessPanels({ steps }: { steps: readonly TitledText[] }) {
             )}
           >
             <div>
-              <span className={cn("text-caption font-medium", filled ? "text-white/80" : "text-slate")}>
+              <span className={cn("text-caption font-medium", filled ? "text-white" : "text-navy")}>
                 [{index + 1}]
               </span>
               <h3 className={cn("mt-3 text-title", filled ? "text-white" : "text-navy")}>{step.title}</h3>
             </div>
-            <p className={cn("text-label", filled ? "text-white/80" : "text-slate")}>{step.description}</p>
+            <p data-single-line="" className={cn("text-label", filled ? "text-white" : "text-navy")}>
+              {step.description}
+            </p>
           </li>
         );
       })}

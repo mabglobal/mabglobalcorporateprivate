@@ -50,16 +50,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="tr" className={`${googleSansFlex.variable} antialiased`}>
+    <html lang="en" className={`${googleSansFlex.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a
-          href="#icerik"
+          href="#content"
           className="sr-only z-50 rounded-control bg-navy px-4 py-3 text-label text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
-          İçeriğe geç
+          Skip to Content
         </a>
         <Header />
-        <main id="icerik" tabIndex={-1} className="flex-1 focus:outline-none">
+        <main id="content" tabIndex={-1} className="flex-1 focus:outline-none">
           {children}
         </main>
         <Footer />

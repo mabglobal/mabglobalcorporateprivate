@@ -2,122 +2,122 @@ import { routes } from "@/config/routes";
 import type { IconName, ServiceSlug, TitledText } from "@/types/content";
 
 /**
- * Homepage copy. The layout follows the consulting reference: framed badge,
- * two-tone heading over an architectural photo, grouped service list,
- * staggered process boxes, about block with figures, working principles,
- * sectors, FAQ and a contact band.
+ * Homepage copy. The hero follows the full-bleed consulting reference; the
+ * sections below keep the framed service list, staggered process boxes,
+ * profile block, working principles, industries, FAQ and contact band.
+ * Copy style: Title Case headings, short one-line descriptions, no commas in
+ * headings or descriptions, imperative "you" voice.
  */
 export const homeContent = {
   hero: {
-    badge: "ABD ve Birleşik Krallık · Türkçe danışmanlık",
-    titleLead: "Global işinizi",
-    titleRest: "sağlam temeller üzerine kurun.",
-    description:
-      "Amerika ve İngiltere'de şirket kuruluşundan vergi ve muhasebe süreçlerine kadar uluslararası operasyonlarınızı yönetin.",
-    primaryCta: { label: "Danışmanlık Talep Edin", href: routes.contactForm },
-    secondaryCta: { label: "Hizmetleri İnceleyin", href: routes.services },
-    imageAlt: "Sütunlu cepheleri ve kubbesiyle klasik tarihi yapılar",
+    badge: "US and UK Company Formation",
+    titleLead: "Invest in America",
+    titleRest: "With the Right Structure",
+    description: "Form your US company and manage tax and accounting with one team.",
+    primaryCta: { label: "Book a Consultation", href: routes.contactForm },
+    secondaryCta: { label: "View Services", href: routes.services },
+    imageAlt: "Classical colonnades and a domed building in navy tones",
   },
   services: {
-    tag: "Hizmet alanları",
-    titleLead: "Uluslararası işinize",
-    titleAccent: "uygun hizmeti seçin",
-    allServicesLabel: "Tüm hizmetler",
+    tag: "Services",
+    titleLead: "Company Services",
+    titleAccent: "Built Around Your Plans",
+    allServicesLabel: "All Services",
     groups: [
       {
-        label: "Şirket kuruluşu",
-        description: "ABD veya Birleşik Krallık'ta şirketinizi kurun.",
-        services: ["amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu"],
+        label: "Company Formation",
+        description: "Form your company in the US or the UK.",
+        services: ["us-company-formation", "uk-company-formation"],
         featured: "registered-agent",
       },
       {
-        label: "Vergi ve operasyon",
-        description: "Kuruluştan sonraki yükümlülükleri düzenli yönetin.",
-        services: ["vergi-danismanligi", "muhasebe-hizmetleri", "is-adresi-ve-sirket-operasyonlari"],
-        featured: "uluslararasi-is-danismanligi",
+        label: "Tax and Operations",
+        description: "Manage every obligation after formation.",
+        services: ["tax-advisory", "accounting", "business-address-and-operations"],
+        featured: "international-business-consulting",
       },
     ] satisfies { label: string; description: string; services: ServiceSlug[]; featured: ServiceSlug }[],
   },
   process: {
-    tag: "Çalışma süreci",
-    title: "Nasıl çalışır",
-    description: "Üç adımda net bir yol haritası oluşturun.",
+    tag: "Process",
+    title: "How It Works",
+    description: "Build a clear roadmap in three steps.",
     steps: [
       {
-        title: "İhtiyaçların Belirlenmesi",
-        description: "Hedef pazarınızı ve beklentilerinizi paylaşın.",
+        title: "Define Your Needs",
+        description: "Share your target market and goals.",
       },
       {
-        title: "Uygun Yapının Planlanması",
-        description: "Uygun kuruluş yapısını birlikte planlayın.",
+        title: "Plan the Structure",
+        description: "Plan the right company structure together.",
       },
       {
-        title: "Süreçlerin Yönetimi",
-        description: "Uyum süreçlerinizi anlaşılan kapsamda yönetin.",
+        title: "Manage the Process",
+        description: "Run compliance within the agreed scope.",
       },
     ] satisfies TitledText[],
   },
   about: {
-    tag: "Hakkımızda",
+    tag: "About Us",
     title: "MAB Global Partners",
-    subtitle: "Uluslararası şirket süreçlerinde Türkçe danışmanlık",
+    subtitle: "Company Services for the US and UK Markets",
     paragraphs: [
-      "MAB Global Partners, Amerika ve Birleşik Krallık'ta iş yapmak isteyen girişimcilere ve şirketlere destek veren kurumsal hizmetler markasıdır.",
-      "Şirket kuruluşu, registered agent, vergi ve muhasebe adımlarını tek bir çatı altında planlayın.",
+      "MAB Global Partners is a corporate services brand for entrepreneurs and companies that do business in the United States and the United Kingdom.",
+      "Plan company formation and registered agent services together with tax and accounting under one roof.",
     ],
     stats: [
-      { value: "50", label: "Eyalette registered agent" },
-      { value: "2", label: "Odak pazar" },
-      { value: "7", label: "Hizmet alanı" },
+      { value: "50", label: "Registered Agent States" },
+      { value: "2", label: "Focus Markets" },
+      { value: "7", label: "Service Areas" },
     ],
-    linkLabel: "Bizi tanıyın",
-    imageAlt: "Klasik sütunların yakından görünümü",
+    linkLabel: "Learn About Us",
+    imageAlt: "Close view of classical columns",
   },
   principles: {
-    tag: "Neden MAB Global Partners",
-    title: "Çalışma ilkeleri",
+    tag: "Why MAB Global Partners",
+    title: "Working Principles",
     items: [
       {
         icon: "globe",
-        title: "Uluslararası uzmanlık",
-        description: "ABD ve İngiltere süreçlerini deneyimli ekiple yürütün.",
+        title: "International Expertise",
+        description: "Run US and UK steps with an expert team.",
       },
       {
         icon: "layers",
-        title: "Tek plan, tek ekip",
-        description: "Kuruluş, muhasebe ve vergiyi tek planda toplayın.",
+        title: "One Plan and One Team",
+        description: "Keep formation and tax in a single plan.",
       },
       {
         icon: "calendar",
-        title: "Düzenli takip",
-        description: "Beyan ve yenileme tarihlerini önceden öğrenin.",
+        title: "Regular Follow-Up",
+        description: "See filing and renewal dates early.",
       },
     ] satisfies (TitledText & { icon: IconName })[],
     cta: {
-      title: "Ön görüşme talep edin",
-      description: "İhtiyacınızı paylaşın, uygun yapıyı birlikte belirleyin.",
+      title: "Book an Intro Call",
+      description: "Share your needs and plan the next step.",
       href: routes.contactForm,
     },
   },
   sectors: {
-    tag: "Kimler için",
-    title: "İş modelinize uygun yapı",
-    description: "Size en yakın alanı seçin.",
-    allSectorsLabel: "Tüm sektörler",
+    tag: "Industries",
+    title: "Structures for Every Business Model",
+    description: "Choose the area closest to your business.",
+    allSectorsLabel: "All Industries",
   },
   faq: {
-    tag: "Sıkça sorulan sorular",
-    title: "Merak edilen konular",
-    description: "Merak edilen konuların kısa yanıtları.",
+    tag: "FAQ",
+    title: "Common Questions",
+    description: "Short answers to frequent questions.",
   },
 } as const;
 
 /** Contact band shown above the footer on most pages. */
 export const contactBand = {
-  tag: "İletişim",
-  title: "İletişime geçin",
-  description: "Uluslararası iş planınızı paylaşın, uygun hizmetleri ve sonraki adımları öğrenin.",
-  cardTitle: "Görüşme talep edin",
-  cardDescription: "Formu doldurun, ekibimiz e-posta ile size dönüş yapsın.",
-  cta: { label: "Danışmanlık Talep Edin", href: routes.contactForm },
+  tag: "Contact",
+  title: "Get in Touch",
+  description: "Share your plans and learn the right next steps.",
+  cardTitle: "Request a Consultation",
+  cardDescription: "Fill in the form and our team replies by email.",
+  cta: { label: "Book a Consultation", href: routes.contactForm },
 } as const;

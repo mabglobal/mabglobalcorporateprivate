@@ -10,7 +10,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
   return (
     <div className="grid gap-2">
       {items.map((item) => (
-        <details key={item.id} className="frame group rounded-panel px-5 transition-colors open:border-slate">
+        <details key={item.id} className="frame group rounded-panel px-5 transition-colors open:border-navy">
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-6 py-4 text-body font-medium text-navy marker:content-none [&::-webkit-details-marker]:hidden">
             <span>{item.question}</span>
             <span
@@ -20,7 +20,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
               <Plus className="size-4" strokeWidth={1.8} />
             </span>
           </summary>
-          <p className="max-w-2xl pb-5 pr-10 text-label text-slate">{item.answer}</p>
+          <p className="max-w-3xl pb-5 pr-10 text-label text-navy">{item.answer}</p>
         </details>
       ))}
     </div>

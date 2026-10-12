@@ -24,19 +24,19 @@ describe("absoluteUrl", () => {
   it("builds canonical URLs on the production host", () => {
     expect(siteConfig.url).toBe("https://www.mabglobalpartners.com");
     expect(absoluteUrl("/")).toBe("https://www.mabglobalpartners.com");
-    expect(absoluteUrl("/hizmetler/registered-agent")).toBe(
-      "https://www.mabglobalpartners.com/hizmetler/registered-agent",
+    expect(absoluteUrl("/services/registered-agent")).toBe(
+      "https://www.mabglobalpartners.com/services/registered-agent",
     );
   });
 
   it("drops query strings, fragments and trailing slashes", () => {
-    expect(absoluteUrl("/hizmetler/?utm_source=x#ust")).toBe(
-      "https://www.mabglobalpartners.com/hizmetler",
+    expect(absoluteUrl("/services/?utm_source=x#top")).toBe(
+      "https://www.mabglobalpartners.com/services",
     );
   });
 
   it("rejects relative paths", () => {
-    expect(() => absoluteUrl("hizmetler")).toThrow();
+    expect(() => absoluteUrl("services")).toThrow();
   });
 });
 

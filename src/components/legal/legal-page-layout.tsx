@@ -16,7 +16,7 @@ export function LegalPageLayout({ documentKey }: { documentKey: LegalDocument["k
   const document = legalDocuments[documentKey];
   const page = staticPages[documentKey];
   const breadcrumb: BreadcrumbTrailItem[] = [
-    { name: "Ana Sayfa", path: routes.home },
+    { name: "Home", path: routes.home },
     { name: page.title, path: page.path },
   ];
 
@@ -36,8 +36,8 @@ export function LegalPageLayout({ documentKey }: { documentKey: LegalDocument["k
       <PageHero breadcrumb={breadcrumb} title={page.title} description={document.intro} />
       <div className="section-y bg-white">
         <div className="container-page">
-          <p className="text-caption text-slate">
-            Son güncelleme <time dateTime={page.updatedAt}>{formatDate(page.updatedAt)}</time>
+          <p className="text-caption text-navy">
+            Last updated <time dateTime={page.updatedAt}>{formatDate(page.updatedAt)}</time>
           </p>
           <div className="prose-mab mt-2">
             {document.sections.map((section) => (

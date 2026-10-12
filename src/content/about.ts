@@ -7,56 +7,59 @@ import type { TitledText } from "@/types/content";
  */
 export const aboutContent = {
   hero: {
-    title: "Uluslararası işinizde kurumsal çözüm ortağınız",
-    description:
-      "MAB Global Partners, uluslararası iş yapan girişimcilere ve şirketlere kuruluş, vergi, muhasebe ve uyum süreçlerinde destek veren kurumsal hizmetler markasıdır.",
+    title: "Your Partner for International Business",
+    description: "Formation and compliance support for companies in the US and UK.",
   },
   introduction: {
-    title: "Kurumsal tanıtım",
+    tag: "Company",
+    title: "Company Overview",
     paragraphs: [
-      "MAB Global Partners, Mehmet Akif Birkan tarafından Türkiye'de kuruldu ve ilk günden itibaren Amerika pazarına açılan girişimcilere hizmet verdi.",
-      "Hizmet yapısı zamanla şirket kuruluşu, vergi, muhasebe ve iş adresi hizmetlerini kapsayacak şekilde genişledi. Registered agent hizmetleri MAB Registered Agent Inc. markasıyla sunulur.",
-      "Amerika Birleşik Devletleri ve Birleşik Krallık odağındaki kuruluş ve uyum süreçleri İstanbul ofisinden koordine edilir.",
+      "Mehmet Akif Birkan founded MAB Global Partners in Türkiye to support entrepreneurs entering the US market.",
+      "The service range grew over time to cover company formation and tax along with accounting and business address services. Registered agent services run under the MAB Registered Agent Inc. brand.",
+      "The Istanbul office coordinates formation and compliance work for the United States and the United Kingdom.",
     ],
   },
   philosophy: {
-    title: "İş felsefemiz",
-    quote: "Herkesin doğru bilgiye ulaşma hakkı vardır.",
-    quoteAttribution: "Mehmet Akif Birkan, Kurucu",
+    title: "Our Philosophy",
+    quote: "Everyone has the right to accurate information.",
+    quoteName: "Mehmet Akif Birkan",
+    quoteRole: "Founder",
     paragraphs: [
-      "Uluslararası şirket süreçlerini açık bir dille öğrenin, her kararın gerekçesini bilin.",
-      "Bilgi Merkezi rehberleri resmi kaynaklara dayanır ve bu anlayışla hazırlanır.",
+      "Learn how international company processes work in plain language and understand the reason behind every decision.",
+      "Our Insights guides draw on official sources and follow the same approach.",
     ],
   },
   focus: {
-    title: "Uluslararası odak",
+    tag: "Markets",
+    title: "International Focus",
     items: [
       {
-        title: "Amerika Birleşik Devletleri",
-        description: "LLC ve corporation kuruluşu, registered agent, EIN, vergi beyanları ve yıllık uyum.",
+        title: "United States",
+        description: "LLC and corporation formation with registered agent and EIN support.",
       },
       {
-        title: "Birleşik Krallık",
-        description: "Limited şirket kuruluşu, Companies House, Corporation Tax ve yıllık hesaplar.",
+        title: "United Kingdom",
+        description: "Limited company formation with Companies House and Corporation Tax support.",
       },
     ] satisfies TitledText[],
   },
   approach: {
-    title: "Hizmet yaklaşımı",
+    tag: "Approach",
+    title: "Our Approach",
     items: [
-      { title: "İhtiyacınızı paylaşın", description: "Her iş birliği iş modelinizin dinlenmesiyle başlar." },
-      { title: "Gerekçeyi bilin", description: "Önerilen yapının nedenleri ve yükümlülükleri açıkça paylaşılır." },
-      { title: "Takvimle ilerleyin", description: "Beyan ve rapor tarihleri baştan planlanır." },
-      { title: "Sınırları bilin", description: "Kurum ve banka kararlarına bağlı konularda sonuç taahhüdü verilmez." },
+      { title: "Share Your Needs", description: "Every project starts with your model." },
+      { title: "Know the Reasons", description: "See why each structure is suggested." },
+      { title: "Follow a Calendar", description: "Plan every deadline from the start." },
+      { title: "Know the Limits", description: "Official decisions are never promised." },
     ] satisfies TitledText[],
   },
   founder: {
-    title: "Kurucumuz",
+    tag: "Our Founder",
     name: "Mehmet Akif Birkan",
-    role: "Kurucu",
+    role: "Founder",
     paragraphs: [
-      "Mehmet Akif Birkan üniversite eğitimini New York'taki City University of New York'ta (CUNY) tamamladı ve bir dönem ABD'de kurumsal şirketlerde görev aldı. Türkiye'ye döndükten sonra çeşitli kurumsal şirketlerde yönetici olarak çalıştı.",
-      "Global e-ticaretle 2018 yılında tanışan Birkan, bilgi ve deneyimlerini YouTube kanalında ücretsiz olarak paylaşır. Kendi şirket kuruluşunda yaşadığı güçlükler bu hizmet yapısının çıkış noktası oldu.",
+      "Mehmet Akif Birkan completed university studies at the City University of New York (CUNY) and worked at US corporations. Back in Türkiye Birkan held management roles at several companies.",
+      "Birkan entered global e-commerce in 2018 and shares knowledge and experience for free on a YouTube channel. The challenges of forming a first company became the starting point for this service.",
     ],
   },
 } as const;

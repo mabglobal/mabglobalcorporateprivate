@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
 const mainLinks = [
-  { label: "Hakkımızda", path: "/hakkimizda" },
-  { label: "Hizmetler", path: "/hizmetler" },
-  { label: "Sektörler", path: "/sektorler" },
-  { label: "Bilgi Merkezi", path: "/bilgi-merkezi" },
-  { label: "İletişim", path: "/iletisim" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Industries", path: "/industries" },
+  { label: "Insights", path: "/insights" },
+  { label: "Contact", path: "/contact" },
 ];
 
 test.describe("desktop navigation", () => {
@@ -13,7 +13,7 @@ test.describe("desktop navigation", () => {
 
   test("main navigation links reach their pages and mark the active item", async ({ page }) => {
     await page.goto("/");
-    const nav = page.getByRole("navigation", { name: "Ana menü" });
+    const nav = page.getByRole("navigation", { name: "Main menu" });
     for (const link of mainLinks) {
       await nav.getByRole("link", { name: link.label, exact: true }).click();
       await expect(page).toHaveURL(link.path);
@@ -30,30 +30,30 @@ test.describe("desktop navigation", () => {
   test("hero CTA leads to the contact form and the services link to the index", async ({ page }) => {
     await page.goto("/");
     const hero = page.locator("section").first();
-    await hero.getByRole("link", { name: "Danışmanlık Talep Edin" }).click();
-    await expect(page).toHaveURL("/iletisim#danismanlik-formu");
-    await expect(page.getByRole("heading", { name: "Danışmanlık talebi" })).toBeVisible();
+    await hero.getByRole("link", { name: "Book a Consultation" }).click();
+    await expect(page).toHaveURL("/contact#consultation-form");
+    await expect(page.getByRole("heading", { name: "Consultation Request" })).toBeVisible();
 
     await page.goto("/");
-    await page.getByRole("link", { name: "Tüm hizmetler" }).click();
-    await expect(page).toHaveURL("/hizmetler");
+    await page.getByRole("link", { name: "All Services" }).click();
+    await expect(page).toHaveURL("/services");
   });
 
   test("service cards open the service page", async ({ page }) => {
-    await page.goto("/hizmetler");
+    await page.goto("/services");
     await page.getByRole("main").getByRole("link", { name: "Registered Agent", exact: true }).click();
-    await expect(page).toHaveURL("/hizmetler/registered-agent");
-    await expect(page.getByRole("navigation", { name: "Sayfa konumu" })).toContainText("Hizmetler");
+    await expect(page).toHaveURL("/services/registered-agent");
+    await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toContainText("Services");
   });
 
   test("skip link moves focus to the main content", async ({ page, browserName }) => {
     await page.goto("/");
     // Safari moves focus to links with Option+Tab by default.
     await page.keyboard.press(browserName === "webkit" ? "Alt+Tab" : "Tab");
-    const skip = page.getByRole("link", { name: "İçeriğe geç" });
+    const skip = page.getByRole("link", { name: "Skip to Content" });
     await expect(skip).toBeFocused();
     await page.keyboard.press("Enter");
-    await expect(page).toHaveURL("/#icerik");
+    await expect(page).toHaveURL("/#content");
   });
 });
 
@@ -62,8 +62,8 @@ test.describe("mobile navigation", () => {
 
   test("hamburger menu opens, closes with Escape and navigates", async ({ page }) => {
     await page.goto("/");
-    const open = page.getByRole("button", { name: "Menüyü aç" });
-    const dialog = page.getByRole("dialog", { name: "Menü" });
+    const open = page.getByRole("button", { name: "Open menu" });
+    const dialog = page.getByRole("dialog", { name: "Menu" });
 
     await open.click();
     await expect(dialog).toBeVisible();
@@ -73,20 +73,20 @@ test.describe("mobile navigation", () => {
     await expect(open).toHaveAttribute("aria-expanded", "false");
 
     await open.click();
-    await dialog.getByRole("button", { name: "Menüyü kapat" }).click();
+    await dialog.getByRole("button", { name: "Close menu" }).click();
     await expect(dialog).toBeHidden();
 
     await open.click();
-    await dialog.getByRole("link", { name: "Sektörler", exact: true }).click();
-    await expect(page).toHaveURL("/sektorler");
+    await dialog.getByRole("link", { name: "Industries", exact: true }).click();
+    await expect(page).toHaveURL("/industries");
     await expect(dialog).toBeHidden();
   });
 
   test("menu CTA leads to the contact form", async ({ page }) => {
-    await page.goto("/hakkimizda");
-    await page.getByRole("button", { name: "Menüyü aç" }).click();
-    await page.getByRole("dialog", { name: "Menü" }).getByRole("link", { name: "Danışmanlık Talep Edin" }).click();
-    await expect(page).toHaveURL("/iletisim#danismanlik-formu");
+    await page.goto("/about");
+    await page.getByRole("button", { name: "Open menu" }).click();
+    await page.getByRole("dialog", { name: "Menu" }).getByRole("link", { name: "Book a Consultation" }).click();
+    await expect(page).toHaveURL("/contact#consultation-form");
   });
 });
 
@@ -102,19 +102,19 @@ test("FAQ accordion works with the keyboard", async ({ page }) => {
   await expect(first).not.toHaveAttribute("open", "");
 });
 
-test("unknown routes return a Turkish 404 page with a 404 status", async ({ page }) => {
-  for (const path of ["/bilgi-merkezi/olmayan-rehber", "/hizmetler/olmayan-hizmet", "/olmayan-sayfa"]) {
+test("unknown routes return a 404 page with a 404 status", async ({ page }) => {
+  for (const path of ["/insights/missing-guide", "/services/missing-service", "/missing-page"]) {
     const response = await page.goto(path);
     expect(response?.status(), path).toBe(404);
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Aradığınız sayfa bulunamadı.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page Not Found");
     await expect(page.locator('meta[name="robots"]').first()).toHaveAttribute("content", /noindex/);
   }
 });
 
 test("published articles are still served", async ({ page }) => {
-  const response = await page.goto("/bilgi-merkezi/registered-agent-nedir");
+  const response = await page.goto("/insights/what-is-a-registered-agent");
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Registered Agent Nedir ve Neden Gereklidir?",
+    "What Is a Registered Agent and Why Do You Need One?",
   );
 });

@@ -17,32 +17,31 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <section aria-labelledby="error-title" className="section-y bg-white">
-      <div className="container-page max-w-3xl">
-        <h1 id="error-title" className="text-heading text-navy">
-          Beklenmeyen bir hata oluştu.
+    <section aria-labelledby="error-title" className="on-dark bg-navy-deep">
+      <div className="container-page pb-24 pt-36 md:pb-32 md:pt-44">
+        <h1 id="error-title" className="text-heading text-white">
+          Something Went Wrong
         </h1>
-        <p className="mt-5 text-lead text-slate">
-          Sayfayı yeniden yükleyin. Sorun devam ederse bize{" "}
-          <a href={mailtoHref} className="text-navy underline underline-offset-4">
+        <p className="mt-5 text-lead text-white">
+          Reload the page. If the problem continues email us at{" "}
+          <a href={mailtoHref} className="text-white underline underline-offset-4">
             {contactConfig.email}
-          </a>{" "}
-          adresinden ulaşabilirsiniz.
+          </a>
+          .
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-3">
           <button
             type="button"
             onClick={() => retry()}
-            data-brand-accent=""
-            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control bg-accent px-6 text-label font-medium text-white hover:bg-accent-hover"
+            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control bg-white px-6 text-label font-medium text-navy hover:bg-white/90"
           >
-            Tekrar Deneyin
+            Try Again
           </button>
           <Link
             href={routes.home}
-            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control border border-line bg-white px-6 text-label font-medium text-navy shadow-frame hover:border-slate"
+            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control border border-white/25 bg-navy-deep/40 px-6 text-label font-medium text-white hover:border-white/60"
           >
-            Ana Sayfaya Dönün
+            Back to Home
           </Link>
         </div>
       </div>

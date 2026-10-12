@@ -43,10 +43,10 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy lg:hidden"
+        className="inline-flex size-11 items-center justify-center rounded-control border border-white/30 text-white lg:hidden"
       >
         <Menu aria-hidden="true" className="size-5" strokeWidth={1.8} />
-        <span className="sr-only">Menüyü aç</span>
+        <span className="sr-only">Open menu</span>
       </button>
 
       <dialog
@@ -56,11 +56,11 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={(event) => {
           if (event.target === dialogRef.current) close();
         }}
-        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-md bg-white p-0 text-ink [--focus-ring:var(--color-navy)] backdrop:bg-navy-deep/60 open:flex open:flex-col"
+        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-md bg-white p-0 text-ink [--focus-ring:var(--color-navy)] backdrop:bg-navy-deep/70 open:flex open:flex-col"
       >
         <div className="flex items-center justify-between px-5 py-4">
-          <p id={titleId} className="text-label font-medium text-slate">
-            Menü
+          <p id={titleId} className="text-label font-medium text-navy">
+            Menu
           </p>
           <button
             type="button"
@@ -68,25 +68,25 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
             className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy"
           >
             <X aria-hidden="true" className="size-5" strokeWidth={1.8} />
-            <span className="sr-only">Menüyü kapat</span>
+            <span className="sr-only">Close menu</span>
           </button>
         </div>
 
-        <nav aria-label="Mobil menü" className="flex-1 overflow-y-auto px-5 pb-6">
+        <nav aria-label="Mobile menu" className="flex-1 overflow-y-auto px-5 pb-6">
           <Suspense fallback={<PrimaryLinks items={items} onNavigate={close} />}>
             <PrimaryLinksWithActiveState items={items} onNavigate={close} />
           </Suspense>
 
           {groups.map((group) => (
             <div key={group.title} className="mt-8">
-              <p className="px-4 text-caption font-medium text-slate">{group.title}</p>
+              <p className="px-4 text-caption font-medium text-navy">{group.title}</p>
               <ul className="mt-2 grid gap-0.5">
                 {group.items.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={close}
-                      className="flex min-h-10 items-center rounded-control px-4 text-label text-slate hover:text-navy"
+                      className="flex min-h-10 items-center rounded-control px-4 text-label text-navy hover:underline"
                     >
                       {item.label}
                     </Link>

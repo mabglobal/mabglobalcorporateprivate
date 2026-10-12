@@ -6,11 +6,7 @@
 export const brandColors = {
   navy: "#262F40",
   navyDeep: "#1C2432",
-  slate: "#526071",
-  muted: "#697586",
-  surface: "#F3F5F7",
-  surfaceStrong: "#E9EDF2",
-  line: "#DCE2E8",
+  line: "#CFD7E6",
   white: "#FFFFFF",
   ink: "#202938",
   accent: "#F45800",

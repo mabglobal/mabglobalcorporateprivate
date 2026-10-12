@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
@@ -8,16 +8,17 @@ import { cn } from "@/lib/utilities/cn";
  *  - accent: orange fill, white text. White surfaces only.
  *  - outline: white, thin border, navy text (framed button).
  *  - dark: navy fill, white text.
- *  - light / outline-light: for navy surfaces.
+ *  - light: white fill, navy text. For navy surfaces.
+ *  - outline-light: translucent navy with a thin white border. For navy surfaces.
  */
 type Variant = "accent" | "outline" | "dark" | "light" | "outline-light";
 
 const variants: Record<Variant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
-  outline: "border border-line bg-white text-navy shadow-frame hover:border-slate",
+  outline: "border border-line bg-white text-navy shadow-frame hover:border-navy",
   dark: "bg-navy text-white hover:bg-navy-deep",
   light: "bg-white text-navy hover:bg-white/90",
-  "outline-light": "border border-white/30 text-white hover:border-white/60",
+  "outline-light": "border border-white/25 bg-navy-deep/40 text-white hover:border-white/60",
 };
 
 interface ButtonLinkProps {
@@ -25,6 +26,8 @@ interface ButtonLinkProps {
   children: ReactNode;
   variant?: Variant;
   size?: "md" | "sm";
+  /** Trailing icon. The hero reference uses a straight arrow. */
+  icon?: "arrow-up-right" | "arrow-right" | "none";
   className?: string;
   external?: boolean;
 }
@@ -34,6 +37,7 @@ export function ButtonLink({
   children,
   variant = "accent",
   size = "md",
+  icon = "arrow-up-right",
   className,
   external = false,
 }: ButtonLinkProps) {
@@ -43,14 +47,22 @@ export function ButtonLink({
     variants[variant],
     className,
   );
+  const Icon = icon === "arrow-right" ? ArrowRight : ArrowUpRight;
   const content = (
     <>
       <span>{children}</span>
-      <ArrowUpRight
-        aria-hidden="true"
-        strokeWidth={1.8}
-        className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-      />
+      {icon === "none" ? null : (
+        <Icon
+          aria-hidden="true"
+          strokeWidth={1.8}
+          className={cn(
+            "size-4 transition-transform duration-200",
+            icon === "arrow-right"
+              ? "group-hover:translate-x-0.5"
+              : "group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
+          )}
+        />
+      )}
     </>
   );
 

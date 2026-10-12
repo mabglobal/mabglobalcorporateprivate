@@ -9,11 +9,11 @@ import type { ContactOptions } from "./contact";
 export const contactOptions: ContactOptions = {
   services: [
     ...services.map((service) => ({ value: service.slug, label: service.title })),
-    { value: "birden-fazla-hizmet", label: "Birden fazla hizmet" },
-    { value: "diger", label: "Diğer konular" },
+    { value: "multiple-services", label: "Multiple Services" },
+    { value: "other", label: "Other Topics" },
   ],
   sectors: [
     ...sectors.map((sector) => ({ value: sector.slug, label: sector.title })),
-    { value: "diger", label: "Diğer" },
+    { value: "other", label: "Other" },
   ],
 };

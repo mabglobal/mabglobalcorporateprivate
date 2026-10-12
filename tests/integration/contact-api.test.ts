@@ -18,12 +18,12 @@ import { contactOptions } from "@/lib/validation/contact-options";
 const ORIGIN = "https://www.mabglobalpartners.com";
 
 const values = {
-  name: "Ayşe Yılmaz",
-  email: "ayse@example.com",
-  company: "Örnek Marka",
-  service: "vergi-danismanligi",
-  sector: "serbest-calisanlar",
-  message: "ABD'deki LLC şirketim için yıllık beyan sürecini konuşmak istiyorum.",
+  name: "Jane Doe",
+  email: "jane@example.com",
+  company: "Example Brand",
+  service: "tax-advisory",
+  sector: "freelancers",
+  message: "I would like to discuss the annual filing process for my US LLC.",
 };
 
 const meta = {
@@ -62,7 +62,7 @@ describe("POST /api/contact", () => {
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ ok: true });
     expect(d.sendEmail).toHaveBeenCalledWith(
-      expect.objectContaining({ email: "ayse@example.com", service: "vergi-danismanligi" }),
+      expect.objectContaining({ email: "jane@example.com", service: "tax-advisory" }),
       { idempotencyKey: meta.submissionId },
     );
     expect(response.headers.get("cache-control")).toBe("no-store");
@@ -194,6 +194,6 @@ describe("Resend delivery", () => {
     );
     expect(html).not.toContain("<script>");
     expect(html).toContain("&lt;script&gt;");
-    expect(text).toContain("Vergi Danışmanlığı");
+    expect(text).toContain("Tax Advisory");
   });
 });

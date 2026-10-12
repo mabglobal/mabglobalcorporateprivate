@@ -6,206 +6,206 @@ import type { FaqItem } from "@/types/content";
  */
 const allFaqs: FaqItem[] = [
   {
-    id: "kurulus-hangi-ulke",
-    question: "Amerika'da mı İngiltere'de mi şirket kurmalıyım?",
+    id: "us-or-uk",
+    question: "Should I form my company in the US or the UK?",
     answer:
-      "Karar hedef pazarınıza, müşterilerinizin bulunduğu bölgeye ve satış kanallarınıza bağlıdır. Ön görüşmede iki seçeneği kendi iş modeliniz üzerinden karşılaştırın.",
+      "The answer depends on your target market and where your customers are along with your sales channels. Compare both options against your own business model in an initial consultation.",
     status: "published",
   },
   {
-    id: "abd-kurulus-icin-seyahat",
-    question: "Amerika'da şirket kurmak için ABD'ye gitmem gerekir mi?",
+    id: "us-travel-required",
+    question: "Do I need to travel to the US to form a company?",
     answer:
-      "Birçok eyalette başvuru çevrim içi yapılır ve ABD'de bulunmanız gerekmez. Banka hesabı gibi adımlarda ilgili kurumun kuralları geçerlidir.",
+      "In many states the filing happens online and you can stay where you are. Steps such as opening a bank account follow the rules of each institution.",
     status: "published",
   },
   {
-    id: "abd-eyalet-secimi",
-    question: "Şirketimi hangi eyalette kurmalıyım?",
+    id: "us-state-choice",
+    question: "Which state should I form my company in?",
     answer:
-      "Seçim faaliyet yerine, yıllık giderlere ve yatırım planına göre yapılır. Delaware, Wyoming ve diğer eyaletlerin avantajlarını iş modelinize göre karşılaştırın.",
+      "The choice depends on where you operate and on annual costs along with your investment plans. Compare Delaware and Wyoming with other states for your business model.",
     status: "published",
   },
   {
-    id: "abd-ein-nedir",
-    question: "EIN nedir ve neden gereklidir?",
+    id: "us-ein",
+    question: "What is an EIN and why do I need one?",
     answer:
-      "EIN, IRS'in şirketlere verdiği dokuz haneli işveren kimlik numarasıdır. Banka başvurularında, vergi beyanlarında ve pazaryeri doğrulamalarında kullanılır. IRS bu numara için ücret almaz.",
+      "An EIN is the nine-digit employer identification number the IRS assigns to companies. Banks and tax returns use it along with marketplace verification. The IRS charges no fee for it.",
     status: "published",
   },
   {
-    id: "abd-banka-hesabi",
-    question: "Banka hesabı açılışı garanti edilebilir mi?",
+    id: "us-bank-account",
+    question: "Can a bank account opening be guaranteed?",
     answer:
-      "Hayır, hesap onayı bankanın kararıdır. Başvuru belgelerinizi eksiksiz hazırlayın, değerlendirme ilgili kurumun politikasına göre yapılır.",
+      "No. Account approval is the decision of the bank. Prepare complete application documents and the institution reviews them under its own policy.",
     status: "published",
   },
   {
-    id: "kurulus-suresi",
-    question: "Şirket kuruluşu ne kadar sürer?",
+    id: "formation-timeline",
+    question: "How long does company formation take?",
     answer:
-      "Süre eyalet veya ülkenin işlem yoğunluğuna, belgelerin eksiksizliğine ve kimlik doğrulama adımlarına göre değişir. Resmi kurumların süreleri için kesin taahhüt verilmez.",
+      "The timeline depends on the workload of the state or country and the completeness of documents along with identity verification steps. Official processing times carry no fixed commitment.",
     status: "published",
   },
   {
     id: "uk-registered-office",
-    question: "İngiltere şirketim için hangi adres gereklidir?",
+    question: "Which address does my UK company need?",
     answer:
-      "Registered office, şirketin kayıtlı olduğu Birleşik Krallık ülkesinde posta teslimini kabul eden fiziki bir adres olmalıdır. Posta kutusu hizmetleri kullanılamaz.",
+      "The registered office must be a physical address that accepts post in the UK country where the company is registered. PO Box services are unsuitable for this purpose.",
     status: "published",
   },
   {
-    id: "uk-kimlik-dogrulama",
-    question: "İngiltere'de direktörler için kimlik doğrulama zorunlu mu?",
+    id: "uk-identity-verification",
+    question: "Is identity verification mandatory for UK directors?",
     answer:
-      "Evet. 18 Kasım 2025 itibarıyla direktörler ve önemli kontrol sahibi kişiler (PSC) için Companies House kimlik doğrulaması yasal zorunluluktur.",
+      "Yes. From 18 November 2025 Companies House identity verification is a legal requirement for directors and persons with significant control (PSCs).",
     status: "published",
   },
   {
-    id: "uk-yillik-yukumlulukler",
-    question: "İngiltere'deki şirketimin yıllık yükümlülükleri nelerdir?",
+    id: "uk-annual-obligations",
+    question: "What are the annual obligations of a UK company?",
     answer:
-      "Şirketler her 12 ayda en az bir kez confirmation statement verir, yıllık hesaplarını hazırlar, Company Tax Return sunar ve Corporation Tax öder.",
+      "Every company files a confirmation statement at least once every 12 months. It prepares annual accounts and submits a Company Tax Return and pays Corporation Tax.",
     status: "published",
   },
   {
-    id: "vergi-turkiye-abd",
-    question: "Türkiye'de yaşayan biri olarak ABD şirketim için beyan vermem gerekir mi?",
+    id: "us-filing-from-abroad",
+    question: "Do I need to file returns for my US company if I live abroad?",
     answer:
-      "ABD'deki şirketlerin federal ve eyalet düzeyinde beyan yükümlülükleri olabilir. Yükümlülükler şirket türüne ve işlemlere göre belirlenir. Türkiye'deki vergi durumunuzu ayrı olarak değerlendirin.",
+      "US companies may have federal and state filing duties. The duties depend on the entity type and its transactions. Review your tax position in your country of residence separately.",
     status: "published",
   },
   {
     id: "form-5472",
-    question: "Yabancı ortaklı tek üyeli LLC'ler hangi beyanları verir?",
+    question: "Which returns does a foreign-owned single-member LLC file?",
     answer:
-      "IRS talimatlarına göre bu şirketler ortakla yapılan işlemler için pro forma Form 1120 ile birlikte Form 5472 vermekle yükümlü olabilir. Ortak tarafından yapılan ödemeler de raporlanabilir işlem sayılabilir.",
+      "Under IRS instructions these companies may need to file Form 5472 with a pro forma Form 1120 for transactions with the owner. Payments made by the owner may count as reportable transactions.",
     status: "published",
   },
   {
-    id: "vergi-beyan-donemi",
-    question: "Vergi beyan tarihleri nasıl takip edilir?",
+    id: "tax-deadlines",
+    question: "How do I keep track of tax deadlines?",
     answer:
-      "Şirketiniz için yıllık bir uyum takvimi oluşturulur ve gerekli belgeler beyan döneminden önce talep edilir. Beyanlarınızı son güne bırakmayın.",
+      "Your company receives an annual compliance calendar and the documents you need are requested before each filing period. File ahead of the final day.",
     status: "published",
   },
   {
-    id: "uluslararasi-gelir",
-    question: "Yurt dışı müşteri gelirim için şirket kurmam gerekir mi?",
+    id: "foreign-client-income",
+    question: "Do I need a company for income from foreign clients?",
     answer:
-      "Her durumda gerekmez. Gelir hacmi, müşteri yapısı, ödeme kanalları ve vergi durumunuz kararı belirler. Ön görüşmede iki seçeneği karşılaştırın.",
+      "Only in some cases. Income volume and client structure decide along with payment channels and your tax position. Compare both options in an initial consultation.",
     status: "published",
   },
   {
-    id: "muhasebe-kapsam",
-    question: "Muhasebe hizmeti neleri kapsar?",
+    id: "accounting-scope",
+    question: "What does the accounting service cover?",
     answer:
-      "Gelir ve gider kayıtları, banka ve platform mutabakatları, dönemsel raporlar ve yıl sonu hazırlığı temel kapsamdır. Kapsamı işlem hacminize göre belirleyin.",
+      "Income and expense records form the core along with bank and platform reconciliations and periodic reports with year-end preparation. Set the scope according to your transaction volume.",
     status: "published",
   },
   {
-    id: "on-muhasebe",
-    question: "Pazaryeri satışlarının muhasebesi nasıl tutulur?",
+    id: "marketplace-bookkeeping",
+    question: "How are marketplace sales recorded?",
     answer:
-      "Pazaryeri raporları banka hareketleriyle eşleştirilir. Komisyon, iade, reklam ve lojistik giderleri ayrı kalemler olarak kaydedilir.",
+      "Marketplace reports are matched with bank activity. Fees and refunds are recorded as separate items along with advertising and logistics costs.",
     status: "published",
   },
   {
-    id: "muhasebe-belgeler",
-    question: "Muhasebe için hangi belgeleri paylaşmalıyım?",
+    id: "accounting-documents",
+    question: "Which documents should I share for accounting?",
     answer:
-      "Banka ekstrelerini, ödeme platformu raporlarını, satış raporlarını ve gider faturalarını paylaşın. Paylaşım sıklığı hizmet kapsamına göre belirlenir.",
+      "Share bank statements and payment platform reports along with sales reports and expense invoices. The service scope sets how often you share them.",
     status: "published",
   },
   {
-    id: "registered-agent-nedir",
-    question: "Registered agent ne iş yapar?",
+    id: "registered-agent-role",
+    question: "What does a registered agent do?",
     answer:
-      "Registered agent, şirket adına resmi yazışmaları ve yasal tebligatları kabul eder. Şirketin kayıtlı olduğu eyalette fiziki bir adrese sahip olmalıdır.",
+      "A registered agent accepts official correspondence and legal notices for the company. The agent keeps a physical address in the state where the company is registered.",
     status: "published",
   },
   {
-    id: "registered-agent-zorunlu",
-    question: "Registered agent bulundurmak zorunlu mu?",
+    id: "registered-agent-required",
+    question: "Is a registered agent mandatory?",
     answer:
-      "Evet. LLC ve corporation gibi şirketler kuruluş başvurusundan önce kayıtlı oldukları eyalette bir registered agent belirlemelidir.",
+      "Yes. LLCs and corporations appoint a registered agent in their state of registration before they file for formation.",
     status: "published",
   },
   {
-    id: "registered-agent-kapsam",
-    question: "Registered agent hizmeti hangi eyaletleri kapsar?",
+    id: "registered-agent-coverage",
+    question: "Which states does the registered agent service cover?",
     answer:
-      "MAB Registered Agent Inc. hizmeti 50 eyaleti ve Washington D.C.'yi kapsar. LLC, corporation, partnership ve kâr amacı gütmeyen kuruluşlar dahil tüm şirket türleri için geçerlidir.",
+      "The MAB Registered Agent Inc. service covers all 50 states and Washington D.C. It serves every entity type including LLCs and corporations along with partnerships and nonprofits.",
     status: "published",
   },
   {
-    id: "adres-kullanim",
-    question: "ABD iş adresini hangi amaçlarla kullanabilirim?",
+    id: "business-address-use",
+    question: "What can I use a US business address for?",
     answer:
-      "İş adresi şirket yazışmaları ve kurumsal iletişim için kullanılır. Banka, pazaryeri ve resmi kurumlar adres türü konusunda kendi kurallarını uygular.",
+      "A business address serves company correspondence and business communication. Banks and marketplaces apply their own rules on address types along with public agencies.",
     status: "published",
   },
   {
-    id: "sirket-kapanis",
-    question: "Kullanmadığım ABD veya İngiltere şirketimi nasıl kapatırım?",
+    id: "company-dissolution",
+    question: "How do I close a US or UK company I no longer use?",
     answer:
-      "Kapanış, eyalete veya Companies House'a yapılan resmi başvuruyla tamamlanır. Başvurudan önce son dönem beyanlarını ve açık yükümlülükleri gözden geçirin.",
+      "Dissolution is completed with an official filing to the state or Companies House. Review final returns and open obligations before you file.",
     status: "published",
   },
   {
-    id: "hizmet-kapsami",
-    question: "Hizmet kapsamı nasıl belirlenir?",
+    id: "service-scope",
+    question: "How is the service scope decided?",
     answer:
-      "Ön görüşmede ihtiyaçlarınızı paylaşın. Ardından önerilen hizmet kapsamı ve süreç adımları size iletilir.",
+      "Share your needs in an initial consultation. You then receive the proposed service scope with the process steps.",
     status: "published",
   },
   {
-    id: "danismanlik-sureci",
-    question: "Danışmanlık talebimden sonra süreç nasıl ilerler?",
+    id: "consultation-process",
+    question: "What happens after I request a consultation?",
     answer:
-      "Formu gönderin, talebiniz ekibimize ulaşır. Ekibimiz e-posta ile ön görüşme planlar ve ihtiyacınıza uygun hizmetleri belirler.",
+      "Send the form and your request reaches our team. The team plans an initial consultation by email and sets out the services that fit your needs.",
     status: "published",
   },
   {
-    id: "ucretlendirme",
-    question: "Hizmet ücretleri nasıl belirlenir?",
+    id: "pricing",
+    question: "How are service fees set?",
     answer:
-      "Ücretler hizmet kapsamına, eyalet veya ülkeye ve süreklilik gerektiren hizmetlere göre belirlenir. Resmi kurum harçları teklifte ayrı kalem olarak gösterilir.",
+      "Fees depend on the service scope and the state or country along with any ongoing services. Official agency fees appear as a separate item in the proposal.",
     status: "published",
   },
   {
-    id: "e-ticaret-sirket",
-    question: "Amazon'da satış yapmak için ABD'de şirket kurmam gerekir mi?",
+    id: "amazon-us-company",
+    question: "Do I need a US company to sell on Amazon?",
     answer:
-      "Amazon farklı ülkelerden satıcı kabul eder. Bir ABD şirketi ödeme altyapısı, vergi düzeni ve marka kayıtlarında kolaylık sağlayabilir. Kararı satış hedeflerinize göre verin.",
+      "Amazon accepts sellers from many countries. A US company can make payments and tax setup simpler along with brand registrations. Decide based on your sales goals.",
     status: "published",
   },
   {
     id: "sales-tax",
-    question: "ABD'de sales tax yükümlülüğü ne zaman doğar?",
+    question: "When does a US sales tax obligation start?",
     answer:
-      "Yükümlülük eyalet kurallarına, satış hacmine ve satış kanallarına göre doğar. Birçok eyalette pazaryerleri vergiyi satıcı adına tahsil eder.",
+      "The obligation follows state rules and sales volume along with sales channels. In many states the marketplace collects the tax for the seller.",
     status: "published",
   },
   {
-    id: "amazon-hesap",
-    question: "Amazon hesap açılışı ve hesap sorunlarında destek alabilir miyim?",
+    id: "amazon-account-support",
+    question: "Can I get help with Amazon account setup and account issues?",
     answer:
-      "Evet. Satıcı hesabı açılışında ve hesap askıya alma durumlarında danışmanlık alın. Hesap onayları ve itiraz sonuçları Amazon'un kararına bağlıdır.",
+      "Yes. Get guidance on seller account setup and account suspensions. Account approvals and appeal outcomes depend on the decision of Amazon.",
     status: "published",
   },
   {
-    id: "grup-ici-islemler",
-    question: "Türkiye'deki şirketimle yurt dışı şirketim arasındaki işlemler nasıl kaydedilir?",
+    id: "intercompany-transactions",
+    question: "How are transactions between my home company and my company abroad recorded?",
     answer:
-      "Grup içi ürün, hizmet ve finansman işlemleri sözleşme ve faturayla belgelenir, iki şirketin kayıtlarında tutarlı yer alır. Türkiye tarafı için mali müşavirinizle koordinasyon kurun.",
+      "Intercompany product and service transactions along with financing are documented with contracts and invoices. Both companies record them consistently. Coordinate the home country side with your local accountant.",
     status: "published",
   },
   {
-    id: "mevcut-sirket-devralma",
-    question: "Kurulu yabancı şirketimin takibini devredebilir miyim?",
+    id: "existing-company-takeover",
+    question: "Can I hand over the follow-up of my existing foreign company?",
     answer:
-      "Evet. Devirde önce resmi kayıtlar, registered agent bilgisi ve geçmiş beyanlar gözden geçirilir. Eksik adımlar takvime eklenir ve düzenli takip başlar.",
+      "Yes. The handover starts with a review of official records and registered agent details along with past filings. Missing steps go on the calendar and regular follow-up begins.",
     status: "published",
   },
 ];
@@ -213,14 +213,14 @@ const allFaqs: FaqItem[] = [
 export const faqs: FaqItem[] = allFaqs.filter((faq) => faq.status === "published");
 
 export const homepageFaqIds = [
-  "kurulus-hangi-ulke",
-  "abd-kurulus-icin-seyahat",
-  "vergi-turkiye-abd",
-  "muhasebe-kapsam",
-  "uluslararasi-gelir",
-  "hizmet-kapsami",
-  "danismanlik-sureci",
-  "ucretlendirme",
+  "us-or-uk",
+  "us-travel-required",
+  "us-filing-from-abroad",
+  "accounting-scope",
+  "foreign-client-income",
+  "service-scope",
+  "consultation-process",
+  "pricing",
 ] as const;
 
 export function getFaqs(ids: readonly string[]): FaqItem[] {

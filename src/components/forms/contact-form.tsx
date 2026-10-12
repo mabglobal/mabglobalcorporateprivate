@@ -30,10 +30,10 @@ const emptyValues: FormValues = {
 
 const fieldOrder: ContactField[] = ["name", "email", "company", "service", "sector", "message"];
 
-const genericError = `Talebiniz şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin veya ${contactConfig.email} adresine e-posta gönderin.`;
+const genericError = `Your request failed to send. Please try again later or email ${contactConfig.email}.`;
 
 const inputClasses =
-  "block w-full rounded-control border bg-white px-4 text-body text-ink transition-colors placeholder:text-muted focus:border-navy focus:outline-2 focus:outline-offset-0 focus:outline-navy";
+  "block w-full rounded-control border bg-white px-4 text-body text-ink transition-colors focus:border-navy focus:outline-2 focus:outline-offset-0 focus:outline-navy";
 
 function newSubmissionId(): string {
   return crypto.randomUUID();
@@ -154,10 +154,10 @@ export function ContactForm({ options }: { options: ContactOptions }) {
       <div role="status" className="frame rounded-card p-8 md:p-10">
         <CircleCheck aria-hidden="true" className="size-8 text-navy" strokeWidth={1.6} />
         <h3 ref={successRef} tabIndex={-1} className="mt-6 text-title text-navy focus:outline-none">
-          Talebiniz bize ulaştı.
+          Your Request Has Reached Us
         </h3>
-        <p className="mt-4 text-body text-slate">
-          Ekibimiz talebinizi inceleyip e-posta adresiniz üzerinden sizinle iletişime geçecek.
+        <p className="mt-4 text-body text-navy">
+          Our team reviews your request and replies to your email address.
         </p>
         <button
           type="button"
@@ -167,7 +167,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           }}
           className="mt-8 inline-flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4"
         >
-          Yeni bir talep gönderin
+          Send Another Request
         </button>
       </div>
     );
@@ -194,7 +194,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           <p>
             {errorMessage}{" "}
             <a href={mailtoHref} className="font-medium text-navy underline underline-offset-4">
-              E-posta gönderin
+              Send an Email
             </a>
           </p>
         </div>
@@ -204,7 +204,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("name")}
           errorId={errorId("name")}
-          label="Ad Soyad"
+          label="Full Name"
           error={errors.name}
           required
         >
@@ -229,7 +229,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("email")}
           errorId={errorId("email")}
-          label="E-posta Adresi"
+          label="Email Address"
           error={errors.email}
           required
         >
@@ -255,8 +255,8 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("company")}
           errorId={errorId("company")}
-          label="Şirket veya Marka Adı"
-          hint="İsteğe bağlı"
+          label="Company or Brand Name"
+          hint="Optional"
           error={errors.company}
           className="md:col-span-2"
         >
@@ -280,7 +280,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("service")}
           errorId={errorId("service")}
-          label="İlgilendiğiniz Hizmet"
+          label="Service You Need"
           error={errors.service}
           required
         >
@@ -297,7 +297,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             aria-describedby={errors.service ? errorId("service") : undefined}
             className={cn(inputClasses, "h-12 appearance-auto", errors.service ? "border-accent-strong" : "border-line")}
           >
-            <option value="">Seçiniz</option>
+            <option value="">Select an Option</option>
             {options.services.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -309,7 +309,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("sector")}
           errorId={errorId("sector")}
-          label="Faaliyet Alanınız"
+          label="Your Industry"
           error={errors.sector}
           required
         >
@@ -326,7 +326,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             aria-describedby={errors.sector ? errorId("sector") : undefined}
             className={cn(inputClasses, "h-12 appearance-auto", errors.sector ? "border-accent-strong" : "border-line")}
           >
-            <option value="">Seçiniz</option>
+            <option value="">Select an Option</option>
             {options.sectors.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -338,7 +338,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <Field
           id={fieldId("message")}
           errorId={errorId("message")}
-          label="Mesajınız"
+          label="Your Message"
           error={errors.message}
           required
           className="md:col-span-2"
@@ -357,24 +357,23 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             onChange={(event) => update("message", event.target.value)}
             aria-invalid={errors.message ? true : undefined}
             aria-describedby={errors.message ? errorId("message") : undefined}
-            placeholder="İş modelinizi, hedef pazarınızı ve ihtiyacınızı kısaca anlatın."
             className={cn(inputClasses, "py-3", errors.message ? "border-accent-strong" : "border-line")}
           />
         </Field>
       </div>
 
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label htmlFor={`${formId}-website`}>Web siteniz</label>
+        <label htmlFor={`${formId}-website`}>Your website</label>
         <input id={`${formId}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
 
       <div className="mt-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-        <p id={`${formId}-note`} className="max-w-md text-caption text-slate">
-          Formu göndererek{" "}
+        <p id={`${formId}-note`} className="max-w-md text-caption text-navy">
+          By sending the form you confirm that you have read the{" "}
           <Link href={routes.kvkk} className="text-navy underline underline-offset-4">
-            KVKK Aydınlatma Metni
+            KVKK Privacy Notice
           </Link>
-          &apos;ni okuduğunuzu onaylarsınız.
+          .
         </p>
         <button
           type="submit"
@@ -386,15 +385,15 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           {submitting ? (
             <>
               <LoaderCircle aria-hidden="true" className="size-4 animate-spin" />
-              Lütfen bekleyin
+              Please Wait
             </>
           ) : (
-            "Danışmanlık Talep Edin"
+            "Book a Consultation"
           )}
         </button>
       </div>
       <p aria-live="polite" className="sr-only">
-        {submitting ? "Talebiniz gönderilmek üzere, lütfen bekleyin" : ""}
+        {submitting ? "Sending your request. Please wait." : ""}
       </p>
     </form>
   );
@@ -423,10 +422,10 @@ function Field({ id, errorId, label, hint, error, required, className, counter, 
               *
             </span>
           ) : null}
-          {hint ? <span className="ml-2 font-normal text-slate">{hint}</span> : null}
+          {hint ? <span className="ml-2 font-normal text-navy">{hint}</span> : null}
         </label>
         {counter ? (
-          <span aria-hidden="true" className="text-caption text-slate">
+          <span aria-hidden="true" className="text-caption text-navy">
             {counter}
           </span>
         ) : null}

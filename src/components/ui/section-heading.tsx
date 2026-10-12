@@ -14,11 +14,11 @@ interface SectionHeadingProps {
   as?: "h1" | "h2";
 }
 
-/** Section opening: framed label, heading with optional accent line, short description. */
+/** Section opening: framed label, heading with optional accent line, one-line description. */
 export function SectionHeading({ tag, title, accent, description, action, id, as: Heading = "h2" }: SectionHeadingProps) {
   return (
     <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-      <div className="max-w-2xl">
+      <div className="max-w-4xl">
         {tag ? <Tag>{tag}</Tag> : null}
         <Heading id={id} className={cn("text-heading text-navy", tag ? "mt-5" : "")}>
           {title}
@@ -29,7 +29,11 @@ export function SectionHeading({ tag, title, accent, description, action, id, as
             </>
           ) : null}
         </Heading>
-        {description ? <p className="mt-3 text-body text-slate">{description}</p> : null}
+        {description ? (
+          <p data-single-line="" className="mt-3 text-body text-navy">
+            {description}
+          </p>
+        ) : null}
       </div>
       {action ? <div className="shrink-0">{action}</div> : null}
     </div>

@@ -26,7 +26,14 @@ Sources:
 | Company dissolution (US and UK), share and company transfer (US), DUNS number, trademark (US and UK), FDA registration, warehouse services | Address and operations service, e-commerce and export sectors | S1 service options |
 | Amazon account opening, suspension support, hourly consultations, e-commerce business development | International consulting, e-commerce sector, FAQ | S1 menu and home |
 | Founder studied at City University of New York, worked at US corporations, held management roles in Türkiye, active in global e-commerce since 2018, shares knowledge on YouTube | About, founder section | S1 `/hakkimizda` |
-| Quote "Herkesin doğru bilgiye ulaşma hakkı vardır." | About | S1 `/hakkimizda` |
+| Quote "Herkesin doğru bilgiye ulaşma hakkı vardır.", published in English as "Everyone has the right to accurate information." | About | S1 `/hakkimizda` (translated) |
+
+## Language
+
+On 2026-10-12 the client switched the site from Turkish to English. All copy was translated from the verified Turkish texts without adding facts. Two points need the client's confirmation:
+
+* The English wording of service descriptions, legal texts and guides. The legal texts in particular need review by a lawyer in English.
+* English-language service. The site now presents itself in English and the structured data lists `availableLanguage` as English and Turkish. Confirm that consultations are offered in English.
 
 ## Pending confirmation (not published)
 

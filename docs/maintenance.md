@@ -6,7 +6,7 @@ Run `npm run verify` after every change. The tests catch most inconsistencies: m
 
 1. Add the slug to `ServiceSlug` in `src/types/content.ts`.
 2. Add the entry to `src/content/services.ts` with `status: "review"` and fill every field. Write content unique to the service.
-3. Create `src/app/hizmetler/<slug>/page.tsx` by copying an existing service page and changing the slug.
+3. Create `src/app/services/<slug>/page.tsx` by copying an existing service page and changing the slug.
 4. Add any new FAQs to `src/content/faqs.ts` and reference them in `faqIds`.
 5. Record the source of each claim in `docs/content-verification.md`, then set `status: "published"`.
 
@@ -14,7 +14,7 @@ Navigation, footer, sitemap, contact form options, llms.txt and llms-full.txt up
 
 ## Add a sector
 
-Same steps with `SectorSlug`, `src/content/sectors.ts` and `src/app/sektorler/<slug>/page.tsx`.
+Same steps with `SectorSlug`, `src/content/sectors.ts` and `src/app/industries/<slug>/page.tsx`.
 
 ## Add an article
 

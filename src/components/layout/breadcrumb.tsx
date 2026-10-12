@@ -15,11 +15,11 @@ export function Breadcrumb({
   tone?: "light" | "dark";
 }) {
   return (
-    <nav aria-label="Sayfa konumu">
+    <nav aria-label="Breadcrumb">
       <ol
         className={cn(
           "flex flex-wrap items-center gap-x-1.5 gap-y-1 text-caption",
-          tone === "dark" ? "text-white/60" : "text-slate",
+          tone === "dark" ? "text-white" : "text-navy",
         )}
       >
         {items.map((item, index) => {
@@ -27,7 +27,7 @@ export function Breadcrumb({
           return (
             <li key={item.path} className="inline-flex items-center gap-1.5">
               {last ? (
-                <span aria-current="page" className={tone === "dark" ? "text-white" : "text-navy"}>
+                <span aria-current="page" className={cn("font-medium", tone === "dark" ? "text-white" : "text-navy")}>
                   {item.name}
                 </span>
               ) : (

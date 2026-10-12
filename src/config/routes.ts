@@ -4,19 +4,19 @@
  */
 export const routes = {
   home: "/",
-  about: "/hakkimizda",
-  services: "/hizmetler",
-  service: (slug: string) => `/hizmetler/${slug}`,
-  sectors: "/sektorler",
-  sector: (slug: string) => `/sektorler/${slug}`,
-  knowledge: "/bilgi-merkezi",
-  article: (slug: string) => `/bilgi-merkezi/${slug}`,
-  contact: "/iletisim",
-  contactForm: "/iletisim#danismanlik-formu",
-  privacy: "/gizlilik-politikasi",
-  cookies: "/cerez-politikasi",
-  kvkk: "/kvkk-aydinlatma-metni",
-  legalNotice: "/yasal-uyari",
+  about: "/about",
+  services: "/services",
+  service: (slug: string) => `/services/${slug}`,
+  sectors: "/industries",
+  sector: (slug: string) => `/industries/${slug}`,
+  knowledge: "/insights",
+  article: (slug: string) => `/insights/${slug}`,
+  contact: "/contact",
+  contactForm: "/contact#consultation-form",
+  privacy: "/privacy-policy",
+  cookies: "/cookie-policy",
+  kvkk: "/kvkk-notice",
+  legalNotice: "/legal-notice",
 } as const;
 
-export const CONTACT_FORM_ANCHOR = "danismanlik-formu";
+export const CONTACT_FORM_ANCHOR = "consultation-form";

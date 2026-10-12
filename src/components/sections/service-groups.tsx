@@ -32,19 +32,21 @@ export function ServiceGroups() {
               <div key={group.label} className="grid gap-6 lg:grid-cols-12">
                 <div className="lg:col-span-4">
                   <h3 className="text-title text-navy">{group.label}</h3>
-                  <p className="mt-2 text-label text-slate">{group.description}</p>
+                  <p data-single-line="" className="mt-2 text-label text-navy">
+                    {group.description}
+                  </p>
                 </div>
                 <ul className="grid gap-2 lg:col-span-8">
                   {rows.map((service) => (
                     <li key={service.slug}>
                       <Link
                         href={routes.service(service.slug)}
-                        className="frame group flex min-h-16 items-center justify-between gap-6 rounded-panel px-6 py-4 transition-colors hover:border-slate"
+                        className="frame group flex min-h-16 items-center justify-between gap-6 rounded-panel px-6 py-4 transition-colors hover:border-navy"
                       >
                         <span className="font-medium text-title text-navy">{service.title}</span>
                         <ArrowUpRight
                           aria-hidden="true"
-                          className="size-5 shrink-0 text-slate transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy"
+                          className="size-5 shrink-0 text-navy transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
                       </Link>
                     </li>
@@ -52,9 +54,11 @@ export function ServiceGroups() {
                   <li className="frame rounded-panel p-6 md:p-7">
                     <h4 className="text-title text-navy">{featured.title}</h4>
                     <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-                      <p className="flex-1 text-label text-slate">{featured.summary}</p>
+                      <p data-single-line="" className="flex-1 text-label text-navy">
+                        {featured.summary}
+                      </p>
                       <ButtonLink href={routes.service(featured.slug)} variant="outline" size="sm">
-                        İnceleyin
+                        Learn More
                       </ButtonLink>
                     </div>
                   </li>

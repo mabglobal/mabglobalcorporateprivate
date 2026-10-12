@@ -12,29 +12,29 @@ import { contactOptions } from "@/lib/validation/contact-options";
 const validate = createContactValidator(contactOptions);
 
 const validValues = {
-  name: "Ayşe Yılmaz",
-  email: "  AYSE@Example.com ",
+  name: "Jane Doe",
+  email: "  JANE@Example.com ",
   company: "",
-  service: "amerika-sirket-kurulusu",
-  sector: "e-ticaret",
-  message: "Amazon üzerinden ABD pazarına satış yapmayı planlıyoruz.",
+  service: "us-company-formation",
+  sector: "e-commerce",
+  message: "We plan to sell on Amazon in the US market and need a company.",
 };
 
 describe("contact form validation", () => {
   it("accepts a valid submission and normalizes the email", () => {
     const result = validate(validValues);
     expect(result.success).toBe(true);
-    if (result.success) expect(result.data.email).toBe("ayse@example.com");
+    if (result.success) expect(result.data.email).toBe("jane@example.com");
   });
 
-  it("returns Turkish messages for each invalid field", () => {
+  it("returns a message for each invalid field", () => {
     const result = validate({
       name: "A",
-      email: "gecersiz",
+      email: "invalid",
       company: "x".repeat(200),
-      service: "olmayan-hizmet",
+      service: "unknown-service",
       sector: "",
-      message: "kısa",
+      message: "short",
     });
     expect(result.success).toBe(false);
     if (!result.success) {
@@ -108,7 +108,7 @@ describe("utilities", () => {
   });
 
   it("formats ISO dates in Turkish", () => {
-    expect(formatDate("2026-10-12")).toBe("12 Ekim 2026");
+    expect(formatDate("2026-10-12")).toBe("12 October 2026");
     expect(() => formatDate("2026-10")).toThrow();
   });
 });

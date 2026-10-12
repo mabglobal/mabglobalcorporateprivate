@@ -15,7 +15,9 @@ export function TitledCheckList({ items }: { items: TitledText[] }) {
           </span>
           <div>
             <h3 className="text-title text-navy">{item.title}</h3>
-            <p className="mt-1 text-label text-slate">{item.description}</p>
+            <p data-single-line="" className="mt-1 text-label text-navy">
+              {item.description}
+            </p>
           </div>
         </li>
       ))}

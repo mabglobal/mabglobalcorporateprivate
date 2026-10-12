@@ -1,11 +1,12 @@
-const formatter = new Intl.DateTimeFormat("tr-TR", {
+// en-GB order ("12 October 2026") avoids the comma of the US long format.
+const formatter = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
   month: "long",
   year: "numeric",
   timeZone: "Europe/Istanbul",
 });
 
-/** Formats an ISO calendar date (YYYY-MM-DD) as a Turkish long date. */
+/** Formats an ISO calendar date (YYYY-MM-DD) as a long English date. */
 export function formatDate(isoDate: string): string {
   const [year, month, day] = isoDate.split("-").map(Number);
   if (!year || !month || !day) {

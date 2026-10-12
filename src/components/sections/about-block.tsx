@@ -30,7 +30,7 @@ export function AboutBlock() {
           <p className="mt-2 text-label text-accent-strong">{about.subtitle}</p>
           <div className="mt-6 grid gap-4">
             {about.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-body text-slate">
+              <p key={paragraph} className="text-body text-navy">
                 {paragraph}
               </p>
             ))}
@@ -41,7 +41,7 @@ export function AboutBlock() {
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
                   <span className="block font-medium text-heading leading-none text-navy">{stat.value}</span>
-                  <span className="mt-2 block text-caption text-slate">{stat.label}</span>
+                  <span className="mt-2 block text-caption text-navy">{stat.label}</span>
                 </dd>
               </div>
             ))}

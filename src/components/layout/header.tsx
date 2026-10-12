@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import {
+  headerCta,
   mainNavigation,
   primaryCta,
   sectorNavigation,
@@ -10,31 +11,36 @@ import { DesktopNavigation, NavigationList } from "./desktop-navigation";
 import { MobileNavigation } from "./mobile-navigation";
 import { SiteLogo } from "./site-logo";
 
-/** White header with a framed call to action, as in the consulting reference. */
+/**
+ * Transparent header laid over the navy hero of every page, following the
+ * hero reference: wordmark and links on the left, a white call to action on
+ * the right. White on navy only.
+ */
 export function Header() {
   return (
-    <header className="relative z-40 bg-white">
-      <div className="container-page flex h-20 items-center justify-between gap-6">
-        <SiteLogo />
-
-        <nav aria-label="Ana menü" className="hidden lg:block">
-          <Suspense fallback={<NavigationList items={mainNavigation} />}>
-            <DesktopNavigation items={mainNavigation} />
-          </Suspense>
-        </nav>
+    <header className="on-dark absolute inset-x-0 top-0 z-40">
+      <div className="container-page flex h-20 items-center justify-between gap-6 md:h-24">
+        <div className="flex items-center gap-10 xl:gap-14">
+          <SiteLogo tone="dark" />
+          <nav aria-label="Main menu" className="hidden lg:block">
+            <Suspense fallback={<NavigationList items={mainNavigation} />}>
+              <DesktopNavigation items={mainNavigation} />
+            </Suspense>
+          </nav>
+        </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:block lg:hidden xl:block">
-            <ButtonLink href={primaryCta.href} variant="outline" size="sm">
-              {primaryCta.label}
+          <div className="hidden sm:block">
+            <ButtonLink href={headerCta.href} variant="light" size="sm" icon="none">
+              {headerCta.label}
             </ButtonLink>
           </div>
           <MobileNavigation
             items={mainNavigation}
             cta={primaryCta}
             groups={[
-              { title: "Hizmetler", items: serviceNavigation },
-              { title: "Sektörler", items: sectorNavigation },
+              { title: "Services", items: serviceNavigation },
+              { title: "Industries", items: sectorNavigation },
             ]}
           />
         </div>

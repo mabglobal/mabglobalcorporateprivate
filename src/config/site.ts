@@ -18,22 +18,22 @@ export const siteConfig = {
   name: "MAB Global Partners",
   legalNamePending: true,
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
-  locale: "tr_TR",
-  language: "tr",
+  locale: "en_US",
+  language: "en",
   description:
-    "MAB Global Partners, Amerika ve İngiltere'de şirket kuruluşu, vergi danışmanlığı, muhasebe ve registered agent hizmetleriyle uluslararası iş yapan girişimcileri ve şirketleri destekler.",
+    "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom with company formation and registered agent services along with tax and accounting support.",
   shortDescription:
-    "Amerika ve İngiltere'de şirket kuruluşu, vergi, muhasebe ve registered agent hizmetleri.",
+    "Company formation and registered agent services with tax and accounting support in the US and UK.",
   founderName: "Mehmet Akif Birkan",
   relatedBrands: [
     {
       name: "MAB Registered Agent Inc.",
       url: "https://www.mabregisteredagent.com",
       description:
-        "MAB Global Partners bünyesinde registered agent hizmetleri sunan marka.",
+        "The MAB Global Partners brand for registered agent services.",
     },
   ],
-  focusMarkets: ["Amerika Birleşik Devletleri", "Birleşik Krallık"],
+  focusMarkets: ["United States", "United Kingdom"],
 } as const;
 
 /**

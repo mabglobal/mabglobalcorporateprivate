@@ -22,7 +22,7 @@ export function ContactBand() {
                 <MapPin className="size-4" />
               </span>
               <div>
-                <p className="text-caption text-slate">Adres</p>
+                <p className="text-caption font-medium text-navy">Address</p>
                 <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="text-label text-navy hover:underline">
                   {contactConfig.address.full}
                 </a>
@@ -33,7 +33,7 @@ export function ContactBand() {
                 <Mail className="size-4" />
               </span>
               <div>
-                <p className="text-caption text-slate">E-posta</p>
+                <p className="text-caption font-medium text-navy">Email</p>
                 <a href={mailtoHref} className="text-label text-navy hover:underline">
                   {contactConfig.email}
                 </a>
@@ -44,7 +44,9 @@ export function ContactBand() {
         <div className="lg:col-span-5 lg:col-start-8">
           <div className="frame rounded-card p-7 md:p-8">
             <h3 className="text-title text-navy">{contactBand.cardTitle}</h3>
-            <p className="mt-2 text-label text-slate">{contactBand.cardDescription}</p>
+            <p data-single-line="" className="mt-2 text-label text-navy">
+              {contactBand.cardDescription}
+            </p>
             <ButtonLink href={contactBand.cta.href} className="mt-6 w-full">
               {contactBand.cta.label}
             </ButtonLink>

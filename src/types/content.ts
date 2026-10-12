@@ -41,21 +41,21 @@ export interface TitledText {
 }
 
 export type ServiceSlug =
-  | "amerika-sirket-kurulusu"
-  | "ingiltere-sirket-kurulusu"
-  | "vergi-danismanligi"
-  | "muhasebe-hizmetleri"
+  | "us-company-formation"
+  | "uk-company-formation"
+  | "tax-advisory"
+  | "accounting"
   | "registered-agent"
-  | "is-adresi-ve-sirket-operasyonlari"
-  | "uluslararasi-is-danismanligi";
+  | "business-address-and-operations"
+  | "international-business-consulting";
 
 export type SectorSlug =
-  | "e-ticaret"
-  | "ihracat-ve-lojistik"
-  | "serbest-calisanlar"
-  | "teknoloji-sirketleri"
-  | "girisimciler-ve-yatirimcilar"
-  | "kobiler-ve-kurumsal-isletmeler";
+  | "e-commerce"
+  | "export-and-logistics"
+  | "freelancers"
+  | "technology-companies"
+  | "entrepreneurs-and-investors"
+  | "smes-and-enterprises";
 
 export type Jurisdiction = "us" | "uk" | "us-uk";
 
@@ -66,7 +66,7 @@ export interface Service {
   shortTitle: string;
   icon: IconName;
   jurisdiction: Jurisdiction;
-  /** Card description, one or two sentences. */
+  /** One-line card and hero description. */
   summary: string;
   /** Concise factual definition used at the top of the page and in llms-full.txt. */
   definition: string;
@@ -128,14 +128,14 @@ export interface ArticleSection {
 }
 
 export type ArticleCategory =
-  | "amerika-sirket-kurulusu"
-  | "ingiltere-sirket-kurulusu"
-  | "uluslararasi-vergi"
-  | "muhasebe-ve-uyum"
-  | "e-ticaret"
-  | "ihracat-ve-lojistik"
-  | "serbest-calisanlar"
-  | "teknoloji-sirketleri";
+  | "us-company-formation"
+  | "uk-company-formation"
+  | "international-tax"
+  | "accounting-and-compliance"
+  | "e-commerce"
+  | "export-and-logistics"
+  | "freelancers"
+  | "technology-companies";
 
 export interface ArticleAuthor {
   /** Organizational attribution unless a verified person is approved. */

@@ -44,32 +44,32 @@ export function buildContactEmail(
   options: ContactOptions,
 ) {
   const rows: [string, string][] = [
-    ["Ad Soyad", submission.name],
-    ["E-posta", submission.email],
-    ["Şirket veya marka", submission.company || "Belirtilmedi"],
-    ["İlgilenilen hizmet", optionLabel(options.services, submission.service)],
-    ["Faaliyet alanı", optionLabel(options.sectors, submission.sector)],
+    ["Full Name", submission.name],
+    ["Email", submission.email],
+    ["Company or Brand", submission.company || "Left blank"],
+    ["Service", optionLabel(options.services, submission.service)],
+    ["Industry", optionLabel(options.sectors, submission.sector)],
   ];
 
-  const subject = `Yeni danışmanlık talebi, ${submission.name}`;
+  const subject = `New consultation request from ${submission.name}`;
   const text = [
-    `${siteConfig.name} web sitesinden yeni bir danışmanlık talebi alındı.`,
+    `A new consultation request arrived from the ${siteConfig.name} website.`,
     "",
     ...rows.map(([label, value]) => `${label}. ${value}`),
     "",
-    "Mesaj",
+    "Message",
     submission.message,
   ].join("\n");
 
-  const html = `<!doctype html><html lang="tr"><body style="font-family:Arial,sans-serif;color:#202938">
-<p>${escapeHtml(siteConfig.name)} web sitesinden yeni bir danışmanlık talebi alındı.</p>
+  const html = `<!doctype html><html lang="en"><body style="font-family:Arial,sans-serif;color:#202938">
+<p>A new consultation request arrived from the ${escapeHtml(siteConfig.name)} website.</p>
 <table cellpadding="6" style="border-collapse:collapse">${rows
     .map(
       ([label, value]) =>
-        `<tr><th align="left" style="border-bottom:1px solid #DCE2E8">${escapeHtml(label)}</th><td style="border-bottom:1px solid #DCE2E8">${escapeHtml(value)}</td></tr>`,
+        `<tr><th align="left" style="border-bottom:1px solid #CFD7E6">${escapeHtml(label)}</th><td style="border-bottom:1px solid #CFD7E6">${escapeHtml(value)}</td></tr>`,
     )
     .join("")}</table>
-<h3>Mesaj</h3>
+<h3>Message</h3>
 <p style="white-space:pre-wrap">${escapeHtml(submission.message)}</p>
 </body></html>`;
 

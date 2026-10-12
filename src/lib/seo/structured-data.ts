@@ -33,11 +33,11 @@ export interface BreadcrumbTrailItem {
 type PageType = "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
 
 const countryNodes = {
-  us: [{ "@type": "Country", name: "Amerika Birleşik Devletleri" }],
-  uk: [{ "@type": "Country", name: "Birleşik Krallık" }],
+  us: [{ "@type": "Country", name: "United States" }],
+  uk: [{ "@type": "Country", name: "United Kingdom" }],
   "us-uk": [
-    { "@type": "Country", name: "Amerika Birleşik Devletleri" },
-    { "@type": "Country", name: "Birleşik Krallık" },
+    { "@type": "Country", name: "United States" },
+    { "@type": "Country", name: "United Kingdom" },
   ],
 } as const;
 
@@ -60,7 +60,7 @@ export function organizationNode(): Organization {
     },
     location: {
       "@type": "Place",
-      name: `${siteConfig.name} İstanbul ofisi`,
+      name: `${siteConfig.name} Istanbul office`,
       address: contactConfig.address.full,
       hasMap: contactConfig.mapsUrl,
     },
@@ -68,15 +68,15 @@ export function organizationNode(): Organization {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: contactConfig.email,
-      availableLanguage: ["Turkish"],
+      availableLanguage: ["English", "Turkish"],
     },
     founder: { "@type": "Person", name: siteConfig.founderName },
     areaServed: [...countryNodes["us-uk"]],
     knowsAbout: [
-      "Amerika'da şirket kuruluşu",
-      "İngiltere'de şirket kuruluşu",
-      "Vergi danışmanlığı",
-      "Muhasebe",
+      "US company formation",
+      "UK company formation",
+      "Tax advisory",
+      "Accounting",
       "Registered agent",
     ],
     subOrganization: siteConfig.relatedBrands.map((brand) => ({

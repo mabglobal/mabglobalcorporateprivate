@@ -17,7 +17,9 @@ export function Principles() {
               <Icon name={item.icon} className="size-6 text-accent-strong" />
               <div>
                 <h3 className="text-title text-navy">{item.title}</h3>
-                <p className="mt-2 text-label text-slate">{item.description}</p>
+                <p data-single-line="" className="mt-2 text-label text-navy">
+                  {item.description}
+                </p>
               </div>
             </li>
           ))}
@@ -32,7 +34,9 @@ export function Principles() {
               />
               <span>
                 <span className="block font-medium text-title text-white">{principles.cta.title}</span>
-                <span className="mt-2 block text-label text-white/80">{principles.cta.description}</span>
+                <span data-single-line="" className="mt-2 block text-label text-white">
+                  {principles.cta.description}
+                </span>
               </span>
             </Link>
           </li>

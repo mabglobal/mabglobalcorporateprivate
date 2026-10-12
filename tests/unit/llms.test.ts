@@ -19,7 +19,7 @@ describe("llms.txt", () => {
     expect(lines[0]).toBe(`# ${siteConfig.name}`);
     expect(lines[2]?.startsWith("> ")).toBe(true);
     expect(text.match(/^# /gm)?.length).toBe(1);
-    for (const heading of ["## Kurumsal", "## Hizmetler", "## Sektörler", "## Bilgi Merkezi", "## Optional"]) {
+    for (const heading of ["## Company", "## Services", "## Industries", "## Insights", "## Optional"]) {
       expect(lines).toContain(heading);
     }
   });

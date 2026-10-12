@@ -14,7 +14,7 @@ export function ServiceCard({
 }) {
   const Heading = headingLevel;
   return (
-    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-navy">
       <IconTile name={service.icon} size="sm" />
       <Heading className="mt-8 text-title text-navy">
         <Link
@@ -24,9 +24,11 @@ export function ServiceCard({
           {service.shortTitle}
         </Link>
       </Heading>
-      <p className="mt-2 flex-1 text-label text-slate">{service.summary}</p>
+      <p data-single-line="" className="mt-2 flex-1 text-label text-navy">
+        {service.summary}
+      </p>
       <span aria-hidden="true" className="mt-6 inline-flex items-center gap-2 text-label font-medium text-navy">
-        İnceleyin
+        Learn More
         <ArrowRight className="size-4 text-accent-strong transition-transform duration-200 group-hover:translate-x-1" />
       </span>
     </article>

@@ -13,12 +13,12 @@ export function SectorCard({
 }) {
   const Heading = headingLevel;
   return (
-    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-navy">
       <div className="flex items-center justify-between">
         <Icon name={sector.icon} className="size-6 text-accent-strong" />
         <ArrowRight
           aria-hidden="true"
-          className="size-5 text-slate transition-transform duration-200 group-hover:translate-x-1 group-hover:text-navy"
+          className="size-5 text-navy transition-transform duration-200 group-hover:translate-x-1"
         />
       </div>
       <Heading className="mt-8 text-title text-navy">
@@ -29,7 +29,9 @@ export function SectorCard({
           {sector.shortTitle}
         </Link>
       </Heading>
-      <p className="mt-2 text-label text-slate">{sector.summary}</p>
+      <p data-single-line="" className="mt-2 text-label text-navy">
+        {sector.summary}
+      </p>
     </article>
   );
 }

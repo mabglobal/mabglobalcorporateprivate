@@ -20,7 +20,7 @@ export function NavigationList({
   pathname?: string | null;
 }) {
   return (
-    <ul className="flex items-center gap-1">
+    <ul className="flex items-center gap-0.5">
       {items.map((item) => {
         const active = pathname ? isActivePath(pathname, item.href) : false;
         return (
@@ -30,7 +30,7 @@ export function NavigationList({
               aria-current={active ? "page" : undefined}
               className={cn(
                 "inline-flex min-h-10 items-center whitespace-nowrap rounded-chip border px-3 text-label transition-colors",
-                active ? "border-line text-navy" : "border-transparent text-slate hover:text-navy",
+                active ? "border-white/30 text-white" : "border-transparent text-white hover:border-white/20",
               )}
             >
               {item.label}

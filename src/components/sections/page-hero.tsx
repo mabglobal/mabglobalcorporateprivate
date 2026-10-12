@@ -1,31 +1,47 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
+import heroArchitecture from "@/assets/images/hero-architecture.jpg";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import type { BreadcrumbTrailItem } from "@/lib/seo/structured-data";
 
 interface PageHeroProps {
   breadcrumb: BreadcrumbTrailItem[];
   title: string;
+  /** One line under the title. */
   description?: string;
+  /** Light or outline-light buttons only: orange never sits on navy. */
   actions?: ReactNode;
-  aside?: ReactNode;
 }
 
-/** White opening section for inner pages. */
-export function PageHero({ breadcrumb, title, description, actions, aside }: PageHeroProps) {
+/**
+ * Navy opening band for inner pages. It carries the transparent header like
+ * the homepage hero and repeats the architectural image faintly on wide
+ * screens. White on navy only.
+ */
+export function PageHero({ breadcrumb, title, description, actions }: PageHeroProps) {
   return (
-    <section aria-labelledby="page-title" className="bg-white">
-      <div className="container-page pb-6 pt-6 md:pb-8">
-        <Breadcrumb items={breadcrumb} />
-        <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className={aside ? "lg:col-span-7" : "lg:col-span-9"}>
-            <h1 id="page-title" className="text-[clamp(2.125rem,1.75rem+1.4vw,3rem)] leading-[1.1] text-navy">
-              {title}
-            </h1>
-            {description ? <p className="mt-4 max-w-2xl text-body text-slate">{description}</p> : null}
-            {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
-          </div>
-          {aside ? <div className="lg:col-span-5 lg:col-start-8">{aside}</div> : null}
-        </div>
+    <section aria-labelledby="page-title" className="on-dark relative isolate overflow-hidden bg-navy-deep">
+      <div aria-hidden="true" className="absolute bottom-0 right-0 -z-20 hidden aspect-[3/1] w-[62%] opacity-45 lg:block">
+        <Image src={heroArchitecture} alt="" fill sizes="62vw" className="object-cover object-bottom" />
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,var(--color-navy-deep)_38%,rgb(28_36_50/0)_85%)] lg:block"
+      />
+      <div className="container-page pb-14 pt-32 md:pb-20 md:pt-40">
+        <Breadcrumb items={breadcrumb} tone="dark" />
+        <h1
+          id="page-title"
+          className="mt-8 max-w-5xl text-[clamp(2.125rem,1.75rem+1.4vw,3rem)] leading-[1.1] tracking-[-0.01em] text-white"
+        >
+          {title}
+        </h1>
+        {description ? (
+          <p data-single-line="" className="mt-4 text-body text-white">
+            {description}
+          </p>
+        ) : null}
+        {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
       </div>
     </section>
   );

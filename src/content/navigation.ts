@@ -4,16 +4,21 @@ import { services } from "./services";
 import { sectors } from "./sectors";
 
 export const mainNavigation: NavItem[] = [
-  { label: "Ana Sayfa", href: routes.home },
-  { label: "Hakkımızda", href: routes.about },
-  { label: "Hizmetler", href: routes.services },
-  { label: "Sektörler", href: routes.sectors },
-  { label: "Bilgi Merkezi", href: routes.knowledge },
-  { label: "İletişim", href: routes.contact },
+  { label: "About", href: routes.about },
+  { label: "Services", href: routes.services },
+  { label: "Industries", href: routes.sectors },
+  { label: "Insights", href: routes.knowledge },
+  { label: "Contact", href: routes.contact },
 ];
 
 export const primaryCta: NavItem = {
-  label: "Danışmanlık Talep Edin",
+  label: "Book a Consultation",
+  href: routes.contactForm,
+};
+
+/** Compact call to action in the header, as in the hero reference. */
+export const headerCta: NavItem = {
+  label: "Get in Touch",
   href: routes.contactForm,
 };
 
@@ -28,21 +33,21 @@ export const sectorNavigation: NavItem[] = sectors.map((sector) => ({
 }));
 
 export const footerNavigation: NavGroup[] = [
-  { title: "Hizmetler", items: serviceNavigation },
+  { title: "Services", items: serviceNavigation },
   {
-    title: "Kurumsal",
+    title: "Company",
     items: [
-      { label: "Hakkımızda", href: routes.about },
-      { label: "Sektörler", href: routes.sectors },
-      { label: "Bilgi Merkezi", href: routes.knowledge },
-      { label: "İletişim", href: routes.contact },
+      { label: "About", href: routes.about },
+      { label: "Industries", href: routes.sectors },
+      { label: "Insights", href: routes.knowledge },
+      { label: "Contact", href: routes.contact },
     ],
   },
 ];
 
 export const legalNavigation: NavItem[] = [
-  { label: "Gizlilik Politikası", href: routes.privacy },
-  { label: "Çerez Politikası", href: routes.cookies },
-  { label: "KVKK Aydınlatma Metni", href: routes.kvkk },
-  { label: "Yasal Uyarı", href: routes.legalNotice },
+  { label: "Privacy Policy", href: routes.privacy },
+  { label: "Cookie Policy", href: routes.cookies },
+  { label: "KVKK Notice", href: routes.kvkk },
+  { label: "Legal Notice", href: routes.legalNotice },
 ];

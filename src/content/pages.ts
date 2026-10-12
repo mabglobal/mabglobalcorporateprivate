@@ -33,10 +33,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   home: {
     key: "home",
     path: routes.home,
-    title:
-      "MAB Global Partners | Amerika ve İngiltere'de Şirket Kuruluşu, Vergi ve Muhasebe",
+    title: "MAB Global Partners | Company Formation and Tax Support in the US and UK",
     description:
-      "Amerika ve İngiltere'de şirketinizi kurun, vergi, muhasebe ve registered agent süreçlerinizi Türkçe destekle tek ekiple yönetin.",
+      "Form your company in the US or the UK and manage tax and accounting with registered agent support from one team.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 1,
@@ -45,9 +44,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   about: {
     key: "about",
     path: routes.about,
-    title: "Hakkımızda",
+    title: "About Us",
     description:
-      "MAB Global Partners, uluslararası iş yapan girişimcilere ve şirketlere şirket kuruluşu, vergi, muhasebe ve uyum süreçlerinde destek veren kurumsal hizmetler markasıdır.",
+      "MAB Global Partners helps entrepreneurs and companies with company formation and compliance in the US and UK.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.7,
@@ -55,9 +54,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   services: {
     key: "services",
     path: routes.services,
-    title: "Hizmetler",
+    title: "Services",
     description:
-      "Amerika ve İngiltere'de şirket kuruluşu, vergi danışmanlığı, muhasebe, registered agent, iş adresi ve uluslararası iş danışmanlığı hizmetlerimiz.",
+      "Company formation and tax advisory in the US and UK with accounting and registered agent support.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 0.9,
@@ -65,9 +64,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   sectors: {
     key: "sectors",
     path: routes.sectors,
-    title: "Sektörler",
+    title: "Industries",
     description:
-      "E-ticaret, ihracat ve lojistik, serbest çalışanlar, teknoloji şirketleri, girişimciler ve kurumsal işletmeler için uluslararası şirket ve uyum çözümleri.",
+      "Company and compliance solutions shaped around the way your industry works in the US and UK.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 0.8,
@@ -75,9 +74,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   knowledge: {
     key: "knowledge",
     path: routes.knowledge,
-    title: "Bilgi Merkezi",
+    title: "Insights",
     description:
-      "Amerika ve İngiltere'de şirket kuruluşu, vergi ve uyum süreçleri hakkında resmi kaynaklara dayanan rehberler.",
+      "Guides on company formation and compliance in the US and UK based on official sources.",
     updatedAt: "2026-10-12",
     changeFrequency: "weekly",
     priority: 0.7,
@@ -85,9 +84,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   contact: {
     key: "contact",
     path: routes.contact,
-    title: "İletişim ve Danışmanlık Talebi",
+    title: "Contact and Consultation Request",
     description:
-      "MAB Global Partners ile iletişime geçin. Uluslararası şirket kuruluşu, vergi ve muhasebe ihtiyaçlarınız için danışmanlık talep edin.",
+      "Contact MAB Global Partners to request a consultation for your US or UK company.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.8,
@@ -95,9 +94,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   privacy: {
     key: "privacy",
     path: routes.privacy,
-    title: "Gizlilik Politikası",
+    title: "Privacy Policy",
     description:
-      "MAB Global Partners web sitesinde kişisel verilerin hangi amaçlarla işlendiğini ve nasıl korunduğunu açıklayan gizlilik politikası.",
+      "How the MAB Global Partners website processes and protects personal data.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.3,
@@ -105,9 +104,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   cookies: {
     key: "cookies",
     path: routes.cookies,
-    title: "Çerez Politikası",
+    title: "Cookie Policy",
     description:
-      "MAB Global Partners web sitesinde kullanılan çerezler ve benzeri teknolojiler hakkında bilgilendirme.",
+      "Information on cookies and similar technologies on the MAB Global Partners website.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.3,
@@ -115,9 +114,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   kvkk: {
     key: "kvkk",
     path: routes.kvkk,
-    title: "KVKK Aydınlatma Metni",
+    title: "KVKK Privacy Notice",
     description:
-      "6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında iletişim formu ve e-posta yoluyla paylaşılan kişisel verilere ilişkin aydınlatma metni.",
+      "Notice under Turkish Personal Data Protection Law No. 6698 for data you share through the contact form and email.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.3,
@@ -125,9 +124,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   legalNotice: {
     key: "legalNotice",
     path: routes.legalNotice,
-    title: "Yasal Uyarı",
+    title: "Legal Notice",
     description:
-      "MAB Global Partners web sitesindeki içeriklerin kullanım koşulları ve bilgilendirme amacına ilişkin yasal uyarı.",
+      "Terms of use and the informational purpose of content on the MAB Global Partners website.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.2,

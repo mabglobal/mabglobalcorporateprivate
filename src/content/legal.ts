@@ -6,60 +6,58 @@ import type { LegalDocument } from "@/types/content";
  * (no analytics, advertising or tracking cookies). Legal review is pending;
  * see docs/content-verification.md before launch.
  */
-const controllerSentence = `Veri sorumlusu MAB Global Partners'tır. Bize ${contactConfig.email} adresinden veya ${contactConfig.address.full} adresinden ulaşabilirsiniz.`;
+const controllerSentence = `The data controller is MAB Global Partners. You can reach us at ${contactConfig.email} or at ${contactConfig.address.full}.`;
 
 export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
   privacy: {
     key: "privacy",
     intro:
-      "Bu politika, MAB Global Partners web sitesini ziyaret ettiğinizde ve bizimle iletişime geçtiğinizde kişisel verilerinizin nasıl işlendiğini açıklar.",
+      "This policy explains how MAB Global Partners processes your personal data when you visit the website and contact us.",
     sections: [
       {
-        heading: "Veri sorumlusu",
+        heading: "Data Controller",
         paragraphs: [controllerSentence],
       },
       {
-        heading: "Topladığımız bilgiler",
+        heading: "Information We Collect",
         paragraphs: [
-          "İletişim formunu kullandığınızda adınızı, e-posta adresinizi, isteğe bağlı olarak şirket veya marka adınızı, ilgilendiğiniz hizmeti, faaliyet alanınızı ve mesajınızı alırız.",
-          "Web sitesinin güvenli çalışması için barındırma altyapımız IP adresi, tarayıcı bilgisi ve istek zamanı gibi teknik kayıtları sınırlı bir süre tutar.",
+          "When you use the contact form we receive your name and email address along with an optional company or brand name. We receive the service you are interested in and your industry along with your message.",
+          "Our hosting provider keeps technical logs such as IP address and browser details along with request times for a limited period to keep the website secure.",
         ],
       },
       {
-        heading: "Bilgileri kullanma amaçlarımız",
-        paragraphs: [
-          "Topladığımız bilgileri yalnızca aşağıdaki amaçlarla kullanırız.",
-        ],
+        heading: "How We Use Information",
+        paragraphs: ["We use the information we collect only for the purposes below."],
         list: [
-          "Danışmanlık talebinizi değerlendirmek ve size yanıt vermek",
-          "Talep ettiğiniz hizmete ilişkin ön görüşmeyi planlamak",
-          "Web sitesinin güvenliğini sağlamak ve kötüye kullanımı önlemek",
-          "Yasal yükümlülüklerimizi yerine getirmek",
+          "Reviewing your consultation request and replying to you",
+          "Planning an initial consultation for the service you request",
+          "Keeping the website secure and preventing misuse",
+          "Meeting our legal obligations",
         ],
       },
       {
-        heading: "Bilgilerin paylaşılması",
+        heading: "Sharing Information",
         paragraphs: [
-          "Kişisel verilerinizi satmayız ve pazarlama amacıyla üçüncü kişilerle paylaşmayız.",
-          "Web sitesi barındırma ve form iletilerinin e-posta ile teslimi için hizmet sağlayıcılardan destek alırız. Bu sağlayıcıların sunucuları yurt dışında bulunabilir. Aktarımlar 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun yurt dışına aktarıma ilişkin hükümlerine uygun şekilde yapılır.",
+          "We never sell your personal data or share it with third parties for marketing.",
+          "We work with service providers for website hosting and for the email delivery of form messages. Their servers may be located outside Türkiye. Transfers follow the provisions of Turkish Personal Data Protection Law No. 6698 on transfers abroad.",
         ],
       },
       {
-        heading: "Saklama süresi",
+        heading: "Retention Period",
         paragraphs: [
-          "İletişim talepleri, talebin değerlendirilmesi ve olası hizmet ilişkisinin yürütülmesi için gereken süre boyunca saklanır. Hizmet ilişkisi kurulmayan talepler makul bir süre sonunda silinir.",
+          "We keep contact requests for as long as we need to review them and to run any resulting service relationship. Requests that lead to no service relationship are deleted after a reasonable period.",
         ],
       },
       {
-        heading: "Haklarınız",
+        heading: "Your Rights",
         paragraphs: [
-          "Kişisel verilerinizle ilgili haklarınızı ve başvuru yöntemini KVKK Aydınlatma Metni'nde bulabilirsiniz.",
+          "You can find your rights regarding personal data and how to apply in the KVKK Privacy Notice.",
         ],
       },
       {
-        heading: "Değişiklikler",
+        heading: "Changes",
         paragraphs: [
-          "Bu politikayı web sitesinde kullanılan teknolojiler veya veri işleme süreçlerimiz değiştiğinde güncelleriz. Güncel tarih sayfanın başında yer alır.",
+          "We update this policy when the technologies on the website or our data processing change. The current date appears at the top of the page.",
         ],
       },
     ],
@@ -67,140 +65,135 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
   cookies: {
     key: "cookies",
     intro:
-      "Bu sayfa, MAB Global Partners web sitesinde çerezlerin ve benzeri teknolojilerin nasıl kullanıldığını açıklar.",
+      "This page explains how the MAB Global Partners website uses cookies and similar technologies.",
     sections: [
       {
-        heading: "Kullandığımız çerezler",
+        heading: "Cookies We Use",
         paragraphs: [
-          "Web sitemiz şu anda analiz, reklam veya kullanıcı takibi amacıyla çerez kullanmaz. Bu nedenle sitede bir çerez tercih paneli bulunmaz.",
-          "Yazı tipleri web sitemizin kendi sunucusundan yüklenir. Sayfaları görüntülediğinizde yazı tipi sağlayıcısına herhangi bir istek gönderilmez.",
+          "Our website uses no cookies for analytics or advertising or user tracking. For this reason the site has no cookie preference panel.",
+          "Fonts load from our own server. Viewing our pages sends no request to a font provider.",
         ],
       },
       {
-        heading: "Tarayıcı depolaması",
+        heading: "Browser Storage",
         paragraphs: [
-          "İletişim formu, gönderim sırasında yalnızca formun çalışması için gereken bilgileri tarayıcı belleğinde geçici olarak tutar. Bu bilgiler sayfayı kapattığınızda silinir.",
+          "During submission the contact form keeps only the information it needs in browser memory for a short time. This information is deleted when you close the page.",
         ],
       },
       {
-        heading: "Gelecekteki değişiklikler",
+        heading: "Future Changes",
         paragraphs: [
-          "Web sitesine analiz veya benzeri bir araç eklenmesi durumunda bu politikayı güncelleyecek ve gerekli olduğu durumlarda onayınızı alacağız.",
+          "If we add analytics or a similar tool to the website we will update this policy and ask for your consent where required.",
         ],
       },
       {
-        heading: "Çerezleri yönetme",
-        paragraphs: [
-          "Tarayıcınızın ayarlarından çerezleri dilediğiniz zaman görüntüleyebilir ve silebilirsiniz.",
-        ],
+        heading: "Managing Cookies",
+        paragraphs: ["You can view and delete cookies at any time in your browser settings."],
       },
     ],
   },
   kvkk: {
     key: "kvkk",
     intro:
-      "Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 10. maddesi uyarınca iletişim formu ve e-posta yoluyla paylaştığınız kişisel verilere ilişkin bilgilendirme amacıyla hazırlanmıştır.",
+      "This notice is provided under Article 10 of Turkish Personal Data Protection Law No. 6698 (KVKK) for personal data you share through the contact form and by email.",
     sections: [
       {
-        heading: "Veri sorumlusu",
+        heading: "Data Controller",
         paragraphs: [controllerSentence],
       },
       {
-        heading: "İşlenen kişisel veriler",
+        heading: "Personal Data We Process",
         paragraphs: [
-          "Kimlik bilgisi olarak adınızı ve soyadınızı, iletişim bilgisi olarak e-posta adresinizi, talep bilgisi olarak şirket veya marka adınızı, ilgilendiğiniz hizmeti, faaliyet alanınızı ve mesajınızı işleriz. Güvenlik amacıyla IP adresi ve istek zamanı gibi işlem güvenliği bilgileri de işlenir.",
+          "We process your first and last name as identity data and your email address as contact data. We process your company or brand name and the service you are interested in along with your industry and message as request data. For security we process transaction security data such as IP address and request time.",
         ],
       },
       {
-        heading: "İşleme amaçları",
+        heading: "Purposes of Processing",
         paragraphs: [
-          "Kişisel verileriniz danışmanlık talebinizin değerlendirilmesi, sizinle iletişime geçilmesi, ön görüşmenin planlanması ve web sitesinin güvenliğinin sağlanması amaçlarıyla işlenir.",
+          "We process your personal data to review your consultation request and to contact you. We process it to plan an initial consultation and to keep the website secure.",
         ],
       },
       {
-        heading: "Hukuki sebepler",
+        heading: "Legal Grounds",
         paragraphs: [
-          "Kişisel verileriniz Kanun'un 5. maddesinin ikinci fıkrasında yer alan bir sözleşmenin kurulmasıyla doğrudan ilgili olması ve temel hak ve özgürlüklerinize zarar vermemek kaydıyla meşru menfaatimiz için zorunlu olması hukuki sebeplerine dayanılarak işlenir.",
+          "We process your personal data on the legal grounds in Article 5(2) of the Law. These are that processing is directly related to the formation of a contract and that it is necessary for our legitimate interests provided it causes no harm to your fundamental rights and freedoms.",
         ],
       },
       {
-        heading: "Toplama yöntemi",
+        heading: "Method of Collection",
         paragraphs: [
-          "Kişisel verileriniz web sitemizdeki iletişim formu ve e-posta yoluyla elektronik ortamda toplanır.",
+          "We collect your personal data electronically through the contact form on our website and by email.",
         ],
       },
       {
-        heading: "Aktarım",
+        heading: "Transfers",
         paragraphs: [
-          "Kişisel verileriniz web sitesinin barındırılması ve form iletilerinin e-posta ile teslim edilmesi amacıyla hizmet aldığımız ve sunucuları yurt dışında bulunabilen hizmet sağlayıcılara Kanun'un 9. maddesine uygun şekilde aktarılabilir. Yasal bir zorunluluk bulunması halinde yetkili kamu kurumlarıyla paylaşılabilir.",
+          "We may transfer your personal data in line with Article 9 of the Law to service providers for website hosting and for the email delivery of form messages. Their servers may be located outside Türkiye. Where a legal obligation exists we may share data with authorized public bodies.",
         ],
       },
       {
-        heading: "Haklarınız",
-        paragraphs: [
-          "Kanun'un 11. maddesi uyarınca aşağıdaki haklara sahipsiniz.",
-        ],
+        heading: "Your Rights",
+        paragraphs: ["Under Article 11 of the Law you have the rights below."],
         list: [
-          "Kişisel verilerinizin işlenip işlenmediğini öğrenme",
-          "İşlenmişse buna ilişkin bilgi talep etme",
-          "İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme",
-          "Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme",
-          "Eksik veya yanlış işlenmişse düzeltilmesini isteme",
-          "Kanun'da öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme",
-          "Düzeltme, silme veya yok etme işlemlerinin aktarılan üçüncü kişilere bildirilmesini isteme",
-          "Otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonuç çıkmasına itiraz etme",
-          "Kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme",
+          "To learn whether your personal data is processed",
+          "To request information about processing that has taken place",
+          "To learn the purpose of processing and whether data is used for that purpose",
+          "To know the third parties in Türkiye or abroad that receive your data",
+          "To ask for correction of incomplete or inaccurate data",
+          "To ask for deletion or destruction of data under the conditions of the Law",
+          "To ask that third parties who received your data are told about any correction or deletion",
+          "To object to a result against you that arises only from automated analysis",
+          "To claim compensation for damage caused by unlawful processing",
         ],
       },
       {
-        heading: "Başvuru",
+        heading: "Applications",
         paragraphs: [
-          `Haklarınıza ilişkin taleplerinizi ${contactConfig.email} adresine e-posta göndererek iletebilirsiniz. Başvurunuzu en geç otuz gün içinde sonuçlandırırız.`,
+          `Send requests about your rights by email to ${contactConfig.email}. We conclude each application within thirty days at the latest.`,
         ],
       },
     ],
   },
   legalNotice: {
     key: "legalNotice",
-    intro:
-      "Bu web sitesindeki içerikler MAB Global Partners tarafından genel bilgilendirme amacıyla yayımlanır.",
+    intro: "MAB Global Partners publishes the content on this website for general information.",
     sections: [
       {
-        heading: "Bilgilendirme amacı",
+        heading: "Informational Purpose",
         paragraphs: [
-          "Web sitesindeki hizmet açıklamaları ve Bilgi Merkezi rehberleri genel bilgi sunar ve kişisel hukuki, vergisel veya mali danışmanlık yerine geçmez.",
-          "Şirket kuruluşu ve vergi yükümlülükleri ilgili ülkenin ve eyaletin mevzuatına ve kişisel durumunuza göre değişir. Karar vermeden önce durumunuzun ayrıntılı olarak değerlendirilmesini öneririz.",
+          "Service descriptions and Insights guides on this website provide general information. They are no substitute for personal legal or tax or financial advice.",
+          "Company formation and tax obligations vary with the laws of each country and state and with your personal situation. We recommend a detailed review of your situation before you decide.",
         ],
       },
       {
-        heading: "Taahhüt sınırları",
+        heading: "Limits of Commitment",
         paragraphs: [
-          "Resmi kurumların işlem süreleri, banka ve ödeme kuruluşlarının hesap onayları ve vergi sonuçları ilgili kurumların değerlendirmesine bağlıdır. Bu konularda kesin süre veya sonuç taahhüdü vermeyiz.",
+          "Official processing times and account approvals by banks and payment providers depend on the review of each institution along with tax outcomes. We give no fixed commitment on timing or results in these areas.",
         ],
       },
       {
-        heading: "Güncellik",
+        heading: "Accuracy",
         paragraphs: [
-          "İçeriklerimizi düzenli olarak gözden geçiririz. Mevzuat değişiklikleri nedeniyle bazı bilgiler güncelliğini yitirebilir. Rehberlerin yayın ve güncelleme tarihleri ilgili sayfada yer alır.",
+          "We review our content regularly. Some information may become outdated after changes in the law. Each guide shows its publication and update dates on its page.",
         ],
       },
       {
-        heading: "Fikri mülkiyet",
+        heading: "Intellectual Property",
         paragraphs: [
-          "Web sitesindeki metinler, tasarım ve görseller MAB Global Partners'a aittir ve izin alınmadan ticari amaçla kullanılamaz.",
+          "The text and design along with the images on this website belong to MAB Global Partners. Commercial use requires prior permission.",
         ],
       },
       {
-        heading: "Görseller",
+        heading: "Images",
         paragraphs: [
-          "Ana sayfadaki mimari görsel MAB Global Partners tarafından sağlanmıştır.",
-          "Hakkımızda bölümündeki sütun fotoğrafı Carol M. Highsmith tarafından çekilmiştir ve Library of Congress arşivinde kamu malı olarak yayımlanmıştır.",
+          "MAB Global Partners supplied the architectural image on the homepage.",
+          "Carol M. Highsmith took the column photograph in the About section. The Library of Congress publishes it in the public domain.",
         ],
       },
       {
-        heading: "Dış bağlantılar",
+        heading: "External Links",
         paragraphs: [
-          "Web sitemizde resmi kurumların ve iş ortaklarımızın sayfalarına bağlantılar bulunur. Bu sayfaların içeriğinden ilgili kurumlar sorumludur.",
+          "Our website links to pages of public agencies and business partners. Each organization is responsible for the content of its own pages.",
         ],
       },
     ],

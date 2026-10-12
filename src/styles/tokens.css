@@ -6,17 +6,17 @@
  * src/config/brand.ts mirrors these values for generated images; a unit test
  * keeps both files in sync.
  *
- * Color pairing rules (client decision, 2026-10-12):
+ * Color pairing rules (client decisions, 2026-10-12):
  *  - Orange fills carry white text only. Never navy on orange.
  *  - Navy surfaces carry white only. Never orange on navy.
- *  - Orange is used on white and light grey surfaces only.
- *
- * Surfaces: boxes are white with a thin border; no grey box backgrounds.
+ *  - Orange is used on white surfaces only.
+ *  - No grey anywhere: text is navy or ink on white and white on navy.
+ *    The brief's slate, muted and grey surface tokens are removed; box
+ *    borders use a light navy tint (line).
  *
  * Contrast notes (WCAG 2.2 AA):
  *  - White on accent (#F45800) is 3.4:1, below 4.5:1 for normal text.
  *    This is an explicit client decision for buttons; see docs/architecture.md.
- *  - muted (#697586) passes 4.5:1 only on white.
  *  - accent-strong is reserved for small orange icons and text on white.
  */
 @theme {
@@ -25,11 +25,7 @@
 
   --color-navy: #262f40;
   --color-navy-deep: #1c2432;
-  --color-slate: #526071;
-  --color-muted: #697586;
-  --color-surface: #f3f5f7;
-  --color-surface-strong: #e9edf2;
-  --color-line: #dce2e8;
+  --color-line: #cfd7e6;
   --color-white: #ffffff;
   --color-ink: #202938;
   --color-accent: #f45800;

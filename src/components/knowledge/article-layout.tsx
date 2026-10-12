@@ -21,7 +21,7 @@ import { formatDate } from "@/lib/utilities/format-date";
 export function ArticleLayout({ article }: { article: Article }) {
   const path = routes.article(article.slug);
   const breadcrumb: BreadcrumbTrailItem[] = [
-    { name: "Ana Sayfa", path: routes.home },
+    { name: "Home", path: routes.home },
     { name: staticPages.knowledge.title, path: routes.knowledge },
     { name: article.title, path },
   ];
@@ -48,21 +48,21 @@ export function ArticleLayout({ article }: { article: Article }) {
           <aside className="order-2 lg:order-1 lg:col-span-3">
             <dl className="grid gap-5 frame rounded-card p-6 text-label lg:sticky lg:top-8">
               <div>
-                <dt className="text-caption text-slate">Kategori</dt>
+                <dt className="text-caption font-medium text-navy">Category</dt>
                 <dd className="mt-1 text-navy">{articleCategoryLabels[article.category]}</dd>
               </div>
               <div>
-                <dt className="text-caption text-slate">Hazırlayan</dt>
+                <dt className="text-caption font-medium text-navy">Author</dt>
                 <dd className="mt-1 text-navy">{article.author.name}</dd>
               </div>
               <div>
-                <dt className="text-caption text-slate">Yayın tarihi</dt>
+                <dt className="text-caption font-medium text-navy">Published</dt>
                 <dd className="mt-1 text-navy">
                   <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
                 </dd>
               </div>
               <div>
-                <dt className="text-caption text-slate">Son güncelleme</dt>
+                <dt className="text-caption font-medium text-navy">Last Updated</dt>
                 <dd className="mt-1 text-navy">
                   <time dateTime={article.updatedAt}>{formatDate(article.updatedAt)}</time>
                 </dd>
@@ -91,7 +91,7 @@ export function ArticleLayout({ article }: { article: Article }) {
 
             <section aria-labelledby="sources-title" className="mt-16 frame rounded-card p-7">
               <h2 id="sources-title" className="text-title text-navy">
-                Kaynaklar
+                Sources
               </h2>
               <ol className="mt-6 grid gap-4">
                 {article.sources.map((source) => (
@@ -104,8 +104,8 @@ export function ArticleLayout({ article }: { article: Article }) {
                       {source.title}
                       <ExternalLink aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 text-accent-strong" />
                     </a>
-                    <span className="block text-slate">
-                      {source.publisher}, erişim tarihi{" "}
+                    <span className="block text-navy">
+                      {source.publisher} · accessed{" "}
                       <time dateTime={source.accessedAt}>{formatDate(source.accessedAt)}</time>
                     </span>
                   </li>
@@ -115,7 +115,7 @@ export function ArticleLayout({ article }: { article: Article }) {
 
             <section aria-labelledby="related-links-title" className="mt-12">
               <h2 id="related-links-title" className="text-title text-navy">
-                İlgili sayfalar
+                Related Pages
               </h2>
               <ul className="mt-4 grid gap-1">
                 {article.relatedLinks.map((link) => (
@@ -126,13 +126,13 @@ export function ArticleLayout({ article }: { article: Article }) {
               </ul>
             </section>
 
-            <p className="mt-12 text-caption text-slate">
-              Bu içerik genel bilgilendirme amaçlıdır ve kişisel hukuki veya vergisel danışmanlık
-              yerine geçmez. Ayrıntılar için{" "}
+            <p className="mt-12 text-caption text-navy">
+              This content provides general information and is no substitute for personal legal or
+              tax advice. See the{" "}
               <Link href={routes.legalNotice} className="text-navy underline underline-offset-4">
-                yasal uyarı
+                legal notice
               </Link>{" "}
-              sayfasını inceleyebilirsiniz.
+              for details.
             </p>
           </article>
         </div>

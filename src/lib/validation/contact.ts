@@ -19,21 +19,21 @@ export {
 
 /**
  * Contact form schema shared by the client form and the API route, so both
- * sides enforce identical rules and Turkish error messages. The option lists
+ * sides enforce identical rules and error messages. The option lists
  * are passed in (see contact-options.ts) so the client bundle does not include
  * the full service and sector content.
  */
 
 
 export const contactMessages = {
-  name: "Lütfen adınızı ve soyadınızı yazın.",
-  nameMax: `Ad soyad en fazla ${contactLimits.nameMax} karakter olabilir.`,
-  email: "Lütfen geçerli bir e-posta adresi yazın.",
-  company: `Şirket veya marka adı en fazla ${contactLimits.companyMax} karakter olabilir.`,
-  service: "Lütfen ilgilendiğiniz hizmeti seçin.",
-  sector: "Lütfen faaliyet alanınızı seçin.",
-  messageMin: `Mesajınız en az ${contactLimits.messageMin} karakter olmalıdır.`,
-  messageMax: `Mesajınız en fazla ${contactLimits.messageMax} karakter olabilir.`,
+  name: "Please enter your full name.",
+  nameMax: `Your name can be up to ${contactLimits.nameMax} characters long.`,
+  email: "Please enter a valid email address.",
+  company: `The company or brand name can be up to ${contactLimits.companyMax} characters long.`,
+  service: "Please choose the service you need.",
+  sector: "Please choose your industry.",
+  messageMin: `Your message needs at least ${contactLimits.messageMin} characters.`,
+  messageMax: `Your message can be up to ${contactLimits.messageMax} characters long.`,
 } as const;
 
 function values(options: ContactOption[]): [string, ...string[]] {

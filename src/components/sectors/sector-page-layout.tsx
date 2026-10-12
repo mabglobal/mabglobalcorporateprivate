@@ -30,7 +30,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
   const faqs = getFaqs(sector.faqIds);
   const relevantServices = getServices(sector.services);
   const breadcrumb: BreadcrumbTrailItem[] = [
-    { name: "Ana Sayfa", path: routes.home },
+    { name: "Home", path: routes.home },
     { name: staticPages.sectors.title, path: routes.sectors },
     { name: sector.title, path },
   ];
@@ -49,36 +49,56 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
       <PageHero
         breadcrumb={breadcrumb}
         title={sector.title}
-        description={sector.intro[0]}
+        description={sector.summary}
         actions={
-          <ButtonLink href={primaryCta.href} variant="accent">
+          <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
             {primaryCta.label}
           </ButtonLink>
         }
-        aside={
-          <div className="frame rounded-card p-7">
-            <p className="text-caption font-medium text-slate">Kimler için</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {sector.examples.map((example) => (
-                <li key={example} className="rounded-chip border border-line px-3 py-1.5 text-caption text-navy">
-                  {example}
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
       />
 
-      <section aria-labelledby="needs-title" className="section-y bg-white">
+      <section aria-labelledby="overview-title" className="section-y bg-white">
+        <div className="container-page grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <SectionHeading id="overview-title" tag="Overview" title="Industry Overview" />
+          </div>
+          <div className="grid content-start gap-5 lg:col-span-7 lg:col-start-6">
+            {sector.intro.map((paragraph) => (
+              <p key={paragraph} className="text-lead text-ink">
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-3">
+              <h3 className="text-label font-medium text-navy">Who It Serves</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {sector.examples.map((example) => (
+                  <li key={example} className="rounded-chip border border-line px-3 py-1.5 text-caption text-navy">
+                    {example}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="needs-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="needs-title" tag="İhtiyaçlar" title="Öne çıkan ihtiyaçlar" description={sector.intro[1]} />
+          <SectionHeading
+            id="needs-title"
+            tag="Needs"
+            title="Key Needs"
+            description="The topics that matter most in this industry."
+          />
           <ul className="mt-14 grid gap-4 md:grid-cols-2">
             {sector.needs.map((need) => (
               <li key={need.title} className="flex gap-5 frame rounded-card p-7">
                 <IconTile name="file-check" size="sm" />
                 <div>
                   <h3 className="text-title text-navy">{need.title}</h3>
-                  <p className="mt-2 text-label text-slate">{need.description}</p>
+                  <p data-single-line="" className="mt-2 text-label text-navy">
+                    {need.description}
+                  </p>
                 </div>
               </li>
             ))}
@@ -88,7 +108,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
 
       <section aria-labelledby="services-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="services-title" tag="Hizmetler" title="İlgili hizmetler" />
+          <SectionHeading id="services-title" tag="Services" title="Related Services" />
           <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {relevantServices.map((service) => (
               <li key={service.slug}>
@@ -103,7 +123,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
         <div className="container-page">
           <div className="frame rounded-card p-7 md:p-10">
             <h2 id="operations-title" className="text-title text-navy">
-              Operasyonel konular
+              Operational Points
             </h2>
             <div className="mt-6 max-w-3xl">
               <BulletList items={sector.considerations} />

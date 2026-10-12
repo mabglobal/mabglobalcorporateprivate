@@ -25,33 +25,33 @@ export function generateLlmsTxt(): string {
     "",
     `> ${siteConfig.description}`,
     "",
-    "MAB Global Partners Türkçe hizmet veren bir kurumsal hizmetler markasıdır. Odak pazarları Amerika Birleşik Devletleri ve Birleşik Krallık'tır. Registered agent hizmetleri MAB Global Partners bünyesindeki MAB Registered Agent Inc. markasıyla sunulur. Hizmet sayfaları şirketin sunduğu hizmetleri, Bilgi Merkezi rehberleri ise resmi kaynaklara dayanan genel bilgileri içerir. İçerikler kişisel hukuki veya vergisel danışmanlık yerine geçmez.",
+    "MAB Global Partners is a corporate services brand based in Istanbul. Its focus markets are the United States and the United Kingdom. Registered agent services run under MAB Registered Agent Inc., a brand within MAB Global Partners. Service pages describe what the company offers. Insights guides contain general information based on official sources. The content is no substitute for personal legal or tax advice.",
     "",
-    `İletişim e-postası ${contactConfig.email}. Ofis adresi ${contactConfig.address.full}.`,
+    `Contact email ${contactConfig.email}. Office address ${contactConfig.address.full}.`,
     "",
-    "## Kurumsal",
+    "## Company",
     "",
-    link("Ana Sayfa", routes.home, staticPages.home.description),
-    link("Hakkımızda", routes.about, staticPages.about.description),
-    link("İletişim", routes.contact, staticPages.contact.description),
+    link("Home", routes.home, staticPages.home.description),
+    link("About Us", routes.about, staticPages.about.description),
+    link("Contact", routes.contact, staticPages.contact.description),
     "",
-    "## Hizmetler",
+    "## Services",
     "",
-    link("Hizmetler", routes.services, staticPages.services.description),
+    link("Services", routes.services, staticPages.services.description),
     ...services.map((service) =>
       link(service.title, routes.service(service.slug), service.summary),
     ),
     "",
-    "## Sektörler",
+    "## Industries",
     "",
-    link("Sektörler", routes.sectors, staticPages.sectors.description),
+    link("Industries", routes.sectors, staticPages.sectors.description),
     ...sectors.map((sector) =>
       link(sector.title, routes.sector(sector.slug), sector.summary),
     ),
     "",
-    "## Bilgi Merkezi",
+    "## Insights",
     "",
-    link("Bilgi Merkezi", routes.knowledge, staticPages.knowledge.description),
+    link("Insights", routes.knowledge, staticPages.knowledge.description),
     ...articles.map((article) =>
       link(article.title, routes.article(article.slug), article.summary),
     ),
@@ -59,13 +59,13 @@ export function generateLlmsTxt(): string {
     "## Optional",
     "",
     link(
-      "Tam metin özeti",
+      "Full text summary",
       "/llms-full.txt",
-      "Hizmet ve sektör sayfalarının sade metin sürümü.",
+      "Plain text version of the service and industry pages.",
     ),
-    link("Yasal Uyarı", routes.legalNotice, staticPages.legalNotice.description),
-    link("Gizlilik Politikası", routes.privacy, staticPages.privacy.description),
-    link("KVKK Aydınlatma Metni", routes.kvkk, staticPages.kvkk.description),
+    link("Legal Notice", routes.legalNotice, staticPages.legalNotice.description),
+    link("Privacy Policy", routes.privacy, staticPages.privacy.description),
+    link("KVKK Privacy Notice", routes.kvkk, staticPages.kvkk.description),
     "",
   ];
   return lines.join("\n");
@@ -85,18 +85,18 @@ export function generateLlmsFullTxt(): string {
     "",
     `> ${siteConfig.description}`,
     "",
-    "Bu dosya web sitesindeki yayımlanmış hizmet ve sektör içeriklerinin sade metin sürümüdür ve sitenin içerik kaynağından otomatik olarak üretilir. Her bölümün kanonik adresi başlığın altında yer alır.",
+    "This file is a plain text version of the published service and industry content on the website. It is generated automatically from the site content source. The canonical address of each section appears below its heading.",
     "",
-    "## Kurum",
+    "## Company",
     "",
     ...aboutContent.introduction.paragraphs,
     "",
-    `Kurucu ${aboutContent.founder.name}.`,
-    `İletişim e-postası ${contactConfig.email}.`,
-    `Ofis adresi ${contactConfig.address.full}.`,
-    `Kanonik adres ${absoluteUrl(routes.about)}`,
+    `Founder ${aboutContent.founder.name}.`,
+    `Contact email ${contactConfig.email}.`,
+    `Office address ${contactConfig.address.full}.`,
+    `Canonical address ${absoluteUrl(routes.about)}`,
     "",
-    "## Hizmetler",
+    "## Services",
     "",
   ];
 
@@ -104,71 +104,71 @@ export function generateLlmsFullTxt(): string {
     lines.push(
       `## ${service.title}`,
       "",
-      `Kanonik adres ${absoluteUrl(routes.service(service.slug))}`,
-      `Kapsadığı ülke ${jurisdictionLabels[service.jurisdiction]}`,
+      `Canonical address ${absoluteUrl(routes.service(service.slug))}`,
+      `Coverage ${jurisdictionLabels[service.jurisdiction]}`,
       "",
       service.definition,
       "",
       ...service.intro.flatMap((paragraph) => [paragraph, ""]),
       ...section(
-        "Kimler için",
+        "Who It Is For",
         bullets(service.audience.map((a) => `${a.title}. ${a.description}`)),
       ),
       ...section(
-        "Hizmet kapsamı",
+        "Service Scope",
         bullets(service.scope.map((s) => `${s.title}. ${s.description}`)),
       ),
       ...section(
-        "Süreç",
+        "Process",
         service.process.map((p, i) => `${i + 1}. ${p.title}. ${p.description}`),
       ),
       ...(service.documents
-        ? section("Gerekebilecek belgeler", bullets(service.documents))
+        ? section("Documents You May Need", bullets(service.documents))
         : []),
-      ...section("Dikkat edilmesi gerekenler", bullets(service.considerations)),
+      ...section("Points to Consider", bullets(service.considerations)),
       ...section(
-        "Sık sorulan sorular",
+        "Frequently Asked Questions",
         getFaqs(service.faqIds).flatMap((faq) => [
-          `Soru. ${faq.question}`,
-          `Yanıt. ${faq.answer}`,
+          `Question. ${faq.question}`,
+          `Answer. ${faq.answer}`,
           "",
         ]),
       ),
     );
   }
 
-  lines.push("## Sektörler", "");
+  lines.push("## Industries", "");
   for (const sector of sectors) {
     lines.push(
       `## ${sector.title}`,
       "",
-      `Kanonik adres ${absoluteUrl(routes.sector(sector.slug))}`,
+      `Canonical address ${absoluteUrl(routes.sector(sector.slug))}`,
       "",
       ...sector.intro.flatMap((paragraph) => [paragraph, ""]),
-      ...section("Kimler için", bullets(sector.examples)),
+      ...section("Who It Is For", bullets(sector.examples)),
       ...section(
-        "Öne çıkan ihtiyaçlar",
+        "Key Needs",
         bullets(sector.needs.map((n) => `${n.title}. ${n.description}`)),
       ),
       ...section(
-        "İlgili hizmetler",
+        "Related Services",
         bullets(
           sector.services.map(
             (slug) => `${absoluteUrl(routes.service(slug))}`,
           ),
         ),
       ),
-      ...section("Operasyonel konular", bullets(sector.considerations)),
+      ...section("Operational Points", bullets(sector.considerations)),
     );
   }
 
-  lines.push("## Bilgi Merkezi rehberleri", "");
+  lines.push("## Insights Guides", "");
   for (const article of articles) {
     lines.push(
       link(
         article.title,
         routes.article(article.slug),
-        `${articleCategoryLabels[article.category]}. Güncelleme ${article.updatedAt}.`,
+        `${articleCategoryLabels[article.category]}. Updated ${article.updatedAt}.`,
       ),
     );
   }

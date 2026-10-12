@@ -7,8 +7,8 @@ import { formatDate } from "@/lib/utilities/format-date";
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
-      <p className="text-caption font-medium text-slate">
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-navy">
+      <p className="text-caption font-medium text-navy">
         {articleCategoryLabels[article.category]}
       </p>
       <h3 className="mt-5 text-title text-navy">
@@ -19,10 +19,10 @@ export function ArticleCard({ article }: { article: Article }) {
           {article.title}
         </Link>
       </h3>
-      <p className="mt-2 flex-1 text-label text-slate">{article.summary}</p>
+      <p className="mt-2 flex-1 text-label text-navy">{article.summary}</p>
       <div className="mt-6 flex items-center justify-between">
-        <p className="text-caption text-slate">
-          Güncelleme{" "}
+        <p className="text-caption text-navy">
+          Updated{" "}
           <time dateTime={article.updatedAt}>{formatDate(article.updatedAt)}</time>
         </p>
         <ArrowRight

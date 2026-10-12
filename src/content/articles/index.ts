@@ -1,13 +1,13 @@
 import type { Article, ArticleCategory } from "@/types/content";
-import { amerikaSirketKurulusuRehberi } from "./amerika-sirket-kurulusu-rehberi";
-import { ingiltereLimitedSirketKurulusuRehberi } from "./ingiltere-limited-sirket-kurulusu-rehberi";
-import { registeredAgentNedir } from "./registered-agent-nedir";
+import { ukLimitedCompanyFormationGuide } from "./uk-limited-company-formation-guide";
+import { usCompanyFormationGuide } from "./us-company-formation-guide";
+import { whatIsARegisteredAgent } from "./what-is-a-registered-agent";
 
 /** Add new article modules here. Only published entries become routes. */
 const allArticles: Article[] = [
-  amerikaSirketKurulusuRehberi,
-  ingiltereLimitedSirketKurulusuRehberi,
-  registeredAgentNedir,
+  usCompanyFormationGuide,
+  ukLimitedCompanyFormationGuide,
+  whatIsARegisteredAgent,
 ];
 
 export const articles: Article[] = allArticles
@@ -19,12 +19,12 @@ export function findArticle(slug: string): Article | undefined {
 }
 
 export const articleCategoryLabels: Record<ArticleCategory, string> = {
-  "amerika-sirket-kurulusu": "Amerika'da şirket kuruluşu",
-  "ingiltere-sirket-kurulusu": "İngiltere'de şirket kuruluşu",
-  "uluslararasi-vergi": "Uluslararası vergi süreçleri",
-  "muhasebe-ve-uyum": "Muhasebe ve uyum",
-  "e-ticaret": "E-ticaret ve pazaryerleri",
-  "ihracat-ve-lojistik": "İhracat ve lojistik",
-  "serbest-calisanlar": "Serbest çalışanlar",
-  "teknoloji-sirketleri": "Teknoloji şirketleri",
+  "us-company-formation": "US Company Formation",
+  "uk-company-formation": "UK Company Formation",
+  "international-tax": "International Tax",
+  "accounting-and-compliance": "Accounting and Compliance",
+  "e-commerce": "E-Commerce and Marketplaces",
+  "export-and-logistics": "Export and Logistics",
+  freelancers: "Freelancers",
+  "technology-companies": "Technology Companies",
 };

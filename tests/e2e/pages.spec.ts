@@ -1,12 +1,13 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { copyViolations } from "../helpers/copy-rules";
+import { copyViolations, titleCaseViolations } from "../helpers/copy-rules";
 import { PRODUCTION_ORIGIN, sitemapPaths } from "./helpers";
 
 /**
  * Crawls every URL in the generated sitemap and checks the rendered page:
  * status, language, canonical, headings, structured data, copy rules,
- * internal links, horizontal overflow and automated accessibility rules.
+ * Title Case headings, internal links, horizontal overflow and automated
+ * accessibility rules.
  */
 test("every sitemap page renders correctly", async ({ page, request }, testInfo) => {
   test.setTimeout(240_000);
@@ -19,7 +20,7 @@ test("every sitemap page renders correctly", async ({ page, request }, testInfo)
     const response = await page.goto(path);
     if (response?.status() !== 200) problems.push(`${path} status ${response?.status()}`);
 
-    expect(await page.getAttribute("html", "lang")).toBe("tr");
+    expect(await page.getAttribute("html", "lang")).toBe("en");
 
     const canonical = await page.getAttribute('link[rel="canonical"]', "href");
     const expected = `${PRODUCTION_ORIGIN}${path === "/" ? "" : path}`;
@@ -46,6 +47,12 @@ test("every sitemap page renders correctly", async ({ page, request }, testInfo)
     for (const line of text.split("\n")) {
       const rules = copyViolations(line);
       if (rules.length > 0) problems.push(`${path} copy ${rules.join(",")} in "${line.trim()}"`);
+    }
+
+    for (const heading of await page.locator("h1:visible, h2:visible, h3:visible, h4:visible").allInnerTexts()) {
+      const words = titleCaseViolations(heading.replace(/\s+/g, " ").trim());
+      if (words.length > 0) problems.push(`${path} heading "${heading}" breaks Title Case at ${words.join(",")}`);
+      if (heading.includes(",")) problems.push(`${path} heading "${heading}" has a comma`);
     }
 
     const internal = await page
@@ -85,7 +92,7 @@ test("every sitemap page renders correctly", async ({ page, request }, testInfo)
 test("pages stay usable at narrow and tablet widths", async ({ page }) => {
   for (const width of [320, 768, 1024]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/", "/hizmetler/ingiltere-sirket-kurulusu", "/sektorler/e-ticaret", "/iletisim"]) {
+    for (const path of ["/", "/services/uk-company-formation", "/industries/e-commerce", "/contact"]) {
       await page.goto(path);
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -93,4 +100,31 @@ test("pages stay usable at narrow and tablet widths", async ({ page }) => {
       expect(overflow, `${path} at ${width}px`).toBe(0);
     }
   }
+});
+
+/**
+ * Descriptions under headings and inside cards stay on one line on common
+ * desktop widths (client decision, 2026-10-12). Elements opt in with
+ * data-single-line.
+ */
+test("one-line descriptions fit on one line at 1440px", async ({ page, request }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Desktop layout only");
+  test.setTimeout(180_000);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const problems: string[] = [];
+  for (const path of await sitemapPaths(request)) {
+    await page.goto(path);
+    const wrapped = await page.locator("[data-single-line]").evaluateAll((elements) =>
+      elements
+        .filter((element) => (element as HTMLElement).offsetParent !== null)
+        .map((element) => {
+          const style = getComputedStyle(element);
+          const lines = Math.round(element.getBoundingClientRect().height / parseFloat(style.lineHeight));
+          return { text: (element.textContent ?? "").trim(), lines };
+        })
+        .filter((entry) => entry.lines > 1),
+    );
+    for (const entry of wrapped) problems.push(`${path} wraps to ${entry.lines} lines: "${entry.text}"`);
+  }
+  expect(problems).toEqual([]);
 });

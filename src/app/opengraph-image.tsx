@@ -61,7 +61,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            Global işinizi sağlam temeller üzerine kurun.
+            Invest in America With the Right Structure
           </div>
           <div style={{ display: "flex", fontSize: 30, fontWeight: 400, color: "rgba(255,255,255,0.75)" }}>
             {siteConfig.shortDescription}

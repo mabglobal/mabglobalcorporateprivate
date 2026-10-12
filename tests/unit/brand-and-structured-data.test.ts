@@ -20,10 +20,6 @@ describe("design tokens", () => {
   const tokenMap: Record<keyof typeof brandColors, string> = {
     navy: "navy",
     navyDeep: "navy-deep",
-    slate: "slate",
-    muted: "muted",
-    surface: "surface",
-    surfaceStrong: "surface-strong",
     line: "line",
     white: "white",
     ink: "ink",
@@ -44,14 +40,16 @@ describe("design tokens", () => {
       navy: "#262F40",
       accent: "#F45800",
       navyDeep: "#1C2432",
-      slate: "#526071",
-      muted: "#697586",
-      surface: "#F3F5F7",
-      surfaceStrong: "#E9EDF2",
-      line: "#DCE2E8",
+      line: "#CFD7E6",
       white: "#FFFFFF",
       ink: "#202938",
     });
+  });
+
+  it("defines no grey tokens (client decision, 2026-10-12)", () => {
+    for (const token of ["slate", "muted", "surface", "surface-strong", "gray", "grey"]) {
+      expect(css).not.toMatch(new RegExp(`--color-${token}:`));
+    }
   });
 });
 

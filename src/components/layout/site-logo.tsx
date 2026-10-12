@@ -32,7 +32,7 @@ export function SiteLogo({
       >
         MAB
       </span>
-      <span className="sr-only">{siteConfig.name} ana sayfa</span>
+      <span className="sr-only">{siteConfig.name} home</span>
       <span aria-hidden="true" className="text-[1rem] font-[450] tracking-[-0.01em]">
         Global Partners
       </span>
