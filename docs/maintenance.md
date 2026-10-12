@@ -47,7 +47,7 @@ Edit `src/styles/tokens.css` and `src/config/brand.ts` together; the unit test f
 ## Content review cycle
 
 * Articles: re-check against their sources before `reviewBy`, then update `updatedAt` and `reviewBy`.
-* Services and sectors: review every six months or when a regulation changes (for example Companies House identity verification or IRS reporting rules).
+* Services and sectors: review every six months or when a regulation changes (for example IRS reporting rules).
 * AI crawler table in `llm-discoverability.md`: review every six months.
 
 ## Dependency updates

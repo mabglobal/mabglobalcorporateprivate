@@ -25,7 +25,7 @@ export function generateLlmsTxt(): string {
     "",
     `> ${siteConfig.description}`,
     "",
-    "MAB Global Partners is a corporate services brand based in Istanbul. Its focus markets are the United States and the United Kingdom. Registered agent services run under MAB Registered Agent Inc., a brand within MAB Global Partners. Service pages describe what the company offers. Insights guides contain general information based on official sources. The content is no substitute for personal legal or tax advice.",
+    "MAB Global Partners is a corporate services brand based in Istanbul. Its focus market is the United States. Registered agent services run under MAB Registered Agent Inc., a brand within MAB Global Partners. Service pages describe what the company offers. Insights guides contain general information based on official sources. The content is no substitute for personal legal or tax advice.",
     "",
     `Contact email ${contactConfig.email}. Office address ${contactConfig.address.full}.`,
     "",

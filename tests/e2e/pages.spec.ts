@@ -12,7 +12,7 @@ import { PRODUCTION_ORIGIN, sitemapPaths } from "./helpers";
 test("every sitemap page renders correctly", async ({ page, request }, testInfo) => {
   test.setTimeout(240_000);
   const paths = await sitemapPaths(request);
-  expect(paths.length).toBeGreaterThanOrEqual(26);
+  expect(paths.length).toBeGreaterThanOrEqual(24);
   const known = new Set(paths);
   const problems: string[] = [];
 
@@ -92,7 +92,7 @@ test("every sitemap page renders correctly", async ({ page, request }, testInfo)
 test("pages stay usable at narrow and tablet widths", async ({ page }) => {
   for (const width of [320, 768, 1024]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/", "/services/uk-company-formation", "/industries/e-commerce", "/contact"]) {
+    for (const path of ["/", "/services/tax-advisory", "/industries/e-commerce", "/contact"]) {
       await page.goto(path);
       const { overflow, culprits } = await page.evaluate(() => {
         const viewport = document.documentElement.clientWidth;

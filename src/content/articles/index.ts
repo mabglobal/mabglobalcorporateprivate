@@ -1,12 +1,10 @@
 import type { Article, ArticleCategory } from "@/types/content";
-import { ukLimitedCompanyFormationGuide } from "./uk-limited-company-formation-guide";
 import { usCompanyFormationGuide } from "./us-company-formation-guide";
 import { whatIsARegisteredAgent } from "./what-is-a-registered-agent";
 
 /** Add new article modules here. Only published entries become routes. */
 const allArticles: Article[] = [
   usCompanyFormationGuide,
-  ukLimitedCompanyFormationGuide,
   whatIsARegisteredAgent,
 ];
 
@@ -20,7 +18,6 @@ export function findArticle(slug: string): Article | undefined {
 
 export const articleCategoryLabels: Record<ArticleCategory, string> = {
   "us-company-formation": "US Company Formation",
-  "uk-company-formation": "UK Company Formation",
   "international-tax": "International Tax",
   "accounting-and-compliance": "Accounting and Compliance",
   "e-commerce": "E-Commerce and Marketplaces",

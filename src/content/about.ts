@@ -8,7 +8,7 @@ import type { TitledText } from "@/types/content";
 export const aboutContent = {
   hero: {
     title: "Your Partner for International Business",
-    description: "Formation and compliance support for companies in the US and UK.",
+    description: "Formation and compliance support for companies in the United States.",
   },
   introduction: {
     tag: "Company",
@@ -16,7 +16,7 @@ export const aboutContent = {
     paragraphs: [
       "MAB Global Partners was founded in Türkiye to support entrepreneurs entering the US market.",
       "The service range grew over time to cover company formation and tax along with accounting and business address services. Registered agent services run under the MAB Registered Agent Inc. brand.",
-      "The Istanbul office coordinates formation and compliance work for the United States and the United Kingdom.",
+      "The Istanbul office coordinates formation and compliance work for the United States.",
     ],
   },
   philosophy: {
@@ -28,16 +28,16 @@ export const aboutContent = {
     ],
   },
   focus: {
-    tag: "Markets",
-    title: "International Focus",
+    tag: "Market",
+    title: "United States Focus",
     items: [
       {
-        title: "United States",
+        title: "Company Formation",
         description: "LLC and corporation formation with registered agent and EIN support.",
       },
       {
-        title: "United Kingdom",
-        description: "Limited company formation with Companies House and Corporation Tax support.",
+        title: "Tax and Accounting",
+        description: "Federal and state returns with bookkeeping and annual compliance.",
       },
     ] satisfies TitledText[],
   },

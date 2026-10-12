@@ -19,13 +19,20 @@ Sources:
 | MAB Registered Agent Inc. is a brand within MAB Global Partners | Registered agent service, about, llms | S2 |
 | Registered agent in all 50 states and Washington D.C., all entity types | Registered agent page, homepage facts, FAQ | S2 |
 | US company formation (LLC, corporation), EIN, ITIN, registered agent, tax return, annual company address, bank account support | US formation service | S1 `/amerika-sirket-kurulumu`, S2 |
-| UK company formation, UK tax return, UK accounting | UK formation, tax, accounting | S1 service options |
 | US tax return, tax form preparation, tax planning, preventive follow-up | Tax service | S1 tax page |
-| US accounting, UK accounting | Accounting service | S1 service options, S2 |
+| US accounting | Accounting service | S1 service options, S2 |
 | US business address, annual compliance | Address and operations service | S2 |
-| Company dissolution (US and UK), share and company transfer (US), DUNS number, trademark (US and UK), FDA registration, warehouse services | Address and operations service, e-commerce and export sectors | S1 service options |
+| Company dissolution (US), share and company transfer (US), DUNS number, trademark (US), FDA registration, warehouse services | Address and operations service, e-commerce and export sectors | S1 service options |
 | Amazon account opening, suspension support, hourly consultations, e-commerce business development | International consulting, e-commerce sector, FAQ | S1 menu and home |
 | Philosophy line "Everyone has the right to accurate information." (from the founder's quote "Herkesin doğru bilgiye ulaşma hakkı vardır.", published without attribution) | About | S1 `/hakkimizda` (translated) |
+
+## United States only
+
+On 2026-10-12 the client asked to remove everything related to the United Kingdom. The UK company formation service, the UK limited company guide and the UK FAQs were deleted, and every other page now covers the United States only. The "US or UK" FAQ became an LLC or corporation FAQ.
+
+## Bank and payment platform logos
+
+On 2026-10-12 the client asked for logos of Bank of America, Capital One, Mercury, Wise and Payoneer in the strip under the hero, without presenting them as partners. They are shown in single-color navy under the caption "Banking and Payment Platforms" with the note "Logos belong to their respective owners and show no partnership or endorsement." Sources: Wikimedia Commons for Bank of America, Capital One, Wise and Payoneer (marked public domain there, trademarks still apply) and the mercury.com header for Mercury. Most of these brands restrict logo use without written permission; the client accepted that risk. Remove a logo on request from its owner, and replace the row with the brands' official partner assets if a partnership is signed.
 
 ## Official logos and seals
 
@@ -75,7 +82,6 @@ The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12
 | Article | Key claims | Official sources |
 |---|---|---|
 | `amerika-sirket-kurulusu-rehberi` | State-level formation, registered agent before filing, EIN free of charge, online EIN eligibility, Form 5472 for foreign-owned single-member LLCs, USD 25,000 penalty | SBA, IRS EIN page, IRS Instructions for Form 5472 |
-| `ingiltere-limited-sirket-kurulusu-rehberi` | One director, optional secretary, registered office rules, registered email, identity verification mandatory from 18 November 2025, confirmation statement every 12 months | GOV.UK guides, Companies House identity verification guidance |
 | `registered-agent-nedir` | Definition, entity types that need one, location in the state of registration | SBA |
 
 Re-check each article before its `reviewBy` date.

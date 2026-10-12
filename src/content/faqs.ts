@@ -6,10 +6,10 @@ import type { FaqItem } from "@/types/content";
  */
 const allFaqs: FaqItem[] = [
   {
-    id: "us-or-uk",
-    question: "Should I form my company in the US or the UK?",
+    id: "entity-type",
+    question: "Should I form an LLC or a corporation?",
     answer:
-      "The answer depends on your target market and where your customers are along with your sales channels. Compare both options against your own business model in an initial consultation.",
+      "The answer depends on your investment plans and ownership structure along with your tax position. Compare both options against your own business model in an initial consultation.",
     status: "published",
   },
   {
@@ -44,28 +44,7 @@ const allFaqs: FaqItem[] = [
     id: "formation-timeline",
     question: "How long does company formation take?",
     answer:
-      "The timeline depends on the workload of the state or country and the completeness of documents along with identity verification steps. Official processing times carry no fixed commitment.",
-    status: "published",
-  },
-  {
-    id: "uk-registered-office",
-    question: "Which address does my UK company need?",
-    answer:
-      "The registered office must be a physical address that accepts post in the UK country where the company is registered. PO Box services are unsuitable for this purpose.",
-    status: "published",
-  },
-  {
-    id: "uk-identity-verification",
-    question: "Is identity verification mandatory for UK directors?",
-    answer:
-      "Yes. From 18 November 2025 Companies House identity verification is a legal requirement for directors and persons with significant control (PSCs).",
-    status: "published",
-  },
-  {
-    id: "uk-annual-obligations",
-    question: "What are the annual obligations of a UK company?",
-    answer:
-      "Every company files a confirmation statement at least once every 12 months. It prepares annual accounts and submits a Company Tax Return and pays Corporation Tax.",
+      "The timeline depends on the workload of the state and the completeness of documents along with identity verification steps. Official processing times carry no fixed commitment.",
     status: "published",
   },
   {
@@ -147,9 +126,9 @@ const allFaqs: FaqItem[] = [
   },
   {
     id: "company-dissolution",
-    question: "How do I close a US or UK company I no longer use?",
+    question: "How do I close a US company I no longer use?",
     answer:
-      "Dissolution is completed with an official filing to the state or Companies House. Review final returns and open obligations before you file.",
+      "Dissolution is completed with an official filing to the state. Review final returns and open obligations before you file.",
     status: "published",
   },
   {
@@ -170,7 +149,7 @@ const allFaqs: FaqItem[] = [
     id: "pricing",
     question: "How are service fees set?",
     answer:
-      "Fees depend on the service scope and the state or country along with any ongoing services. Official agency fees appear as a separate item in the proposal.",
+      "Fees depend on the service scope and the state along with any ongoing services. Official agency fees appear as a separate item in the proposal.",
     status: "published",
   },
   {
@@ -213,7 +192,7 @@ const allFaqs: FaqItem[] = [
 export const faqs: FaqItem[] = allFaqs.filter((faq) => faq.status === "published");
 
 export const homepageFaqIds = [
-  "us-or-uk",
+  "entity-type",
   "us-travel-required",
   "us-filing-from-abroad",
   "accounting-scope",

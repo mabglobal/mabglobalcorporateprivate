@@ -33,9 +33,9 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
   home: {
     key: "home",
     path: routes.home,
-    title: "MAB Global Partners | Company Formation and Tax Support in the US and UK",
+    title: "MAB Global Partners | Company Formation and Tax Support in the United States",
     description:
-      "Form your company in the US or the UK and manage tax and accounting with registered agent support from one team.",
+      "Form your US company and manage tax and accounting with registered agent support from one team.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 1,
@@ -46,7 +46,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     path: routes.about,
     title: "About Us",
     description:
-      "MAB Global Partners helps entrepreneurs and companies with company formation and compliance in the US and UK.",
+      "MAB Global Partners helps entrepreneurs and companies with company formation and compliance in the United States.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.7,
@@ -56,7 +56,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     path: routes.services,
     title: "Services",
     description:
-      "Company formation and tax advisory in the US and UK with accounting and registered agent support.",
+      "US company formation and tax advisory with accounting and registered agent support.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 0.9,
@@ -66,7 +66,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     path: routes.sectors,
     title: "Industries",
     description:
-      "Company and compliance solutions shaped around the way your industry works in the US and UK.",
+      "Company and compliance solutions shaped around the way your industry works in the United States.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 0.8,
@@ -76,7 +76,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     path: routes.knowledge,
     title: "Insights",
     description:
-      "Guides on company formation and compliance in the US and UK based on official sources.",
+      "Guides on company formation and compliance in the United States based on official sources.",
     updatedAt: "2026-10-12",
     changeFrequency: "weekly",
     priority: 0.7,
@@ -86,7 +86,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     path: routes.contact,
     title: "Contact and Consultation Request",
     description:
-      "Contact MAB Global Partners to request a consultation for your US or UK company.",
+      "Contact MAB Global Partners to request a consultation for your US company.",
     updatedAt: "2026-10-12",
     changeFrequency: "yearly",
     priority: 0.8,

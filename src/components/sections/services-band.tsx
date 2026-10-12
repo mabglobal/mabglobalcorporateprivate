@@ -21,6 +21,11 @@ export function ServicesBand() {
       title: servicesBand.allServicesLabel,
       description: servicesBand.allServicesDescription,
     },
+    {
+      href: routes.contactForm,
+      title: servicesBand.consultationLabel,
+      description: servicesBand.consultationDescription,
+    },
   ];
   return (
     <section aria-labelledby="services-band-title" className="on-dark bg-navy-deep py-20 md:py-28">

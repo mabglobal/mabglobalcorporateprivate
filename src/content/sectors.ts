@@ -57,7 +57,7 @@ const allSectors: Sector[] = [
     title: "Export and Logistics",
     shortTitle: "Export and Logistics",
     icon: "ship",
-    summary: "Work with US and UK buyers through a local company.",
+    summary: "Work with US buyers through a local company.",
     intro: [
       "A local company can simplify contracts and invoicing with buyers in your target market.",
       "Plan company formation and accounting along with tax tracking around your trade flows.",
@@ -80,8 +80,8 @@ const allSectors: Sector[] = [
     ],
     services: [
       "us-company-formation",
-      "uk-company-formation",
       "accounting",
+      "tax-advisory",
       "business-address-and-operations",
       "international-business-consulting",
     ],
@@ -90,11 +90,11 @@ const allSectors: Sector[] = [
       "Pricing of transactions between related companies matters under the tax rules of both countries.",
       "Food and cosmetics along with medical products may need extra registrations such as FDA registration.",
     ],
-    faqIds: ["us-or-uk", "intercompany-transactions", "service-scope"],
+    faqIds: ["us-state-choice", "intercompany-transactions", "service-scope"],
     seo: {
-      title: "Company Structures Abroad for Export and Logistics Businesses",
+      title: "US Company Structures for Export and Logistics Businesses",
       description:
-        "Form a US or UK company for your export or logistics business. Plan DUNS registration and accounting along with operational steps.",
+        "Form a US company for your export or logistics business. Plan DUNS registration and accounting along with operational steps.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -167,19 +167,19 @@ const allSectors: Sector[] = [
     ],
     services: [
       "us-company-formation",
-      "uk-company-formation",
       "accounting",
       "tax-advisory",
+      "registered-agent",
       "business-address-and-operations",
     ],
     considerations: [
       "Institutional investors may prefer a specific entity type and state. Decide the structure together with your investment plan.",
-      "Some states and countries apply sales tax or VAT to digital services.",
+      "Some states apply sales tax to digital services.",
       "Ownership shares and equity plans belong in the formation documents with clear terms.",
     ],
-    faqIds: ["us-state-choice", "us-or-uk", "accounting-scope"],
+    faqIds: ["us-state-choice", "entity-type", "accounting-scope"],
     seo: {
-      title: "US and UK Company Structures for Technology Companies and Startups",
+      title: "US Company Structures for Technology Companies and Startups",
       description:
         "Choose the entity type for your SaaS or AI startup. Organize subscription accounting and tax along with brand protection.",
     },
@@ -191,7 +191,7 @@ const allSectors: Sector[] = [
     title: "Entrepreneurs and Investors",
     shortTitle: "Entrepreneurs and Investors",
     icon: "rocket",
-    summary: "Settle country and structure for your first company.",
+    summary: "Settle state and structure for your first company.",
     intro: [
       "Ask the right questions early before you form your first company abroad.",
       "Clarify the target market and ownership structure along with your long-term plan to give your first decisions a solid base.",
@@ -201,25 +201,25 @@ const allSectors: Sector[] = [
       "Startup Founders",
       "Entrepreneurs Going Global",
       "Investors Reviewing Structures Abroad",
-      "Businesses Entering the US or UK",
+      "Businesses Entering the US",
     ],
     needs: [
-      { title: "Country and Entity Type", description: "Compare US and UK options for your business model." },
+      { title: "State and Entity Type", description: "Compare state and entity options for your model." },
       { title: "Ownership Structure", description: "Reflect shares and authority along with decision rules in documents." },
       { title: "First-Year Calendar", description: "See filing and report dates after formation in advance." },
       { title: "Annual Cost Plan", description: "Forecast formation and renewal costs with accounting and tax." },
     ],
-    services: ["international-business-consulting", "us-company-formation", "uk-company-formation", "registered-agent"],
+    services: ["international-business-consulting", "us-company-formation", "registered-agent", "tax-advisory"],
     considerations: [
       "A company abroad brings tax advantages only in some cases. Advantages and obligations depend on each situation.",
       "Investor expectations for structure vary by type of investment.",
       "Include annual costs after formation in your plan from the start.",
     ],
-    faqIds: ["us-or-uk", "us-state-choice", "pricing"],
+    faqIds: ["entity-type", "us-state-choice", "pricing"],
     seo: {
-      title: "Company Formation Abroad for Entrepreneurs and Investors",
+      title: "US Company Formation for Entrepreneurs and Investors",
       description:
-        "Choose the country and entity type for your first company abroad. Plan ownership and first-year compliance along with costs.",
+        "Choose the state and entity type for your first US company. Plan ownership and first-year compliance along with costs.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -242,17 +242,17 @@ const allSectors: Sector[] = [
       "Companies Seeking Ongoing Compliance",
     ],
     needs: [
-      { title: "Foreign Subsidiary", description: "Form a US or UK company that fits your parent company." },
+      { title: "Foreign Subsidiary", description: "Form a US company that fits your parent company." },
       { title: "Existing Company Follow-Up", description: "Hand over accounting and tax along with compliance for your company." },
       { title: "Management Reports", description: "Receive periodic financial reports and a compliance calendar." },
       { title: "Intercompany Transactions", description: "Document transactions between the parent and the subsidiary." },
     ],
     services: [
       "us-company-formation",
-      "uk-company-formation",
       "accounting",
       "tax-advisory",
       "registered-agent",
+      "business-address-and-operations",
     ],
     considerations: [
       "Transactions between the parent and the subsidiary need a review under the rules of both countries.",

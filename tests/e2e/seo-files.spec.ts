@@ -17,7 +17,7 @@ test.describe("crawler resources", () => {
   test("sitemap lists only canonical production URLs that respond", async ({ request }) => {
     const xml = await (await request.get("/sitemap.xml")).text();
     const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]!);
-    expect(locs.length).toBeGreaterThanOrEqual(26);
+    expect(locs.length).toBeGreaterThanOrEqual(24);
     for (const loc of locs) {
       expect(loc.startsWith(PRODUCTION_ORIGIN)).toBe(true);
       expect(loc).not.toContain("/api/");

@@ -66,7 +66,6 @@ export interface ProcessStep extends TitledText {
 
 export type ServiceSlug =
   | "us-company-formation"
-  | "uk-company-formation"
   | "tax-advisory"
   | "accounting"
   | "registered-agent"
@@ -81,7 +80,7 @@ export type SectorSlug =
   | "entrepreneurs-and-investors"
   | "smes-and-enterprises";
 
-export type Jurisdiction = "us" | "uk" | "us-uk";
+export type Jurisdiction = "us";
 
 export interface Service {
   slug: ServiceSlug;
@@ -153,7 +152,6 @@ export interface ArticleSection {
 
 export type ArticleCategory =
   | "us-company-formation"
-  | "uk-company-formation"
   | "international-tax"
   | "accounting-and-compliance"
   | "e-commerce"

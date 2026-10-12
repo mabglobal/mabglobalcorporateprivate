@@ -47,7 +47,7 @@ export default function ServicesPage() {
       <PageHero
         breadcrumb={breadcrumb}
         title="Services"
-        description="Form your company in the US or UK and manage tax and compliance in one plan."
+        description="Form your US company and manage tax and compliance in one plan."
         actions={
           <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
             {primaryCta.label}

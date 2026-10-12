@@ -28,12 +28,28 @@ export const homeContent = {
       "Registered Agent",
       "Form 5472",
       "Sales Tax",
-      "Companies House",
-      "Corporation Tax",
+      "State Filings",
+      "Business Address",
       "Annual Reports",
       "Bookkeeping",
       "DUNS Number",
       "Trademarks",
+    ],
+  },
+  /**
+   * Banks and payment platforms named by the client (2026-10-12). Shown as
+   * logos without any partner claim, with an ownership note. Files in
+   * public/images/platforms are single-color navy versions of each logo.
+   */
+  platforms: {
+    caption: "Banking and Payment Platforms",
+    note: "Logos belong to their respective owners and show no partnership or endorsement.",
+    items: [
+      { name: "Bank of America", src: "/images/platforms/bank-of-america.svg", width: 180, height: 18 },
+      { name: "Capital One", src: "/images/platforms/capital-one.svg", width: 117, height: 42 },
+      { name: "Mercury", src: "/images/platforms/mercury.svg", width: 126, height: 29 },
+      { name: "Wise", src: "/images/platforms/wise.svg", width: 114, height: 26 },
+      { name: "Payoneer", src: "/images/platforms/payoneer.svg", width: 128, height: 27 },
     ],
   },
   servicesBand: {
@@ -41,6 +57,8 @@ export const homeContent = {
     description: "Choose the service you need and plan every step with one team.",
     allServicesLabel: "All Services",
     allServicesDescription: "Compare every service in one place.",
+    consultationLabel: "Book a Consultation",
+    consultationDescription: "Plan your next step with our team.",
   },
   process: {
     tag: "Process",
@@ -66,24 +84,24 @@ export const homeContent = {
   },
   about: {
     label: "About MAB Global Partners",
-    title: "One Partner for Your US and UK Business",
+    title: "One Partner for Your US Business",
     features: [
       {
         title: "Formation and Compliance",
-        text: "Form your company in the US or the UK and keep annual filings on schedule with registered agent support.",
+        text: "Form your US company and keep annual filings on schedule with registered agent support.",
       },
       {
         title: "Tax and Accounting",
-        text: "Keep clean books and file federal and state returns or UK Corporation Tax returns on time.",
+        text: "Keep clean books and file your federal and state returns on time.",
       },
     ],
     facts: [
       [
         { label: "Registered Agent States", value: "50" },
-        { label: "Focus Markets", value: "2" },
+        { label: "Focus Market", value: "US" },
       ],
       [
-        { label: "Service Areas", value: "7" },
+        { label: "Service Areas", value: "6" },
         { label: "Entity Types Served", value: "All" },
       ],
     ],
@@ -97,7 +115,7 @@ export const homeContent = {
       {
         icon: "globe",
         title: "International Expertise",
-        description: "Get clear guidance on US and UK rules.",
+        description: "Get clear guidance on US rules.",
       },
       {
         icon: "layers",

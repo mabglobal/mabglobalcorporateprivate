@@ -25,7 +25,7 @@ export function Footer() {
           <div className="mt-8 grid max-w-2xl gap-4 text-label text-navy">
             <p>
               {siteConfig.name} is a corporate services brand for entrepreneurs and companies that do
-              business in the United States and the United Kingdom.
+              business in the United States.
               {registeredAgentBrand ? (
                 <>
                   {" "}

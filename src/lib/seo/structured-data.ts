@@ -34,11 +34,6 @@ type PageType = "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
 
 const countryNodes = {
   us: [{ "@type": "Country", name: "United States" }],
-  uk: [{ "@type": "Country", name: "United Kingdom" }],
-  "us-uk": [
-    { "@type": "Country", name: "United States" },
-    { "@type": "Country", name: "United Kingdom" },
-  ],
 } as const;
 
 export function organizationNode(): Organization {
@@ -70,10 +65,9 @@ export function organizationNode(): Organization {
       email: contactConfig.email,
       availableLanguage: ["English", "Turkish"],
     },
-    areaServed: [...countryNodes["us-uk"]],
+    areaServed: [...countryNodes.us],
     knowsAbout: [
       "US company formation",
-      "UK company formation",
       "Tax advisory",
       "Accounting",
       "Registered agent",
