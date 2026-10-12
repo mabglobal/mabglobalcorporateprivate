@@ -1,7 +1,10 @@
 import { routes } from "@/config/routes";
 import { articleCategoryLabels, articles } from "@/content/articles";
 import { staticPages } from "@/content/pages";
-import { ArticleCard } from "@/components/knowledge/article-card";
+import { primaryCta } from "@/content/navigation";
+import { TileBand } from "@/components/sections/tile-band";
+import { ButtonLink } from "@/components/ui/button-link";
+import { formatDate } from "@/lib/utilities/format-date";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
@@ -13,7 +16,6 @@ import {
   webPageNode,
   type BreadcrumbTrailItem,
 } from "@/lib/seo/structured-data";
-import type { ArticleCategory } from "@/types/content";
 
 const page = staticPages.knowledge;
 
@@ -25,9 +27,6 @@ const breadcrumb: BreadcrumbTrailItem[] = [
 ];
 
 export default function KnowledgeCenterPage() {
-  const categories = (Object.keys(articleCategoryLabels) as ArticleCategory[]).filter(
-    (category) => articles.some((article) => article.category === category),
-  );
 
   return (
     <>
@@ -48,30 +47,34 @@ export default function KnowledgeCenterPage() {
         breadcrumb={breadcrumb}
         title="Insights"
         description="Read guides on formation and compliance based on official sources."
+        actions={
+          <>
+          <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+            Schedule a Consultation
+          </ButtonLink>
+            <ButtonLink href={routes.services} variant="outline-white" icon="none">
+              Explore Our Services
+            </ButtonLink>
+          </>
+        }
       />
-      <div className="section-y bg-white">
-        <div className="container-page grid gap-20">
-          {categories.map((category) => (
-            <section key={category} aria-labelledby={`category-${category}`}>
-              <h2 id={`category-${category}`} className="text-title text-navy">
-                {articleCategoryLabels[category]}
-              </h2>
-              <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {articles
-                  .filter((article) => article.category === category)
-                  .map((article) => (
-                    <li key={article.slug}>
-                      <ArticleCard article={article} />
-                    </li>
-                  ))}
-              </ul>
-            </section>
-          ))}
-          <p className="max-w-3xl text-caption text-navy">
-            Guides provide general information and are no substitute for personal legal or tax
-            advice. Each guide lists its sources and last update date on its page.
-          </p>
-        </div>
+      <TileBand
+        id="guide-list-title"
+        tone="light"
+        columns={3}
+        title="Guides for Your US Company"
+        description="Plain answers to common formation and compliance questions."
+        tiles={articles.map((article) => ({
+          href: routes.article(article.slug),
+          title: article.title,
+          description: `${articleCategoryLabels[article.category]} · Updated ${formatDate(article.updatedAt)}`,
+        }))}
+      />
+      <div className="bg-white pb-20 md:pb-28">
+        <p className="container-page text-center text-caption text-navy">
+          Guides provide general information and are no substitute for personal legal or tax advice.
+          Each guide lists its sources and last update date on its page.
+        </p>
       </div>
       <ContactBand />
     </>

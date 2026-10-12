@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PageHero } from "@/components/sections/page-hero";
-import { ServiceCard } from "@/components/services/service-card";
+import { TileBand } from "@/components/sections/tile-band";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList } from "@/components/ui/check-list";
 import { IconTile } from "@/components/ui/icon";
@@ -54,9 +54,14 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
         title={sector.title}
         description={sector.summary}
         actions={
-          <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
-            {primaryCta.label}
-          </ButtonLink>
+          <>
+            <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+              Schedule a Consultation
+            </ButtonLink>
+            <ButtonLink href="#related-services" variant="outline-white" icon="none">
+              Related Services
+            </ButtonLink>
+          </>
         }
       />
 
@@ -70,7 +75,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
               { title: "The Starting Point", text: sector.intro[0] ?? "" },
               { title: "The Plan", text: sector.intro[1] ?? "" },
             ]}
-            action={<TextLink href="#related-services">Related Services</TextLink>}
+            action={<TextLink href={primaryCta.href}>Book a Consultation</TextLink>}
             image={heroArchitecture}
             imageAlt=""
             imageClassName="object-[72%_60%]"
@@ -103,18 +108,19 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
         </div>
       </section>
 
-      <section id="related-services" aria-labelledby="services-title" className="scroll-mt-6 bg-white pb-20 md:pb-28 lg:pb-34">
-        <div className="container-page">
-          <SectionHeading id="services-title" tag="Services" title="Related Services" />
-          <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {relevantServices.map((service) => (
-              <li key={service.slug}>
-                <ServiceCard service={service} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <TileBand
+        id="services-title"
+        sectionId="related-services"
+        columns={3}
+        title="Related Services"
+        description="The services businesses in this industry use most."
+        tiles={relevantServices.map((service) => ({
+          href: routes.service(service.slug),
+          title: service.shortTitle,
+          description: service.summary,
+        }))}
+      />
+      <div className="h-20 bg-white md:h-28 lg:h-34" aria-hidden="true" />
 
       <section aria-labelledby="operations-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">

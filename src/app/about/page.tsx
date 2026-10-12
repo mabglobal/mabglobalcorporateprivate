@@ -1,11 +1,14 @@
 import { routes } from "@/config/routes";
+import aboutColumns from "@/assets/images/about-columns.jpg";
 import { aboutContent } from "@/content/about";
+import { homeContent } from "@/content/home";
 import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button-link";
+import { FactCards, FeaturePanel } from "@/components/ui/feature-panel";
 import { IconTile } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
@@ -48,24 +51,32 @@ export default function AboutPage() {
         title={hero.title}
         description={hero.description}
         actions={
-          <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
-            {primaryCta.label}
-          </ButtonLink>
+          <>
+            <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+              Schedule a Consultation
+            </ButtonLink>
+            <ButtonLink href={routes.services} variant="outline-white" icon="none">
+              Explore Our Services
+            </ButtonLink>
+          </>
         }
       />
 
       <section aria-labelledby="intro-title" className="section-y bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <SectionHeading id="intro-title" tag={introduction.tag} title={introduction.title} />
-          </div>
-          <div className="grid gap-5 lg:col-span-7 lg:col-start-6">
-            {introduction.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-lead text-ink">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+        <div className="container-page">
+          <FeaturePanel
+            id="intro-title"
+            label={introduction.tag}
+            title={introduction.title}
+            features={[
+              { title: "Our Story", text: `${introduction.paragraphs[0]} ${introduction.paragraphs[2]}` },
+              { title: "Our Services", text: introduction.paragraphs[1] ?? "" },
+            ]}
+            image={aboutColumns}
+            imageAlt={homeContent.about.imageAlt}
+            imageClassName="object-[50%_30%]"
+            details={<FactCards groups={homeContent.about.facts} />}
+          />
         </div>
       </section>
 

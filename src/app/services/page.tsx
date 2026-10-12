@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
-import { ServiceCard } from "@/components/services/service-card";
+import { TileBand } from "@/components/sections/tile-band";
 import { ButtonLink } from "@/components/ui/button-link";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import {
@@ -49,24 +49,31 @@ export default function ServicesPage() {
         title="Services"
         description="Form your US company and manage tax and compliance in one plan."
         actions={
-          <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
-            {primaryCta.label}
+          <>
+          <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+            Schedule a Consultation
           </ButtonLink>
+            <ButtonLink href={routes.sectors} variant="outline-white" icon="none">
+              View Industries
+            </ButtonLink>
+          </>
         }
       />
-      <section aria-label="Service list" className="section-y bg-white">
-        <div className="container-page">
-          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <ServiceCard service={service} headingLevel="h2" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <TileBand
+        id="service-list-title"
+        tone="light"
+        columns={3}
+        title="Explore Our Company Services"
+        description="Choose the service you need and plan every step with one team."
+        tiles={services.map((service) => ({
+          href: routes.service(service.slug),
+          title: service.shortTitle,
+          description: service.summary,
+        }))}
+      />
       <ProcessSection
         id="process-title"
+        tag={process.tag}
         title={process.title}
         description={process.description}
         steps={process.steps}

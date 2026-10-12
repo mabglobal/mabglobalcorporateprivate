@@ -5,7 +5,7 @@ import { sectors } from "@/content/sectors";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
-import { SectorCard } from "@/components/sectors/sector-card";
+import { TileBand } from "@/components/sections/tile-band";
 import { ButtonLink } from "@/components/ui/button-link";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import {
@@ -46,22 +46,28 @@ export default function SectorsPage() {
         title="Industries"
         description="Choose your business model and plan formation and tax around your needs."
         actions={
-          <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
-            {primaryCta.label}
+          <>
+          <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+            Schedule a Consultation
           </ButtonLink>
+            <ButtonLink href={routes.services} variant="outline-white" icon="none">
+              Explore Our Services
+            </ButtonLink>
+          </>
         }
       />
-      <section aria-label="Industry list" className="section-y bg-white">
-        <div className="container-page">
-          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {sectors.map((sector) => (
-              <li key={sector.slug}>
-                <SectorCard sector={sector} headingLevel="h2" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <TileBand
+        id="industry-list-title"
+        tone="light"
+        columns={3}
+        title="Find Your Industry"
+        description="Choose the area closest to your business."
+        tiles={sectors.map((sector) => ({
+          href: routes.sector(sector.slug),
+          title: sector.shortTitle,
+          description: sector.summary,
+        }))}
+      />
       <ContactBand />
     </>
   );

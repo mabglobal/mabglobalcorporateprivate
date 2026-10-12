@@ -10,6 +10,7 @@ import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
+import { TileBand } from "@/components/sections/tile-band";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList, TitledCheckList } from "@/components/ui/check-list";
 import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
@@ -25,7 +26,6 @@ import {
   type BreadcrumbTrailItem,
 } from "@/lib/seo/structured-data";
 import type { ServiceSlug } from "@/types/content";
-import { ServiceCard } from "./service-card";
 
 /** Shared template for every service page. Content comes from the registry. */
 export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
@@ -57,11 +57,11 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
         description={service.summary}
         actions={
           <>
-            <ButtonLink href={primaryCta.href} variant="light" icon="arrow-right">
-              {primaryCta.label}
+            <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
+              Schedule a Consultation
             </ButtonLink>
-            <ButtonLink href="#service-scope" variant="outline-light" icon="none">
-              View the Scope
+            <ButtonLink href="#service-scope" variant="outline-white" icon="none">
+              See What Is Included
             </ButtonLink>
           </>
         }
@@ -88,7 +88,7 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
                   <ExternalLink aria-hidden="true" className="size-4" />
                 </a>
               ) : (
-                <TextLink href="#service-scope">See What Is Included</TextLink>
+                <TextLink href="#related-services">Related Services</TextLink>
               )
             }
             image={heroArchitecture}
@@ -157,18 +157,19 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
         </div>
       </section>
 
-      <section aria-labelledby="related-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
-        <div className="container-page">
-          <SectionHeading id="related-title" tag="More Services" title="Related Services" />
-          <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {relatedServices.slice(0, 3).map((related) => (
-              <li key={related.slug}>
-                <ServiceCard service={related} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <TileBand
+        id="related-title"
+        sectionId="related-services"
+        columns={3}
+        title="Related Services"
+        description="Services that often go together with this one."
+        tiles={relatedServices.slice(0, 3).map((related) => ({
+          href: routes.service(related.slug),
+          title: related.shortTitle,
+          description: related.summary,
+        }))}
+      />
+      <div className="h-20 bg-white md:h-28 lg:h-34" aria-hidden="true" />
 
       <FaqSection items={faqs} padding="bottom" />
       <ContactBand />
