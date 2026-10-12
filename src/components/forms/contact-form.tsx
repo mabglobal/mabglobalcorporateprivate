@@ -78,11 +78,21 @@ export function ContactForm({ options }: { options: ContactOptions }) {
   const submissionId = useRef("");
   const fieldRefs = useRef<Partial<Record<ContactField, HTMLElement | null>>>({});
   const successRef = useRef<HTMLHeadingElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const errorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     startedAt.current = Date.now();
     submissionId.current = newSubmissionId();
+    // Keep anything typed before hydration: React does not read the DOM
+    // values of controlled fields when it attaches.
+    const form = formRef.current;
+    if (!form) return;
+    const data = new FormData(form);
+    const typed = Object.fromEntries(
+      fieldOrder.map((field) => [field, String(data.get(field) ?? "")]),
+    ) as FormValues;
+    if (fieldOrder.some((field) => typed[field] !== "")) setValues(typed);
   }, []);
 
   useEffect(() => {
@@ -189,6 +199,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
 
   return (
     <form
+      ref={formRef}
       noValidate
       onSubmit={handleSubmit}
       onFocus={() => void loadValidator()}

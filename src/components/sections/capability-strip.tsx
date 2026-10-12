@@ -18,7 +18,7 @@ export function CapabilityStrip() {
           {capabilities.items.map((item) => (
             <li
               key={item}
-              className="flex min-h-12 items-center justify-center whitespace-nowrap text-center font-display text-[clamp(1.0625rem,0.9rem+0.5vw,1.3125rem)] font-bold leading-tight text-navy"
+              className="flex min-h-12 items-center justify-center text-balance text-center font-display text-[clamp(1rem,0.85rem+0.55vw,1.3125rem)] font-bold leading-tight text-navy lg:whitespace-nowrap"
             >
               {item}
             </li>

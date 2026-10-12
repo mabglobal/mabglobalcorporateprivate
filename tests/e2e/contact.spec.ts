@@ -1,6 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
 
 async function fillValidForm(page: Page) {
+  // The submit button is enabled once the form has hydrated.
+  await expect(page.getByRole("button", { name: "Book a Consultation" })).toBeEnabled();
   await page.getByLabel("Full Name").fill("Jane Doe");
   await page.getByLabel("Email Address").fill("jane@example.com");
   await page.getByLabel("Service You Need").selectOption("us-company-formation");
