@@ -29,18 +29,11 @@ export function NavigationList({
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "relative inline-flex min-h-11 items-center px-3 text-label font-medium transition-colors",
-                active ? "text-navy" : "text-slate hover:text-navy",
+                "inline-flex min-h-10 items-center whitespace-nowrap rounded-tile px-3 text-label transition-colors",
+                active ? "bg-white/12 text-white" : "text-white/70 hover:text-white",
               )}
             >
               {item.label}
-              <span
-                aria-hidden="true"
-                className={cn(
-                  "absolute inset-x-3 bottom-1.5 h-0.5 rounded-full bg-accent transition-opacity",
-                  active ? "opacity-100" : "opacity-0",
-                )}
-              />
             </Link>
           </li>
         );

@@ -1,51 +1,78 @@
 import { homeContent } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
-import { Eyebrow } from "@/components/ui/section-heading";
-import { HeroGraphic } from "./hero-graphic";
+
+/**
+ * Soft layered ridges at the top of the hero, echoing the reference
+ * composition. Filled shapes only, no strokes.
+ */
+function HeroBackdrop() {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 1440 640"
+      preserveAspectRatio="xMidYMin slice"
+      className="absolute inset-0 h-full w-full"
+    >
+      <defs>
+        <linearGradient id="hero-ridge-far" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style={{ stopColor: "var(--color-navy-deep)" }} stopOpacity="1" />
+          <stop offset="1" style={{ stopColor: "var(--color-navy-deep)" }} stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="hero-ridge-near" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style={{ stopColor: "var(--color-navy-deep)" }} stopOpacity="0.9" />
+          <stop offset="1" style={{ stopColor: "var(--color-navy-deep)" }} stopOpacity="0" />
+        </linearGradient>
+        <radialGradient id="hero-glow" cx="0.72" cy="0.55" r="0.6">
+          <stop offset="0" style={{ stopColor: "var(--color-white)" }} stopOpacity="0.07" />
+          <stop offset="1" style={{ stopColor: "var(--color-white)" }} stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="640" fill="url(#hero-glow)" />
+      <path
+        d="M0 0H1440V190C1340 150 1250 120 1150 150C1040 182 960 250 840 240C720 230 660 150 540 140C420 130 330 210 210 220C130 226 60 200 0 180Z"
+        fill="url(#hero-ridge-far)"
+      />
+      <path
+        d="M0 0H1440V110C1360 90 1290 70 1200 92C1100 116 1030 170 930 168C820 166 760 100 650 96C540 92 470 150 360 158C250 166 140 120 0 100Z"
+        fill="url(#hero-ridge-near)"
+      />
+    </svg>
+  );
+}
 
 export function Hero() {
   const { hero } = homeContent;
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden bg-navy-deep text-white"
-    >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_35%,rgb(255_255_255/0.07),transparent_60%)]"
-      />
-      <div className="container-page">
-        <div className="grid items-center gap-12 pb-16 pt-20 md:pt-24 lg:min-h-[640px] lg:grid-cols-12 lg:gap-10 lg:pb-20 lg:pt-28">
+    <section aria-labelledby="hero-title" className="on-dark relative isolate overflow-hidden bg-navy">
+      <HeroBackdrop />
+      <div className="container-page relative flex min-h-[520px] flex-col justify-end pb-14 pt-28 lg:min-h-[600px]">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <Eyebrow tone="dark">{hero.eyebrow}</Eyebrow>
-            <h1 id="hero-title" className="mt-6 max-w-[13ch] text-display text-white">
+            <h1 id="hero-title" className="max-w-2xl text-display text-white">
               {hero.title}
             </h1>
-            <p className="mt-7 max-w-xl text-lead text-white/75">{hero.description}</p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <ButtonLink href={hero.primaryCta.href}>{hero.primaryCta.label}</ButtonLink>
-              <ButtonLink href={hero.secondaryCta.href} variant="outline-light">
-                {hero.secondaryCta.label}
+            <p className="mt-5 max-w-lg text-body text-white/75">{hero.description}</p>
+            <div className="mt-8">
+              <ButtonLink href={hero.primaryCta.href} variant="light">
+                {hero.primaryCta.label}
               </ButtonLink>
             </div>
           </div>
-          <div className="hidden text-white md:block lg:col-span-5">
-            <HeroGraphic className="mx-auto w-full max-w-[520px]" />
+          <div className="lg:col-span-5 lg:justify-self-end">
+            <p className="text-caption text-white/60">{hero.marketsLabel}</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {hero.markets.map((market) => (
+                <li
+                  key={market.code}
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-control bg-white/10 px-3 py-2 text-label text-white"
+                >
+                  <span className="font-semibold">{market.code}</span>
+                  <span className="text-white/80">{market.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-
-        <div className="flex flex-col gap-5 border-t border-white/10 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-caption text-white/60">{hero.marketsLabel}</p>
-          <ul className="flex flex-wrap gap-x-10 gap-y-3">
-            {hero.markets.map((market) => (
-              <li key={market.code} className="flex items-center gap-3 text-label text-white/85">
-                <span className="rounded-[3px] border border-white/20 px-1.5 py-0.5 text-caption font-medium tracking-[0.06em] text-white">
-                  {market.code}
-                </span>
-                {market.name}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

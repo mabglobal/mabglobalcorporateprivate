@@ -1,23 +1,21 @@
 import { Check } from "lucide-react";
 import type { TitledText } from "@/types/content";
 
-/** Two-column list of titled items with check marks. */
+/** Grid of titled items, each in a rounded light box with a check mark. */
 export function TitledCheckList({ items }: { items: TitledText[] }) {
   return (
-    <ul className="grid gap-x-10 gap-y-10 md:grid-cols-2">
+    <ul className="grid gap-3 md:grid-cols-2">
       {items.map((item) => (
-        <li key={item.title} className="flex gap-4">
+        <li key={item.title} className="flex gap-4 rounded-panel bg-surface p-5">
           <span
             aria-hidden="true"
-            className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-[4px] bg-navy text-accent"
+            className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-tile bg-navy text-white"
           >
             <Check className="size-4" strokeWidth={2} />
           </span>
           <div>
-            <h3 className="text-[1.125rem] font-medium leading-snug text-navy">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-body text-slate">{item.description}</p>
+            <h3 className="text-body font-medium text-navy">{item.title}</h3>
+            <p className="mt-1 text-label text-slate">{item.description}</p>
           </div>
         </li>
       ))}
@@ -25,13 +23,13 @@ export function TitledCheckList({ items }: { items: TitledText[] }) {
   );
 }
 
-/** Simple bulleted list for plain sentences. */
+/** Simple list for plain sentences. */
 export function BulletList({ items }: { items: readonly string[] }) {
   return (
-    <ul className="grid gap-4">
+    <ul className="grid gap-3">
       {items.map((item) => (
-        <li key={item} className="flex gap-4 text-body text-ink">
-          <span aria-hidden="true" className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-accent" />
+        <li key={item} className="flex gap-3 text-label text-ink">
+          <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-navy" strokeWidth={2} />
           <span>{item}</span>
         </li>
       ))}

@@ -43,7 +43,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy lg:hidden"
+        className="inline-flex size-11 items-center justify-center rounded-control border border-white/20 text-white lg:hidden"
       >
         <Menu aria-hidden="true" className="size-5" strokeWidth={1.8} />
         <span className="sr-only">Menüyü aç</span>
@@ -56,37 +56,37 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={(event) => {
           if (event.target === dialogRef.current) close();
         }}
-        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-md bg-white p-0 text-ink backdrop:bg-navy-deep/60 open:flex open:flex-col"
+        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-md bg-white p-0 text-ink [--focus-ring:var(--color-navy)] backdrop:bg-navy-deep/60 open:flex open:flex-col"
       >
-        <div className="flex items-center justify-between border-b border-line px-5 py-4">
+        <div className="flex items-center justify-between px-5 py-4">
           <p id={titleId} className="text-label font-medium text-slate">
             Menü
           </p>
           <button
             type="button"
             onClick={close}
-            className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy"
+            className="inline-flex size-11 items-center justify-center rounded-control bg-surface text-navy"
           >
             <X aria-hidden="true" className="size-5" strokeWidth={1.8} />
             <span className="sr-only">Menüyü kapat</span>
           </button>
         </div>
 
-        <nav aria-label="Mobil menü" className="flex-1 overflow-y-auto px-5 py-6">
+        <nav aria-label="Mobil menü" className="flex-1 overflow-y-auto px-5 pb-6">
           <Suspense fallback={<PrimaryLinks items={items} onNavigate={close} />}>
             <PrimaryLinksWithActiveState items={items} onNavigate={close} />
           </Suspense>
 
           {groups.map((group) => (
             <div key={group.title} className="mt-8">
-              <p className="text-caption font-medium text-slate">{group.title}</p>
-              <ul className="mt-3 grid gap-1">
+              <p className="px-4 text-caption font-medium text-slate">{group.title}</p>
+              <ul className="mt-2 grid gap-0.5">
                 {group.items.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={close}
-                      className="flex min-h-11 items-center text-label text-navy"
+                      className="flex min-h-10 items-center rounded-control px-4 text-label text-navy hover:bg-surface"
                     >
                       {item.label}
                     </Link>
@@ -97,11 +97,12 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
           ))}
         </nav>
 
-        <div className="border-t border-line px-5 py-5">
+        <div className="px-5 py-5">
           <Link
             href={cta.href}
             onClick={close}
-            className="flex min-h-12 items-center justify-center rounded-control bg-accent px-5 text-label font-medium text-navy-deep"
+            data-brand-accent=""
+            className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-accent px-5 text-label font-medium text-white"
           >
             {cta.label}
           </Link>
@@ -124,24 +125,21 @@ function PrimaryLinksWithActiveState(props: PrimaryLinksProps) {
 
 function PrimaryLinks({ items, onNavigate, pathname }: PrimaryLinksProps) {
   return (
-    <ul className="flex flex-col">
+    <ul className="grid gap-1">
       {items.map((item) => {
         const active = pathname ? isActivePath(pathname, item.href) : false;
         return (
-          <li key={item.href} className="border-b border-line">
+          <li key={item.href}>
             <Link
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex min-h-14 items-center justify-between text-title",
-                active ? "text-navy" : "text-ink",
+                "flex min-h-12 items-center rounded-control px-4 text-title",
+                active ? "bg-surface text-navy" : "text-ink hover:bg-surface",
               )}
             >
               {item.label}
-              {active ? (
-                <span aria-hidden="true" className="size-2 rounded-[1px] bg-accent" />
-              ) : null}
             </Link>
           </li>
         );

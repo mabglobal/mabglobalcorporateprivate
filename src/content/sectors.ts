@@ -4,13 +4,12 @@ const allSectors: Sector[] = [
   {
     slug: "e-ticaret",
     title: "E-ticaret ve Amazon Satıcıları",
-    shortTitle: "E-ticaret",
+    shortTitle: "E-ticaret ve Amazon",
     icon: "shopping-bag",
-    summary:
-      "ABD ve Birleşik Krallık pazaryerlerinde satış yapan işletmeler için şirket, vergi ve muhasebe altyapısını kuruyoruz.",
+    summary: "Pazaryeri satışlarınız için şirket, vergi ve muhasebe altyapınızı kurun.",
     intro: [
-      "Pazaryerinde satış yapmak satıcı hesabının, şirket yapısının, ödeme altyapısının ve vergi kaydının birlikte planlanmasını gerektirir.",
-      "Amazon, Shopify, Etsy ve eBay gibi platformlarda satış yapan işletmelerin bu adımlarını tek bir plan içinde ele alıyoruz.",
+      "Satıcı hesabı, şirket yapısı, ödeme altyapısı ve vergi kaydı birlikte planlanmalıdır.",
+      "Amazon, Shopify, Etsy ve eBay satışlarınızın tüm adımlarını tek planda toplayın.",
     ],
     examples: [
       "Amazon satıcıları",
@@ -20,29 +19,13 @@ const allSectors: Sector[] = [
       "Pazaryeri operatörleri",
       "Doğrudan tüketiciye satış yapan markalar",
       "Sınır ötesi online perakendeciler",
-      "Birden fazla pazaryerinde satış yapan işletmeler",
+      "Çok pazaryerli işletmeler",
     ],
     needs: [
-      {
-        title: "Satıcı hesabına uygun şirket yapısı",
-        description:
-          "Pazaryeri doğrulama süreçleriyle uyumlu şirket, adres ve belge yapısını kurmak.",
-      },
-      {
-        title: "Sales tax ve eyalet yükümlülükleri",
-        description:
-          "ABD'de satış yapılan eyaletlere göre doğan vergi kayıt ve beyan ihtiyacını takip etmek.",
-      },
-      {
-        title: "Pazaryeri ödemelerinin muhasebesi",
-        description:
-          "Komisyon, iade, reklam ve lojistik giderlerini doğru ayrıştırarak kaydetmek.",
-      },
-      {
-        title: "Marka ve ürün kayıtları",
-        description:
-          "Marka tescili ve gerekli ürünlerde FDA kaydı gibi başvuruları zamanında planlamak.",
-      },
+      { title: "Satıcı hesabına uygun yapı", description: "Pazaryeri doğrulamasıyla uyumlu şirket, adres ve belge yapısı kurun." },
+      { title: "Sales tax takibi", description: "Satış yaptığınız eyaletlerdeki kayıt ve beyan ihtiyacını izleyin." },
+      { title: "Pazaryeri muhasebesi", description: "Komisyon, iade, reklam ve lojistik giderlerini ayrı kaydedin." },
+      { title: "Marka ve ürün kayıtları", description: "Marka tescili ve gerekli ürünlerde FDA kaydını planlayın." },
     ],
     services: [
       "amerika-sirket-kurulusu",
@@ -52,16 +35,16 @@ const allSectors: Sector[] = [
       "is-adresi-ve-sirket-operasyonlari",
     ],
     considerations: [
-      "Pazaryerleri satıcı doğrulaması sırasında şirket, adres ve banka bilgilerinin birbiriyle tutarlı olmasını bekler.",
-      "Birçok eyalette pazaryerleri satış vergisini satıcı adına tahsil eder. Satıcının kendi kayıt yükümlülükleri satış kanallarına ve eyalet kurallarına göre ayrı olarak değerlendirilir.",
-      "Hesap askıya alma durumlarında belgelerin tutarlılığı çözüm sürecini doğrudan etkiler.",
-      "Gıda, kozmetik ve benzeri ürün gruplarında ABD'deki ürün düzenlemeleri satışa başlamadan önce kontrol edilmelidir.",
+      "Pazaryerleri doğrulama sırasında şirket, adres ve banka bilgilerinin tutarlı olmasını bekler.",
+      "Birçok eyalette pazaryerleri satış vergisini satıcı adına tahsil eder. Kendi kayıt ihtiyacınız ayrı değerlendirilir.",
+      "Hesap askıya alma durumlarında belge tutarlılığı çözüm sürecini doğrudan etkiler.",
+      "Gıda ve kozmetik gibi ürünlerde ABD düzenlemelerini satıştan önce kontrol edin.",
     ],
     faqIds: ["e-ticaret-sirket", "sales-tax", "amazon-hesap", "on-muhasebe"],
     seo: {
       title: "E-ticaret ve Amazon Satıcıları için Şirket, Vergi ve Muhasebe",
       description:
-        "Amazon, Shopify, Etsy ve eBay satıcıları için ABD şirket kuruluşu, sales tax takibi, pazaryeri muhasebesi ve marka kayıtlarında destek.",
+        "Amazon, Shopify, Etsy ve eBay satışlarınız için ABD şirketinizi kurun, sales tax yükümlülüklerini takip edin ve pazaryeri muhasebenizi düzenleyin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -71,11 +54,10 @@ const allSectors: Sector[] = [
     title: "İhracat ve Lojistik",
     shortTitle: "İhracat ve Lojistik",
     icon: "ship",
-    summary:
-      "ABD ve Birleşik Krallık'taki alıcılarla çalışan ihracatçılar ve lojistik işletmeleri için yerel şirket yapısını planlıyoruz.",
+    summary: "ABD ve Birleşik Krallık'taki alıcılarınızla yerel bir şirket üzerinden çalışın.",
     intro: [
-      "Hedef pazardaki alıcılarla doğrudan çalışmak isteyen ihracatçılar ve lojistik işletmeleri için yerel bir şirket yapısı ticari ilişkileri kolaylaştırabilir.",
-      "Şirket kuruluşunu, muhasebeyi ve vergi takibini ticari akışınıza göre planlıyoruz.",
+      "Yerel bir şirket, hedef pazardaki alıcılarla sözleşme ve faturalamayı kolaylaştırabilir.",
+      "Şirket kuruluşunu, muhasebeyi ve vergi takibini ticari akışınıza göre planlayın.",
     ],
     examples: [
       "İhracatçılar",
@@ -88,26 +70,10 @@ const allSectors: Sector[] = [
       "Uluslararası satın alma işletmeleri",
     ],
     needs: [
-      {
-        title: "Yerel şirket ve fatura yapısı",
-        description:
-          "Hedef pazardaki müşterilerle yerel bir şirket üzerinden sözleşme yapmak ve fatura kesmek.",
-      },
-      {
-        title: "DUNS ve tedarikçi kayıtları",
-        description:
-          "Kurumsal alıcıların tedarikçi kayıt süreçlerinde talep ettiği kimlik numaralarını edinmek.",
-      },
-      {
-        title: "Depolama ve dağıtım planı",
-        description:
-          "Ürünlerin hedef pazarda depolanması ve dağıtımı için operasyon planı oluşturmak.",
-      },
-      {
-        title: "Ülkeler arası işlem kayıtları",
-        description:
-          "Türkiye'deki şirket ile yurt dışı şirket arasındaki işlemleri belgeli şekilde kaydetmek.",
-      },
+      { title: "Yerel şirket ve fatura", description: "Hedef pazarda yerel şirket üzerinden sözleşme yapın, fatura kesin." },
+      { title: "DUNS ve tedarikçi kaydı", description: "Kurumsal alıcıların istediği kimlik numaralarını edinin." },
+      { title: "Depolama ve dağıtım", description: "Ürünlerinizin hedef pazarda depolanmasını ve dağıtımını planlayın." },
+      { title: "Şirketler arası kayıtlar", description: "Türkiye ve yurt dışı şirket arasındaki işlemleri belgeleyin." },
     ],
     services: [
       "amerika-sirket-kurulusu",
@@ -117,7 +83,7 @@ const allSectors: Sector[] = [
       "uluslararasi-is-danismanligi",
     ],
     considerations: [
-      "Gümrük, ürün standardı ve ithalat izinleri ürün grubuna göre değişir ve ilgili kurumların kurallarına göre değerlendirilir.",
+      "Gümrük, ürün standardı ve ithalat izinleri ürün grubuna göre değişir.",
       "İlişkili şirketler arasındaki işlemlerin fiyatlandırması iki ülkenin vergi kuralları açısından önem taşır.",
       "Gıda, kozmetik ve tıbbi ürünlerde FDA kaydı gibi ek kayıtlar gerekebilir.",
     ],
@@ -125,7 +91,7 @@ const allSectors: Sector[] = [
     seo: {
       title: "İhracat ve Lojistik Şirketleri için Yurt Dışı Şirket Yapısı",
       description:
-        "İhracatçılar, üreticiler ve lojistik şirketleri için ABD ve İngiltere'de şirket kuruluşu, DUNS kaydı, muhasebe ve operasyon planlaması.",
+        "İhracatçılar, üreticiler ve lojistik şirketleri için ABD veya İngiltere şirketinizi kurun, DUNS kaydı, muhasebe ve operasyon adımlarını planlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -135,11 +101,10 @@ const allSectors: Sector[] = [
     title: "Serbest Çalışanlar ve Dijital Profesyoneller",
     shortTitle: "Serbest Çalışanlar",
     icon: "laptop",
-    summary:
-      "Yurt dışındaki müşterilere hizmet veren profesyoneller için uygun yapıyı gelir modeli ve vergi durumu üzerinden değerlendiriyoruz.",
+    summary: "Yurt dışı müşterileriniz için uygun yapıyı gelir modelinize göre seçin.",
     intro: [
-      "Yurt dışındaki müşterilere hizmet veren profesyoneller için bir şirket yapısı sözleşme, faturalama ve ödeme süreçlerini daha düzenli hale getirebilir.",
-      "Şirket yapısına ihtiyacınız olup olmadığını gelir modeliniz ve vergi durumunuz üzerinden birlikte değerlendiriyoruz.",
+      "Bir şirket yapısı, yurt dışı müşterilerle sözleşme, fatura ve ödeme süreçlerini düzenleyebilir.",
+      "Şirkete ihtiyacınız olup olmadığını gelir modeliniz ve vergi durumunuz üzerinden değerlendirin.",
     ],
     examples: [
       "Yazılım geliştiriciler",
@@ -147,48 +112,27 @@ const allSectors: Sector[] = [
       "Tasarımcılar",
       "Pazarlama danışmanları",
       "Bağımsız danışmanlar",
-      "Fiverr ve Upwork üzerinden çalışan serbest çalışanlar",
-      "Yurt dışındaki müşterilere hizmet veren profesyoneller",
+      "Fiverr ve Upwork serbest çalışanları",
+      "Yurt dışına hizmet veren profesyoneller",
       "Uluslararası gelir elde eden uzaktan çalışanlar",
     ],
     needs: [
-      {
-        title: "Uygun yapı kararı",
-        description:
-          "Bireysel çalışma ile şirket yapısı arasındaki farkları gelir ve vergi açısından karşılaştırmak.",
-      },
-      {
-        title: "Ödeme ve faturalama düzeni",
-        description:
-          "Uluslararası müşterilerden gelen ödemeleri şirket kayıtlarıyla uyumlu şekilde yönetmek.",
-      },
-      {
-        title: "Platform vergi formları",
-        description:
-          "Çalışılan platformların talep ettiği vergi formlarını şirket yapısına uygun şekilde doldurmak.",
-      },
-      {
-        title: "Yıllık beyan takvimi",
-        description:
-          "Şirket kurulduysa federal ve eyalet düzeyindeki yıllık beyanları zamanında tamamlamak.",
-      },
+      { title: "Doğru yapı kararı", description: "Bireysel çalışma ile şirket yapısını gelir ve vergi açısından karşılaştırın." },
+      { title: "Ödeme ve fatura düzeni", description: "Uluslararası ödemeleri şirket kayıtlarıyla uyumlu yönetin." },
+      { title: "Platform vergi formları", description: "Platformların istediği vergi formlarını yapınıza uygun doldurun." },
+      { title: "Yıllık beyan takvimi", description: "Federal ve eyalet beyanlarınızı zamanında tamamlayın." },
     ],
-    services: [
-      "amerika-sirket-kurulusu",
-      "vergi-danismanligi",
-      "muhasebe-hizmetleri",
-      "uluslararasi-is-danismanligi",
-    ],
+    services: ["amerika-sirket-kurulusu", "vergi-danismanligi", "muhasebe-hizmetleri", "uluslararasi-is-danismanligi"],
     considerations: [
-      "Türkiye'de yaşayan kişilerin yurt dışı şirketlerinden elde ettiği gelirler Türkiye'de vergilendirme konusu olabilir. Bu konuyu Türkiye'deki mali müşavirinizle değerlendirmenizi öneririz.",
-      "Platformların talep ettiği W-8 veya W-9 gibi vergi formları şirket yapınıza göre değişir.",
-      "Her serbest çalışan için şirket kurmak gerekmeyebilir. Kararı gelir hacmi ve müşteri yapısı belirler.",
+      "Türkiye'de yaşayan kişilerin yurt dışı şirket gelirleri Türkiye'de vergilendirilebilir. Bu konuyu mali müşavirinizle değerlendirin.",
+      "Platformların istediği W-8 veya W-9 gibi formlar şirket yapınıza göre değişir.",
+      "Her serbest çalışan için şirket gerekmeyebilir. Kararı gelir hacmi ve müşteri yapısı belirler.",
     ],
     faqIds: ["uluslararasi-gelir", "vergi-turkiye-abd", "form-5472"],
     seo: {
       title: "Serbest Çalışanlar ve Dijital Profesyoneller için Yurt Dışı Şirket",
       description:
-        "Fiverr, Upwork ve yurt dışı müşterilerle çalışan yazılımcılar, tasarımcılar ve danışmanlar için şirket yapısı, vergi ve muhasebe desteği.",
+        "Fiverr, Upwork ve yurt dışı müşterilerle çalışan yazılımcılar, tasarımcılar ve danışmanlar için şirket yapısını, vergi ve muhasebe adımlarını planlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -198,11 +142,10 @@ const allSectors: Sector[] = [
     title: "Teknoloji Şirketleri ve Girişimler",
     shortTitle: "Teknoloji Şirketleri",
     icon: "cpu",
-    summary:
-      "SaaS, yazılım ve yapay zekâ girişimleri için yatırım planına ve gelir modeline uygun şirket yapısını kuruyoruz.",
+    summary: "SaaS ve yazılım girişiminiz için yatırıma uygun şirket yapısını kurun.",
     intro: [
-      "ABD pazarını hedefleyen teknoloji şirketleri için şirket türü, ortaklık yapısı ve ödeme altyapısı ilk aşamada doğru kurulmalıdır.",
-      "Yatırım planınız, ekibiniz ve gelir modeliniz üzerinden uygun yapıyı birlikte değerlendiriyoruz.",
+      "ABD pazarını hedefleyen teknoloji şirketlerinde şirket türü, ortaklık yapısı ve ödeme altyapısı baştan doğru kurulmalıdır.",
+      "Yatırım planınıza, ekibinize ve gelir modelinize uygun yapıyı seçin.",
     ],
     examples: [
       "SaaS şirketleri",
@@ -214,26 +157,10 @@ const allSectors: Sector[] = [
       "Teknoloji danışmanlık şirketleri",
     ],
     needs: [
-      {
-        title: "Yatırıma uygun şirket yapısı",
-        description:
-          "Yatırım almayı planlayan girişimler için LLC ve corporation seçeneklerini karşılaştırmak.",
-      },
-      {
-        title: "Abonelik gelirlerinin muhasebesi",
-        description:
-          "Tekrarlayan gelirleri ve ödeme sağlayıcı hareketlerini düzenli kaydetmek.",
-      },
-      {
-        title: "Ödeme altyapısı hazırlığı",
-        description:
-          "Ödeme sağlayıcılarının talep ettiği şirket ve belge bilgilerini hazırlamak.",
-      },
-      {
-        title: "Marka koruması",
-        description:
-          "Ürün ve şirket adını hedef pazarda marka tescili ile korumak.",
-      },
+      { title: "Yatırıma uygun yapı", description: "LLC ve corporation seçeneklerini yatırım planınıza göre karşılaştırın." },
+      { title: "Abonelik muhasebesi", description: "Tekrarlayan gelirleri ve ödeme hareketlerini düzenli kaydedin." },
+      { title: "Ödeme altyapısı", description: "Ödeme sağlayıcılarının istediği şirket bilgilerini hazırlayın." },
+      { title: "Marka koruması", description: "Ürün ve şirket adınızı hedef pazarda tescil ettirin." },
     ],
     services: [
       "amerika-sirket-kurulusu",
@@ -243,15 +170,15 @@ const allSectors: Sector[] = [
       "is-adresi-ve-sirket-operasyonlari",
     ],
     considerations: [
-      "Kurumsal yatırımcılar şirket türü ve kuruluş eyaleti konusunda belirli tercihler bildirebilir. Yapı kararını yatırım planınızla birlikte vermek önemlidir.",
-      "Dijital hizmet satışlarında bazı eyaletler ve ülkeler satış vergisi veya KDV uygulayabilir.",
+      "Kurumsal yatırımcılar şirket türü ve eyalet konusunda tercih bildirebilir. Yapı kararını yatırım planınızla birlikte verin.",
+      "Dijital hizmet satışlarında bazı eyalet ve ülkeler satış vergisi veya KDV uygulayabilir.",
       "Ortaklık payları ve hisse planları kuruluş belgelerinde açıkça tanımlanmalıdır.",
     ],
     faqIds: ["abd-eyalet-secimi", "kurulus-hangi-ulke", "muhasebe-kapsam"],
     seo: {
       title: "Teknoloji Şirketleri ve Girişimler için ABD ve İngiltere Şirket Yapısı",
       description:
-        "SaaS, yazılım, yapay zekâ ve mobil uygulama girişimleri için şirket türü seçimi, abonelik muhasebesi, vergi ve marka süreçlerinde destek.",
+        "SaaS, yazılım, yapay zekâ ve mobil uygulama girişiminiz için şirket türünü seçin, abonelik muhasebesini, vergi ve marka süreçlerini düzenleyin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -261,57 +188,35 @@ const allSectors: Sector[] = [
     title: "Girişimciler ve Yatırımcılar",
     shortTitle: "Girişimciler ve Yatırımcılar",
     icon: "rocket",
-    summary:
-      "Yurt dışında ilk şirketini kuracak girişimciler ve yapı değerlendiren yatırımcılar için ilk kararları birlikte netleştiriyoruz.",
+    summary: "Yurt dışındaki ilk şirketiniz için ülke, yapı ve ortaklık kararlarını netleştirin.",
     intro: [
-      "Yurt dışında ilk şirketini kuracak girişimciler için en önemli adım doğru soruları erken sormaktır.",
-      "Hedef pazarı, ortaklık yapısını ve uzun vadeli planı netleştirerek ilk kararları sağlam bir zemine oturtuyoruz.",
+      "Yurt dışında ilk şirketinizi kurmadan önce doğru soruları erken sorun.",
+      "Hedef pazarı, ortaklık yapısını ve uzun vadeli planı netleştirerek ilk kararlarınızı sağlam bir zemine oturtun.",
     ],
     examples: [
       "İlk şirketini kuran girişimciler",
       "Startup kurucuları",
       "Uluslararası pazara açılan girişimciler",
-      "Yurt dışı şirket yapılarını değerlendiren yatırımcılar",
-      "ABD veya Birleşik Krallık pazarına girmeyi planlayan işletmeler",
+      "Yurt dışı yapıları değerlendiren yatırımcılar",
+      "ABD veya Birleşik Krallık pazarına giren işletmeler",
     ],
     needs: [
-      {
-        title: "Ülke ve şirket türü seçimi",
-        description:
-          "ABD ve Birleşik Krallık seçeneklerini hedef pazar ve iş modeli üzerinden karşılaştırmak.",
-      },
-      {
-        title: "Ortaklık ve yönetim yapısı",
-        description:
-          "Ortakların paylarını, yetkilerini ve karar alma süreçlerini kuruluş belgelerine yansıtmak.",
-      },
-      {
-        title: "İlk yıl uyum takvimi",
-        description:
-          "Kuruluştan sonraki ilk yılda doğacak beyan ve raporlama tarihlerini önceden görmek.",
-      },
-      {
-        title: "Yıllık maliyet planı",
-        description:
-          "Kuruluş, yenileme, muhasebe ve vergi hizmetlerinin yıllık maliyetini öngörmek.",
-      },
+      { title: "Ülke ve şirket türü", description: "ABD ve Birleşik Krallık seçeneklerini iş modelinize göre karşılaştırın." },
+      { title: "Ortaklık yapısı", description: "Payları, yetkileri ve karar süreçlerini belgelere yansıtın." },
+      { title: "İlk yıl takvimi", description: "Kuruluştan sonraki beyan ve rapor tarihlerini önceden görün." },
+      { title: "Yıllık maliyet planı", description: "Kuruluş, yenileme, muhasebe ve vergi giderlerini öngörün." },
     ],
-    services: [
-      "uluslararasi-is-danismanligi",
-      "amerika-sirket-kurulusu",
-      "ingiltere-sirket-kurulusu",
-      "registered-agent",
-    ],
+    services: ["uluslararasi-is-danismanligi", "amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu", "registered-agent"],
     considerations: [
-      "Yurt dışı şirket yapısı her durumda vergi avantajı sağlamaz. Avantaj ve yükümlülükler kişisel ve ticari duruma göre değerlendirilir.",
-      "Yatırımcıların şirket yapısına ilişkin beklentileri yatırım türüne göre farklılık gösterebilir.",
-      "Kuruluş sonrası yıllık giderler planlamaya baştan dahil edilmelidir.",
+      "Yurt dışı şirket yapısı her durumda vergi avantajı sağlamaz. Avantaj ve yükümlülükler duruma göre değerlendirilir.",
+      "Yatırımcıların yapı beklentileri yatırım türüne göre farklılık gösterebilir.",
+      "Kuruluş sonrası yıllık giderleri planlamaya baştan dahil edin.",
     ],
     faqIds: ["kurulus-hangi-ulke", "abd-eyalet-secimi", "ucretlendirme"],
     seo: {
       title: "Girişimciler ve Yatırımcılar için Yurt Dışı Şirket Kuruluşu",
       description:
-        "Yurt dışında ilk şirketini kuracak girişimciler ve yatırımcılar için ülke, şirket türü, ortaklık yapısı ve ilk yıl uyum planlaması.",
+        "Yurt dışındaki ilk şirketiniz için ülke, şirket türü ve ortaklık yapısını belirleyin, ilk yılın uyum takvimini ve maliyetlerini planlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -319,42 +224,25 @@ const allSectors: Sector[] = [
   {
     slug: "kobiler-ve-kurumsal-isletmeler",
     title: "KOBİ'ler ve Kurumsal İşletmeler",
-    shortTitle: "KOBİ'ler ve Kurumsal İşletmeler",
+    shortTitle: "KOBİ ve Kurumsal",
     icon: "factory",
-    summary:
-      "Yurt dışında iştirak kuran veya mevcut yabancı şirketini yöneten işletmelere düzenli vergi, muhasebe ve uyum desteği veriyoruz.",
+    summary: "Yurt dışı iştirakinizi kurun, mevcut yabancı şirketinizin uyumunu düzenli takip edin.",
     intro: [
-      "Türkiye'de faaliyet gösteren köklü işletmeler yurt dışında iştirak kurarken mevcut yapılarıyla uyumlu bir plana ihtiyaç duyar.",
-      "Yeni şirket kuruluşunu ya da mevcut yabancı şirketinizin düzenli takibini kurumsal süreçlerinize uygun şekilde yürütüyoruz.",
+      "Yurt dışı iştirakinizi mevcut yapınızla uyumlu bir planla kurun.",
+      "Yeni kuruluşu ya da mevcut yabancı şirketinizin takibini kurumsal süreçlerinize göre yönetin.",
     ],
     examples: [
       "KOBİ'ler",
       "Aile şirketleri",
       "Yurt dışında iştirak kuran şirketler",
-      "Mevcut yabancı şirketini yöneten işletmeler",
-      "Düzenli vergi, muhasebe ve uyum desteğine ihtiyaç duyan şirketler",
+      "Yabancı şirketini yöneten işletmeler",
+      "Düzenli uyum desteği arayan şirketler",
     ],
     needs: [
-      {
-        title: "Yurt dışı iştirak kuruluşu",
-        description:
-          "Ana şirketin yapısıyla uyumlu bir ABD veya İngiltere şirketi kurmak.",
-      },
-      {
-        title: "Mevcut şirketlerin takibi",
-        description:
-          "Kurulu yabancı şirketlerin muhasebe, vergi ve uyum süreçlerini devralmak.",
-      },
-      {
-        title: "Düzenli yönetim raporları",
-        description:
-          "Yönetim için dönemsel finansal raporlar ve uyum takvimi hazırlamak.",
-      },
-      {
-        title: "Grup içi işlemlerin belgelenmesi",
-        description:
-          "Ana şirket ile iştirak arasındaki hizmet, ürün ve finansman işlemlerini belgeli şekilde kaydetmek.",
-      },
+      { title: "Yurt dışı iştirak", description: "Ana şirketinizle uyumlu bir ABD veya İngiltere şirketi kurun." },
+      { title: "Mevcut şirket takibi", description: "Kurulu şirketinizin muhasebe, vergi ve uyum süreçlerini devredin." },
+      { title: "Yönetim raporları", description: "Dönemsel finansal raporları ve uyum takvimini düzenli alın." },
+      { title: "Grup içi işlemler", description: "Ana şirket ve iştirak arasındaki işlemleri belgeleyin." },
     ],
     services: [
       "amerika-sirket-kurulusu",
@@ -364,24 +252,22 @@ const allSectors: Sector[] = [
       "registered-agent",
     ],
     considerations: [
-      "Türkiye'deki ana şirket ile yurt dışı iştirak arasındaki işlemler iki ülkenin mevzuatı açısından ayrı ayrı değerlendirilir.",
-      "Mevcut bir şirketin takibi devralınırken geçmiş dönem beyanları ve kayıtlar ilk aşamada gözden geçirilir.",
-      "Yurt dışı iştirak kararlarında Türkiye'deki mali müşavirinizle koordinasyon önemlidir.",
+      "Ana şirket ile iştirak arasındaki işlemler iki ülkenin mevzuatı açısından ayrı ayrı değerlendirilir.",
+      "Mevcut bir şirketin takibi devralınırken geçmiş dönem beyanları ilk aşamada gözden geçirilir.",
+      "Yurt dışı iştirak kararlarında Türkiye'deki mali müşavirinizle koordinasyon kurun.",
     ],
     faqIds: ["grup-ici-islemler", "mevcut-sirket-devralma", "muhasebe-kapsam"],
     seo: {
       title: "KOBİ'ler ve Kurumsal İşletmeler için Yurt Dışı İştirak ve Uyum",
       description:
-        "Yurt dışında iştirak kuran ve mevcut yabancı şirketini yöneten KOBİ'ler ile kurumsal işletmeler için vergi, muhasebe ve uyum desteği.",
+        "Yurt dışı iştirakinizi kurun, mevcut yabancı şirketinizin vergi, muhasebe ve uyum süreçlerini kurumsal düzende takip edin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
   },
 ];
 
-export const sectors: Sector[] = allSectors.filter(
-  (sector) => sector.status === "published",
-);
+export const sectors: Sector[] = allSectors.filter((sector) => sector.status === "published");
 
 export function getSector(slug: SectorSlug): Sector {
   const sector = sectors.find((entry) => entry.slug === slug);

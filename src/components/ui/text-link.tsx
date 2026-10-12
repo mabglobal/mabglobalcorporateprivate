@@ -19,7 +19,7 @@ export function TextLink({
     <Link
       href={href}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-2 text-label font-medium underline-offset-4 hover:underline",
+        "group inline-flex min-h-11 items-center gap-2 whitespace-nowrap text-label font-medium underline-offset-4 hover:underline",
         tone === "light" ? "text-navy" : "text-white",
         className,
       )}
@@ -28,7 +28,10 @@ export function TextLink({
       <ArrowRight
         aria-hidden="true"
         strokeWidth={1.8}
-        className="size-4 text-accent-strong transition-transform duration-200 group-hover:translate-x-0.5"
+        className={cn(
+          "size-4 transition-transform duration-200 group-hover:translate-x-0.5",
+          tone === "light" ? "text-accent-strong" : "text-white",
+        )}
       />
     </Link>
   );

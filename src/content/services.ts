@@ -3,6 +3,7 @@ import type { Service, ServiceSlug } from "@/types/content";
 /**
  * Service registry. Scope items are limited to services listed on the
  * business's existing websites (see docs/content-verification.md).
+ * Copy style: short sentences, imperative "siz" forms, no "-yor" tense.
  */
 const allServices: Service[] = [
   {
@@ -11,133 +12,56 @@ const allServices: Service[] = [
     shortTitle: "Amerika'da Şirket Kuruluşu",
     icon: "building",
     jurisdiction: "us",
-    summary:
-      "LLC ve corporation kuruluşunu eyalet seçiminden EIN başvurusuna kadar planlı bir süreçle yönetiyoruz.",
+    summary: "LLC veya corporation kurun, EIN ve registered agent adımlarını tek planda tamamlayın.",
     definition:
-      "Amerika'da şirket kuruluşu, seçilen eyalette bir LLC veya corporation kaydının yapılmasını ve şirketin faaliyete hazır hale getirilmesi için gereken resmi adımları kapsar.",
+      "Amerika'da şirket kuruluşu, seçilen eyalette LLC veya corporation kaydını ve şirketin faaliyete hazırlanmasını kapsar.",
     intro: [
-      "Amerika Birleşik Devletleri'nde şirketler eyalet düzeyinde kurulur. Şirket türü, kuruluş eyaleti ve sonrasında doğacak vergi yükümlülükleri iş modelinize göre birlikte değerlendirilmelidir.",
-      "Kuruluş belgelerinin hazırlanmasını, eyalet başvurusunu, registered agent atamasını ve EIN sürecini tek bir plan içinde takip ediyoruz. Türkiye'den yönetilen şirketler için tüm süreci Türkçe iletişimle yürütüyoruz.",
+      "Şirketinizi doğru eyalette ve doğru türde kurun. Kuruluş, registered agent ve EIN adımlarını tek planda tamamlayın.",
+      "Tüm süreci Türkçe iletişimle, Türkiye'den yönetin.",
     ],
     audience: [
-      {
-        title: "E-ticaret satıcıları",
-        description:
-          "Amazon, Shopify, Etsy ve benzeri platformlarda ABD pazarına satış yapan işletmeler.",
-      },
-      {
-        title: "Serbest çalışanlar ve ajanslar",
-        description:
-          "ABD'deki müşterilere hizmet veren yazılım, tasarım ve danışmanlık profesyonelleri.",
-      },
-      {
-        title: "Teknoloji girişimleri",
-        description:
-          "ABD pazarını hedefleyen SaaS, yazılım ve mobil uygulama şirketleri.",
-      },
-      {
-        title: "Mevcut işletmeler",
-        description:
-          "Türkiye'deki faaliyetine ek olarak ABD'de yeni bir şirket yapısı kurmak isteyen firmalar.",
-      },
+      { title: "E-ticaret satıcıları", description: "Amazon, Shopify veya Etsy üzerinden ABD'ye satış yapan işletmeler." },
+      { title: "Serbest çalışanlar", description: "ABD'deki müşterilere hizmet veren profesyoneller." },
+      { title: "Teknoloji girişimleri", description: "ABD pazarını hedefleyen SaaS ve yazılım şirketleri." },
+      { title: "Mevcut işletmeler", description: "ABD'de yeni bir şirket yapısı kurmak isteyen firmalar." },
     ],
     scope: [
-      {
-        title: "Şirket türü ve eyalet değerlendirmesi",
-        description:
-          "LLC ve corporation seçeneklerini faaliyet planınız ve ortaklık yapınız üzerinden birlikte değerlendiriyoruz.",
-      },
-      {
-        title: "Kuruluş belgeleri ve eyalet başvurusu",
-        description:
-          "Articles of Organization veya Articles of Incorporation başvurusunu seçilen eyaletin kurallarına göre hazırlıyoruz.",
-      },
-      {
-        title: "Registered agent ataması",
-        description:
-          "Eyalet kaydı için gereken registered agent hizmetini MAB Registered Agent Inc. üzerinden sağlıyoruz.",
-      },
-      {
-        title: "EIN başvurusu",
-        description:
-          "Şirketinizin IRS nezdinde kullanacağı işveren kimlik numarası (EIN) başvurusunu takip ediyoruz.",
-      },
-      {
-        title: "ITIN başvuru desteği",
-        description:
-          "Gerekli durumlarda bireysel vergi kimlik numarası (ITIN) başvuru sürecinde destek veriyoruz.",
-      },
-      {
-        title: "Kuruluş sonrası adres ve uyum planı",
-        description:
-          "Şirket adresi, yıllık rapor ve vergi beyanı adımlarını kuruluşla bağlantılı olarak planlıyoruz.",
-      },
-      {
-        title: "Banka hesabı başvuru hazırlığı",
-        description:
-          "Banka ve finansal hizmet sağlayıcılarına yapılacak başvurular için belge hazırlığında yol gösteriyoruz.",
-      },
+      { title: "Şirket türü ve eyalet", description: "LLC ve corporation seçeneklerini iş modelinize göre karşılaştırın." },
+      { title: "Kuruluş belgeleri", description: "Articles of Organization veya Incorporation başvurunuzu eksiksiz hazırlatın." },
+      { title: "Registered agent", description: "Registered agent hizmetini MAB Registered Agent Inc. üzerinden alın." },
+      { title: "EIN başvurusu", description: "Şirketinizin IRS işveren kimlik numarasını alın." },
+      { title: "ITIN desteği", description: "Gerekli durumlarda bireysel vergi kimlik numarası başvurusu yapın." },
+      { title: "Adres ve uyum planı", description: "Şirket adresi, yıllık rapor ve beyan takvimini baştan planlayın." },
+      { title: "Banka başvuru hazırlığı", description: "Banka ve ödeme kuruluşu başvuruları için belgelerinizi hazırlayın." },
     ],
     process: [
-      {
-        title: "Ön değerlendirme",
-        description:
-          "İş modelinizi, ortaklık yapınızı ve hedef pazarınızı dinliyoruz.",
-      },
-      {
-        title: "Yapı ve eyalet seçimi",
-        description:
-          "Şirket türünü ve kuruluş eyaletini gerekçeleriyle birlikte netleştiriyoruz.",
-      },
-      {
-        title: "Belge hazırlığı ve başvuru",
-        description:
-          "Kuruluş belgelerini hazırlıyor, eyalet başvurusunu yapıyor ve registered agent atamasını tamamlıyoruz.",
-      },
-      {
-        title: "EIN ve kuruluş sonrası adımlar",
-        description:
-          "EIN başvurusunu takip ediyor, vergi ve yıllık uyum takvimini sizinle paylaşıyoruz.",
-      },
+      { title: "Ön görüşme", description: "İş modelinizi, ortaklık yapınızı ve hedef pazarınızı paylaşın." },
+      { title: "Yapı ve eyalet", description: "Şirket türünü ve kuruluş eyaletini gerekçeleriyle belirleyin." },
+      { title: "Başvuru", description: "Kuruluş belgelerini ve eyalet başvurusunu tamamlayın." },
+      { title: "EIN ve takvim", description: "EIN numaranızı alın, yıllık uyum takviminizi oluşturun." },
     ],
     documents: [
-      "Şirket ortaklarının geçerli pasaport bilgileri",
+      "Ortakların geçerli pasaport bilgileri",
       "Ortakların iletişim ve adres bilgileri",
       "Planlanan şirket adı ve alternatifleri",
       "Faaliyet alanına ilişkin kısa açıklama",
-      "Ortaklık payları ve yönetim yapısına ilişkin bilgiler",
+      "Ortaklık payları ve yönetim yapısı",
     ],
     considerations: [
-      "Başvuru ücretleri, yıllık rapor yükümlülükleri ve işlem süreleri eyaletten eyalete farklılık gösterir.",
-      "Kuruluş eyaleti dışındaki bir eyalette fiilen faaliyet gösteren şirketlerin o eyalette de kayıt yaptırması gerekebilir.",
-      "Yabancı ortaklı tek üyeli LLC'ler için IRS'e yönelik yıllık bilgi beyanı yükümlülükleri doğabilir. Bu yükümlülükleri kuruluş aşamasında planlamak önemlidir.",
-      "Türkiye'deki vergi durumunuz kendi başına bir değerlendirme gerektirir. Kuruluş planınızı Türkiye'deki mali müşavirinizle de paylaşmanızı öneririz.",
-      "Banka hesabı onayları ve resmi kurumların işlem süreleri ilgili kurumların değerlendirmesine bağlıdır. Bu nedenle kesin süre ve sonuç taahhüdü vermiyoruz.",
+      "Başvuru ücretleri, yıllık raporlar ve işlem süreleri eyalete göre değişir.",
+      "Başka bir eyalette fiilen faaliyet gösteren şirketler o eyalette de kayıt gerektirebilir.",
+      "Yabancı ortaklı tek üyeli LLC'ler IRS'e yıllık bilgi beyanı vermekle yükümlü olabilir.",
+      "Türkiye'deki vergi durumunuzu mali müşavirinizle değerlendirin.",
+      "Banka onayları ve resmi işlem süreleri ilgili kurumların kararına bağlıdır.",
     ],
-    relatedServices: [
-      "registered-agent",
-      "vergi-danismanligi",
-      "muhasebe-hizmetleri",
-      "is-adresi-ve-sirket-operasyonlari",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "serbest-calisanlar",
-      "teknoloji-sirketleri",
-      "girisimciler-ve-yatirimcilar",
-    ],
-    faqIds: [
-      "abd-kurulus-icin-seyahat",
-      "abd-eyalet-secimi",
-      "abd-ein-nedir",
-      "abd-banka-hesabi",
-      "kurulus-suresi",
-    ],
+    relatedServices: ["registered-agent", "vergi-danismanligi", "muhasebe-hizmetleri", "is-adresi-ve-sirket-operasyonlari"],
+    relatedSectors: ["e-ticaret", "serbest-calisanlar", "teknoloji-sirketleri", "girisimciler-ve-yatirimcilar"],
+    faqIds: ["abd-kurulus-icin-seyahat", "abd-eyalet-secimi", "abd-ein-nedir", "abd-banka-hesabi", "kurulus-suresi"],
     featured: true,
     seo: {
       title: "Amerika'da Şirket Kuruluşu, LLC ve Corporation",
       description:
-        "Amerika'da LLC veya corporation kuruluşunu eyalet seçimi, registered agent, EIN ve kuruluş sonrası uyum adımlarıyla birlikte planlıyoruz.",
+        "Amerika'da LLC veya corporation kurun. Eyalet seçimi, registered agent, EIN ve kuruluş sonrası uyum adımlarını tek planda tamamlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -148,127 +72,55 @@ const allServices: Service[] = [
     shortTitle: "İngiltere'de Şirket Kuruluşu",
     icon: "landmark",
     jurisdiction: "uk",
-    summary:
-      "Companies House kaydı, registered office adresi ve HMRC adımlarıyla İngiltere'de limited şirket kuruluşunu planlıyoruz.",
+    summary: "Limited şirketinizi Companies House'a kaydedin, vergi ve raporlama adımlarını planlayın.",
     definition:
-      "İngiltere'de şirket kuruluşu, bir private limited company'nin Companies House'a kaydedilmesini ve şirketin vergi ile raporlama yükümlülüklerine hazırlanmasını kapsar.",
+      "İngiltere'de şirket kuruluşu, bir private limited company'nin Companies House'a kaydını ve vergi ile raporlama yükümlülüklerine hazırlanmasını kapsar.",
     intro: [
-      "Birleşik Krallık'ta şirketler Companies House'a kaydedilir. Kuruluş aşamasında şirket adı, direktörler, hissedarlar, önemli kontrol sahibi kişiler (PSC) ve registered office adresi belirlenir.",
-      "Kuruluş başvurusunu, kimlik doğrulama adımlarını ve kuruluş sonrası Corporation Tax kaydını tek bir süreç olarak planlıyoruz. Birleşik Krallık ve Avrupa pazarına açılan işletmelere Türkçe destek veriyoruz.",
+      "Limited şirketinizi Companies House'a kaydedin. Direktör, hissedar, PSC ve registered office bilgilerini eksiksiz hazırlayın.",
+      "Kimlik doğrulama ve Corporation Tax kaydını kuruluşla birlikte planlayın.",
     ],
     audience: [
-      {
-        title: "Avrupa pazarına açılan markalar",
-        description:
-          "Birleşik Krallık ve Avrupa'daki müşterilere satış yapmayı planlayan e-ticaret işletmeleri.",
-      },
-      {
-        title: "Hizmet ihracatı yapan profesyoneller",
-        description:
-          "Birleşik Krallık'taki müşterilerle sözleşmeli çalışan danışmanlar ve ajanslar.",
-      },
-      {
-        title: "Teknoloji şirketleri",
-        description:
-          "Birleşik Krallık'ta yerel bir şirket yapısıyla faaliyet göstermek isteyen yazılım işletmeleri.",
-      },
-      {
-        title: "İhracatçılar",
-        description:
-          "Birleşik Krallık'taki alıcılarla yerel bir şirket üzerinden çalışmak isteyen üreticiler.",
-      },
+      { title: "Avrupa'ya açılan markalar", description: "Birleşik Krallık ve Avrupa'ya satış yapmayı planlayan işletmeler." },
+      { title: "Hizmet ihracatçıları", description: "Birleşik Krallık'taki müşterilerle çalışan danışmanlar ve ajanslar." },
+      { title: "Teknoloji şirketleri", description: "Birleşik Krallık'ta yerel şirketle faaliyet göstermek isteyen firmalar." },
+      { title: "İhracatçılar", description: "Birleşik Krallık'taki alıcılarla yerel şirket üzerinden çalışan üreticiler." },
     ],
     scope: [
-      {
-        title: "Şirket türü ve isim kontrolü",
-        description:
-          "Şirket türünü belirliyor, şirket adının uygunluğunu Companies House kayıtları üzerinden kontrol ediyoruz.",
-      },
-      {
-        title: "Direktör, hissedar ve PSC bilgileri",
-        description:
-          "Yönetim ve ortaklık yapısını, önemli kontrol sahibi kişiler dahil olmak üzere başvuruya hazırlıyoruz.",
-      },
-      {
-        title: "Registered office adresi",
-        description:
-          "Şirketin resmi yazışmaları için gereken adres şartlarını ve uygun adres seçeneklerini planlıyoruz.",
-      },
-      {
-        title: "Kimlik doğrulama adımları",
-        description:
-          "Direktörlerin ve PSC'lerin Companies House kimlik doğrulamasını tamamlamasına yardımcı oluyoruz.",
-      },
-      {
-        title: "Companies House başvurusu",
-        description:
-          "Kuruluş belgelerini hazırlıyor ve başvurunun sonuçlanmasını takip ediyoruz.",
-      },
-      {
-        title: "Kuruluş sonrası vergi ve muhasebe",
-        description:
-          "Corporation Tax kaydı, yıllık hesaplar ve İngiltere vergi beyanı süreçlerini planlıyoruz.",
-      },
+      { title: "Şirket türü ve isim", description: "Şirket türünü seçin, şirket adının uygunluğunu kontrol edin." },
+      { title: "Direktör ve PSC bilgileri", description: "Yönetim ve ortaklık yapısını başvuruya hazırlayın." },
+      { title: "Registered office", description: "Resmi yazışmalar için gereken adres şartlarını planlayın." },
+      { title: "Kimlik doğrulama", description: "Direktör ve PSC kimlik doğrulamasını zamanında tamamlayın." },
+      { title: "Companies House başvurusu", description: "Kuruluş belgelerini hazırlatın, başvuruyu takip edin." },
+      { title: "Vergi ve muhasebe", description: "Corporation Tax kaydını, yıllık hesapları ve beyanları planlayın." },
     ],
     process: [
-      {
-        title: "Ön değerlendirme",
-        description:
-          "Hedef pazarınızı, ortaklık yapınızı ve faaliyet planınızı dinliyoruz.",
-      },
-      {
-        title: "Şirket bilgilerinin netleştirilmesi",
-        description:
-          "Şirket adını, direktörleri, hissedarları, PSC bilgilerini ve faaliyet kodunu belirliyoruz.",
-      },
-      {
-        title: "Kimlik doğrulama ve başvuru",
-        description:
-          "Kimlik doğrulama adımlarını planlıyor ve Companies House başvurusunu yapıyoruz.",
-      },
-      {
-        title: "Kuruluş sonrası kayıtlar",
-        description:
-          "Corporation Tax kaydını ve yıllık raporlama takvimini sizinle birlikte oluşturuyoruz.",
-      },
+      { title: "Ön görüşme", description: "Hedef pazarınızı ve ortaklık yapınızı paylaşın." },
+      { title: "Şirket bilgileri", description: "Şirket adını, direktörleri, PSC'leri ve faaliyet kodunu belirleyin." },
+      { title: "Doğrulama ve başvuru", description: "Kimlik doğrulamayı tamamlayın, Companies House başvurusunu yapın." },
+      { title: "Kuruluş sonrası", description: "Corporation Tax kaydını ve raporlama takvimini oluşturun." },
     ],
     documents: [
-      "Direktörlerin ve hissedarların geçerli pasaport bilgileri",
-      "Direktörlerin ve hissedarların adres bilgileri",
+      "Direktör ve hissedarların pasaport bilgileri",
+      "Direktör ve hissedarların adres bilgileri",
       "Planlanan şirket adı ve alternatifleri",
       "Faaliyet alanına ilişkin kısa açıklama",
-      "Pay dağılımı ve önemli kontrol sahibi kişilere ilişkin bilgiler",
+      "Pay dağılımı ve PSC bilgileri",
     ],
     considerations: [
-      "Registered office adresi, şirketin kayıtlı olduğu Birleşik Krallık ülkesinde bulunan fiziki bir adres olmalıdır. Posta kutusu hizmetleri bu amaçla kullanılamaz.",
-      "Companies House'a bir kayıtlı e-posta adresi bildirilmesi gerekir. Bu adres kamuya açık kayıtta yayımlanmaz.",
-      "18 Kasım 2025 itibarıyla direktörler ve PSC'ler için Companies House kimlik doğrulaması yasal bir zorunluluktur.",
-      "Şirketler her 12 ayda en az bir kez confirmation statement verir, yıllık hesaplarını hazırlar ve Corporation Tax yükümlülüklerini yerine getirir.",
-      "KDV (VAT) kaydı ciro eşiğine ve faaliyet yapısına bağlıdır ve işletmenin durumuna göre değerlendirilir.",
+      "Registered office, şirketin kayıtlı olduğu ülkede fiziki bir adres olmalıdır. Posta kutusu kullanılamaz.",
+      "Companies House'a kayıtlı bir e-posta adresi bildirilir. Bu adres kamuya açık kayıtta yayımlanmaz.",
+      "18 Kasım 2025 itibarıyla direktör ve PSC kimlik doğrulaması yasal zorunluluktur.",
+      "Şirketler her 12 ayda en az bir kez confirmation statement verir.",
+      "KDV kaydı ciro eşiğine ve faaliyet yapısına bağlıdır.",
     ],
-    relatedServices: [
-      "vergi-danismanligi",
-      "muhasebe-hizmetleri",
-      "uluslararasi-is-danismanligi",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "ihracat-ve-lojistik",
-      "teknoloji-sirketleri",
-      "kobiler-ve-kurumsal-isletmeler",
-    ],
-    faqIds: [
-      "uk-registered-office",
-      "uk-kimlik-dogrulama",
-      "uk-yillik-yukumlulukler",
-      "kurulus-hangi-ulke",
-      "kurulus-suresi",
-    ],
+    relatedServices: ["vergi-danismanligi", "muhasebe-hizmetleri", "uluslararasi-is-danismanligi"],
+    relatedSectors: ["e-ticaret", "ihracat-ve-lojistik", "teknoloji-sirketleri", "kobiler-ve-kurumsal-isletmeler"],
+    faqIds: ["uk-registered-office", "uk-kimlik-dogrulama", "uk-yillik-yukumlulukler", "kurulus-hangi-ulke", "kurulus-suresi"],
     featured: true,
     seo: {
       title: "İngiltere'de Şirket Kuruluşu, Limited Şirket",
       description:
-        "İngiltere'de limited şirket kuruluşunu Companies House kaydı, kimlik doğrulama, registered office ve Corporation Tax adımlarıyla planlıyoruz.",
+        "İngiltere'de limited şirket kurun. Companies House kaydı, kimlik doğrulama, registered office ve Corporation Tax adımlarını planlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -279,117 +131,47 @@ const allServices: Service[] = [
     shortTitle: "Vergi Danışmanlığı",
     icon: "receipt",
     jurisdiction: "us-uk",
-    summary:
-      "Amerika ve İngiltere'deki şirketlerinizin vergi beyanlarını ve yıllık yükümlülüklerini takvimli olarak yönetiyoruz.",
+    summary: "ABD ve İngiltere şirketlerinizin vergi beyanlarını zamanında ve doğru tamamlayın.",
     definition:
-      "Vergi danışmanlığı hizmetimiz, Amerika ve İngiltere'de kurulu şirketlerin federal, eyalet ve ülke düzeyindeki vergi beyanlarının hazırlanmasını ve yükümlülüklerin takibini kapsar.",
+      "Vergi danışmanlığı, Amerika ve İngiltere'deki şirketlerin federal, eyalet ve ülke düzeyindeki beyanlarının hazırlanmasını ve takibini kapsar.",
     intro: [
-      "Şirket kuruluşu sürecin başlangıcıdır. Asıl sorumluluklar şirket faaliyete geçtikten sonra başlar.",
-      "Amerika'da federal ve eyalet düzeyindeki yükümlülükleri, İngiltere'de Corporation Tax ve yıllık raporlama adımlarını takip ediyoruz. Beyan dönemlerini önceden planlayarak gecikme riskini azaltmayı hedefliyoruz.",
+      "Şirket kuruluşu ilk adımdır. Asıl sorumluluklar şirket faaliyete geçtikten sonra başlar.",
+      "Federal, eyalet ve Corporation Tax yükümlülüklerinizi tek takvimde toplayın, beyanlarınızı son güne bırakmayın.",
     ],
     audience: [
-      {
-        title: "Türkiye'den yönetilen ABD şirketleri",
-        description:
-          "Türkiye'de yaşayan ve ABD'de LLC veya corporation sahibi olan girişimciler.",
-      },
-      {
-        title: "Pazaryeri satıcıları",
-        description:
-          "Birden fazla eyalete satış yapan ve sales tax yükümlülüklerini takip etmesi gereken işletmeler.",
-      },
-      {
-        title: "İngiltere'deki limited şirketler",
-        description:
-          "Corporation Tax ve Company Tax Return süreçlerini düzenli yönetmek isteyen şirketler.",
-      },
-      {
-        title: "Büyüyen işletmeler",
-        description:
-          "Gelir kanalları çeşitlenen ve vergi takvimini kurumsal bir düzene oturtmak isteyen firmalar.",
-      },
+      { title: "Türkiye'den yönetilen şirketler", description: "Türkiye'de yaşayan ABD şirketi sahipleri." },
+      { title: "Pazaryeri satıcıları", description: "Birden fazla eyalete satış yapan işletmeler." },
+      { title: "İngiltere'deki şirketler", description: "Corporation Tax süreçlerini düzenli yönetmek isteyenler." },
+      { title: "Büyüyen işletmeler", description: "Vergi takvimini kurumsal düzene oturtmak isteyen firmalar." },
     ],
     scope: [
-      {
-        title: "ABD şirket vergi beyanları",
-        description:
-          "Şirket yapınıza uygun federal vergi beyanlarının (tax return) hazırlanmasını ve sunulmasını takip ediyoruz.",
-      },
-      {
-        title: "Yabancı ortaklı LLC bilgi beyanları",
-        description:
-          "Yabancı ortaklı tek üyeli LLC'ler için Form 5472 ve pro forma Form 1120 yükümlülüklerini planlıyoruz.",
-      },
-      {
-        title: "Eyalet düzeyindeki yükümlülükler",
-        description:
-          "Faaliyet gösterdiğiniz eyaletlere göre sales tax ve benzeri yükümlülükleri değerlendiriyoruz.",
-      },
-      {
-        title: "İngiltere vergi beyanları",
-        description:
-          "Corporation Tax ve Company Tax Return süreçlerini muhasebe kayıtlarıyla uyumlu şekilde yönetiyoruz.",
-      },
-      {
-        title: "Vergi takvimi ve önleyici takip",
-        description:
-          "Beyan ve ödeme tarihlerini önceden bildiriyor, gerekli belgeleri zamanında talep ediyoruz.",
-      },
-      {
-        title: "Vergi planlaması görüşmeleri",
-        description:
-          "Giderlerin doğru sınıflandırılması ve yürürlükteki mevzuat çerçevesinde vergi planlaması konularında görüşme yapıyoruz.",
-      },
+      { title: "ABD vergi beyanları", description: "Şirket yapınıza uygun federal beyanları hazırlatın ve sunun." },
+      { title: "Form 5472 ve 1120", description: "Yabancı ortaklı LLC bilgi beyanlarını zamanında verin." },
+      { title: "Eyalet yükümlülükleri", description: "Satış yaptığınız eyaletlerdeki sales tax ihtiyacını değerlendirin." },
+      { title: "İngiltere beyanları", description: "Corporation Tax ve Company Tax Return süreçlerini yönetin." },
+      { title: "Vergi takvimi", description: "Beyan ve ödeme tarihlerini önceden öğrenin." },
+      { title: "Vergi planlaması", description: "Giderlerinizi mevzuata uygun sınıflandırın." },
     ],
     process: [
-      {
-        title: "Mevcut durumun incelenmesi",
-        description:
-          "Şirket türünüzü, ortaklık yapınızı ve geçmiş dönem beyanlarınızı gözden geçiriyoruz.",
-      },
-      {
-        title: "Yükümlülük takvimi",
-        description:
-          "Federal, eyalet ve ülke düzeyindeki beyan tarihlerini tek bir takvimde topluyoruz.",
-      },
-      {
-        title: "Belge toplama ve hazırlık",
-        description:
-          "Beyana esas belgeleri talep ediyor ve muhasebe kayıtlarıyla karşılaştırıyoruz.",
-      },
-      {
-        title: "Beyan ve takip",
-        description:
-          "Beyanları hazırlıyor, sunuyor ve sonraki dönemin takvimini güncelliyoruz.",
-      },
+      { title: "Mevcut durum", description: "Şirket türünüzü ve geçmiş beyanlarınızı paylaşın." },
+      { title: "Yükümlülük takvimi", description: "Tüm beyan tarihlerini tek takvimde toplayın." },
+      { title: "Belge hazırlığı", description: "Beyana esas belgeleri muhasebe kayıtlarıyla eşleştirin." },
+      { title: "Beyan ve takip", description: "Beyanları sunun, sonraki dönemin takvimini güncelleyin." },
     ],
     considerations: [
-      "Vergi yükümlülükleri şirket türüne, ortakların vergi mukimliğine ve faaliyetin nerede yürütüldüğüne göre değişir.",
-      "Türkiye'de yaşayan şirket sahiplerinin Türkiye'deki vergi yükümlülükleri kendi başına bir değerlendirme gerektirir.",
-      "Vergi tasarrufu taahhüdü vermiyoruz. Danışmanlığımız yürürlükteki mevzuat çerçevesinde doğru beyan ve zamanında uyum üzerine kuruludur.",
-      "Beyan süreleri ve cezai yaptırımlar ilgili vergi idaresinin kurallarına tabidir. Belgelerin zamanında paylaşılması süreci doğrudan etkiler.",
+      "Vergi yükümlülükleri şirket türüne, ortakların mukimliğine ve faaliyet yerine göre değişir.",
+      "Türkiye'deki vergi yükümlülükleriniz kendi başına değerlendirme gerektirir.",
+      "Vergi tasarrufu taahhüdü verilmez. Danışmanlık doğru beyan ve zamanında uyum üzerine kuruludur.",
+      "Beyan süreleri ve cezalar ilgili vergi idaresinin kurallarına tabidir.",
     ],
-    relatedServices: [
-      "muhasebe-hizmetleri",
-      "amerika-sirket-kurulusu",
-      "ingiltere-sirket-kurulusu",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "serbest-calisanlar",
-      "kobiler-ve-kurumsal-isletmeler",
-    ],
-    faqIds: [
-      "vergi-turkiye-abd",
-      "form-5472",
-      "vergi-beyan-donemi",
-      "uluslararasi-gelir",
-    ],
+    relatedServices: ["muhasebe-hizmetleri", "amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu"],
+    relatedSectors: ["e-ticaret", "serbest-calisanlar", "kobiler-ve-kurumsal-isletmeler"],
+    faqIds: ["vergi-turkiye-abd", "form-5472", "vergi-beyan-donemi", "uluslararasi-gelir"],
     featured: true,
     seo: {
       title: "Vergi Danışmanlığı, ABD ve İngiltere Şirketleri",
       description:
-        "ABD ve İngiltere'deki şirketleriniz için federal ve eyalet vergi beyanlarını, Form 5472 yükümlülüklerini ve Corporation Tax süreçlerini takip ediyoruz.",
+        "ABD ve İngiltere şirketlerinizin federal ve eyalet beyanlarını, Form 5472 yükümlülüklerini ve Corporation Tax süreçlerini zamanında tamamlayın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -400,112 +182,47 @@ const allServices: Service[] = [
     shortTitle: "Muhasebe Hizmetleri",
     icon: "calculator",
     jurisdiction: "us-uk",
-    summary:
-      "ABD ve İngiltere şirketleriniz için düzenli kayıt, mutabakat ve raporlama süreçlerini yürütüyoruz.",
+    summary: "Kayıt, mutabakat ve raporlama süreçlerinizi ABD ve İngiltere şirketleriniz için düzenleyin.",
     definition:
-      "Muhasebe hizmetlerimiz, Amerika ve İngiltere'de kurulu şirketlerin gelir ve gider kayıtlarının tutulmasını, banka mutabakatlarını ve dönemsel finansal raporların hazırlanmasını kapsar.",
+      "Muhasebe hizmetleri, Amerika ve İngiltere'deki şirketlerin gelir ve gider kayıtlarını, banka mutabakatlarını ve dönemsel raporlarını kapsar.",
     intro: [
-      "Düzenli muhasebe kayıtları doğru vergi beyanının temelidir. Pazaryeri ödemeleri, banka hareketleri ve giderler dönem içinde işlendiğinde yıl sonu süreçleri daha öngörülebilir hale gelir.",
-      "ABD ve İngiltere muhasebesini şirketinizin işlem hacmine ve gelir kanallarına göre yapılandırıyoruz.",
+      "Düzenli kayıtlar doğru beyanın temelidir. Pazaryeri ödemelerini, banka hareketlerini ve giderleri dönem içinde işleyin.",
+      "Muhasebe düzeninizi işlem hacminize ve gelir kanallarınıza göre kurun.",
     ],
     audience: [
-      {
-        title: "Pazaryeri satıcıları",
-        description:
-          "Amazon ve diğer pazaryerlerinden gelen ödemeleri düzenli kaydetmesi gereken işletmeler.",
-      },
-      {
-        title: "Abonelik tabanlı şirketler",
-        description:
-          "Tekrarlayan gelirlerini ve ödeme sağlayıcı hareketlerini takip eden teknoloji şirketleri.",
-      },
-      {
-        title: "Hizmet şirketleri",
-        description:
-          "Uluslararası müşterilere faturalama yapan danışmanlık ve yazılım şirketleri.",
-      },
-      {
-        title: "Yurt dışı iştirakler",
-        description:
-          "Türkiye'deki ana şirkete dönemsel rapor sunması gereken ABD veya İngiltere şirketleri.",
-      },
+      { title: "Pazaryeri satıcıları", description: "Amazon ve diğer pazaryeri ödemelerini kaydeden işletmeler." },
+      { title: "Abonelik şirketleri", description: "Tekrarlayan gelirleri takip eden teknoloji şirketleri." },
+      { title: "Hizmet şirketleri", description: "Uluslararası müşterilere fatura kesen firmalar." },
+      { title: "Yurt dışı iştirakler", description: "Ana şirkete dönemsel rapor sunan şirketler." },
     ],
     scope: [
-      {
-        title: "Gelir ve gider kayıtları",
-        description:
-          "Şirketinizin tüm gelir ve gider hareketlerini dönemsel olarak kayıt altına alıyoruz.",
-      },
-      {
-        title: "Banka ve ödeme platformu mutabakatları",
-        description:
-          "Banka hesapları, ödeme platformları ve pazaryeri ödemelerini kayıtlarla eşleştiriyoruz.",
-      },
-      {
-        title: "Dönemsel finansal raporlar",
-        description:
-          "Gelir tablosu ve bilanço gibi raporları belirlenen dönemlerde paylaşıyoruz.",
-      },
-      {
-        title: "Gider sınıflandırması",
-        description:
-          "Şirket giderlerinin doğru kategorilerde kaydedilmesi için bir belge düzeni oluşturuyoruz.",
-      },
-      {
-        title: "Yıl sonu hazırlığı",
-        description:
-          "Vergi beyanına esas olacak kayıtları yıl sonundan önce gözden geçiriyoruz.",
-      },
-      {
-        title: "İngiltere yıllık hesapları",
-        description:
-          "Companies House ve HMRC'ye sunulacak yıllık hesapların hazırlık sürecini yönetiyoruz.",
-      },
+      { title: "Gelir ve gider kayıtları", description: "Tüm hareketleri dönemsel olarak kayıt altına alın." },
+      { title: "Mutabakatlar", description: "Banka, ödeme platformu ve pazaryeri hareketlerini eşleştirin." },
+      { title: "Dönemsel raporlar", description: "Gelir tablosu ve bilançoyu belirlenen dönemlerde görün." },
+      { title: "Gider sınıflandırması", description: "Giderlerinizi doğru kategorilerde kaydedin." },
+      { title: "Yıl sonu hazırlığı", description: "Beyana esas kayıtları yıl sonundan önce gözden geçirin." },
+      { title: "İngiltere yıllık hesapları", description: "Companies House ve HMRC için yıllık hesaplarınızı hazırlatın." },
     ],
     process: [
-      {
-        title: "Kapsamın belirlenmesi",
-        description:
-          "İşlem hacminizi, gelir kanallarınızı ve raporlama ihtiyacınızı değerlendiriyoruz.",
-      },
-      {
-        title: "Kayıt düzeninin kurulması",
-        description:
-          "Hesap planını, belge paylaşım yöntemini ve dönem takvimini oluşturuyoruz.",
-      },
-      {
-        title: "Dönemsel kayıt ve mutabakat",
-        description:
-          "Kayıtları işliyor, banka ve platform hareketleriyle eşleştiriyoruz.",
-      },
-      {
-        title: "Raporlama ve yıl sonu",
-        description:
-          "Dönemsel raporları paylaşıyor ve yıl sonu beyan hazırlığını başlatıyoruz.",
-      },
+      { title: "Kapsam", description: "İşlem hacminizi ve raporlama ihtiyacınızı paylaşın." },
+      { title: "Kayıt düzeni", description: "Hesap planını ve belge paylaşım yöntemini belirleyin." },
+      { title: "Kayıt ve mutabakat", description: "Kayıtları dönemsel olarak işleyin ve eşleştirin." },
+      { title: "Raporlama", description: "Raporlarınızı alın, yıl sonu hazırlığını başlatın." },
     ],
     considerations: [
       "Muhasebe kapsamı ve kayıt sıklığı işlem hacmine göre belirlenir.",
       "Belgelerin düzenli paylaşılması kayıtların doğruluğu için belirleyicidir.",
-      "ABD'deki kayıt düzeni ile İngiltere'deki muhasebe kayıt yükümlülükleri farklılık gösterir.",
-      "Pazaryeri satışlarında komisyon, iade ve kargo kalemlerinin ayrıştırılması doğru raporlama için önemlidir.",
+      "ABD ve İngiltere'deki kayıt yükümlülükleri farklılık gösterir.",
+      "Pazaryeri satışlarında komisyon, iade ve kargo kalemleri ayrı kaydedilmelidir.",
     ],
-    relatedServices: [
-      "vergi-danismanligi",
-      "amerika-sirket-kurulusu",
-      "ingiltere-sirket-kurulusu",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "teknoloji-sirketleri",
-      "kobiler-ve-kurumsal-isletmeler",
-    ],
+    relatedServices: ["vergi-danismanligi", "amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu"],
+    relatedSectors: ["e-ticaret", "teknoloji-sirketleri", "kobiler-ve-kurumsal-isletmeler"],
     faqIds: ["muhasebe-kapsam", "on-muhasebe", "muhasebe-belgeler"],
     featured: true,
     seo: {
       title: "Muhasebe Hizmetleri, ABD ve İngiltere Şirketleri",
       description:
-        "ABD ve İngiltere şirketleriniz için gelir ve gider kayıtları, banka mutabakatları, dönemsel raporlar ve yıl sonu hazırlığı sunuyoruz.",
+        "ABD ve İngiltere şirketleriniz için gelir ve gider kayıtlarını, banka mutabakatlarını, dönemsel raporları ve yıl sonu hazırlığını düzenleyin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -516,110 +233,46 @@ const allServices: Service[] = [
     shortTitle: "Registered Agent",
     icon: "shield",
     jurisdiction: "us",
-    summary:
-      "MAB Registered Agent Inc. aracılığıyla 50 eyalet ve Washington D.C. için registered agent hizmeti sunuyoruz.",
+    summary: "50 eyalet ve Washington D.C. için registered agent hizmetini MAB Registered Agent Inc. ile alın.",
     definition:
-      "Registered agent, bir şirket adına resmi yazışmaları ve yasal tebligatları kabul eden ve şirketin kayıtlı olduğu eyalette fiziki adresi bulunan temsilcidir.",
+      "Registered agent, şirket adına resmi yazışmaları ve yasal tebligatları kabul eden, şirketin kayıtlı olduğu eyalette fiziki adresi bulunan temsilcidir.",
     intro: [
-      "Amerika'da LLC, corporation ve diğer şirket türleri, kuruluş başvurusundan önce kayıtlı oldukları eyalette bir registered agent belirlemelidir.",
-      "MAB Global Partners bünyesindeki MAB Registered Agent Inc., 50 eyalet ve Washington D.C. kapsamında tüm şirket türlerine registered agent hizmeti sunar. Şirketiniz adına gelen resmi yazışmaları kabul ediyor ve size iletiyoruz.",
+      "ABD'de LLC, corporation ve diğer şirket türleri, kuruluş başvurusundan önce eyalette bir registered agent belirlemelidir.",
+      "MAB Registered Agent Inc., 50 eyalet ve Washington D.C. kapsamında tüm şirket türlerine hizmet sunar.",
     ],
     audience: [
-      {
-        title: "Yeni kurulan şirketler",
-        description:
-          "Eyalet başvurusu için registered agent belirlemesi gereken LLC ve corporation'lar.",
-      },
-      {
-        title: "ABD dışında yaşayan şirket sahipleri",
-        description:
-          "Kayıtlı oldukları eyalette fiziki adresi bulunmayan girişimciler.",
-      },
-      {
-        title: "Birden fazla eyalette faaliyet gösteren şirketler",
-        description:
-          "Farklı eyaletlerde kayıt yaptıran ve her eyalet için temsilci ihtiyacı olan işletmeler.",
-      },
-      {
-        title: "Temsilcisini değiştirmek isteyen şirketler",
-        description:
-          "Mevcut registered agent hizmetini daha düzenli bir yapıya taşımak isteyen firmalar.",
-      },
+      { title: "Yeni şirketler", description: "Eyalet başvurusu için temsilci belirlemesi gereken şirketler." },
+      { title: "ABD dışındaki sahipler", description: "Eyalette fiziki adresi bulunmayan girişimciler." },
+      { title: "Çok eyaletli şirketler", description: "Farklı eyaletlerde kayıt yaptıran işletmeler." },
+      { title: "Temsilci değiştirenler", description: "Mevcut hizmetini daha düzenli bir yapıya taşımak isteyenler." },
     ],
     scope: [
-      {
-        title: "Yasal tebligatların kabulü",
-        description:
-          "Şirketiniz adına gönderilen yasal belgeleri ve tebligatları kabul ediyoruz.",
-      },
-      {
-        title: "Eyalet yazışmalarının iletilmesi",
-        description:
-          "Eyalet kurumlarından gelen resmi yazışmaları kayıt altına alıyor ve size iletiyoruz.",
-      },
-      {
-        title: "50 eyalet ve Washington D.C.",
-        description:
-          "Şirketiniz hangi eyalette kayıtlı olursa olsun aynı hizmet yapısıyla çalışıyoruz.",
-      },
-      {
-        title: "Tüm şirket türleri",
-        description:
-          "LLC, corporation, partnership ve kâr amacı gütmeyen kuruluşlara hizmet veriyoruz.",
-      },
-      {
-        title: "Yıllık uyum takibi",
-        description:
-          "Yıllık rapor ve uyum tarihlerini takip ederek şirketinizin resmi kayıtlarda iyi durumda kalmasına yardımcı oluyoruz.",
-      },
+      { title: "Yasal tebligatlar", description: "Şirketiniz adına gelen yasal belgeleri güvenle teslim alın." },
+      { title: "Eyalet yazışmaları", description: "Resmi yazışmaları kayıt altında ve zamanında alın." },
+      { title: "50 eyalet ve D.C.", description: "Tüm eyaletlerde aynı hizmet yapısıyla çalışın." },
+      { title: "Tüm şirket türleri", description: "LLC, corporation, partnership ve kâr amacı gütmeyen kuruluşlar." },
+      { title: "Yıllık uyum takibi", description: "Yıllık rapor tarihlerini takip edin, iyi durumda kalın." },
     ],
     process: [
-      {
-        title: "Eyalet ve şirket bilgileri",
-        description:
-          "Şirketinizin kayıtlı olduğu veya kurulacağı eyaleti ve şirket türünü belirliyoruz.",
-      },
-      {
-        title: "Atama",
-        description:
-          "Kuruluş başvurusunda ya da mevcut şirketinizin kayıtlarında registered agent bilgisini tanımlıyoruz.",
-      },
-      {
-        title: "Yazışma yönetimi",
-        description:
-          "Gelen resmi belgeleri kayıt altına alıyor ve size iletiyoruz.",
-      },
+      { title: "Eyalet ve şirket türü", description: "Şirketinizin kayıtlı olduğu eyaleti ve türünü paylaşın." },
+      { title: "Atama", description: "Registered agent bilgisini başvuruya veya kayıtlarınıza ekletin." },
+      { title: "Yazışma yönetimi", description: "Gelen resmi belgeleri düzenli olarak alın." },
     ],
     considerations: [
       "Registered agent, şirketin kayıtlı olduğu eyalette fiziki bir adrese sahip olmalıdır.",
       "Registered agent bilgileri eyalet kayıtlarında kamuya açık olabilir.",
-      "Tebligatların zamanında iletilebilmesi için iletişim bilgilerinizin güncel tutulması gerekir.",
-      "Kuruluş eyaleti dışındaki eyaletlerde kayıt yaptıran şirketler o eyaletlerde de registered agent bulundurmak durumunda kalabilir.",
+      "Tebligatların zamanında ulaşması için iletişim bilgilerinizi güncel tutun.",
+      "Başka eyaletlerde kayıt yaptıran şirketler o eyaletlerde de temsilci bulundurabilir.",
     ],
-    relatedServices: [
-      "amerika-sirket-kurulusu",
-      "is-adresi-ve-sirket-operasyonlari",
-      "vergi-danismanligi",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "girisimciler-ve-yatirimcilar",
-      "kobiler-ve-kurumsal-isletmeler",
-    ],
-    faqIds: [
-      "registered-agent-nedir",
-      "registered-agent-zorunlu",
-      "registered-agent-kapsam",
-    ],
-    externalReference: {
-      label: "MAB Registered Agent Inc. web sitesi",
-      href: "https://www.mabregisteredagent.com",
-    },
+    relatedServices: ["amerika-sirket-kurulusu", "is-adresi-ve-sirket-operasyonlari", "vergi-danismanligi"],
+    relatedSectors: ["e-ticaret", "girisimciler-ve-yatirimcilar", "kobiler-ve-kurumsal-isletmeler"],
+    faqIds: ["registered-agent-nedir", "registered-agent-zorunlu", "registered-agent-kapsam"],
+    externalReference: { label: "MAB Registered Agent Inc. web sitesi", href: "https://www.mabregisteredagent.com" },
     featured: true,
     seo: {
       title: "Registered Agent Hizmetleri, 50 Eyalet ve Washington D.C.",
       description:
-        "MAB Registered Agent Inc. aracılığıyla 50 eyalet ve Washington D.C. kapsamında LLC, corporation ve diğer şirket türleri için registered agent hizmeti.",
+        "MAB Registered Agent Inc. ile 50 eyalet ve Washington D.C. kapsamında LLC, corporation ve diğer şirket türleri için registered agent hizmeti alın.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -630,107 +283,46 @@ const allServices: Service[] = [
     shortTitle: "İş Adresi ve Operasyonlar",
     icon: "map-pin",
     jurisdiction: "us-uk",
-    summary:
-      "ABD iş adresi, yıllık uyum takibi ve şirket değişiklikleri gibi operasyonel süreçleri düzenli olarak takip ediyoruz.",
+    summary: "ABD iş adresi, yıllık uyum, devir ve kapanış işlemlerini düzenli olarak yönetin.",
     definition:
-      "İş adresi ve şirket operasyonları hizmetimiz, kurulu şirketlerin adres ihtiyacını, yıllık uyum takvimini ve şirket kayıtlarına ilişkin değişiklik işlemlerini kapsar.",
+      "İş adresi ve şirket operasyonları, kurulu şirketlerin adres ihtiyacını, yıllık uyum takvimini ve kayıt değişikliği işlemlerini kapsar.",
     intro: [
-      "Şirket kurulduktan sonra adres, yıllık rapor ve kayıt güncellemeleri gibi tekrar eden işlemler başlar. Bu adımların takvimli takibi şirketin resmi kayıtlarda iyi durumda kalmasına katkı sağlar.",
-      "Adres hizmetinden şirket devri ve kapanışına kadar şirketinizin yaşam döngüsündeki operasyonel işlemleri planlıyoruz.",
+      "Kuruluştan sonra adres, yıllık rapor ve kayıt güncellemeleri başlar. Bu adımları takvime bağlayın.",
+      "Adres hizmetinden devir ve kapanışa kadar şirketinizin tüm operasyonel işlemlerini planlayın.",
     ],
     audience: [
-      {
-        title: "Kurulu ABD şirketleri",
-        description:
-          "Profesyonel bir iş adresine ve yıllık uyum takibine ihtiyaç duyan şirketler.",
-      },
-      {
-        title: "Yapısını değiştiren şirketler",
-        description:
-          "Hisse devri, ortaklık değişikliği veya şirket devri planlayan işletmeler.",
-      },
-      {
-        title: "Faaliyetini sonlandıran şirketler",
-        description:
-          "ABD veya İngiltere şirketini düzenli bir şekilde kapatmak isteyen girişimciler.",
-      },
-      {
-        title: "Kurumsal alıcılarla çalışan firmalar",
-        description:
-          "Tedarikçi kayıt süreçleri için DUNS numarasına ihtiyaç duyan işletmeler.",
-      },
+      { title: "Kurulu ABD şirketleri", description: "İş adresi ve yıllık uyum takibi isteyen şirketler." },
+      { title: "Yapısını değiştirenler", description: "Hisse veya şirket devri planlayan işletmeler." },
+      { title: "Faaliyetini sonlandıranlar", description: "Şirketini düzenli kapatmak isteyen girişimciler." },
+      { title: "Kurumsal tedarikçiler", description: "DUNS numarasına ihtiyaç duyan işletmeler." },
     ],
     scope: [
-      {
-        title: "ABD iş adresi",
-        description:
-          "Şirketiniz için profesyonel bir ABD iş adresi sağlıyoruz.",
-      },
-      {
-        title: "Yıllık rapor ve uyum takibi",
-        description:
-          "Eyalet yıllık raporlarını ve yenileme tarihlerini takvime bağlıyoruz.",
-      },
-      {
-        title: "Hisse ve şirket devri",
-        description:
-          "ABD şirketlerinde hisse ve şirket devri işlemlerini planlıyoruz.",
-      },
-      {
-        title: "Şirket kapanış işlemleri",
-        description:
-          "ABD ve İngiltere şirketlerinin fesih süreçlerini yürütüyoruz.",
-      },
-      {
-        title: "DUNS numarası başvurusu",
-        description:
-          "Kurumsal tedarikçi kayıtlarında talep edilen DUNS numarası başvurusunu takip ediyoruz.",
-      },
-      {
-        title: "Marka tescil başvuruları",
-        description:
-          "ABD ve İngiltere'de marka tescil başvuru süreçlerinde destek veriyoruz.",
-      },
+      { title: "ABD iş adresi", description: "Şirketiniz için profesyonel bir ABD iş adresi edinin." },
+      { title: "Yıllık rapor takibi", description: "Eyalet raporlarını ve yenileme tarihlerini takvime bağlayın." },
+      { title: "Hisse ve şirket devri", description: "ABD şirketlerinde devir işlemlerini planlayın." },
+      { title: "Şirket kapanışı", description: "ABD ve İngiltere şirketlerinin fesih işlemlerini tamamlayın." },
+      { title: "DUNS numarası", description: "Kurumsal tedarikçi kayıtları için DUNS numarası alın." },
+      { title: "Marka tescili", description: "ABD ve İngiltere'de marka tescil başvurusu yapın." },
     ],
     process: [
-      {
-        title: "İhtiyacın belirlenmesi",
-        description:
-          "Şirketinizin mevcut durumunu ve planladığınız işlemi değerlendiriyoruz.",
-      },
-      {
-        title: "İşlem planı",
-        description:
-          "Gerekli belgeleri, resmi başvuruları ve işlem sırasını netleştiriyoruz.",
-      },
-      {
-        title: "Uygulama ve takip",
-        description:
-          "Başvuruları yapıyor, sonuçları takip ediyor ve kayıtlarınızı güncelliyoruz.",
-      },
+      { title: "İhtiyaç", description: "Şirketinizin durumunu ve planladığınız işlemi paylaşın." },
+      { title: "İşlem planı", description: "Gerekli belgeleri ve başvuru sırasını netleştirin." },
+      { title: "Uygulama", description: "Başvuruları tamamlayın, kayıtlarınızı güncelleyin." },
     ],
     considerations: [
-      "Adres hizmetinin hangi amaçlarla kullanılabileceği banka, pazaryeri ve resmi kurum kurallarına göre değişebilir.",
+      "Adresin hangi amaçlarla kullanılabileceği banka, pazaryeri ve kurum kurallarına göre değişir.",
       "Yıllık rapor tarihleri ve ücretleri eyalete göre değişir.",
       "Devir ve kapanış işlemlerinde vergi kapanış yükümlülükleri de değerlendirilmelidir.",
-      "Marka tescil başvuruları ilgili ofisin incelemesine tabidir ve sonuç taahhüdü verilemez.",
+      "Marka tescil başvuruları ilgili ofisin incelemesine tabidir.",
     ],
-    relatedServices: [
-      "registered-agent",
-      "amerika-sirket-kurulusu",
-      "vergi-danismanligi",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "ihracat-ve-lojistik",
-      "kobiler-ve-kurumsal-isletmeler",
-    ],
+    relatedServices: ["registered-agent", "amerika-sirket-kurulusu", "vergi-danismanligi"],
+    relatedSectors: ["e-ticaret", "ihracat-ve-lojistik", "kobiler-ve-kurumsal-isletmeler"],
     faqIds: ["adres-kullanim", "sirket-kapanis", "hizmet-kapsami"],
     featured: false,
     seo: {
       title: "İş Adresi ve Şirket Operasyonları",
       description:
-        "ABD iş adresi, yıllık uyum takibi, hisse devri, şirket kapanışı, DUNS numarası ve marka tescil başvurularında operasyonel destek.",
+        "ABD iş adresi edinin, yıllık uyumu takip edin, hisse devri, şirket kapanışı, DUNS numarası ve marka tescil işlemlerini düzenli yönetin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
@@ -738,117 +330,56 @@ const allServices: Service[] = [
   {
     slug: "uluslararasi-is-danismanligi",
     title: "Uluslararası İş Danışmanlığı",
-    shortTitle: "Uluslararası İş Danışmanlığı",
+    shortTitle: "Uluslararası Danışmanlık",
     icon: "compass",
     jurisdiction: "us-uk",
-    summary:
-      "Hedef pazarınıza, gelir modelinize ve operasyon yapınıza uygun uluslararası iş planını birlikte oluşturuyoruz.",
+    summary: "Hedef pazarınıza ve gelir modelinize uygun uluslararası iş planını oluşturun.",
     definition:
-      "Uluslararası iş danışmanlığı, yurt dışında şirket kurmayı veya faaliyet göstermeyi planlayan işletmelerin yapı, pazar ve operasyon kararlarını birlikte değerlendirdiğimiz danışmanlık hizmetidir.",
+      "Uluslararası iş danışmanlığı, yurt dışında faaliyet planlayan işletmelerin yapı, pazar ve operasyon kararlarının birlikte değerlendirildiği danışmanlık hizmetidir.",
     intro: [
-      "Uluslararası pazara açılırken şirket yapısı, ödeme altyapısı, pazaryeri hesapları ve vergi yükümlülükleri birbirini etkiler. Bu kararları bütünlüklü bir plan içinde değerlendiriyoruz.",
-      "E-ticaret, ihracat ve dijital hizmet alanlarındaki işletmelere ABD ve Birleşik Krallık pazarına giriş sürecinde yol gösteriyoruz.",
+      "Şirket yapısı, ödeme altyapısı, pazaryeri hesapları ve vergi birbirini etkiler. Bu kararları tek planda değerlendirin.",
+      "ABD ve Birleşik Krallık pazarına girişinizi e-ticaret, ihracat ve dijital hizmet deneyimiyle planlayın.",
     ],
     audience: [
-      {
-        title: "Yurt dışına ilk kez açılan işletmeler",
-        description:
-          "Hangi ülkede ve hangi yapıyla faaliyet göstereceğine karar vermek isteyen firmalar.",
-      },
-      {
-        title: "E-ticaret girişimcileri",
-        description:
-          "Amazon ve diğer pazaryerlerinde satışa başlamayı planlayan markalar.",
-      },
-      {
-        title: "Mevcut yapısını gözden geçirenler",
-        description:
-          "Halihazırda yurt dışında şirketi olan ve kayıt ile uyum durumunu kontrol ettirmek isteyen işletmeler.",
-      },
-      {
-        title: "Belirli bir konuda görüş arayanlar",
-        description:
-          "Tek bir konuyu netleştirmek için birebir görüşme talep eden girişimciler.",
-      },
+      { title: "İlk kez açılanlar", description: "Ülke ve yapı kararını vermek isteyen firmalar." },
+      { title: "E-ticaret girişimcileri", description: "Amazon ve diğer pazaryerlerinde satışa başlayan markalar." },
+      { title: "Yapısını gözden geçirenler", description: "Yurt dışı şirketinin uyumunu kontrol ettirmek isteyenler." },
+      { title: "Tek konuda görüş arayanlar", description: "Birebir görüşme talep eden girişimciler." },
     ],
     scope: [
-      {
-        title: "Pazar ve yapı değerlendirmesi",
-        description:
-          "ABD ve Birleşik Krallık seçeneklerini iş modeliniz üzerinden karşılaştırıyoruz.",
-      },
-      {
-        title: "E-ticaret ve pazaryeri süreçleri",
-        description:
-          "Amazon başta olmak üzere pazaryeri hesap açılışı ve satıcı süreçlerinde danışmanlık veriyoruz.",
-      },
-      {
-        title: "Operasyon planı",
-        description:
-          "Şirket, banka, ödeme ve muhasebe adımlarını doğru sırayla planlıyoruz.",
-      },
-      {
-        title: "Birebir danışmanlık görüşmeleri",
-        description:
-          "Belirli bir konuyu netleştirmek isteyen işletmeler için saatlik görüşmeler düzenliyoruz.",
-      },
-      {
-        title: "Mevcut yapının gözden geçirilmesi",
-        description:
-          "Yurt dışındaki şirketinizin kayıt ve uyum durumunu değerlendiriyoruz.",
-      },
+      { title: "Pazar ve yapı", description: "ABD ve Birleşik Krallık seçeneklerini karşılaştırın." },
+      { title: "Pazaryeri süreçleri", description: "Amazon hesap açılışı ve satıcı süreçlerinde danışmanlık alın." },
+      { title: "Operasyon planı", description: "Şirket, banka, ödeme ve muhasebe adımlarını doğru sırayla planlayın." },
+      { title: "Birebir görüşmeler", description: "Belirli bir konuyu saatlik görüşmeyle netleştirin." },
+      { title: "Mevcut yapı kontrolü", description: "Yurt dışı şirketinizin kayıt ve uyum durumunu değerlendirin." },
     ],
     process: [
-      {
-        title: "Hedeflerin dinlenmesi",
-        description:
-          "Ürününüzü, müşterilerinizi ve büyüme hedeflerinizi dinliyoruz.",
-      },
-      {
-        title: "Seçeneklerin karşılaştırılması",
-        description:
-          "Ülke, şirket yapısı ve satış kanalı seçeneklerini artı ve eksileriyle karşılaştırıyoruz.",
-      },
-      {
-        title: "Yol haritası",
-        description:
-          "Atılacak adımları, sorumlulukları ve öncelik sırasını içeren bir plan paylaşıyoruz.",
-      },
+      { title: "Hedefler", description: "Ürününüzü, müşterilerinizi ve hedeflerinizi paylaşın." },
+      { title: "Seçenekler", description: "Ülke, yapı ve satış kanalı seçeneklerini karşılaştırın." },
+      { title: "Yol haritası", description: "Adımları ve öncelik sırasını içeren planınızı alın." },
     ],
     considerations: [
-      "Danışmanlık görüşmeleri bilgilendirme ve planlama amaçlıdır. Hukuki ve vergisel kararlar kişisel durumunuza göre ayrıntılı değerlendirme gerektirir.",
-      "Pazaryeri ve ödeme sağlayıcılarının hesap onayları ilgili platformun kendi politikalarına bağlıdır.",
+      "Görüşmeler bilgilendirme ve planlama amaçlıdır. Hukuki ve vergisel kararlar ayrıntılı değerlendirme gerektirir.",
+      "Pazaryeri ve ödeme sağlayıcılarının onayları kendi politikalarına bağlıdır.",
       "Hedef ülkedeki lisans, izin ve ürün düzenlemeleri sektöre göre farklılık gösterir.",
     ],
-    relatedServices: [
-      "amerika-sirket-kurulusu",
-      "ingiltere-sirket-kurulusu",
-      "vergi-danismanligi",
-    ],
-    relatedSectors: [
-      "e-ticaret",
-      "ihracat-ve-lojistik",
-      "girisimciler-ve-yatirimcilar",
-    ],
+    relatedServices: ["amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu", "vergi-danismanligi"],
+    relatedSectors: ["e-ticaret", "ihracat-ve-lojistik", "girisimciler-ve-yatirimcilar"],
     faqIds: ["kurulus-hangi-ulke", "amazon-hesap", "hizmet-kapsami"],
     featured: true,
     seo: {
       title: "Uluslararası İş Danışmanlığı",
       description:
-        "ABD ve Birleşik Krallık pazarına giriş için şirket yapısı, pazaryeri süreçleri ve operasyon planını iş modelinize göre birlikte değerlendiriyoruz.",
+        "ABD ve Birleşik Krallık pazarına girişinizi planlayın. Şirket yapısını, pazaryeri süreçlerini ve operasyon adımlarını iş modelinize göre belirleyin.",
     },
     status: "published",
     updatedAt: "2026-10-12",
   },
 ];
 
-export const services: Service[] = allServices.filter(
-  (service) => service.status === "published",
-);
+export const services: Service[] = allServices.filter((service) => service.status === "published");
 
-export const featuredServices: Service[] = services.filter(
-  (service) => service.featured,
-);
+export const featuredServices: Service[] = services.filter((service) => service.featured);
 
 export function getService(slug: ServiceSlug): Service {
   const service = services.find((entry) => entry.slug === slug);

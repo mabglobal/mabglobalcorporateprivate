@@ -44,14 +44,15 @@
   }
 
   ::selection {
-    background-color: var(--color-accent);
-    color: var(--color-navy-deep);
+    background-color: var(--color-navy);
+    color: var(--color-white);
   }
 
+  /* Navy ring on light surfaces, white ring inside .on-dark surfaces. */
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--focus-ring, var(--color-navy));
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -91,14 +92,14 @@
   }
 }
 
-@utility eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  font-size: var(--text-label);
-  line-height: var(--text-label--line-height);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+/* Navy surfaces: white text and white focus rings only. */
+@utility on-dark {
+  --focus-ring: var(--color-white);
+  color: var(--color-white);
+  & ::selection {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+  }
 }
 
 @utility prose-mab {
@@ -124,12 +125,11 @@
     margin-bottom: 0.5rem;
   }
   & li::marker {
-    color: var(--color-accent);
+    color: var(--color-slate);
   }
   & a {
     color: var(--color-navy);
     text-decoration: underline;
-    text-decoration-color: var(--color-accent);
     text-underline-offset: 3px;
   }
 }

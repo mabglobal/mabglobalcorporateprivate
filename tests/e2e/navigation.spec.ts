@@ -27,21 +27,21 @@ test.describe("desktop navigation", () => {
     }
   });
 
-  test("hero CTAs lead to the contact form and the services index", async ({ page }) => {
+  test("hero CTA leads to the contact form and the services link to the index", async ({ page }) => {
     await page.goto("/");
     const hero = page.locator("section").first();
-    await hero.getByRole("link", { name: "Danışmanlık Talep Et" }).click();
+    await hero.getByRole("link", { name: "Danışmanlık Talep Edin" }).click();
     await expect(page).toHaveURL("/iletisim#danismanlik-formu");
     await expect(page.getByRole("heading", { name: "Danışmanlık talebi" })).toBeVisible();
 
     await page.goto("/");
-    await page.getByRole("link", { name: "Hizmetleri Keşfedin" }).click();
+    await page.getByRole("link", { name: "Tüm hizmetler" }).click();
     await expect(page).toHaveURL("/hizmetler");
   });
 
   test("service cards open the service page", async ({ page }) => {
     await page.goto("/hizmetler");
-    await page.getByRole("link", { name: "Registered Agent Hizmetleri" }).click();
+    await page.getByRole("main").getByRole("link", { name: "Registered Agent", exact: true }).click();
     await expect(page).toHaveURL("/hizmetler/registered-agent");
     await expect(page.getByRole("navigation", { name: "Sayfa konumu" })).toContainText("Hizmetler");
   });
@@ -85,7 +85,7 @@ test.describe("mobile navigation", () => {
   test("menu CTA leads to the contact form", async ({ page }) => {
     await page.goto("/hakkimizda");
     await page.getByRole("button", { name: "Menüyü aç" }).click();
-    await page.getByRole("dialog", { name: "Menü" }).getByRole("link", { name: "Danışmanlık Talep Et" }).click();
+    await page.getByRole("dialog", { name: "Menü" }).getByRole("link", { name: "Danışmanlık Talep Edin" }).click();
     await expect(page).toHaveURL("/iletisim#danismanlik-formu");
   });
 });

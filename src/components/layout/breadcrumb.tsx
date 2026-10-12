@@ -1,29 +1,41 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import type { BreadcrumbTrailItem } from "@/lib/seo/structured-data";
+import { cn } from "@/lib/utilities/cn";
 
 /**
  * Visible breadcrumb trail. The matching BreadcrumbList JSON-LD is emitted by
  * the page from the same items.
  */
-export function Breadcrumb({ items }: { items: BreadcrumbTrailItem[] }) {
+export function Breadcrumb({
+  items,
+  tone = "dark",
+}: {
+  items: BreadcrumbTrailItem[];
+  tone?: "light" | "dark";
+}) {
   return (
     <nav aria-label="Sayfa konumu">
-      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-caption text-slate">
+      <ol
+        className={cn(
+          "flex flex-wrap items-center gap-x-1.5 gap-y-1 text-caption",
+          tone === "dark" ? "text-white/60" : "text-slate",
+        )}
+      >
         {items.map((item, index) => {
           const last = index === items.length - 1;
           return (
             <li key={item.path} className="inline-flex items-center gap-1.5">
               {last ? (
-                <span aria-current="page" className="text-navy">
+                <span aria-current="page" className={tone === "dark" ? "text-white" : "text-navy"}>
                   {item.name}
                 </span>
               ) : (
                 <>
-                  <Link href={item.path} className="inline-flex min-h-8 items-center hover:text-navy hover:underline">
+                  <Link href={item.path} className="inline-flex min-h-8 items-center hover:underline">
                     {item.name}
                   </Link>
-                  <ChevronRight aria-hidden="true" className="size-3.5 text-muted" />
+                  <ChevronRight aria-hidden="true" className="size-3.5" />
                 </>
               )}
             </li>

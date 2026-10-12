@@ -1,8 +1,8 @@
 import { routes } from "@/config/routes";
+import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { sectors } from "@/content/sectors";
 import { JsonLd } from "@/components/seo/json-ld";
-import { ClosingCta } from "@/components/sections/closing-cta";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectorCard } from "@/components/sectors/sector-card";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -42,14 +42,17 @@ export default function SectorsPage() {
       />
       <PageHero
         breadcrumb={breadcrumb}
-        eyebrow="Sektörler"
-        title="Farklı iş modelleri için uluslararası şirket yapıları"
-        description="E-ticaretten teknolojiye, serbest çalışmadan kurumsal iştiraklere kadar her iş modelinin kuruluş, vergi ve muhasebe ihtiyacını kendi koşullarıyla ele alıyoruz."
-        actions={<ButtonLink href={routes.contactForm}>Danışmanlık Talep Et</ButtonLink>}
+        title="Sektörler"
+        description="İş modelinizi seçin, kuruluş, vergi ve muhasebe ihtiyaçlarınızı kendi koşullarınızla planlayın."
+        actions={
+          <ButtonLink href={primaryCta.href} variant="light">
+            {primaryCta.label}
+          </ButtonLink>
+        }
       />
       <section aria-label="Sektör listesi" className="section-y bg-white">
         <div className="container-page">
-          <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {sectors.map((sector) => (
               <li key={sector.slug}>
                 <SectorCard sector={sector} headingLevel="h2" />
@@ -58,7 +61,6 @@ export default function SectorsPage() {
           </ul>
         </div>
       </section>
-      <ClosingCta />
     </>
   );
 }

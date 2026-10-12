@@ -27,7 +27,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          backgroundColor: brandColors.navyDeep,
+          backgroundImage: `linear-gradient(180deg, ${brandColors.navyDeep} 0%, ${brandColors.navy} 100%)`,
           color: brandColors.white,
           fontFamily: "Google Sans Flex",
         }}
@@ -43,8 +43,7 @@ export default function OpenGraphImage() {
               fontWeight: 500,
               letterSpacing: 2,
               padding: "6px 14px",
-              borderRadius: 6,
-              borderBottom: `4px solid ${brandColors.accent}`,
+              borderRadius: 10,
             }}
           >
             MAB
@@ -55,7 +54,7 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 76,
+              fontSize: 68,
               fontWeight: 500,
               lineHeight: 1.05,
               letterSpacing: -2,
@@ -68,7 +67,7 @@ export default function OpenGraphImage() {
             {siteConfig.shortDescription}
           </div>
         </div>
-        <div style={{ display: "flex", width: 120, height: 6, backgroundColor: brandColors.accent }} />
+        <div style={{ display: "flex", fontSize: 24, color: "rgba(255,255,255,0.6)" }}>mabglobalpartners.com</div>
       </div>
     ),
     {

@@ -2,6 +2,7 @@ import {
   Building2,
   CalendarCheck,
   Calculator,
+  CircleHelp,
   Compass,
   Cpu,
   Factory,
@@ -19,6 +20,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/types/content";
+import { cn } from "@/lib/utilities/cn";
 
 const icons: Record<IconName, LucideIcon> = {
   building: Building2,
@@ -38,38 +40,36 @@ const icons: Record<IconName, LucideIcon> = {
   layers: Layers,
   calendar: CalendarCheck,
   "file-check": FileCheck,
+  help: CircleHelp,
 };
 
-export function Icon({
-  name,
-  className,
-}: {
-  name: IconName;
-  className?: string;
-}) {
+export function Icon({ name, className }: { name: IconName; className?: string }) {
   const Component = icons[name];
-  return (
-    <Component aria-hidden="true" strokeWidth={1.6} className={className} />
-  );
+  return <Component aria-hidden="true" strokeWidth={1.7} className={className} />;
 }
 
-/** Small square icon tile used on cards. */
+/**
+ * Rounded square icon box. Navy with a white icon on light surfaces,
+ * translucent white with a white icon on navy surfaces. Never orange on navy.
+ */
 export function IconTile({
   name,
   tone = "light",
+  size = "md",
 }: {
   name: IconName;
   tone?: "light" | "dark";
+  size?: "sm" | "md";
 }) {
   return (
     <span
-      className={
-        tone === "light"
-          ? "inline-flex size-11 items-center justify-center rounded-control bg-navy text-accent"
-          : "inline-flex size-11 items-center justify-center rounded-control bg-white/10 text-accent"
-      }
+      className={cn(
+        "inline-flex shrink-0 items-center justify-center rounded-tile text-white",
+        size === "md" ? "size-10" : "size-8",
+        tone === "light" ? "bg-navy" : "bg-white/12",
+      )}
     >
-      <Icon name={name} className="size-5" />
+      <Icon name={name} className={size === "md" ? "size-5" : "size-4"} />
     </span>
   );
 }

@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import { aboutContent } from "@/content/about";
 import { articles } from "@/content/articles";
 import { faqs } from "@/content/faqs";
-import { homeContent } from "@/content/home";
+import { closingCta, homeContent } from "@/content/home";
 import { legalDocuments } from "@/content/legal";
 import { footerNavigation, legalNavigation, mainNavigation } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
@@ -62,6 +62,7 @@ const sources: Record<string, unknown> = {
   // Source titles are quoted from official English pages and are exempt.
   articles: articles.map((article) => ({ ...article, sources: [] })),
   home: homeContent,
+  closingCta,
   about: aboutContent,
   legal: legalDocuments,
   pages: Object.values(staticPages).map(({ title, description }) => ({
@@ -83,6 +84,10 @@ describe("Turkish copy rules", () => {
     expect(copyViolations("Bunun ötesinde")).toEqual(['"ötesinde"']);
     expect(copyViolations("Ayrıca şunu ekleyelim")).toEqual(['"ayrıca"']);
     expect(copyViolations("Sonuç olarak")).toEqual(['"sonuç olarak"']);
+    expect(copyViolations("Süreçleri yönetiyoruz")).toEqual(["-yor tense"]);
+    expect(copyViolations("Ekip destek veriyor")).toEqual(["-yor tense"]);
+    expect(copyViolations("Şirketinizi kurun, süreçleri yönetin")).toEqual([]);
+    expect(copyViolations("City University of New York")).toEqual([]);
     expect(copyViolations("Başlık: metin")).toEqual(["colon"]);
     expect(copyViolations("Bir — iki – üç")).toEqual(["em dash", "en dash"]);
     expect(copyViolations("Ayrıntılı bilgi")).toEqual([]);

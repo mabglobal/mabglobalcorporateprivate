@@ -3,23 +3,34 @@ import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
-type Variant = "primary" | "secondary" | "outline" | "outline-light";
+/**
+ * Variants follow the brand pairing rules:
+ *  - accent: orange fill, white text. Light surfaces only.
+ *  - dark: navy fill, white text. Light surfaces.
+ *  - light: white fill, navy text. Navy surfaces.
+ *  - outline / outline-light: bordered secondary actions.
+ */
+type Variant = "accent" | "dark" | "light" | "outline" | "outline-light";
 
 const variants: Record<Variant, { button: string; arrow: string }> = {
-  primary: {
-    button: "bg-accent text-navy-deep hover:bg-accent-hover",
-    arrow: "bg-navy-deep text-white",
+  accent: {
+    button: "bg-accent text-white hover:bg-accent-hover",
+    arrow: "bg-white/20 text-white",
   },
-  secondary: {
+  dark: {
     button: "bg-navy text-white hover:bg-navy-deep",
-    arrow: "bg-white/12 text-white",
+    arrow: "bg-white/15 text-white",
+  },
+  light: {
+    button: "bg-white text-navy hover:bg-surface",
+    arrow: "bg-navy text-white",
   },
   outline: {
-    button: "border border-line bg-white text-navy hover:border-navy",
+    button: "border border-line bg-white text-navy hover:border-slate",
     arrow: "bg-surface text-navy",
   },
   "outline-light": {
-    button: "border border-white/30 text-white hover:border-white/60 hover:bg-white/5",
+    button: "border border-white/25 text-white hover:bg-white/10",
     arrow: "bg-white/10 text-white",
   },
 };
@@ -28,24 +39,23 @@ interface ButtonLinkProps {
   href: string;
   children: ReactNode;
   variant?: Variant;
+  size?: "md" | "sm";
   className?: string;
   external?: boolean;
 }
 
-/**
- * Call-to-action link. Rendered as an anchor because every CTA on the site
- * navigates. External links open in the same tab and carry rel attributes.
- */
 export function ButtonLink({
   href,
   children,
-  variant = "primary",
+  variant = "accent",
+  size = "md",
   className,
   external = false,
 }: ButtonLinkProps) {
   const styles = variants[variant];
   const classes = cn(
-    "group inline-flex min-h-12 items-center gap-3 rounded-control py-2 pl-5 pr-2 text-label font-medium transition-colors duration-200",
+    "group inline-flex items-center gap-2.5 whitespace-nowrap rounded-control font-medium transition-colors duration-200",
+    size === "md" ? "min-h-12 py-2 pl-5 pr-2 text-label" : "min-h-10 py-1.5 pl-4 pr-1.5 text-label",
     styles.button,
     className,
   );
@@ -55,7 +65,8 @@ export function ButtonLink({
       <span
         aria-hidden="true"
         className={cn(
-          "inline-flex size-8 items-center justify-center rounded-[4px] transition-transform duration-200 group-hover:translate-x-0.5",
+          "inline-flex items-center justify-center rounded-tile transition-transform duration-200 group-hover:translate-x-0.5",
+          size === "md" ? "size-8" : "size-7",
           styles.arrow,
         )}
       >
@@ -64,15 +75,17 @@ export function ButtonLink({
     </>
   );
 
+  const brandAccent = variant === "accent" ? { "data-brand-accent": "" } : {};
+
   if (external) {
     return (
-      <a href={href} className={classes} rel="noopener noreferrer">
+      <a href={href} className={classes} rel="noopener noreferrer" {...brandAccent}>
         {content}
       </a>
     );
   }
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} {...brandAccent}>
       {content}
     </Link>
   );

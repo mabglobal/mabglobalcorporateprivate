@@ -42,7 +42,13 @@ Rules enforced by tests: at least one HTTPS source, related links resolve to pub
 
 ## Turkish copy rules
 
-Public text must be natural, formal Turkish and must not contain the word "değil", "ötesinde", "ayrıca", the phrase "sonuç olarak", colons, em dashes or en dashes. Two checks enforce this:
+Public text must be natural, formal Turkish written in short sentences that do not wrap unnecessarily.
+
+* Use imperative "siz" forms addressed to the reader ("kurun", "yönetin", "paylaşın", "inceleyin") and aorist statements for facts ("kapsar", "gerekir", "değişir").
+* Do not use the present continuous tense ("yapıyoruz", "ediyor", "sunuyoruz") or singular imperatives ("yap", "et"). Button labels follow the same rule ("Danışmanlık Talep Edin", "İletişime Geçin").
+* Do not use the word "değil", "ötesinde", "ayrıca", the phrase "sonuç olarak", colons, em dashes or en dashes.
+
+Two checks enforce the word, tense and punctuation rules:
 
 * `tests/unit/copy-rules.test.ts` scans every content module, form message and option label.
 * `tests/e2e/pages.spec.ts` scans the rendered text of every page in the sitemap.

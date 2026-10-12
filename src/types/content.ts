@@ -32,7 +32,8 @@ export type IconName =
   | "compass"
   | "layers"
   | "calendar"
-  | "file-check";
+  | "file-check"
+  | "help";
 
 export interface TitledText {
   title: string;

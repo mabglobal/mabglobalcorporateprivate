@@ -9,215 +9,208 @@ const allFaqs: FaqItem[] = [
     id: "kurulus-hangi-ulke",
     question: "Amerika'da mı İngiltere'de mi şirket kurmalıyım?",
     answer:
-      "Bu karar hedef pazarınıza, müşterilerinizin bulunduğu bölgeye ve kullanacağınız satış ile ödeme kanallarına bağlıdır. Ön görüşmede iş modelinizi dinliyor ve iki seçeneği kendi durumunuz üzerinden karşılaştırıyoruz.",
+      "Karar hedef pazarınıza, müşterilerinizin bulunduğu bölgeye ve satış kanallarınıza bağlıdır. Ön görüşmede iki seçeneği kendi iş modeliniz üzerinden karşılaştırın.",
     status: "published",
   },
   {
     id: "abd-kurulus-icin-seyahat",
     question: "Amerika'da şirket kurmak için ABD'ye gitmem gerekir mi?",
     answer:
-      "Kuruluş başvuruları birçok eyalette çevrim içi olarak yapılabilir ve kuruluş için ABD'de bulunmanız gerekmez. Banka hesabı gibi bazı adımlarda ilgili kurumun kendi kuralları belirleyicidir.",
+      "Birçok eyalette başvuru çevrim içi yapılır ve ABD'de bulunmanız gerekmez. Banka hesabı gibi adımlarda ilgili kurumun kuralları geçerlidir.",
     status: "published",
   },
   {
     id: "abd-eyalet-secimi",
     question: "Şirketimi hangi eyalette kurmalıyım?",
     answer:
-      "Eyalet seçimi faaliyetin fiilen nerede yürütüleceğine, yıllık giderlere ve yatırım planlarına göre yapılır. Delaware, Wyoming ve diğer eyaletlerin farklı avantajları ve yükümlülükleri vardır. Seçimi iş modelinize göre birlikte yapıyoruz.",
+      "Seçim faaliyet yerine, yıllık giderlere ve yatırım planına göre yapılır. Delaware, Wyoming ve diğer eyaletlerin avantajlarını iş modelinize göre karşılaştırın.",
     status: "published",
   },
   {
     id: "abd-ein-nedir",
     question: "EIN nedir ve neden gereklidir?",
     answer:
-      "EIN, IRS tarafından şirketlere verilen dokuz haneli işveren kimlik numarasıdır. Banka hesabı başvurularında, vergi beyanlarında ve birçok pazaryeri doğrulamasında kullanılır. IRS bu numara için ücret talep etmez.",
+      "EIN, IRS'in şirketlere verdiği dokuz haneli işveren kimlik numarasıdır. Banka başvurularında, vergi beyanlarında ve pazaryeri doğrulamalarında kullanılır. IRS bu numara için ücret almaz.",
     status: "published",
   },
   {
     id: "abd-banka-hesabi",
     question: "Banka hesabı açılışı garanti edilebilir mi?",
     answer:
-      "Banka ve ödeme kuruluşları hesap başvurularını kendi politikalarına göre değerlendirir. Başvuru için gereken belgeleri hazırlamanıza yardımcı oluyoruz. Hesap onayı ilgili kurumun kararına bağlıdır.",
+      "Hayır, hesap onayı bankanın kararıdır. Başvuru belgelerinizi eksiksiz hazırlayın, değerlendirme ilgili kurumun politikasına göre yapılır.",
     status: "published",
   },
   {
     id: "kurulus-suresi",
     question: "Şirket kuruluşu ne kadar sürer?",
     answer:
-      "Süre, seçilen eyalet veya ülkenin işlem yoğunluğuna, belgelerin eksiksiz olmasına ve kimlik doğrulama adımlarına göre değişir. Ön görüşmede güncel işlem süreleri hakkında bilgi veriyor ve süreci adım adım takip ediyoruz. Resmi kurumların işlem süreleri için kesin taahhüt vermiyoruz.",
+      "Süre eyalet veya ülkenin işlem yoğunluğuna, belgelerin eksiksizliğine ve kimlik doğrulama adımlarına göre değişir. Resmi kurumların süreleri için kesin taahhüt verilmez.",
     status: "published",
   },
   {
     id: "uk-registered-office",
     question: "İngiltere şirketim için hangi adres gereklidir?",
     answer:
-      "Companies House kurallarına göre registered office adresi, şirketin kayıtlı olduğu Birleşik Krallık ülkesinde bulunan ve posta teslimini kabul edebilen fiziki bir adres olmalıdır. Posta kutusu hizmetleri bu amaçla kullanılamaz.",
+      "Registered office, şirketin kayıtlı olduğu Birleşik Krallık ülkesinde posta teslimini kabul eden fiziki bir adres olmalıdır. Posta kutusu hizmetleri kullanılamaz.",
     status: "published",
   },
   {
     id: "uk-kimlik-dogrulama",
     question: "İngiltere'de direktörler için kimlik doğrulama zorunlu mu?",
     answer:
-      "Evet. 18 Kasım 2025 itibarıyla direktörler ve önemli kontrol sahibi kişiler (PSC) için Companies House kimlik doğrulaması yasal bir zorunluluktur. Kuruluş sürecinde bu adımı birlikte planlıyoruz.",
+      "Evet. 18 Kasım 2025 itibarıyla direktörler ve önemli kontrol sahibi kişiler (PSC) için Companies House kimlik doğrulaması yasal zorunluluktur.",
     status: "published",
   },
   {
     id: "uk-yillik-yukumlulukler",
     question: "İngiltere'deki şirketimin yıllık yükümlülükleri nelerdir?",
     answer:
-      "Şirketler her 12 ayda en az bir kez confirmation statement verir, yıllık hesaplarını hazırlar, Company Tax Return sunar ve Corporation Tax öder. Bu tarihleri şirketinizin takvimine göre takip ediyoruz.",
+      "Şirketler her 12 ayda en az bir kez confirmation statement verir, yıllık hesaplarını hazırlar, Company Tax Return sunar ve Corporation Tax öder.",
     status: "published",
   },
   {
     id: "vergi-turkiye-abd",
-    question:
-      "Türkiye'de yaşıyorum. Amerika'daki şirketim için vergi beyanı vermem gerekir mi?",
+    question: "Türkiye'de yaşayan biri olarak ABD şirketim için beyan vermem gerekir mi?",
     answer:
-      "Amerika'da kurulu şirketlerin federal ve eyalet düzeyinde çeşitli beyan yükümlülükleri olabilir. Bu yükümlülükler şirket türüne, ortaklık yapısına ve işlemlere göre belirlenir. Türkiye'deki vergi durumunuz kendi başına bir değerlendirme gerektirir.",
+      "ABD'deki şirketlerin federal ve eyalet düzeyinde beyan yükümlülükleri olabilir. Yükümlülükler şirket türüne ve işlemlere göre belirlenir. Türkiye'deki vergi durumunuzu ayrı olarak değerlendirin.",
     status: "published",
   },
   {
     id: "form-5472",
     question: "Yabancı ortaklı tek üyeli LLC'ler hangi beyanları verir?",
     answer:
-      "IRS talimatlarına göre yabancı bir kişiye ait tek üyeli LLC'ler, ortakla yapılan raporlanabilir işlemler için pro forma Form 1120 ile birlikte Form 5472 vermekle yükümlü olabilir. Ortak tarafından yapılan ödemeler de raporlanabilir işlem sayılabildiği için durumunuzu yıl sonundan önce birlikte değerlendiriyoruz.",
+      "IRS talimatlarına göre bu şirketler ortakla yapılan işlemler için pro forma Form 1120 ile birlikte Form 5472 vermekle yükümlü olabilir. Ortak tarafından yapılan ödemeler de raporlanabilir işlem sayılabilir.",
     status: "published",
   },
   {
     id: "vergi-beyan-donemi",
-    question: "Vergi beyan tarihlerini nasıl takip ediyorsunuz?",
+    question: "Vergi beyan tarihleri nasıl takip edilir?",
     answer:
-      "Şirketiniz için yıllık bir uyum takvimi oluşturuyor ve beyan dönemlerinden önce gerekli belgeleri talep ediyoruz. Böylece beyanların son güne bırakılmadan hazırlanmasını hedefliyoruz.",
+      "Şirketiniz için yıllık bir uyum takvimi oluşturulur ve gerekli belgeler beyan döneminden önce talep edilir. Beyanlarınızı son güne bırakmayın.",
     status: "published",
   },
   {
     id: "uluslararasi-gelir",
-    question:
-      "Yurt dışındaki müşterilerden elde ettiğim gelir için şirket kurmam gerekir mi?",
+    question: "Yurt dışı müşteri gelirim için şirket kurmam gerekir mi?",
     answer:
-      "Her durumda şirket kurmak gerekmez. Gelir hacmi, müşteri yapısı, ödeme kanalları ve Türkiye'deki vergi durumunuz bu kararı belirler. Ön görüşmede bireysel çalışma ile şirket yapısının farklarını sizinle birlikte değerlendiriyoruz.",
+      "Her durumda gerekmez. Gelir hacmi, müşteri yapısı, ödeme kanalları ve vergi durumunuz kararı belirler. Ön görüşmede iki seçeneği karşılaştırın.",
     status: "published",
   },
   {
     id: "muhasebe-kapsam",
     question: "Muhasebe hizmeti neleri kapsar?",
     answer:
-      "Gelir ve gider kayıtları, banka ve ödeme platformu mutabakatları, dönemsel raporlar ve yıl sonu hazırlığı muhasebe hizmetinin temelini oluşturur. Kapsamı işlem hacminize göre birlikte belirliyoruz.",
+      "Gelir ve gider kayıtları, banka ve platform mutabakatları, dönemsel raporlar ve yıl sonu hazırlığı temel kapsamdır. Kapsamı işlem hacminize göre belirleyin.",
     status: "published",
   },
   {
     id: "on-muhasebe",
-    question: "Pazaryeri satışlarımın muhasebesini nasıl yürütüyorsunuz?",
+    question: "Pazaryeri satışlarının muhasebesi nasıl tutulur?",
     answer:
-      "Pazaryeri raporlarını banka hareketleriyle eşleştiriyor, komisyon, iade, reklam ve lojistik giderlerini ayrı kalemler olarak kaydediyoruz. Bu düzen doğru vergi beyanı için gereken kayıt yapısını sağlar.",
+      "Pazaryeri raporları banka hareketleriyle eşleştirilir. Komisyon, iade, reklam ve lojistik giderleri ayrı kalemler olarak kaydedilir.",
     status: "published",
   },
   {
     id: "muhasebe-belgeler",
-    question: "Muhasebe için hangi belgeleri paylaşmam gerekir?",
+    question: "Muhasebe için hangi belgeleri paylaşmalıyım?",
     answer:
-      "Banka ekstreleri, ödeme platformu raporları, satış raporları ve gider faturaları temel belgelerdir. Belgeleri hangi sıklıkla paylaşacağınızı hizmet kapsamına göre birlikte planlıyoruz.",
+      "Banka ekstrelerini, ödeme platformu raporlarını, satış raporlarını ve gider faturalarını paylaşın. Paylaşım sıklığı hizmet kapsamına göre belirlenir.",
     status: "published",
   },
   {
     id: "registered-agent-nedir",
     question: "Registered agent ne iş yapar?",
     answer:
-      "Registered agent, şirket adına resmi yazışmaları ve yasal tebligatları kabul eden temsilcidir. Şirketin kayıtlı olduğu eyalette fiziki bir adrese sahip olmalı ve bu yazışmaları şirkete zamanında iletmelidir.",
+      "Registered agent, şirket adına resmi yazışmaları ve yasal tebligatları kabul eder. Şirketin kayıtlı olduğu eyalette fiziki bir adrese sahip olmalıdır.",
     status: "published",
   },
   {
     id: "registered-agent-zorunlu",
     question: "Registered agent bulundurmak zorunlu mu?",
     answer:
-      "ABD'de LLC ve corporation gibi şirket türleri, kuruluş başvurusundan önce kayıtlı oldukları eyalette bir registered agent belirlemelidir. Bu bilginin güncel tutulması şirketin resmi kayıtlarda iyi durumda kalması için önemlidir.",
+      "Evet. LLC ve corporation gibi şirketler kuruluş başvurusundan önce kayıtlı oldukları eyalette bir registered agent belirlemelidir.",
     status: "published",
   },
   {
     id: "registered-agent-kapsam",
-    question: "Hangi eyaletlerde registered agent hizmeti veriyorsunuz?",
+    question: "Registered agent hizmeti hangi eyaletleri kapsar?",
     answer:
-      "MAB Registered Agent Inc. aracılığıyla 50 eyalet ve Washington D.C. kapsamında hizmet veriyoruz. LLC, corporation, partnership ve kâr amacı gütmeyen kuruluşlar dahil tüm şirket türleriyle çalışıyoruz.",
+      "MAB Registered Agent Inc. hizmeti 50 eyaleti ve Washington D.C.'yi kapsar. LLC, corporation, partnership ve kâr amacı gütmeyen kuruluşlar dahil tüm şirket türleri için geçerlidir.",
     status: "published",
   },
   {
     id: "adres-kullanim",
     question: "ABD iş adresini hangi amaçlarla kullanabilirim?",
     answer:
-      "İş adresi şirket yazışmaları ve kurumsal iletişim için kullanılır. Banka, pazaryeri ve resmi kurumlar adres türüne ilişkin kendi kurallarını uygular. Kullanım amacınızı ön görüşmede birlikte değerlendiriyoruz.",
+      "İş adresi şirket yazışmaları ve kurumsal iletişim için kullanılır. Banka, pazaryeri ve resmi kurumlar adres türü konusunda kendi kurallarını uygular.",
     status: "published",
   },
   {
     id: "sirket-kapanis",
     question: "Kullanmadığım ABD veya İngiltere şirketimi nasıl kapatırım?",
     answer:
-      "Kapanış işlemi ilgili eyalete veya Companies House'a yapılan resmi başvuruyla tamamlanır. Kapanıştan önce son dönem vergi beyanları ve açık yükümlülükler gözden geçirilmelidir. Süreci şirketinizin durumuna göre planlıyoruz.",
+      "Kapanış, eyalete veya Companies House'a yapılan resmi başvuruyla tamamlanır. Başvurudan önce son dönem beyanlarını ve açık yükümlülükleri gözden geçirin.",
     status: "published",
   },
   {
     id: "hizmet-kapsami",
-    question: "Hizmet kapsamı nasıl belirleniyor?",
+    question: "Hizmet kapsamı nasıl belirlenir?",
     answer:
-      "Her işletmenin ihtiyacı farklıdır. Ön görüşmede ihtiyaçlarınızı netleştiriyor, ardından önerilen hizmet kapsamını ve süreç adımlarını sizinle paylaşıyoruz.",
+      "Ön görüşmede ihtiyaçlarınızı paylaşın. Ardından önerilen hizmet kapsamı ve süreç adımları size iletilir.",
     status: "published",
   },
   {
     id: "danismanlik-sureci",
     question: "Danışmanlık talebimden sonra süreç nasıl ilerler?",
     answer:
-      "Formu gönderdiğinizde talebiniz ekibimize ulaşır. Ekibimiz sizinle e-posta yoluyla iletişime geçerek bir ön görüşme planlar. Görüşmede ihtiyaçlarınızı değerlendiriyor ve uygun hizmetleri belirliyoruz.",
+      "Formu gönderin, talebiniz ekibimize ulaşır. Ekibimiz e-posta ile ön görüşme planlar ve ihtiyacınıza uygun hizmetleri belirler.",
     status: "published",
   },
   {
     id: "ucretlendirme",
-    question: "Hizmet ücretleri nasıl belirleniyor?",
+    question: "Hizmet ücretleri nasıl belirlenir?",
     answer:
-      "Ücretler hizmet kapsamına, şirketin kurulacağı eyalete veya ülkeye ve süreklilik gerektiren hizmetlere göre belirlenir. Resmi kurum harçları hizmet ücretinden bağımsız olarak hesaplanır. Ön görüşmenin ardından kapsamınıza uygun teklifi paylaşıyoruz.",
+      "Ücretler hizmet kapsamına, eyalet veya ülkeye ve süreklilik gerektiren hizmetlere göre belirlenir. Resmi kurum harçları teklifte ayrı kalem olarak gösterilir.",
     status: "published",
   },
   {
     id: "e-ticaret-sirket",
     question: "Amazon'da satış yapmak için ABD'de şirket kurmam gerekir mi?",
     answer:
-      "Amazon farklı ülkelerden satıcı kaydı kabul eder. Bir ABD şirketi ödeme altyapısı, vergi düzeni ve marka kayıtları gibi konularda işinizi kolaylaştırabilir. Kararı satış hedeflerinize göre birlikte değerlendiriyoruz.",
+      "Amazon farklı ülkelerden satıcı kabul eder. Bir ABD şirketi ödeme altyapısı, vergi düzeni ve marka kayıtlarında kolaylık sağlayabilir. Kararı satış hedeflerinize göre verin.",
     status: "published",
   },
   {
     id: "sales-tax",
     question: "ABD'de sales tax yükümlülüğü ne zaman doğar?",
     answer:
-      "Sales tax yükümlülüğü eyalet kurallarına, satış hacmine ve satış kanallarına göre belirlenir. Birçok eyalette pazaryerleri vergiyi satıcı adına tahsil eder. Satış yaptığınız eyaletlere göre kayıt ve beyan ihtiyacınızı değerlendiriyoruz.",
+      "Yükümlülük eyalet kurallarına, satış hacmine ve satış kanallarına göre doğar. Birçok eyalette pazaryerleri vergiyi satıcı adına tahsil eder.",
     status: "published",
   },
   {
     id: "amazon-hesap",
-    question:
-      "Amazon hesap açılışı ve hesap sorunlarında destek veriyor musunuz?",
+    question: "Amazon hesap açılışı ve hesap sorunlarında destek alabilir miyim?",
     answer:
-      "Amazon satıcı hesabı açılış sürecinde ve hesap askıya alma durumlarında danışmanlık veriyoruz. Hesap onayları ve itiraz sonuçları Amazon'un kendi değerlendirmesine bağlıdır.",
+      "Evet. Satıcı hesabı açılışında ve hesap askıya alma durumlarında danışmanlık alın. Hesap onayları ve itiraz sonuçları Amazon'un kararına bağlıdır.",
     status: "published",
   },
   {
     id: "grup-ici-islemler",
-    question:
-      "Türkiye'deki şirketimle yurt dışı şirketim arasındaki işlemleri nasıl kaydetmeliyim?",
+    question: "Türkiye'deki şirketimle yurt dışı şirketim arasındaki işlemler nasıl kaydedilir?",
     answer:
-      "Grup içi ürün, hizmet ve finansman işlemleri sözleşme ve faturalarla belgelenmeli ve her iki şirketin kayıtlarında tutarlı şekilde yer almalıdır. Yurt dışı şirket tarafındaki kayıtları düzenli tutuyor, Türkiye tarafındaki mali müşavirinizle koordinasyonun önemini planlamaya dahil ediyoruz.",
+      "Grup içi ürün, hizmet ve finansman işlemleri sözleşme ve faturayla belgelenir, iki şirketin kayıtlarında tutarlı yer alır. Türkiye tarafı için mali müşavirinizle koordinasyon kurun.",
     status: "published",
   },
   {
     id: "mevcut-sirket-devralma",
-    question:
-      "Halihazırda kurulu yabancı şirketimin takibini devralabilir misiniz?",
+    question: "Kurulu yabancı şirketimin takibini devredebilir miyim?",
     answer:
-      "Evet. Devralma sürecinde önce şirketin resmi kayıtlarını, registered agent bilgisini ve geçmiş dönem beyanlarını gözden geçiriyoruz. Eksik bir adım varsa bunu takvime ekliyor ve düzenli takibe başlıyoruz.",
+      "Evet. Devirde önce resmi kayıtlar, registered agent bilgisi ve geçmiş beyanlar gözden geçirilir. Eksik adımlar takvime eklenir ve düzenli takip başlar.",
     status: "published",
   },
 ];
 
-export const faqs: FaqItem[] = allFaqs.filter(
-  (faq) => faq.status === "published",
-);
+export const faqs: FaqItem[] = allFaqs.filter((faq) => faq.status === "published");
 
 export const homepageFaqIds = [
   "kurulus-hangi-ulke",

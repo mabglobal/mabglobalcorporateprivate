@@ -13,7 +13,7 @@ async function fillValidForm(page: Page) {
 test.describe("contact form", () => {
   test("shows Turkish validation messages and focuses the first invalid field", async ({ page }) => {
     await page.goto("/iletisim");
-    await page.getByRole("button", { name: "Danışmanlık Talep Et" }).click();
+    await page.getByRole("button", { name: "Danışmanlık Talep Edin" }).click();
     await expect(page.getByText("Lütfen adınızı ve soyadınızı yazın.")).toBeVisible();
     await expect(page.getByText("Lütfen geçerli bir e-posta adresi yazın.")).toBeVisible();
     await expect(page.getByText("Lütfen ilgilendiğiniz hizmeti seçin.")).toBeVisible();
@@ -26,9 +26,9 @@ test.describe("contact form", () => {
     await fillValidForm(page);
     // The server rejects submissions completed faster than a human could.
     await page.waitForTimeout(2200);
-    await page.getByRole("button", { name: "Danışmanlık Talep Et" }).click();
+    await page.getByRole("button", { name: "Danışmanlık Talep Edin" }).click();
     const alert = page.locator("form").getByRole("alert");
-    await expect(alert).toContainText("Form gönderimi şu anda kullanılamıyor.");
+    await expect(alert).toContainText("Form gönderimi şu anda kapalı.");
     await expect(alert.getByRole("link", { name: "E-posta gönderin" })).toHaveAttribute(
       "href",
       "mailto:info@mabglobalpartners.com",
@@ -47,9 +47,9 @@ test.describe("contact form", () => {
     });
     await page.goto("/iletisim");
     await fillValidForm(page);
-    await page.getByRole("button", { name: "Danışmanlık Talep Et" }).click();
+    await page.getByRole("button", { name: "Danışmanlık Talep Edin" }).click();
     // The response is held until the loading state has been observed.
-    await expect(page.getByRole("button", { name: "Gönderiliyor" })).toBeDisabled();
+    await expect(page.getByRole("button", { name: "Lütfen bekleyin" })).toBeDisabled();
     await expect(page.getByText("Talebiniz bize ulaştı.")).toHaveCount(0);
     release();
     await expect(page.getByRole("status")).toContainText("Talebiniz bize ulaştı.");
@@ -73,7 +73,7 @@ test.describe("contact form", () => {
     );
     await page.goto("/iletisim");
     await fillValidForm(page);
-    await page.getByRole("button", { name: "Danışmanlık Talep Et" }).click();
+    await page.getByRole("button", { name: "Danışmanlık Talep Edin" }).click();
     await expect(page.locator("form").getByRole("alert")).toContainText("Lütfen işaretli alanları kontrol edin.");
     await expect(page.getByLabel("E-posta Adresi")).toHaveAttribute("aria-invalid", "true");
   });
@@ -85,7 +85,7 @@ test.describe("contact form", () => {
       "href",
       "mailto:info@mabglobalpartners.com",
     );
-    await expect(aside.getByRole("link", { name: /Google Haritalar/ })).toHaveAttribute(
+    await expect(aside.getByRole("link", { name: /Haritada açın/ })).toHaveAttribute(
       "href",
       /google\.com\/maps/,
     );

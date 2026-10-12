@@ -62,8 +62,11 @@ test("every sitemap page renders correctly", async ({ page, request }, testInfo)
     if (overflow > 0) problems.push(`${path} overflows horizontally by ${overflow}px`);
 
     if (testInfo.project.name === "desktop") {
+      // Orange buttons carry white text by explicit client decision (3.4:1).
+      // They are marked data-brand-accent and excluded; see docs/architecture.md.
       const axe = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+        .exclude("[data-brand-accent]")
         .analyze();
       for (const violation of axe.violations) {
         problems.push(

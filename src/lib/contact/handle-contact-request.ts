@@ -55,7 +55,7 @@ export const contactErrorMessages: Record<ContactErrorCode, string> = {
   rejected: `Talebiniz gönderilemedi. Lütfen birkaç saniye bekleyip tekrar deneyin. ${fallback}`,
   rate_limited:
     "Kısa süre içinde çok sayıda talep gönderildi. Lütfen birkaç dakika sonra tekrar deneyin.",
-  not_configured: `Form gönderimi şu anda kullanılamıyor. ${fallback}`,
+  not_configured: `Form gönderimi şu anda kapalı. ${fallback}`,
   delivery_failed: `Talebiniz şu anda iletilemedi. Lütfen daha sonra tekrar deneyin. ${fallback}`,
 };
 

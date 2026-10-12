@@ -1,23 +1,10 @@
 import type { ReactNode } from "react";
+import type { IconName } from "@/types/content";
 import { cn } from "@/lib/utilities/cn";
-
-export function Eyebrow({
-  children,
-  tone = "light",
-}: {
-  children: ReactNode;
-  tone?: "light" | "dark";
-}) {
-  return (
-    <p className={cn("eyebrow", tone === "light" ? "text-slate" : "text-white/75")}>
-      <span aria-hidden="true" className="size-2 rounded-[1px] bg-accent" />
-      {children}
-    </p>
-  );
-}
+import { IconTile } from "./icon";
 
 interface SectionHeadingProps {
-  eyebrow?: string;
+  icon?: IconName;
   title: string;
   description?: string;
   tone?: "light" | "dark";
@@ -27,8 +14,9 @@ interface SectionHeadingProps {
   as?: "h1" | "h2";
 }
 
+/** Section opening used across the site: icon box, short heading, short description. */
 export function SectionHeading({
-  eyebrow,
+  icon,
   title,
   description,
   tone = "light",
@@ -37,25 +25,17 @@ export function SectionHeading({
   as: Heading = "h2",
 }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-      <div className="max-w-2xl">
-        {eyebrow ? <Eyebrow tone={tone}>{eyebrow}</Eyebrow> : null}
+    <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div className="max-w-xl">
+        {icon ? <IconTile name={icon} tone={tone} /> : null}
         <Heading
           id={id}
-          className={cn(
-            "mt-5 text-heading",
-            tone === "light" ? "text-navy" : "text-white",
-          )}
+          className={cn("text-heading", icon ? "mt-5" : "", tone === "light" ? "text-navy" : "text-white")}
         >
           {title}
         </Heading>
         {description ? (
-          <p
-            className={cn(
-              "mt-5 text-lead",
-              tone === "light" ? "text-slate" : "text-white/75",
-            )}
-          >
+          <p className={cn("mt-3 text-body", tone === "light" ? "text-slate" : "text-white/75")}>
             {description}
           </p>
         ) : null}

@@ -5,7 +5,7 @@ export const ingiltereLimitedSirketKurulusuRehberi: Article = {
   slug: "ingiltere-limited-sirket-kurulusu-rehberi",
   title: "İngiltere'de Limited Şirket Kuruluşu Rehberi",
   summary:
-    "İngiltere'de private limited company kurarken gereken bilgileri, registered office adresi kurallarını, kimlik doğrulama zorunluluğunu ve yıllık yükümlülükleri özetliyoruz.",
+    "İngiltere'de private limited company kurarken gereken bilgileri, registered office kurallarını, kimlik doğrulamayı ve yıllık yükümlülükleri öğrenin.",
   category: "ingiltere-sirket-kurulusu",
   author: { type: "organization", name: "MAB Global Partners Editör Ekibi" },
   publishedAt: "2026-10-12",

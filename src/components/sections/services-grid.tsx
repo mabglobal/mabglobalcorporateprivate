@@ -12,12 +12,12 @@ export function ServicesGrid() {
       <div className="container-page">
         <SectionHeading
           id="services-title"
-          eyebrow={content.eyebrow}
+          icon="building"
           title={content.title}
           description={content.description}
           action={<TextLink href={routes.services}>{content.allServicesLabel}</TextLink>}
         />
-        <ul className="mt-16 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {featuredServices.map((service) => (
             <li key={service.slug}>
               <ServiceCard service={service} />

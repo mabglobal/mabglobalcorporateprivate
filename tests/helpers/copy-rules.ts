@@ -9,6 +9,9 @@ export const forbiddenCopyPatterns: { label: string; pattern: RegExp }[] = [
   { label: "\"ötesinde\"", pattern: /ötesinde/u },
   { label: "\"ayrıca\"", pattern: /ayrıca/u },
   { label: "\"sonuç olarak\"", pattern: /sonuç olarak/u },
+  // Present continuous tense ("yapıyoruz", "ediyor") is not used; copy uses
+  // imperative "siz" forms ("yapın", "edin") and aorist statements instead.
+  { label: "-yor tense", pattern: /[ıiuü]yor/u },
   { label: "colon", pattern: /:/u },
   { label: "em dash", pattern: /—/u },
   { label: "en dash", pattern: /–/u },

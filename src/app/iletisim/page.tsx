@@ -29,7 +29,7 @@ const consultationTopics = [
   "İş modeliniz ve hedef pazarınız",
   "Mevcut veya planlanan şirket yapınız",
   "Vergi, muhasebe ve uyum ihtiyaçlarınız",
-  "Önerilen hizmet kapsamı ve sonraki adımlar",
+  "Önerilen hizmet kapsamı",
 ];
 
 export default function ContactPage() {
@@ -50,9 +50,8 @@ export default function ContactPage() {
       />
       <PageHero
         breadcrumb={breadcrumb}
-        eyebrow="İletişim"
-        title="Uluslararası iş planınızı paylaşın"
-        description="Formu doldurarak danışmanlık talebinizi iletebilir veya bize doğrudan e-posta gönderebilirsiniz. Talebinizi inceleyip sizinle iletişime geçeceğiz."
+        title="İletişim"
+        description="Formu doldurun veya bize doğrudan e-posta gönderin."
       />
 
       <section
@@ -62,10 +61,10 @@ export default function ContactPage() {
       >
         <div className="container-page grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 id="form-title" className="text-heading text-navy">
+            <h2 id="form-title" className="text-title text-navy">
               Danışmanlık talebi
             </h2>
-            <p className="mb-10 mt-4 text-body text-slate">
+            <p className="mb-8 mt-2 text-label text-slate">
               Yıldız ile işaretli alanların doldurulması gerekir.
             </p>
             <ContactForm options={contactOptions} />
@@ -74,19 +73,19 @@ export default function ContactPage() {
           <aside aria-label="İletişim bilgileri" className="lg:col-span-4 lg:col-start-9">
             <div className="grid gap-5">
               <div className="rounded-card bg-surface p-8">
-                <Mail aria-hidden="true" className="size-6 text-accent-strong" strokeWidth={1.6} />
+                <Mail aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
                 <h2 className="mt-6 text-title text-navy">E-posta</h2>
                 <a
                   href={mailtoHref}
-                  className="mt-3 inline-flex min-h-11 items-center break-all text-body font-medium text-navy underline underline-offset-4"
+                  className="mt-2 inline-flex min-h-11 items-center whitespace-nowrap text-label font-medium text-navy underline underline-offset-4"
                 >
                   {contactConfig.email}
                 </a>
               </div>
               <div className="rounded-card bg-surface p-8">
-                <MapPin aria-hidden="true" className="size-6 text-accent-strong" strokeWidth={1.6} />
+                <MapPin aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
                 <h2 className="mt-6 text-title text-navy">Ofis</h2>
-                <address className="mt-3 text-body not-italic text-ink">
+                <address className="mt-2 text-label not-italic text-ink">
                   {contactConfig.address.full}
                 </address>
                 <a
@@ -94,12 +93,12 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-label font-medium text-navy underline underline-offset-4"
                 >
-                  Google Haritalar&apos;da aç
+                  Haritada açın
                   <ArrowUpRight aria-hidden="true" className="size-4 text-accent-strong" />
                 </a>
               </div>
-              <div className="rounded-card border border-line p-8">
-                <h2 className="text-title text-navy">Ön görüşmede neler konuşulur</h2>
+              <div className="rounded-card bg-surface p-8">
+                <h2 className="text-title text-navy">Ön görüşme konuları</h2>
                 <div className="mt-6">
                   <BulletList items={consultationTopics} />
                 </div>

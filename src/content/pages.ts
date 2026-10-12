@@ -36,7 +36,7 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     title:
       "MAB Global Partners | Amerika ve İngiltere'de Şirket Kuruluşu, Vergi ve Muhasebe",
     description:
-      "Amerika ve İngiltere'de şirket kuruluşu, vergi danışmanlığı, muhasebe ve registered agent hizmetleriyle uluslararası operasyonlarınızı Türkçe destekle yönetiyoruz.",
+      "Amerika ve İngiltere'de şirketinizi kurun, vergi, muhasebe ve registered agent süreçlerinizi Türkçe destekle tek ekiple yönetin.",
     updatedAt: "2026-10-12",
     changeFrequency: "monthly",
     priority: 1,

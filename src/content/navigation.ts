@@ -13,7 +13,7 @@ export const mainNavigation: NavItem[] = [
 ];
 
 export const primaryCta: NavItem = {
-  label: "Danışmanlık Talep Et",
+  label: "Danışmanlık Talep Edin",
   href: routes.contactForm,
 };
 

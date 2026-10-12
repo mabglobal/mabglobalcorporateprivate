@@ -33,7 +33,7 @@ const fieldOrder: ContactField[] = ["name", "email", "company", "service", "sect
 const genericError = `Talebiniz şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin veya ${contactConfig.email} adresine e-posta gönderin.`;
 
 const inputClasses =
-  "block w-full rounded-control border bg-white px-4 text-body text-ink transition-colors placeholder:text-muted focus:border-navy focus:outline-2 focus:outline-offset-0 focus:outline-accent";
+  "block w-full rounded-control border bg-white px-4 text-body text-ink transition-colors placeholder:text-muted focus:border-navy focus:outline-2 focus:outline-offset-0 focus:outline-navy";
 
 function newSubmissionId(): string {
   return crypto.randomUUID();
@@ -151,13 +151,13 @@ export function ContactForm({ options }: { options: ContactOptions }) {
 
   if (status === "success") {
     return (
-      <div role="status" className="rounded-card border border-line bg-white p-8 md:p-10">
+      <div role="status" className="rounded-card bg-surface p-8 md:p-10">
         <CircleCheck aria-hidden="true" className="size-8 text-navy" strokeWidth={1.6} />
         <h3 ref={successRef} tabIndex={-1} className="mt-6 text-title text-navy focus:outline-none">
           Talebiniz bize ulaştı.
         </h3>
         <p className="mt-4 text-body text-slate">
-          Ekibimiz talebinizi inceleyerek e-posta adresiniz üzerinden sizinle iletişime geçecek.
+          Ekibimiz talebinizi inceleyip e-posta adresiniz üzerinden sizinle iletişime geçecek.
         </p>
         <button
           type="button"
@@ -167,7 +167,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           }}
           className="mt-8 inline-flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4"
         >
-          Yeni bir talep gönder
+          Yeni bir talep gönderin
         </button>
       </div>
     );
@@ -181,14 +181,14 @@ export function ContactForm({ options }: { options: ContactOptions }) {
       onSubmit={handleSubmit}
       onFocus={() => void loadValidator()}
       aria-describedby={`${formId}-note`}
-      className="rounded-card border border-line bg-white p-6 sm:p-8 md:p-10"
+      className="rounded-card bg-surface p-6 sm:p-8 md:p-10"
     >
       {status === "error" && errorMessage ? (
         <div
           ref={errorRef}
           role="alert"
           tabIndex={-1}
-          className="mb-8 flex gap-3 rounded-control border border-accent-strong/40 bg-surface p-4 text-label text-ink focus:outline-none"
+          className="mb-8 flex gap-3 rounded-panel bg-white p-4 text-label text-ink focus:outline-none"
         >
           <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent-strong" />
           <p>
@@ -368,32 +368,33 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         <input id={`${formId}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
 
-      <div className="mt-8 flex flex-col gap-5 border-t border-line pt-8 md:flex-row md:items-center md:justify-between">
+      <div className="mt-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <p id={`${formId}-note`} className="max-w-md text-caption text-slate">
-          Formu göndererek bilgilerinizin talebinizi yanıtlamak amacıyla işlenmesine ilişkin{" "}
+          Formu göndererek{" "}
           <Link href={routes.kvkk} className="text-navy underline underline-offset-4">
             KVKK Aydınlatma Metni
           </Link>
-          &apos;ni okuduğunuzu belirtmiş olursunuz.
+          &apos;ni okuduğunuzu onaylarsınız.
         </p>
         <button
           type="submit"
           disabled={submitting}
           aria-disabled={submitting}
-          className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-control bg-accent px-6 text-label font-medium text-navy-deep transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-80"
+          data-brand-accent=""
+          className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-control bg-accent px-6 text-label font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-80"
         >
           {submitting ? (
             <>
               <LoaderCircle aria-hidden="true" className="size-4 animate-spin" />
-              Gönderiliyor
+              Lütfen bekleyin
             </>
           ) : (
-            "Danışmanlık Talep Et"
+            "Danışmanlık Talep Edin"
           )}
         </button>
       </div>
       <p aria-live="polite" className="sr-only">
-        {submitting ? "Talebiniz gönderiliyor" : ""}
+        {submitting ? "Talebiniz gönderilmek üzere, lütfen bekleyin" : ""}
       </p>
     </form>
   );

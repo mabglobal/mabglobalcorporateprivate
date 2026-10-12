@@ -17,13 +17,13 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <section aria-labelledby="error-title" className="section-y bg-surface">
+    <section aria-labelledby="error-title" className="section-y bg-white">
       <div className="container-page max-w-3xl">
         <h1 id="error-title" className="text-heading text-navy">
           Beklenmeyen bir hata oluştu.
         </h1>
         <p className="mt-5 text-lead text-slate">
-          Sayfayı yeniden yüklemeyi deneyebilirsiniz. Sorun devam ederse bize{" "}
+          Sayfayı yeniden yükleyin. Sorun devam ederse bize{" "}
           <a href={mailtoHref} className="text-navy underline underline-offset-4">
             {contactConfig.email}
           </a>{" "}
@@ -33,15 +33,16 @@ export default function ErrorPage({
           <button
             type="button"
             onClick={() => retry()}
-            className="inline-flex min-h-12 items-center rounded-control bg-accent px-6 text-label font-medium text-navy-deep hover:bg-accent-hover"
+            data-brand-accent=""
+            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control bg-accent px-6 text-label font-medium text-white hover:bg-accent-hover"
           >
-            Tekrar dene
+            Tekrar Deneyin
           </button>
           <Link
             href={routes.home}
-            className="inline-flex min-h-12 items-center rounded-control border border-line bg-white px-6 text-label font-medium text-navy hover:border-navy"
+            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control bg-surface px-6 text-label font-medium text-navy hover:bg-surface-strong"
           >
-            Ana sayfaya dön
+            Ana Sayfaya Dönün
           </Link>
         </div>
       </div>

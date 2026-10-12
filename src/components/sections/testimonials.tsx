@@ -13,12 +13,12 @@ export function Testimonials() {
       <div className="container-page">
         <SectionHeading
           id="testimonials-title"
-          eyebrow="Referanslar"
-          title="Müşterilerimizin deneyimleri"
+          icon="help"
+          title="Müşteri deneyimleri"
         />
         <ul className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <li key={testimonial.id} className="rounded-card border border-line p-8">
+            <li key={testimonial.id} className="rounded-card bg-surface p-7">
               <figure>
                 <blockquote className="text-body text-ink">
                   <p>{testimonial.quote}</p>

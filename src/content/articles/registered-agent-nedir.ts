@@ -5,7 +5,7 @@ export const registeredAgentNedir: Article = {
   slug: "registered-agent-nedir",
   title: "Registered Agent Nedir ve Neden Gereklidir?",
   summary:
-    "Registered agent'ın görevini, hangi şirketlerin registered agent belirlemesi gerektiğini ve hizmet seçerken dikkate alınabilecek kriterleri açıklıyoruz.",
+    "Registered agent'ın görevini, hangi şirketlerin temsilci belirlemesi gerektiğini ve hizmet seçerken dikkate alınacak kriterleri öğrenin.",
   category: "muhasebe-ve-uyum",
   author: { type: "organization", name: "MAB Global Partners Editör Ekibi" },
   publishedAt: "2026-10-12",

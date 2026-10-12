@@ -5,7 +5,7 @@ export const amerikaSirketKurulusuRehberi: Article = {
   slug: "amerika-sirket-kurulusu-rehberi",
   title: "Amerika'da Şirket Kuruluşu Rehberi",
   summary:
-    "Amerika'da LLC veya corporation kurmadan önce bilmeniz gereken temel adımları, registered agent ve EIN gerekliliklerini ve kuruluş sonrası yükümlülükleri özetliyoruz.",
+    "Amerika'da LLC veya corporation kurmadan önce temel adımları, registered agent ve EIN gerekliliklerini ve kuruluş sonrası yükümlülükleri öğrenin.",
   category: "amerika-sirket-kurulusu",
   author: { type: "organization", name: "MAB Global Partners Editör Ekibi" },
   publishedAt: "2026-10-12",

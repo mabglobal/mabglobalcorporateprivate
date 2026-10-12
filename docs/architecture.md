@@ -66,9 +66,13 @@ The reference structure in the brief used a `(website)` route group. It was not 
 
 ## Design system
 
+The layout follows the supplied reference composition: the header sits inside the navy band that opens every page, the homepage hero carries a two-line heading at the bottom left and the focus markets at the bottom right, sections open with a small icon box, a short heading and a one-line description, the process is shown as adjacent rounded panels, the market comparison follows the reference pricing cards, FAQs are light grey boxes, and the footer combines the closing call to action with a white card on the navy band.
+
 * Colors: `src/styles/tokens.css` resets Tailwind's palette (`--color-*: initial`) so only brand tokens exist. `src/config/brand.ts` mirrors the hex values for generated images; a unit test keeps them identical.
-* Contrast: orange fills carry deep navy text (4.6:1). Small orange text uses `accent-strong` (#C24A00, 4.9:1). Muted grey is used only on white.
-* Typography: fluid tokens `text-display` (40 to 68 px), `text-heading` (32 to 44 px), `text-title` (20 to 24 px), `text-lead`, `text-body` (17 px), `text-label` (14 px), `text-caption` (13 px).
+* Pairing rules (client decision, 2026-10-12): orange fills carry white text only; navy surfaces carry white only; navy is never placed on orange and orange is never placed on navy. Orange appears as button fills and small icons on white or light grey surfaces. Navy sections use the `on-dark` utility, which also switches the focus ring and text selection to white.
+* Contrast exception: white on brand orange (#F45800) is 3.4:1, below the 4.5:1 AA threshold for normal-size text. The client chose this pairing explicitly. Orange buttons carry a `data-brand-accent` attribute and are excluded from the automated axe check in `tests/e2e/pages.spec.ts`; every other element is checked. A darker orange such as #CC4700 would reach 4.7:1 if full AA compliance is required later.
+* Shape: rounded, close-to-square corners (`rounded-card` 20 px, `rounded-panel` 16 px, `rounded-control` 12 px for buttons and inputs, `rounded-tile` 10 px for icon boxes). No decorative lines, underlines or dividers.
+* Typography: fluid tokens `text-display` (36 to 52 px), `text-heading` (26 to 34 px), `text-title` (17 to 20 px), `text-body` (16 px), `text-label` (14 px), `text-caption` (13 px). Copy is kept short so headings, card titles and buttons do not wrap unnecessarily; buttons and navigation labels never wrap.
 * Spacing: `container-page` (max 1280 px, 20/32/40 px gutters) and `section-y` (80/112/136 px vertical padding).
 * A metric-matched fallback (`Google Sans Flex Fallback`, Arial with ascent 96.63 %, descent 28.61 %) keeps layout shift at zero while the web font loads. Values were computed from the font's hhea table and Turkish sample text widths.
 
@@ -88,4 +92,4 @@ The reference structure in the brief used a `(website)` route group. It was not 
 | `/hizmetler/amerika-sirket-kurulusu` | 95 to 97 | 100 | 100 | 100 | 2.7 s | 40 to 90 ms | 0 |
 | `/iletisim` | 93 to 95 | 100 | 100 | 100 | 2.6 to 2.7 s | 160 to 210 ms | 0 |
 
-Lighthouse 13.5 with default mobile throttling, two runs each, on a development machine running other processes. Simulated LCP is slightly above the 2.5 s "good" threshold; the LCP element is the hero heading and its cost is the web font and HTML transfer under throttling. Field data should be collected after launch before further optimization.
+Lighthouse 13.5 with default mobile throttling, two runs each, on a development machine running other processes, measured before the 2026-10-12 redesign to the reference layout. Simulated LCP is slightly above the 2.5 s "good" threshold; the LCP element is the hero heading and its cost is the web font and HTML transfer under throttling. Field data should be collected after launch before further optimization.

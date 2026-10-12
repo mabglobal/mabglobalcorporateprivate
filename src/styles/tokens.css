@@ -6,10 +6,16 @@
  * src/config/brand.ts mirrors these values for generated images; a unit test
  * keeps both files in sync.
  *
+ * Color pairing rules (client decision, 2026-10-12):
+ *  - Orange fills carry white text only. Never navy on orange.
+ *  - Navy surfaces carry white only. Never orange on navy.
+ *  - Orange is used on white and light grey surfaces only.
+ *
  * Contrast notes (WCAG 2.2 AA):
+ *  - White on accent (#F45800) is 3.4:1, below 4.5:1 for normal text.
+ *    This is an explicit client decision for buttons; see docs/architecture.md.
  *  - muted (#697586) passes 4.5:1 only on white. Use slate on grey surfaces.
- *  - accent (#F45800) is used as a fill with deep navy text (4.6:1).
- *    For small orange text on white use accent-strong.
+ *  - accent-strong is reserved for small orange icons and text on white.
  */
 @theme {
   /* Remove Tailwind's default palette so only brand colors are available. */
@@ -25,7 +31,7 @@
   --color-white: #ffffff;
   --color-ink: #202938;
   --color-accent: #f45800;
-  --color-accent-hover: #ff6a1a;
+  --color-accent-hover: #db4f00;
   --color-accent-strong: #c24a00;
 
   --breakpoint-xs: 30rem;
@@ -33,22 +39,25 @@
   --container-page: 80rem;
   --container-prose: 44rem;
 
-  --radius-card: 0.5rem;
-  --radius-control: 0.375rem;
+  /* Rounded, close-to-square corners for boxes and buttons. */
+  --radius-card: 1.25rem;
+  --radius-panel: 1rem;
+  --radius-control: 0.75rem;
+  --radius-tile: 0.625rem;
 
-  --text-display: clamp(2.5rem, 1.55rem + 3.4vw, 4.25rem);
-  --text-display--line-height: 1.04;
-  --text-display--letter-spacing: -0.03em;
-  --text-heading: clamp(2rem, 1.45rem + 1.6vw, 2.75rem);
-  --text-heading--line-height: 1.1;
-  --text-heading--letter-spacing: -0.022em;
-  --text-title: clamp(1.25rem, 1.15rem + 0.3vw, 1.5rem);
-  --text-title--line-height: 1.25;
-  --text-title--letter-spacing: -0.012em;
-  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-display: clamp(2.25rem, 1.75rem + 1.8vw, 3.25rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.028em;
+  --text-heading: clamp(1.625rem, 1.45rem + 0.7vw, 2.125rem);
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.02em;
+  --text-title: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --text-title--line-height: 1.3;
+  --text-title--letter-spacing: -0.01em;
+  --text-lead: 1.0625rem;
   --text-lead--line-height: 1.6;
-  --text-body: 1.0625rem;
-  --text-body--line-height: 1.7;
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
   --text-label: 0.875rem;
   --text-label--line-height: 1.45;
   --text-caption: 0.8125rem;

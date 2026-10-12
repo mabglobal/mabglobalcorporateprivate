@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import {
   mainNavigation,
@@ -6,15 +5,17 @@ import {
   sectorNavigation,
   serviceNavigation,
 } from "@/content/navigation";
+import { ButtonLink } from "@/components/ui/button-link";
 import { DesktopNavigation, NavigationList } from "./desktop-navigation";
 import { MobileNavigation } from "./mobile-navigation";
 import { SiteLogo } from "./site-logo";
 
+/** Header sits on the navy band that opens every page, as in the reference. */
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white">
+    <header className="on-dark relative z-40 bg-navy-deep">
       <div className="container-page flex h-20 items-center justify-between gap-6">
-        <SiteLogo />
+        <SiteLogo tone="dark" />
 
         <nav aria-label="Ana menü" className="hidden lg:block">
           <Suspense fallback={<NavigationList items={mainNavigation} />}>
@@ -23,12 +24,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href={primaryCta.href}
-            className="hidden min-h-11 items-center rounded-control bg-accent px-5 text-label font-medium text-navy-deep transition-colors hover:bg-accent-hover sm:inline-flex"
-          >
-            {primaryCta.label}
-          </Link>
+          <div className="hidden sm:block">
+            <ButtonLink href={primaryCta.href} variant="light" size="sm">
+              {primaryCta.label}
+            </ButtonLink>
+          </div>
           <MobileNavigation
             items={mainNavigation}
             cta={primaryCta}

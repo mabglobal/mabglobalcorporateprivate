@@ -8,16 +8,16 @@ import { TextLink } from "@/components/ui/text-link";
 export function SectorsGrid() {
   const content = homeContent.sectors;
   return (
-    <section aria-labelledby="sectors-title" className="section-y bg-surface">
+    <section aria-labelledby="sectors-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
       <div className="container-page">
         <SectionHeading
           id="sectors-title"
-          eyebrow={content.eyebrow}
+          icon="globe"
           title={content.title}
           description={content.description}
           action={<TextLink href={routes.sectors}>{content.allSectorsLabel}</TextLink>}
         />
-        <ul className="mt-16 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {sectors.map((sector) => (
             <li key={sector.slug}>
               <SectorCard sector={sector} />

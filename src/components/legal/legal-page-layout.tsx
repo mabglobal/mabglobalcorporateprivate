@@ -33,7 +33,7 @@ export function LegalPageLayout({ documentKey }: { documentKey: LegalDocument["k
           breadcrumbNode(breadcrumb),
         ])}
       />
-      <PageHero breadcrumb={breadcrumb} eyebrow="Yasal bilgilendirme" title={page.title} description={document.intro} />
+      <PageHero breadcrumb={breadcrumb} title={page.title} description={document.intro} />
       <div className="section-y bg-white">
         <div className="container-page">
           <p className="text-caption text-slate">
