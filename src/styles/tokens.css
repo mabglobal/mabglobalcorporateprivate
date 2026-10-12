@@ -1,0 +1,58 @@
+/*
+ * MAB Global Partners design tokens.
+ *
+ * Authoritative brand palette. Components reference these through Tailwind
+ * utilities (bg-navy, text-ink, border-line, ...) and never use raw hex values.
+ * src/config/brand.ts mirrors these values for generated images; a unit test
+ * keeps both files in sync.
+ *
+ * Contrast notes (WCAG 2.2 AA):
+ *  - muted (#697586) passes 4.5:1 only on white. Use slate on grey surfaces.
+ *  - accent (#F45800) is used as a fill with deep navy text (4.6:1).
+ *    For small orange text on white use accent-strong.
+ */
+@theme {
+  /* Remove Tailwind's default palette so only brand colors are available. */
+  --color-*: initial;
+
+  --color-navy: #262f40;
+  --color-navy-deep: #1c2432;
+  --color-slate: #526071;
+  --color-muted: #697586;
+  --color-surface: #f3f5f7;
+  --color-surface-strong: #e9edf2;
+  --color-line: #dce2e8;
+  --color-white: #ffffff;
+  --color-ink: #202938;
+  --color-accent: #f45800;
+  --color-accent-hover: #ff6a1a;
+  --color-accent-strong: #c24a00;
+
+  --breakpoint-xs: 30rem;
+
+  --container-page: 80rem;
+  --container-prose: 44rem;
+
+  --radius-card: 0.5rem;
+  --radius-control: 0.375rem;
+
+  --text-display: clamp(2.5rem, 1.55rem + 3.4vw, 4.25rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+  --text-heading: clamp(2rem, 1.45rem + 1.6vw, 2.75rem);
+  --text-heading--line-height: 1.1;
+  --text-heading--letter-spacing: -0.022em;
+  --text-title: clamp(1.25rem, 1.15rem + 0.3vw, 1.5rem);
+  --text-title--line-height: 1.25;
+  --text-title--letter-spacing: -0.012em;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.6;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.45;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.45;
+
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

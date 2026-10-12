@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-labelledby="title">
+  <title id="title">MAB Global Partners</title>
+  <rect x="0" y="8" width="84" height="48" rx="6" fill="#262F40"/>
+  <rect x="10" y="52" width="64" height="3" fill="#F45800"/>
+  <text x="42" y="41" text-anchor="middle" font-family="'Google Sans Flex', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="1.5" fill="#FFFFFF">MAB</text>
+  <text x="100" y="42" font-family="'Google Sans Flex', Arial, sans-serif" font-size="26" font-weight="450" fill="#262F40">Global Partners</text>
+</svg>

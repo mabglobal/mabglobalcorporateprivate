@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/*
+ * Metric-matched fallback for Google Sans Flex, computed from the font's hhea
+ * metrics and the average advance width of Turkish sample text versus Arial.
+ */
+@font-face {
+  font-family: "Google Sans Flex Fallback";
+  src: local("Arial"), local("ArialMT"), local("Helvetica");
+  size-adjust: 100%;
+  ascent-override: 96.63%;
+  descent-override: 28.61%;
+  line-gap-override: 0%;
+}
+
+@theme inline {
+  --font-sans: var(--font-gsf), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    font-weight: 500;
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-navy-deep);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @variant sm {
+    padding-inline: 2rem;
+  }
+  @variant lg {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility section-y {
+  padding-block: 5rem;
+  @variant md {
+    padding-block: 7rem;
+  }
+  @variant lg {
+    padding-block: 8.5rem;
+  }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@utility prose-mab {
+  max-width: var(--container-prose);
+  & h2 {
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    letter-spacing: var(--text-title--letter-spacing);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-navy);
+  }
+  & p {
+    margin-bottom: 1.25rem;
+    color: var(--color-ink);
+  }
+  & ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  & li {
+    margin-bottom: 0.5rem;
+  }
+  & li::marker {
+    color: var(--color-accent);
+  }
+  & a {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 3px;
+  }
+}
