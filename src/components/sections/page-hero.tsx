@@ -14,9 +14,8 @@ interface PageHeroProps {
 }
 
 /**
- * Navy opening band for inner pages. It carries the transparent header like
- * the homepage hero and repeats the architectural image faintly on wide
- * screens. White on navy only.
+ * Navy opening band for inner pages under the solid header. It repeats the
+ * architectural image faintly on wide screens. White on navy only.
  */
 export function PageHero({ breadcrumb, title, description, actions }: PageHeroProps) {
   return (
@@ -28,7 +27,7 @@ export function PageHero({ breadcrumb, title, description, actions }: PageHeroPr
         aria-hidden="true"
         className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,var(--color-navy-deep)_38%,transparent_85%)] lg:block"
       />
-      <div className="container-page pb-14 pt-32 md:pb-20 md:pt-40">
+      <div className="container-page pb-14 pt-12 md:pb-20 md:pt-16">
         <Breadcrumb items={breadcrumb} tone="dark" />
         <h1
           id="page-title"

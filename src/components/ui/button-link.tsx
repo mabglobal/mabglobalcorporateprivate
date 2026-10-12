@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CalendarDays } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
@@ -10,8 +10,10 @@ import { cn } from "@/lib/utilities/cn";
  *  - dark: navy fill, white text.
  *  - light: white fill, navy text. For navy surfaces.
  *  - outline-light: translucent navy with a thin white border. For navy surfaces.
+ *  - outline-white: transparent with a solid white border (header button).
+ * Labels are uppercase with wide tracking, following behringeb5.com.
  */
-type Variant = "accent" | "outline" | "dark" | "light" | "outline-light";
+type Variant = "accent" | "outline" | "dark" | "light" | "outline-light" | "outline-white";
 
 const variants: Record<Variant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
@@ -19,6 +21,7 @@ const variants: Record<Variant, string> = {
   dark: "bg-navy text-white hover:bg-navy-deep",
   light: "bg-white text-navy hover:bg-white/90",
   "outline-light": "border border-white/25 bg-navy-deep/40 text-white hover:border-white/60",
+  "outline-white": "border border-white text-white hover:bg-white hover:text-navy",
 };
 
 interface ButtonLinkProps {
@@ -27,7 +30,7 @@ interface ButtonLinkProps {
   variant?: Variant;
   size?: "md" | "sm";
   /** Trailing icon. The hero reference uses a straight arrow. */
-  icon?: "arrow-up-right" | "arrow-right" | "none";
+  icon?: "arrow-up-right" | "arrow-right" | "calendar" | "none";
   className?: string;
   external?: boolean;
 }
@@ -42,12 +45,12 @@ export function ButtonLink({
   external = false,
 }: ButtonLinkProps) {
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control font-medium transition-colors duration-200",
-    size === "md" ? "min-h-12 px-5 text-label" : "min-h-10 px-4 text-label",
+    "group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-control font-bold uppercase tracking-[0.06em] transition-colors duration-200",
+    size === "md" ? "min-h-13 px-6 text-[0.8125rem]" : "min-h-11 px-5 text-[0.75rem]",
     variants[variant],
     className,
   );
-  const Icon = icon === "arrow-right" ? ArrowRight : ArrowUpRight;
+  const Icon = icon === "arrow-right" ? ArrowRight : icon === "calendar" ? CalendarDays : ArrowUpRight;
   const content = (
     <>
       <span>{children}</span>
@@ -59,7 +62,9 @@ export function ButtonLink({
             "size-4 transition-transform duration-200",
             icon === "arrow-right"
               ? "group-hover:translate-x-0.5"
-              : "group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
+              : icon === "calendar"
+                ? ""
+                : "group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
           )}
         />
       )}

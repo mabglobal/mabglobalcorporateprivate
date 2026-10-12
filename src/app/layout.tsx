@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Google_Sans_Flex } from "next/font/google";
+import { Figtree } from "next/font/google";
+import localFont from "next/font/local";
 import { brandColors } from "@/config/brand";
 import { seoDefaults } from "@/config/seo";
 import { isIndexable, siteConfig } from "@/config/site";
@@ -8,17 +9,27 @@ import { Header } from "@/components/layout/header";
 import "./globals.css";
 
 /**
- * Google Sans Flex is the typeface verified on brandunder.com
- * (next/font/google, --font-gsf). latin-ext covers Turkish characters.
+ * Typefaces follow behringeb5.com (client decision, 2026-10-12), which sets
+ * headings in Century Gothic and text in Proxima Nova. Both are commercial
+ * Adobe fonts, so free equivalents are used:
+ *  - TeX Gyre Adventor (GUST Font License), a clone of ITC Avant Garde Gothic,
+ *    whose proportions Century Gothic was drawn to match. Self-hosted.
+ *  - Figtree (SIL Open Font License), a geometric sans close to Proxima Nova.
  */
-const googleSansFlex = Google_Sans_Flex({
+const figtree = Figtree({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-gsf",
+  variable: "--font-figtree",
   display: "swap",
-  // next/font has no metric overrides for this family, so a metric-matched
-  // Arial fallback is declared in globals.css to limit layout shift.
-  adjustFontFallback: false,
-  fallback: ["Google Sans Flex Fallback", "Arial", "sans-serif"],
+});
+
+const adventor = localFont({
+  src: [
+    { path: "../assets/fonts/TeXGyreAdventor-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../assets/fonts/TeXGyreAdventor-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-adventor",
+  display: "swap",
+  adjustFontFallback: "Arial",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +61,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${googleSansFlex.variable} antialiased`}>
+    <html lang="en" className={`${figtree.variable} ${adventor.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#content"

@@ -3,13 +3,14 @@ import { homeContent } from "@/content/home";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
 import { AboutBlock } from "@/components/sections/about-block";
+import { CapabilityStrip } from "@/components/sections/capability-strip";
 import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { Hero } from "@/components/sections/hero";
 import { Principles } from "@/components/sections/principles";
 import { ProcessSection } from "@/components/sections/process-steps";
 import { SectorsGrid } from "@/components/sections/sectors-grid";
-import { ServiceGroups } from "@/components/sections/service-groups";
+import { ServicesBand } from "@/components/sections/services-band";
 import { Testimonials } from "@/components/sections/testimonials";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import { faqNode, graph, organizationNode, webPageNode, websiteNode } from "@/lib/seo/structured-data";
@@ -33,14 +34,14 @@ export default function HomePage() {
         ])}
       />
       <Hero />
-      <ServiceGroups />
+      <CapabilityStrip />
+      <ServicesBand />
       <ProcessSection
         id="process-title"
         tag={process.tag}
         title={process.title}
         description={process.description}
         steps={process.steps}
-        padding="bottom"
       />
       <AboutBlock />
       <Principles />

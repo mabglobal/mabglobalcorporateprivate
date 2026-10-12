@@ -392,7 +392,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           disabled={submitting || !hydrated}
           aria-disabled={submitting || !hydrated}
           data-brand-accent=""
-          className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-control bg-accent px-6 text-label font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-80"
+          className="inline-flex min-h-13 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-control bg-accent px-6 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-white transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-80"
         >
           {submitting ? (
             <>

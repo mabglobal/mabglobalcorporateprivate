@@ -1,100 +1,85 @@
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
 import { contactConfig, mailtoHref } from "@/config/contact";
 import { siteConfig } from "@/config/site";
-import { footerNavigation, legalNavigation } from "@/content/navigation";
+import { footerLinks, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
 import { SiteLogo } from "./site-logo";
 
-const footerDescription = "Your partner for doing business across borders.";
+const tagline = "Your partner for doing business across borders.";
 
 const registeredAgentBrand = siteConfig.relatedBrands[0];
 
-const footerLink = "inline-flex min-h-9 items-center text-label text-white underline-offset-4 hover:underline";
-
 /**
- * Footer following the reference: a rounded navy panel inset on the white
- * page with the wordmark and a short line on top, link columns and the
- * sister brand in the middle, and the legal bar at the bottom.
- * White only on navy.
+ * White footer following the EY-Parthenon reference: the logo lockup with a
+ * bold line and two short paragraphs on the left, bold underlined links on
+ * the right, and the legal links with the copyright at the bottom right.
+ * Social links are omitted until accounts are confirmed.
  */
 export function Footer() {
   return (
-    <footer className="bg-white py-4 sm:py-6">
-      <div className="container-page">
-        <div className="on-dark rounded-card bg-navy-deep px-6 py-10 sm:px-10 lg:px-14 lg:py-12">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <SiteLogo tone="dark" />
-            <p className="text-label text-white">{footerDescription}</p>
-          </div>
-
-          <div className="mt-8 grid gap-10 border-t border-white/15 pt-10 lg:grid-cols-12">
-            <div className="grid gap-10 sm:grid-cols-[1.2fr_0.8fr_1.4fr] lg:col-span-9">
-              {footerNavigation.map((group) => (
-                <nav key={group.title} aria-label={group.title}>
-                  <h2 className="text-label font-medium text-white">{group.title}</h2>
-                  <ul className="mt-4 grid gap-0.5">
-                    {group.items.map((item) => (
-                      <li key={item.href}>
-                        <Link href={item.href} className={footerLink}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              ))}
-
-              <div>
-                <h2 className="text-label font-medium text-white">Contact</h2>
-                <ul className="mt-4 grid gap-4 text-label">
-                  <li>
-                    <a
-                      href={contactConfig.mapsUrl}
-                      rel="noopener noreferrer"
-                      className="text-white underline-offset-4 hover:underline"
-                    >
-                      <address className="not-italic">{contactConfig.address.full}</address>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={mailtoHref} className={`${footerLink} whitespace-nowrap`}>
-                      {contactConfig.email}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {registeredAgentBrand ? (
-              <div className="lg:col-span-3 lg:justify-self-end">
-                <a
-                  href={registeredAgentBrand.url}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 text-white underline-offset-4 hover:underline"
-                >
-                  <ShieldCheck aria-hidden="true" className="size-8 shrink-0" strokeWidth={1.5} />
-                  <span aria-hidden="true" className="h-10 w-px bg-white/25" />
-                  <span className="text-label leading-snug">
-                    Registered agent services
-                    <span className="block">by {registeredAgentBrand.name}</span>
-                  </span>
-                </a>
-              </div>
-            ) : null}
-          </div>
-
-          <div className="mt-10 flex flex-col gap-4 border-t border-white/15 pt-6 md:flex-row md:items-center md:justify-between">
-            <p className="text-caption text-white">
-              © <CopyrightYear /> {siteConfig.name}. All rights reserved.
+    <footer className="border-t border-line bg-white">
+      <div className="container-page grid gap-12 py-14 md:py-20 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <SiteLogo tone="light" variant="lockup" />
+          <p className="mt-4 font-display text-title font-bold text-navy">{tagline}</p>
+          <div className="mt-8 grid max-w-2xl gap-4 text-label text-navy">
+            <p>
+              {siteConfig.name} is a corporate services brand for entrepreneurs and companies that do
+              business in the United States and the United Kingdom.
+              {registeredAgentBrand ? (
+                <>
+                  {" "}
+                  Registered agent services are provided by{" "}
+                  <a
+                    href={registeredAgentBrand.url}
+                    rel="noopener noreferrer"
+                    className="font-bold underline underline-offset-4"
+                  >
+                    {registeredAgentBrand.name}
+                  </a>
+                  {registeredAgentBrand.name.endsWith(".") ? null : "."}
+                </>
+              ) : null}
             </p>
+            <p>
+              Content on this website is general information and is no substitute for personal legal or
+              tax advice. Office{" "}
+              <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="underline underline-offset-4">
+                {contactConfig.address.full}
+              </a>
+              . Email{" "}
+              <a href={mailtoHref} className="underline underline-offset-4">
+                {contactConfig.email}
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-between gap-12 lg:col-span-5 lg:items-end">
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-x-7 gap-y-3 lg:justify-end">
+              {footerLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-9 items-center whitespace-nowrap text-body font-bold text-navy underline underline-offset-[6px] hover:decoration-2"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="grid gap-3 lg:justify-items-end">
             <nav aria-label="Legal information">
-              <ul className="flex flex-wrap gap-x-6 gap-y-1">
+              <ul className="flex flex-wrap gap-x-6 gap-y-1 lg:justify-end">
                 {legalNavigation.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="inline-flex min-h-9 items-center whitespace-nowrap text-caption text-white underline-offset-4 hover:underline"
+                      className="inline-flex min-h-9 items-center whitespace-nowrap text-label text-navy underline-offset-4 hover:underline"
                     >
                       {item.label}
                     </Link>
@@ -102,6 +87,9 @@ export function Footer() {
                 ))}
               </ul>
             </nav>
+            <p className="text-caption text-navy">
+              © <CopyrightYear /> {siteConfig.name}. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

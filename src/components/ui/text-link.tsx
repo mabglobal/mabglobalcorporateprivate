@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
 /**
- * Text link with a round framed arrow, following the analytics reference.
+ * Text link with a framed arrow tile shaped like the header buttons.
  * Orange on white surfaces; white on navy surfaces, where orange never sits.
  */
 export function TextLink({
@@ -31,7 +31,7 @@ export function TextLink({
       <span
         aria-hidden="true"
         className={cn(
-          "inline-flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
+          "inline-flex size-10 shrink-0 items-center justify-center rounded-control border transition-colors duration-200",
           tone === "light"
             ? "border-accent-strong group-hover:bg-accent-strong group-hover:text-white"
             : "border-white/40 group-hover:bg-white group-hover:text-navy",

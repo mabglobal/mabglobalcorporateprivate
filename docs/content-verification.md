@@ -48,9 +48,13 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 | Telephone number, social media accounts | None supplied |
 | Whether the S1 service list (FDA, DUNS, warehouse, trademark, dissolution, share transfer, Amazon services) is offered under the MAB Global Partners brand | Listed on the founder's site; confirm scope and wording |
 | Taking over maintenance of existing foreign companies (FAQ `mevcut-sirket-devralma`) | Reasonable extension of accounting and tax services; confirm |
-| Logo files | No approved logo was supplied; a typographic wordmark is used |
+| Registered trademark sign | The logo supplied on 2026-10-12 carries the ® sign. Use ® only for a registered mark; confirm the registration (office and number) or remove the sign from the artwork |
 | Customer testimonials and client logos | None supplied; the section is hidden |
 | Leadership or team members beyond the founder | None supplied |
+
+## Logo
+
+The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12. It was traced to vector with potrace into `src/config/logo.ts` (mark, mark without ®, and lockup with the tagline "Formation | Tax | Accounting | Investment | Business Advisory"). `public/images/brand/` holds navy SVG versions for structured data. The header uses the mark because the tagline is illegible at header size; the footer and the social image use the full lockup; the favicon and home screen icon use the letters without ®.
 
 ## Images
 

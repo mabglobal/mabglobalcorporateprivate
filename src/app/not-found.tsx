@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <section aria-labelledby="not-found-title" className="on-dark bg-navy-deep">
-      <div className="container-page pb-24 pt-36 md:pb-32 md:pt-44">
+      <div className="container-page pb-24 pt-16 md:pb-32 md:pt-24">
         <p className="text-caption font-medium uppercase tracking-[0.14em] text-white">Error 404</p>
         <h1 id="not-found-title" className="mt-4 text-heading text-white">
           Page Not Found

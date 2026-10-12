@@ -15,7 +15,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
             <span>{item.question}</span>
             <span
               aria-hidden="true"
-              className="inline-flex size-7 shrink-0 items-center justify-center rounded-chip border border-line text-navy transition-transform duration-200 group-open:rotate-45"
+              className="inline-flex size-7 shrink-0 items-center justify-center rounded-control border border-line text-navy transition-transform duration-200 group-open:rotate-45"
             >
               <Plus className="size-4" strokeWidth={1.8} />
             </span>

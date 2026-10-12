@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
 const mainLinks = [
-  { label: "About", path: "/about" },
+  { label: "About Us", path: "/about" },
   { label: "Services", path: "/services" },
   { label: "Industries", path: "/industries" },
   { label: "Insights", path: "/insights" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact Us", path: "/contact" },
 ];
 
 test.describe("desktop navigation", () => {
@@ -30,12 +30,12 @@ test.describe("desktop navigation", () => {
   test("hero CTA leads to the contact form and the services link to the index", async ({ page }) => {
     await page.goto("/");
     const hero = page.locator("section").first();
-    await hero.getByRole("link", { name: "Book a Consultation" }).click();
+    await hero.getByRole("link", { name: "Schedule a Consultation" }).click();
     await expect(page).toHaveURL("/contact#consultation-form");
     await expect(page.getByRole("heading", { name: "Consultation Request" })).toBeVisible();
 
     await page.goto("/");
-    await page.getByRole("link", { name: "All Services" }).click();
+    await page.getByRole("main").getByRole("link", { name: /^All Services/ }).click();
     await expect(page).toHaveURL("/services");
   });
 
@@ -88,6 +88,17 @@ test.describe("mobile navigation", () => {
     await page.getByRole("dialog", { name: "Menu" }).getByRole("link", { name: "Book a Consultation" }).click();
     await expect(page).toHaveURL("/contact#consultation-form");
   });
+});
+
+test("service dropdown opens on keyboard focus and lists every service", async ({ page, isMobile }) => {
+  test.skip(isMobile, "Desktop navigation only");
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "Main menu" });
+  await nav.getByRole("link", { name: "Services", exact: true }).focus();
+  const sub = nav.getByRole("link", { name: "Registered Agent", exact: true });
+  await expect(sub).toBeVisible();
+  await sub.click();
+  await expect(page).toHaveURL("/services/registered-agent");
 });
 
 test("FAQ accordion works with the keyboard", async ({ page }) => {

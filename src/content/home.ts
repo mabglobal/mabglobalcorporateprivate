@@ -1,42 +1,45 @@
 import { routes } from "@/config/routes";
-import type { IconName, ProcessStep, ServiceSlug, TitledText } from "@/types/content";
+import type { IconName, ProcessStep, TitledText } from "@/types/content";
 
 /**
- * Homepage copy. The hero follows the full-bleed consulting reference; the
- * sections below keep the framed service list, staggered process boxes,
- * profile block, working principles, industries, FAQ and contact band.
+ * Homepage copy. The hero, the capability strip and the navy services band
+ * follow behringeb5.com; the sections below keep the staggered process boxes,
+ * profile panel, working principles, industries, FAQ and contact band.
  * Copy style: Title Case headings, short one-line descriptions, no commas in
  * headings or descriptions, imperative "you" voice.
  */
 export const homeContent = {
   hero: {
-    badge: "International Business Advisory",
-    titleLead: "Invest in America",
-    titleRest: "With the Right Structure",
-    description: "Form your US company and manage tax and accounting with one team.",
-    primaryCta: { label: "Book a Consultation", href: routes.contactForm },
-    secondaryCta: { label: "View Services", href: routes.services },
+    title: "Invest in America With the Right Company Structure",
+    proofPoints: ["Registered Agent in All 50 States and D.C.", "US and UK Company Formation"],
+    description:
+      "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom. Plan formation and registered agent services together with tax and accounting under one roof.",
+    primaryCta: { label: "Explore Our Services", href: routes.services },
+    secondaryCta: { label: "Schedule a Consultation", href: routes.contactForm },
     imageAlt: "Classical colonnades and a domed building in navy tones",
   },
-  services: {
-    tag: "Services",
-    titleLead: "Company Services",
-    titleAccent: "Built Around Your Plans",
+  capabilities: {
+    caption: "What We Handle",
+    items: [
+      "LLC Formation",
+      "Corporations",
+      "EIN and ITIN",
+      "Registered Agent",
+      "Form 5472",
+      "Sales Tax",
+      "Companies House",
+      "Corporation Tax",
+      "Annual Reports",
+      "Bookkeeping",
+      "DUNS Number",
+      "Trademarks",
+    ],
+  },
+  servicesBand: {
+    title: "Explore Our Company Services",
+    description: "Choose the service you need and plan every step with one team.",
     allServicesLabel: "All Services",
-    groups: [
-      {
-        label: "Company Formation",
-        description: "Form your company in the US or the UK.",
-        services: ["us-company-formation", "uk-company-formation"],
-        featured: "registered-agent",
-      },
-      {
-        label: "Tax and Operations",
-        description: "Manage every obligation after formation.",
-        services: ["tax-advisory", "accounting", "business-address-and-operations"],
-        featured: "international-business-consulting",
-      },
-    ] satisfies { label: string; description: string; services: ServiceSlug[]; featured: ServiceSlug }[],
+    allServicesDescription: "Compare every service in one place.",
   },
   process: {
     tag: "Process",

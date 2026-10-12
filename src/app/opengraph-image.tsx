@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { brandColors } from "@/config/brand";
+import { logoArt } from "@/config/logo";
 import { seoDefaults } from "@/config/seo";
 import { siteConfig } from "@/config/site";
 
@@ -10,10 +11,13 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const fontDirectory = join(process.cwd(), "src/assets/fonts");
-const [medium, regular] = await Promise.all([
-  readFile(join(fontDirectory, "GoogleSansFlex-Medium.ttf")),
-  readFile(join(fontDirectory, "GoogleSansFlex-Regular.ttf")),
+// The OpenType masters are kept for this image; the site uses WOFF2 subsets.
+const [bold, regular] = await Promise.all([
+  readFile(join(fontDirectory, "TeXGyreAdventor-Bold.otf")),
+  readFile(join(fontDirectory, "TeXGyreAdventor-Regular.otf")),
 ]);
+
+const lockup = logoArt.lockup;
 
 /** Default social sharing image used by every page. */
 export default function OpenGraphImage() {
@@ -29,33 +33,22 @@ export default function OpenGraphImage() {
           padding: "72px 80px",
           backgroundImage: `linear-gradient(180deg, ${brandColors.navyDeep} 0%, ${brandColors.navy} 100%)`,
           color: brandColors.white,
-          fontFamily: "Google Sans Flex",
+          fontFamily: "TeX Gyre Adventor",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <div
-            style={{
-              display: "flex",
-              position: "relative",
-              backgroundColor: brandColors.white,
-              color: brandColors.navy,
-              fontSize: 30,
-              fontWeight: 500,
-              letterSpacing: 2,
-              padding: "6px 14px",
-              borderRadius: 10,
-            }}
-          >
-            MAB
-          </div>
-          <div style={{ display: "flex", fontSize: 32, fontWeight: 400 }}>Global Partners</div>
-        </div>
+        <svg width="300" height={Math.round((300 * lockup.height) / lockup.width)} viewBox={lockup.viewBox}>
+          <g transform={lockup.transform} fill={brandColors.white}>
+            {lockup.paths.map((d) => (
+              <path key={d.slice(0, 24)} d={d} />
+            ))}
+          </g>
+        </svg>
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div
             style={{
               display: "flex",
-              fontSize: 68,
-              fontWeight: 500,
+              fontSize: 64,
+              fontWeight: 700,
               lineHeight: 1.05,
               letterSpacing: -2,
               maxWidth: 900,
@@ -73,8 +66,8 @@ export default function OpenGraphImage() {
     {
       ...size,
       fonts: [
-        { name: "Google Sans Flex", data: medium, weight: 500, style: "normal" },
-        { name: "Google Sans Flex", data: regular, weight: 400, style: "normal" },
+        { name: "TeX Gyre Adventor", data: bold, weight: 700, style: "normal" },
+        { name: "TeX Gyre Adventor", data: regular, weight: 400, style: "normal" },
       ],
     },
   );

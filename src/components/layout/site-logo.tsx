@@ -1,41 +1,47 @@
 import Link from "next/link";
+import { logoArt, type LogoVariant } from "@/config/logo";
 import { routes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utilities/cn";
 
+/** Inline MAB logo artwork; inherits the text color. */
+export function LogoArt({ variant, className }: { variant: LogoVariant; className?: string }) {
+  const art = logoArt[variant];
+  return (
+    <svg aria-hidden="true" viewBox={art.viewBox} className={cn("block w-auto", className)} fill="currentColor">
+      <g transform={art.transform}>
+        {art.paths.map((d) => (
+          <path key={d.slice(0, 24)} d={d} />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
 /**
- * Typographic wordmark. No approved logo file exists yet, so the brand is set
- * in type rather than with an invented symbol.
+ * The MAB logo linking home. The header shows the mark; the footer shows the
+ * full lockup with the tagline, which is only legible at a larger size.
  */
 export function SiteLogo({
   tone = "light",
+  variant = "mark",
   className,
 }: {
   tone?: "light" | "dark";
+  variant?: "mark" | "lockup";
   className?: string;
 }) {
   return (
     <Link
       href={routes.home}
       className={cn(
-        "inline-flex min-h-11 items-center gap-2.5 whitespace-nowrap",
+        "inline-flex min-h-11 items-center",
         tone === "light" ? "text-navy" : "text-white",
         className,
       )}
     >
-      <span
-        aria-hidden="true"
-        className={cn(
-          "inline-flex h-8 items-center rounded-tile px-2 text-[0.875rem] font-[650] tracking-[0.04em]",
-          tone === "light" ? "bg-navy text-white" : "bg-white text-navy",
-        )}
-      >
-        MAB
-      </span>
+      <LogoArt variant={variant} className={variant === "mark" ? "h-8 md:h-9" : "h-16 md:h-20"} />
       <span className="sr-only">{siteConfig.name} home</span>
-      <span aria-hidden="true" className="text-[1rem] font-[450] tracking-[-0.01em]">
-        Global Partners
-      </span>
     </Link>
   );
 }

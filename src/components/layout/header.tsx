@@ -12,15 +12,15 @@ import { MobileNavigation } from "./mobile-navigation";
 import { SiteLogo } from "./site-logo";
 
 /**
- * Transparent header laid over the navy hero of every page, following the
- * hero reference: wordmark and links on the left, a white call to action on
- * the right. White on navy only.
+ * Solid navy header bar following behringeb5.com: logo and uppercase menu
+ * with dropdowns on the left, an outlined white button on the right. It
+ * stays at the top while the page scrolls. White on navy only.
  */
 export function Header() {
   return (
-    <header className="on-dark absolute inset-x-0 top-0 z-40">
-      <div className="container-page flex h-20 items-center justify-between gap-6 md:h-24">
-        <div className="flex items-center gap-10 xl:gap-14">
+    <header className="on-dark sticky top-0 z-40 border-b border-white/10 bg-navy-deep">
+      <div className="container-page flex h-20 items-center justify-between gap-6">
+        <div className="flex items-center gap-6 xl:gap-10">
           <SiteLogo tone="dark" />
           <nav aria-label="Main menu" className="hidden lg:block">
             <Suspense fallback={<NavigationList items={mainNavigation} />}>
@@ -31,7 +31,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
-            <ButtonLink href={headerCta.href} variant="light" size="sm" icon="none">
+            <ButtonLink href={headerCta.href} variant="outline-white" size="sm" icon="none">
               {headerCta.label}
             </ButtonLink>
           </div>

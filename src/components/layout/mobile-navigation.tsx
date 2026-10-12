@@ -102,7 +102,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
             href={cta.href}
             onClick={close}
             data-brand-accent=""
-            className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-accent px-5 text-label font-medium text-white"
+            className="flex min-h-13 items-center justify-center whitespace-nowrap rounded-control bg-accent px-5 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-white"
           >
             {cta.label}
           </Link>
