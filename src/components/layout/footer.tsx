@@ -17,7 +17,7 @@ export function Footer() {
       <div aria-hidden="true" className="flex items-center gap-8 whitespace-nowrap py-10 md:py-14">
         {Array.from({ length: 4 }, (_, index) => (
           <span key={index} className="flex shrink-0 items-center gap-8">
-            <span className="font-display text-[clamp(2.75rem,2rem+3vw,5rem)] leading-none text-white">
+            <span className="font-medium text-[clamp(2.75rem,2rem+3vw,5rem)] leading-none text-white">
               {siteConfig.name}
             </span>
             <Plus className="size-8 shrink-0 text-white md:size-10" strokeWidth={2.5} />
@@ -27,7 +27,7 @@ export function Footer() {
 
       <div className="container-page grid gap-12 pb-14 pt-4 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="font-display text-title text-white">{siteConfig.name}</p>
+          <p className="font-medium text-title text-white">{siteConfig.name}</p>
           <p className="mt-3 max-w-xs text-label text-white/70">{footerDescription}</p>
         </div>
 

@@ -10,10 +10,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const fontDirectory = join(process.cwd(), "src/assets/fonts");
-const [display, regular, medium] = await Promise.all([
-  readFile(join(fontDirectory, "CalSans-Regular.ttf")),
-  readFile(join(fontDirectory, "Geist-Regular.ttf")),
-  readFile(join(fontDirectory, "Geist-Medium.ttf")),
+const [medium, regular] = await Promise.all([
+  readFile(join(fontDirectory, "GoogleSansFlex-Medium.ttf")),
+  readFile(join(fontDirectory, "GoogleSansFlex-Regular.ttf")),
 ]);
 
 /** Default social sharing image used by every page. */
@@ -30,7 +29,7 @@ export default function OpenGraphImage() {
           padding: "72px 80px",
           backgroundImage: `linear-gradient(180deg, ${brandColors.navyDeep} 0%, ${brandColors.navy} 100%)`,
           color: brandColors.white,
-          fontFamily: "Geist",
+          fontFamily: "Google Sans Flex",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
@@ -55,9 +54,8 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontFamily: "Cal Sans",
               fontSize: 68,
-              fontWeight: 400,
+              fontWeight: 500,
               lineHeight: 1.05,
               letterSpacing: -2,
               maxWidth: 900,
@@ -75,9 +73,8 @@ export default function OpenGraphImage() {
     {
       ...size,
       fonts: [
-        { name: "Cal Sans", data: display, weight: 400, style: "normal" },
-        { name: "Geist", data: regular, weight: 400, style: "normal" },
-        { name: "Geist", data: medium, weight: 500, style: "normal" },
+        { name: "Google Sans Flex", data: medium, weight: 500, style: "normal" },
+        { name: "Google Sans Flex", data: regular, weight: 400, style: "normal" },
       ],
     },
   );

@@ -40,7 +40,7 @@ export function AboutBlock() {
               <div key={stat.label} className="frame rounded-panel p-4">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
-                  <span className="block font-display text-heading leading-none text-navy">{stat.value}</span>
+                  <span className="block font-medium text-heading leading-none text-navy">{stat.value}</span>
                   <span className="mt-2 block text-caption text-slate">{stat.label}</span>
                 </dd>
               </div>

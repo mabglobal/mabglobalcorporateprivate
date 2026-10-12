@@ -16,7 +16,7 @@ export const homeContent = {
       "Amerika ve İngiltere'de şirket kuruluşundan vergi ve muhasebe süreçlerine kadar uluslararası operasyonlarınızı yönetin.",
     primaryCta: { label: "Danışmanlık Talep Edin", href: routes.contactForm },
     secondaryCta: { label: "Hizmetleri İnceleyin", href: routes.services },
-    imageAlt: "Bir çayırda yan yana yükselen klasik sütunlar",
+    imageAlt: "Sütunlu cepheleri ve kubbesiyle klasik tarihi yapılar",
   },
   services: {
     tag: "Hizmet alanları",

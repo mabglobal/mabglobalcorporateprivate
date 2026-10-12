@@ -2,25 +2,20 @@
 @import "../styles/tokens.css";
 
 /*
- * Typefaces follow popupsmart.com: Cal Sans for headings, Geist for text.
- * Both are loaded through next/font/google in src/app/layout.tsx.
- */
-/*
- * Metric-matched fallback for Cal Sans (next/font has no override values for
- * it), computed from the font's hhea metrics and Turkish heading text widths.
+ * Metric-matched fallback for Google Sans Flex, computed from the font's hhea
+ * metrics and the average advance width of Turkish sample text versus Arial.
  */
 @font-face {
-  font-family: "Cal Sans Fallback";
+  font-family: "Google Sans Flex Fallback";
   src: local("Arial"), local("ArialMT"), local("Helvetica");
-  size-adjust: 97.31%;
-  ascent-override: 102.76%;
-  descent-override: 30.83%;
+  size-adjust: 100%;
+  ascent-override: 96.63%;
+  descent-override: 28.61%;
   line-gap-override: 0%;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-cal-sans), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-gsf), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -44,8 +39,7 @@
   h3,
   h4 {
     text-wrap: balance;
-    font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 500;
     color: inherit;
   }
 

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cal_Sans, Geist } from "next/font/google";
+import { Google_Sans_Flex } from "next/font/google";
 import { brandColors } from "@/config/brand";
 import { seoDefaults } from "@/config/seo";
 import { isIndexable, siteConfig } from "@/config/site";
@@ -8,25 +8,17 @@ import { Header } from "@/components/layout/header";
 import "./globals.css";
 
 /**
- * Typefaces verified on popupsmart.com (next/font/google): Cal Sans for
- * headings (--ps-font-display) and Geist for text (--ps-font-body).
- * latin-ext covers Turkish characters.
+ * Google Sans Flex is the typeface verified on brandunder.com
+ * (next/font/google, --font-gsf). latin-ext covers Turkish characters.
  */
-const geist = Geist({
+const googleSansFlex = Google_Sans_Flex({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-geist",
+  variable: "--font-gsf",
   display: "swap",
-});
-
-const calSans = Cal_Sans({
-  weight: "400",
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-cal-sans",
-  display: "swap",
-  // next/font has no metric overrides for Cal Sans; the fallback is declared
-  // in globals.css.
+  // next/font has no metric overrides for this family, so a metric-matched
+  // Arial fallback is declared in globals.css to limit layout shift.
   adjustFontFallback: false,
-  fallback: ["Cal Sans Fallback", "Arial", "sans-serif"],
+  fallback: ["Google Sans Flex Fallback", "Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="tr" className={`${geist.variable} ${calSans.variable} antialiased`}>
+    <html lang="tr" className={`${googleSansFlex.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#icerik"

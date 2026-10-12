@@ -193,7 +193,8 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
       {
         heading: "Görseller",
         paragraphs: [
-          "Web sitesindeki sütun fotoğrafları Carol M. Highsmith tarafından çekilmiştir ve Library of Congress arşivinde kamu malı olarak yayımlanmıştır.",
+          "Ana sayfadaki mimari görsel MAB Global Partners tarafından sağlanmıştır.",
+          "Hakkımızda bölümündeki sütun fotoğrafı Carol M. Highsmith tarafından çekilmiştir ve Library of Congress arşivinde kamu malı olarak yayımlanmıştır.",
         ],
       },
       {

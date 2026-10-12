@@ -41,7 +41,7 @@ export function ServiceGroups() {
                         href={routes.service(service.slug)}
                         className="frame group flex min-h-16 items-center justify-between gap-6 rounded-panel px-6 py-4 transition-colors hover:border-slate"
                       >
-                        <span className="font-display text-title text-navy">{service.title}</span>
+                        <span className="font-medium text-title text-navy">{service.title}</span>
                         <ArrowUpRight
                           aria-hidden="true"
                           className="size-5 shrink-0 text-slate transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy"
@@ -50,7 +50,7 @@ export function ServiceGroups() {
                     </li>
                   ))}
                   <li className="frame rounded-panel p-6 md:p-7">
-                    <h4 className="font-display text-title text-navy">{featured.title}</h4>
+                    <h4 className="text-title text-navy">{featured.title}</h4>
                     <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                       <p className="flex-1 text-label text-slate">{featured.summary}</p>
                       <ButtonLink href={routes.service(featured.slug)} variant="outline" size="sm">

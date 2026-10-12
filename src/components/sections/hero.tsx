@@ -1,13 +1,13 @@
 import Image from "next/image";
-import heroColumns from "@/assets/images/hero-columns.jpg";
+import heroArchitecture from "@/assets/images/hero-architecture.jpg";
 import { homeContent } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Tag } from "@/components/ui/tag";
 
 /**
- * White hero with a two-tone heading over a wide architectural photograph
- * that fades into the page, following the consulting reference.
- * Photo by Carol M. Highsmith, Library of Congress, public domain.
+ * White hero with a two-tone heading over a wide grayscale architectural
+ * image whose white sky and faded base blend into the page, following the
+ * consulting reference. Image supplied by MAB Global Partners.
  */
 export function Hero() {
   const { hero } = homeContent;
@@ -15,7 +15,7 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="relative bg-white">
       <div className="container-page relative z-10 pt-12 md:pt-16">
         <Tag>{hero.badge}</Tag>
-        <h1 id="hero-title" className="mt-6 max-w-3xl text-display text-navy">
+        <h1 id="hero-title" className="mt-6 max-w-5xl text-display text-navy">
           {hero.titleLead}
           <br />
           <span className="text-slate">{hero.titleRest}</span>
@@ -29,19 +29,19 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-page relative mt-6 md:mt-4">
-        <div className="relative overflow-hidden rounded-card">
+      <div className="container-page relative mt-4 md:mt-2 lg:-mt-12 xl:-mt-28">
+        <div className="relative">
           <Image
-            src={heroColumns}
+            src={heroArchitecture}
             alt={hero.imageAlt}
             priority
             placeholder="blur"
             sizes="(min-width: 1280px) 1200px, 100vw"
-            className="h-[260px] w-full object-cover object-[50%_40%] opacity-85 sm:h-[340px] lg:h-[460px]"
+            className="h-[240px] w-full object-cover object-[80%_50%] sm:h-[320px] lg:h-auto"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,var(--color-white)_0%,rgb(255_255_255/0.6)_25%,rgb(255_255_255/0)_55%)]"
+            className="absolute inset-x-0 bottom-0 h-1/3 bg-[linear-gradient(180deg,rgb(255_255_255/0)_0%,var(--color-white)_100%)]"
           />
         </div>
       </div>

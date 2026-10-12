@@ -49,7 +49,8 @@ Sources:
 
 | Image | Source | License |
 |---|---|---|
-| `src/assets/images/hero-columns.jpg`, `about-columns.jpg` | "National Capitol columns at the United States National Arboretum", Carol M. Highsmith, Library of Congress (LCCN 2010641854), via Wikimedia Commons | Public domain. Converted to grayscale and cropped. Credited on the Yasal Uyarı page |
+| `src/assets/images/hero-architecture.jpg` | Composite of classical colonnades and a dome, supplied by MAB Global Partners on 2026-10-12 | **Confirm before launch** that MAB Global Partners holds the rights to every photograph in the composite. The baked-in transparency checkerboard was removed and the sky set to white. Credited on the Yasal Uyarı page as supplied by MAB Global Partners |
+| `src/assets/images/about-columns.jpg` | "National Capitol columns at the United States National Arboretum", Carol M. Highsmith, Library of Congress (LCCN 2010641854), via Wikimedia Commons | Public domain. Converted to grayscale and cropped. Credited on the Yasal Uyarı page |
 
 ## Legal texts
 

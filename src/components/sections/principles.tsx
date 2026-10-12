@@ -31,7 +31,7 @@ export function Principles() {
                 className="size-6 self-end text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
               <span>
-                <span className="block font-display text-title text-white">{principles.cta.title}</span>
+                <span className="block font-medium text-title text-white">{principles.cta.title}</span>
                 <span className="mt-2 block text-label text-white/80">{principles.cta.description}</span>
               </span>
             </Link>
