@@ -136,26 +136,20 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
 
       <ProcessSection id="process-title" tag="Process" title="How the Process Works" steps={service.process} padding="bottom" />
 
-      <section aria-labelledby="considerations-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
-        <div className="container-page grid gap-4 lg:grid-cols-2">
-          <div className="frame rounded-card p-7 md:p-8">
-            <h2 id="considerations-title" className="text-title text-navy">
-              Points to Consider
-            </h2>
-            <div className="mt-6">
-              <BulletList items={service.considerations} />
-            </div>
-          </div>
-          {service.documents ? (
+      {service.documents ? (
+        <section aria-labelledby="documents-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
+          <div className="container-page">
             <div className="frame rounded-card p-7 md:p-8">
-              <h2 className="text-title text-navy">Documents You May Need</h2>
+              <h2 id="documents-title" className="text-title text-navy">
+                Documents You May Need
+              </h2>
               <div className="mt-6">
                 <BulletList items={service.documents} />
               </div>
             </div>
-          ) : null}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : null}
 
       <TileBand
         id="related-title"

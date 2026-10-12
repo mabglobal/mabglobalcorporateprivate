@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleAlert, CircleCheck, LoaderCircle } from "lucide-react";
+import { ChevronDown, CircleAlert, CircleCheck, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { contactConfig, mailtoHref } from "@/config/contact";
@@ -31,6 +31,10 @@ const emptyValues: FormValues = {
 const fieldOrder: ContactField[] = ["name", "email", "company", "service", "sector", "message"];
 
 const genericError = `Your request failed to send. Please try again later or email ${contactConfig.email}.`;
+
+/** Native selects drawn like the other fields, with the site chevron in place of the browser arrow. */
+const selectClasses =
+  "h-12 cursor-pointer appearance-none pr-12 font-medium shadow-frame [&>option]:font-normal [&>option]:text-ink";
 
 const inputClasses =
   "block w-full rounded-control border bg-white px-4 text-body text-ink transition-colors focus:border-navy focus:outline-2 focus:outline-offset-0 focus:outline-navy";
@@ -307,26 +311,33 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           error={errors.service}
           required
         >
-          <select
-            ref={(node) => {
-              fieldRefs.current.service = node;
-            }}
-            id={fieldId("service")}
-            name="service"
-            required
-            value={values.service}
-            onChange={(event) => update("service", event.target.value)}
-            aria-invalid={errors.service ? true : undefined}
-            aria-describedby={errors.service ? errorId("service") : undefined}
-            className={cn(inputClasses, "h-12 appearance-auto", errors.service ? "border-accent-strong" : "border-line")}
-          >
-            <option value="">Select an Option</option>
-            {options.services.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              ref={(node) => {
+                fieldRefs.current.service = node;
+              }}
+              id={fieldId("service")}
+              name="service"
+              required
+              value={values.service}
+              onChange={(event) => update("service", event.target.value)}
+              aria-invalid={errors.service ? true : undefined}
+              aria-describedby={errors.service ? errorId("service") : undefined}
+              className={cn(inputClasses, selectClasses, errors.service ? "border-accent-strong" : "border-line")}
+            >
+              <option value="">Select an Option</option>
+              {options.services.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden="true"
+              strokeWidth={2}
+              className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-navy"
+            />
+          </div>
         </Field>
 
         <Field
@@ -336,26 +347,33 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           error={errors.sector}
           required
         >
-          <select
-            ref={(node) => {
-              fieldRefs.current.sector = node;
-            }}
-            id={fieldId("sector")}
-            name="sector"
-            required
-            value={values.sector}
-            onChange={(event) => update("sector", event.target.value)}
-            aria-invalid={errors.sector ? true : undefined}
-            aria-describedby={errors.sector ? errorId("sector") : undefined}
-            className={cn(inputClasses, "h-12 appearance-auto", errors.sector ? "border-accent-strong" : "border-line")}
-          >
-            <option value="">Select an Option</option>
-            {options.sectors.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              ref={(node) => {
+                fieldRefs.current.sector = node;
+              }}
+              id={fieldId("sector")}
+              name="sector"
+              required
+              value={values.sector}
+              onChange={(event) => update("sector", event.target.value)}
+              aria-invalid={errors.sector ? true : undefined}
+              aria-describedby={errors.sector ? errorId("sector") : undefined}
+              className={cn(inputClasses, selectClasses, errors.sector ? "border-accent-strong" : "border-line")}
+            >
+              <option value="">Select an Option</option>
+              {options.sectors.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden="true"
+              strokeWidth={2}
+              className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-navy"
+            />
+          </div>
         </Field>
 
         <Field

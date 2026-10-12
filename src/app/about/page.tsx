@@ -81,7 +81,7 @@ export default function AboutPage() {
 
       <section aria-labelledby="philosophy-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <div className="on-dark grid gap-10 rounded-card bg-navy-deep p-8 md:p-12 lg:grid-cols-12">
+          <div className="on-dark grid gap-10 rounded-card bg-accent-strong p-8 md:p-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <IconTile name="compass" tone="dark" />
               <h2 id="philosophy-title" className="mt-5 text-title text-white">

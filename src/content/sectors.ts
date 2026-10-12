@@ -6,8 +6,8 @@ import type { Sector, SectorSlug } from "@/types/content";
 const allSectors: Sector[] = [
   {
     slug: "e-commerce",
-    title: "E-Commerce and Amazon Sellers",
-    shortTitle: "E-Commerce and Amazon",
+    title: "E-Commerce Businesses",
+    shortTitle: "E-Commerce",
     icon: "shopping-bag",
     summary: "Set up the company behind your marketplace sales.",
     intro: [
@@ -45,7 +45,7 @@ const allSectors: Sector[] = [
     ],
     faqIds: ["amazon-us-company", "sales-tax", "amazon-account-support", "marketplace-bookkeeping"],
     seo: {
-      title: "Company Formation and Tax for E-Commerce and Amazon Sellers",
+      title: "Company Formation and Tax for E-Commerce Businesses",
       description:
         "Form a US company for your Amazon and Shopify sales. Track sales tax duties and keep marketplace accounting in order.",
     },

@@ -7,8 +7,8 @@ import type { TitledText } from "@/types/content";
  */
 export const aboutContent = {
   hero: {
-    title: "Your Partner for International Business",
-    description: "Formation and compliance support for companies in the United States.",
+    title: "Helping You Build and Run Your US Company",
+    description: "Form your US company and keep every filing on schedule with one team.",
   },
   introduction: {
     tag: "Company",

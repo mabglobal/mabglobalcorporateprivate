@@ -22,7 +22,7 @@ export function PageHero({ breadcrumb, title, description, actions }: PageHeroPr
   return (
     <section aria-labelledby="page-title" className="on-dark relative isolate overflow-hidden bg-navy-deep">
       <div className="absolute bottom-0 right-0 -z-10 hidden aspect-[3/1] w-[64%] lg:block">
-        <Image src={heroArchitecture} alt="" fill sizes="64vw" className="object-cover object-bottom" />
+        <Image src={heroArchitecture} alt="" fill priority sizes="64vw" className="object-cover object-bottom" />
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(90deg,var(--color-navy-deep)_0%,color-mix(in_srgb,var(--color-navy-deep)_75%,transparent)_25%,transparent_55%)]"

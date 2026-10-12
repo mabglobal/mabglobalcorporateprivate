@@ -1,10 +1,7 @@
 import { routes } from "@/config/routes";
-import { articleCategoryLabels, articles } from "@/content/articles";
 import { staticPages } from "@/content/pages";
 import { primaryCta } from "@/content/navigation";
-import { TileBand } from "@/components/sections/tile-band";
 import { ButtonLink } from "@/components/ui/button-link";
-import { formatDate } from "@/lib/utilities/format-date";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
@@ -58,19 +55,7 @@ export default function KnowledgeCenterPage() {
           </>
         }
       />
-      <TileBand
-        id="guide-list-title"
-        tone="light"
-        columns={3}
-        title="Guides for Your US Company"
-        description="Plain answers to common formation and compliance questions."
-        tiles={articles.map((article) => ({
-          href: routes.article(article.slug),
-          title: article.title,
-          description: `${articleCategoryLabels[article.category]} · Updated ${formatDate(article.updatedAt)}`,
-        }))}
-      />
-      <div className="bg-white pb-20 md:pb-28">
+      <div className="bg-white py-20 md:py-28">
         <p className="container-page text-center text-caption text-navy">
           Guides provide general information and are no substitute for personal legal or tax advice.
           Each guide lists its sources and last update date on its page.

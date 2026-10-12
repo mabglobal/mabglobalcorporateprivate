@@ -1,7 +1,5 @@
-import { routes } from "@/config/routes";
 import type { FaqItem } from "@/types/content";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { TextLink } from "@/components/ui/text-link";
 import { cn } from "@/lib/utilities/cn";
 import { FaqAccordion } from "./faq-accordion";
 
@@ -27,10 +25,6 @@ export function FaqSection({
       <div className="container-page grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionHeading id="faq-title" tag={tag} title={title} description={description} />
-          <div className="mt-6">
-            <p className="text-label text-navy">Have a question of your own?</p>
-            <TextLink href={routes.contactForm}>Write to Us</TextLink>
-          </div>
         </div>
         <div className="lg:col-span-7 lg:col-start-6">
           <FaqAccordion items={items} />
