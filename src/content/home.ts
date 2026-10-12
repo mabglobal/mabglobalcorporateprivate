@@ -11,9 +11,10 @@ import type { IconName, ProcessStep, TitledText } from "@/types/content";
 export const homeContent = {
   hero: {
     title: "Invest in the United States With the Right Company Structure",
-    proofPoints: ["Registered Agent in All 50 States and D.C.", "US and UK Company Formation"],
+    // Same service areas as the tagline in the MAB logo.
+    proofPoints: ["Formation", "Tax", "Accounting", "Investment", "Business Advisory"],
     description:
-      "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom. Plan formation and registered agent services together with tax and accounting under one roof.",
+      "MAB Global Partners helps entrepreneurs and companies set up and run their business in the United States. Plan company formation together with tax and accounting under one roof.",
     primaryCta: { label: "Explore Our Services", href: routes.services },
     secondaryCta: { label: "Schedule a Consultation", href: routes.contactForm },
     imageAlt: "Classical colonnades and a domed building in navy tones",

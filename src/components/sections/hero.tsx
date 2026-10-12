@@ -43,7 +43,7 @@ export function Hero() {
           {hero.title}
         </h1>
         <p className="mt-7 text-lead font-bold text-white md:text-[1.25rem]">{hero.proofPoints.join("  |  ")}</p>
-        <p className="mt-5 max-w-2xl text-body text-white md:text-lead">{hero.description}</p>
+        <p className="mt-5 max-w-3xl text-body text-white md:text-lead">{hero.description}</p>
         <div className="mt-9 flex flex-wrap gap-3">
           <ButtonLink href={hero.primaryCta.href} variant="light" icon="arrow-right">
             {hero.primaryCta.label}
