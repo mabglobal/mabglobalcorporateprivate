@@ -2,7 +2,7 @@ import { routes } from "@/config/routes";
 import type { IconName, ProcessStep, TitledText } from "@/types/content";
 
 /**
- * Homepage copy. The hero, the capability strip and the navy services band
+ * Homepage copy. The hero, the platform strip and the navy services band
  * follow behringeb5.com; the sections below keep the staggered process boxes,
  * profile panel, working principles, industries, FAQ and contact band.
  * Copy style: Title Case headings, short one-line descriptions, no commas in
@@ -18,23 +18,6 @@ export const homeContent = {
     primaryCta: { label: "Explore Our Services", href: routes.services },
     secondaryCta: { label: "Schedule a Consultation", href: routes.contactForm },
     imageAlt: "Classical colonnades and a domed building in navy tones",
-  },
-  capabilities: {
-    caption: "What We Handle",
-    items: [
-      "LLC Formation",
-      "Corporations",
-      "EIN and ITIN",
-      "Registered Agent",
-      "Form 5472",
-      "Sales Tax",
-      "State Filings",
-      "Business Address",
-      "Annual Reports",
-      "Bookkeeping",
-      "DUNS Number",
-      "Trademarks",
-    ],
   },
   /**
    * Banks and payment platforms named by the client (2026-10-12). Shown as

@@ -3,7 +3,7 @@ import { homeContent } from "@/content/home";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
 import { AboutBlock } from "@/components/sections/about-block";
-import { CapabilityStrip } from "@/components/sections/capability-strip";
+import { PlatformStrip } from "@/components/sections/platform-strip";
 import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { Hero } from "@/components/sections/hero";
@@ -34,7 +34,7 @@ export default function HomePage() {
         ])}
       />
       <Hero />
-      <CapabilityStrip />
+      <PlatformStrip />
       <ServicesBand />
       <ProcessSection
         id="process-title"

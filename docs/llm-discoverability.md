@@ -20,7 +20,7 @@ Served at `/llms-full.txt`. Justification: service and sector pages are long, mu
 
 ## Page content for retrieval
 
-Each service page states, in its own section: what the service is (one-sentence definition), which jurisdiction applies, who it is for, the scope, the process, documents that may be needed, factors that need individual assessment and how to get in touch. Educational guides live in Bilgi Merkezi, cite official sources (IRS, SBA, GOV.UK, Companies House) and carry a "general information, not personal advice" notice. Company capabilities and general information are kept in separate page types.
+Each service page states, in its own section: what the service is (one-sentence definition), which jurisdiction applies, who it is for, the scope, the process, documents that may be needed, factors that need individual assessment and how to get in touch. Educational guides live in Insights, cite official sources (IRS, SBA) and carry a "general information, not personal advice" notice. Company capabilities and general information are kept in separate page types.
 
 ## AI crawler policy
 
