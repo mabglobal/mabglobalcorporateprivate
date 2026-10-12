@@ -94,10 +94,20 @@ test("pages stay usable at narrow and tablet widths", async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     for (const path of ["/", "/services/uk-company-formation", "/industries/e-commerce", "/contact"]) {
       await page.goto(path);
-      const overflow = await page.evaluate(
-        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-      );
-      expect(overflow, `${path} at ${width}px`).toBe(0);
+      const { overflow, culprits } = await page.evaluate(() => {
+        const viewport = document.documentElement.clientWidth;
+        const culprits = [...document.querySelectorAll("body *")]
+          .map((element) => ({ element, rect: element.getBoundingClientRect() }))
+          .filter(({ rect }) => rect.width > 0 && rect.right > viewport + 0.5)
+          .slice(0, 3)
+          .map(({ element, rect }) => {
+            const name = element.getAttribute("class")?.slice(0, 80) ?? "";
+            const text = (element.textContent ?? "").trim().slice(0, 40);
+            return `${element.tagName.toLowerCase()} [${name}] right=${Math.round(rect.right)} "${text}"`;
+          });
+        return { overflow: document.documentElement.scrollWidth - viewport, culprits };
+      });
+      expect(overflow, `${path} at ${width}px overflows; widest elements ${culprits.join(" | ")}`).toBe(0);
     }
   }
 });
