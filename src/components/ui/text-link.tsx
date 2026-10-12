@@ -3,7 +3,10 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
-/** Inline navigational link with a trailing arrow. */
+/**
+ * Text link with a round framed arrow, following the analytics reference.
+ * Orange on white surfaces; white on navy surfaces, where orange never sits.
+ */
 export function TextLink({
   href,
   children,
@@ -19,20 +22,23 @@ export function TextLink({
     <Link
       href={href}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-2 whitespace-nowrap text-label font-medium underline-offset-4 hover:underline",
-        tone === "light" ? "text-navy" : "text-white",
+        "group inline-flex min-h-11 items-center gap-3 whitespace-nowrap text-label font-medium",
+        tone === "light" ? "text-accent-strong" : "text-white",
         className,
       )}
     >
       {children}
-      <ArrowRight
+      <span
         aria-hidden="true"
-        strokeWidth={1.8}
         className={cn(
-          "size-4 transition-transform duration-200 group-hover:translate-x-0.5",
-          tone === "light" ? "text-accent-strong" : "text-white",
+          "inline-flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
+          tone === "light"
+            ? "border-accent-strong group-hover:bg-accent-strong group-hover:text-white"
+            : "border-white/40 group-hover:bg-white group-hover:text-navy",
         )}
-      />
+      >
+        <ArrowRight strokeWidth={1.8} className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+      </span>
     </Link>
   );
 }

@@ -1,3 +1,4 @@
+import heroArchitecture from "@/assets/images/hero-architecture.jpg";
 import { routes } from "@/config/routes";
 import { getFaqs } from "@/content/faqs";
 import { primaryCta } from "@/content/navigation";
@@ -12,7 +13,9 @@ import { ServiceCard } from "@/components/services/service-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList } from "@/components/ui/check-list";
 import { IconTile } from "@/components/ui/icon";
+import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { TextLink } from "@/components/ui/text-link";
 import {
   breadcrumbNode,
   faqNode,
@@ -58,27 +61,21 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
       />
 
       <section aria-labelledby="overview-title" className="section-y bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <SectionHeading id="overview-title" tag="Overview" title="Industry Overview" />
-          </div>
-          <div className="grid content-start gap-5 lg:col-span-7 lg:col-start-6">
-            {sector.intro.map((paragraph) => (
-              <p key={paragraph} className="text-lead text-ink">
-                {paragraph}
-              </p>
-            ))}
-            <div className="mt-3">
-              <h3 className="text-label font-medium text-navy">Who It Serves</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {sector.examples.map((example) => (
-                  <li key={example} className="rounded-chip border border-line px-3 py-1.5 text-caption text-navy">
-                    {example}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="container-page">
+          <FeaturePanel
+            id="overview-title"
+            label={sector.shortTitle}
+            title="Industry Overview"
+            features={[
+              { title: "The Starting Point", text: sector.intro[0] ?? "" },
+              { title: "The Plan", text: sector.intro[1] ?? "" },
+            ]}
+            action={<TextLink href="#related-services">Related Services</TextLink>}
+            image={heroArchitecture}
+            imageAlt=""
+            imageClassName="object-[72%_60%]"
+            details={<FactCards groups={splitInTwo(sector.examples.map((example) => ({ label: example })))} />}
+          />
         </div>
       </section>
 
@@ -106,7 +103,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
         </div>
       </section>
 
-      <section aria-labelledby="services-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
+      <section id="related-services" aria-labelledby="services-title" className="scroll-mt-6 bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
           <SectionHeading id="services-title" tag="Services" title="Related Services" />
           <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

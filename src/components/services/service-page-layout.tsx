@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import heroArchitecture from "@/assets/images/hero-architecture.jpg";
 import { routes } from "@/config/routes";
 import { getFaqs } from "@/content/faqs";
 import { primaryCta } from "@/content/navigation";
@@ -11,7 +12,9 @@ import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList, TitledCheckList } from "@/components/ui/check-list";
+import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { TextLink } from "@/components/ui/text-link";
 import {
   breadcrumbNode,
   faqNode,
@@ -65,28 +68,34 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
       />
 
       <section aria-labelledby="overview-title" className="section-y bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <SectionHeading id="overview-title" tag="Overview" title="Service Overview" />
-          </div>
-          <div className="grid content-start gap-5 lg:col-span-7 lg:col-start-6">
-            <p className="text-lead text-ink">{service.definition}</p>
-            {service.intro.map((paragraph) => (
-              <p key={paragraph} className="text-body text-navy">
-                {paragraph}
-              </p>
-            ))}
-            {service.externalReference ? (
-              <a
-                href={service.externalReference.href}
-                rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 text-label font-medium text-navy underline-offset-4 hover:underline"
-              >
-                {service.externalReference.label}
-                <ExternalLink aria-hidden="true" className="size-4 text-accent-strong" />
-              </a>
-            ) : null}
-          </div>
+        <div className="container-page">
+          <FeaturePanel
+            id="overview-title"
+            label={service.shortTitle}
+            title="Service Overview"
+            features={[
+              { title: "What It Covers", text: service.definition },
+              { title: "How We Help", text: service.intro.join(" ") },
+            ]}
+            action={
+              service.externalReference ? (
+                <a
+                  href={service.externalReference.href}
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 text-label font-medium text-accent-strong underline-offset-4 hover:underline"
+                >
+                  {service.externalReference.label}
+                  <ExternalLink aria-hidden="true" className="size-4" />
+                </a>
+              ) : (
+                <TextLink href="#service-scope">See What Is Included</TextLink>
+              )
+            }
+            image={heroArchitecture}
+            imageAlt=""
+            imageClassName="object-[72%_60%]"
+            details={<FactCards groups={splitInTwo(service.scope.slice(0, 4).map((item) => ({ label: item.title })))} />}
+          />
         </div>
       </section>
 

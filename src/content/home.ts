@@ -61,17 +61,27 @@ export const homeContent = {
     ] satisfies ProcessStep[],
   },
   about: {
-    tag: "About Us",
-    title: "MAB Global Partners",
-    subtitle: "Company Services for the US and UK Markets",
-    paragraphs: [
-      "MAB Global Partners is a corporate services brand for entrepreneurs and companies that do business in the United States and the United Kingdom.",
-      "Plan company formation and registered agent services together with tax and accounting under one roof.",
+    label: "About MAB Global Partners",
+    title: "One Partner for Your US and UK Business",
+    features: [
+      {
+        title: "Formation and Compliance",
+        text: "Form your company in the US or the UK and keep annual filings on schedule with registered agent support.",
+      },
+      {
+        title: "Tax and Accounting",
+        text: "Keep clean books and file federal and state returns or UK Corporation Tax returns on time.",
+      },
     ],
-    stats: [
-      { value: "50", label: "Registered Agent States" },
-      { value: "2", label: "Focus Markets" },
-      { value: "7", label: "Service Areas" },
+    facts: [
+      [
+        { label: "Registered Agent States", value: "50" },
+        { label: "Focus Markets", value: "2" },
+      ],
+      [
+        { label: "Service Areas", value: "7" },
+        { label: "Entity Types Served", value: "All" },
+      ],
     ],
     linkLabel: "Learn About Us",
     imageAlt: "Close view of classical columns",
