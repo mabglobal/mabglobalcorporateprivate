@@ -2,7 +2,7 @@
 
 import { CircleAlert, CircleCheck, LoaderCircle } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { contactConfig, mailtoHref } from "@/config/contact";
 import { routes } from "@/config/routes";
 import type { ContactResponseBody } from "@/lib/contact/handle-contact-request";
@@ -41,6 +41,17 @@ function newSubmissionId(): string {
 
 type Validator = (input: unknown) => ContactValidationResult;
 
+const noopSubscribe = () => () => {};
+
+/**
+ * False during server rendering and before hydration. The submit button
+ * stays disabled until then, so an early click never triggers a native GET
+ * submission that would put the form values in the URL.
+ */
+function useHydrated(): boolean {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
+
 /**
  * The shared validation schema is loaded on first interaction so pages that
  * merely link to the contact page never download the validation library.
@@ -57,6 +68,7 @@ function useLazyValidator(options: ContactOptions) {
 
 export function ContactForm({ options }: { options: ContactOptions }) {
   const formId = useId();
+  const hydrated = useHydrated();
   const loadValidator = useLazyValidator(options);
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [errors, setErrors] = useState<ContactFieldErrors>({});
@@ -377,8 +389,8 @@ export function ContactForm({ options }: { options: ContactOptions }) {
         </p>
         <button
           type="submit"
-          disabled={submitting}
-          aria-disabled={submitting}
+          disabled={submitting || !hydrated}
+          aria-disabled={submitting || !hydrated}
           data-brand-accent=""
           className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-control bg-accent px-6 text-label font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-80"
         >
