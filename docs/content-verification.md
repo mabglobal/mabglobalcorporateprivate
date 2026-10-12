@@ -30,6 +30,10 @@ Sources:
 
 On 2026-10-12 the client asked to remove everything related to the United Kingdom. The UK company formation service, the UK limited company guide and the UK FAQs were deleted, and every other page now covers the United States only. The "US or UK" FAQ became an LLC or corporation FAQ.
 
+## USPTO and IRS
+
+On 2026-10-12 the client asked for the USPTO logo and an "EIN logo" (the EIN is issued by the IRS) labeled as agencies the firm works with, without a partner claim. The logos were not used: both agencies forbid third-party use of their logos and seals, and the USPTO warns the public about firms that use its insignia. The capability strip names them in plain text instead ("USPTO, Trademark Applications" and "IRS, EIN Applications") under "Official Filings We Help You Complete", with the note "MAB Global Partners is a private company with no affiliation to any government agency." Trademark applications by applicants domiciled outside the US must be filed by a US-licensed attorney; describe the trademark service as preparation support unless such an attorney files them.
+
 ## Bank and payment platform logos
 
 On 2026-10-12 the client asked for logos of Bank of America, Capital One, Mercury, Wise and Payoneer in the strip under the hero, without presenting them as partners. They are shown in single-color navy under the caption "Banking and Payment Platforms" with the note "Logos belong to their respective owners and show no partnership or endorsement." Sources: Wikimedia Commons for Bank of America, Capital One, Wise and Payoneer (marked public domain there, trademarks still apply) and the mercury.com header for Mercury. Most of these brands restrict logo use without written permission; the client accepted that risk. Remove a logo on request from its owner, and replace the row with the brands' official partner assets if a partnership is signed.

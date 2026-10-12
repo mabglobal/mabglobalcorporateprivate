@@ -52,6 +52,19 @@ export const homeContent = {
       { name: "Payoneer", src: "/images/platforms/payoneer.svg", width: 128, height: 27 },
     ],
   },
+  /**
+   * Agencies named in text only (client request, 2026-10-12). Agency logos
+   * and seals are protected insignia and stay off the site; see
+   * docs/content-verification.md.
+   */
+  agencies: {
+    caption: "Official Filings We Help You Complete",
+    note: "MAB Global Partners is a private company with no affiliation to any government agency.",
+    items: [
+      { name: "USPTO", detail: "Trademark Applications" },
+      { name: "IRS", detail: "EIN Applications" },
+    ],
+  },
   servicesBand: {
     title: "Explore Our Company Services",
     description: "Choose the service you need and plan every step with one team.",

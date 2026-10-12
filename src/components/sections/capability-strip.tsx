@@ -4,11 +4,12 @@ import { homeContent } from "@/content/home";
 /**
  * White strip under the hero, laid out like the "As seen on" wall of
  * behringeb5.com: the filings and services the firm handles as bold
- * wordmarks, then the banks and payment platforms as logos with a note that
- * they show no partnership. No agency logos or state seals are used.
+ * wordmarks, the agencies for which filings are prepared as plain text, then
+ * the banks and payment platforms as logos with a note that they show no
+ * partnership. No agency logos or state seals are used.
  */
 export function CapabilityStrip() {
-  const { capabilities, platforms } = homeContent;
+  const { capabilities, agencies, platforms } = homeContent;
   return (
     <section aria-labelledby="capabilities-title" className="bg-white py-12 md:py-16">
       <div className="container-page">
@@ -25,6 +26,24 @@ export function CapabilityStrip() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-14 md:mt-16">
+          <h3 className="text-center font-sans text-label font-medium text-navy">{agencies.caption}</h3>
+          <ul className="mt-6 flex flex-wrap items-stretch justify-center gap-4">
+            {agencies.items.map((agency) => (
+              <li
+                key={agency.name}
+                className="frame flex min-w-56 flex-col items-center rounded-control px-8 py-4 text-center"
+              >
+                <span className="font-display text-[1.375rem] font-bold leading-tight tracking-[0.04em] text-navy">
+                  {agency.name}
+                </span>
+                <span className="mt-1 text-label text-navy">{agency.detail}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-center text-caption text-navy">{agencies.note}</p>
+        </div>
 
         <div className="mt-14 md:mt-16">
           <h3 className="text-center font-sans text-label font-medium text-navy">{platforms.caption}</h3>
