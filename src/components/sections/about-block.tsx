@@ -17,7 +17,7 @@ export function AboutBlock() {
               src={aboutColumns}
               alt={about.imageAlt}
               placeholder="blur"
-              sizes="(min-width: 1024px) 480px, 100vw"
+              sizes="(min-width: 1024px) 40vw, 100vw"
               className="aspect-[4/5] h-auto w-full rounded-panel object-cover lg:max-h-[520px]"
             />
           </div>

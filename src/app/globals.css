@@ -80,6 +80,12 @@
   @variant lg {
     padding-inline: 2.5rem;
   }
+  @variant xl {
+    padding-inline: 3rem;
+  }
+  @variant 2xl {
+    padding-inline: 4rem;
+  }
 }
 
 @utility section-y {

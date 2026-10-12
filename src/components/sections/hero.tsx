@@ -36,7 +36,7 @@ export function Hero() {
             alt={hero.imageAlt}
             priority
             placeholder="blur"
-            sizes="(min-width: 1280px) 1200px, 100vw"
+            sizes="100vw"
             className="h-[240px] w-full object-cover object-[80%_50%] sm:h-[320px] lg:h-auto"
           />
           <div

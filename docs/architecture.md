@@ -75,7 +75,7 @@ The visual direction follows the consulting reference supplied on 2026-10-12 (a 
 * Shape: slightly rounded, close-to-square corners (`rounded-card` 12 px, `rounded-panel` 10 px, `rounded-control` 8 px for buttons and inputs, `rounded-chip` 6 px for labels). No decorative lines or underlines.
 * Imagery: two crops of "National Capitol columns at the United States National Arboretum" by Carol M. Highsmith (Library of Congress, LCCN 2010641854, public domain), converted to grayscale. The source carries no inscription or institutional branding. Credit appears on the Yasal Uyarı page.
 * Typography: Google Sans Flex for all text, weight 500 for headings and 400 for body text. Fluid tokens `text-display` (38 to 56 px), `text-heading` (28 to 38 px), `text-title` (18 to 21 px), `text-body` (16 px), `text-label` (14 px), `text-caption` (13 px). Copy is kept short so headings, card titles and buttons do not wrap unnecessarily; buttons and navigation labels never wrap.
-* Spacing: `container-page` (max 1280 px, 20/32/40 px gutters) and `section-y` (80/112/136 px vertical padding).
+* Spacing: `container-page` (max 1920 px so the layout fills wide screens, 20/32/40/48/64 px gutters) and `section-y` (80/112/136 px vertical padding).
 * Fallback font: `next/font` has no metric overrides for Google Sans Flex, so a metric-matched fallback (`Google Sans Flex Fallback`, Arial with size-adjust 100 %, ascent 96.63 %, descent 28.61 %) is declared in `globals.css`. Values were computed from the font's hhea table and the average advance width of Turkish sample text. The Open Graph image embeds the Regular and Medium cuts from `src/assets/fonts`.
 
 ## Security
