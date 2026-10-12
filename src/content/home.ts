@@ -1,5 +1,5 @@
 import { routes } from "@/config/routes";
-import type { IconName, ServiceSlug, TitledText } from "@/types/content";
+import type { IconName, ProcessStep, ServiceSlug, TitledText } from "@/types/content";
 
 /**
  * Homepage copy. The hero follows the full-bleed consulting reference; the
@@ -10,7 +10,7 @@ import type { IconName, ServiceSlug, TitledText } from "@/types/content";
  */
 export const homeContent = {
   hero: {
-    badge: "US and UK Company Formation",
+    badge: "International Business Advisory",
     titleLead: "Invest in America",
     titleRest: "With the Right Structure",
     description: "Form your US company and manage tax and accounting with one team.",
@@ -44,18 +44,21 @@ export const homeContent = {
     description: "Build a clear roadmap in three steps.",
     steps: [
       {
+        icon: "message",
         title: "Define Your Needs",
         description: "Share your target market and goals.",
       },
       {
+        icon: "drafting-compass",
         title: "Plan the Structure",
         description: "Plan the right company structure together.",
       },
       {
+        icon: "badge-check",
         title: "Manage the Process",
-        description: "Run compliance within the agreed scope.",
+        description: "Stay compliant within the agreed scope.",
       },
-    ] satisfies TitledText[],
+    ] satisfies ProcessStep[],
   },
   about: {
     tag: "About Us",
@@ -80,12 +83,12 @@ export const homeContent = {
       {
         icon: "globe",
         title: "International Expertise",
-        description: "Run US and UK steps with experts.",
+        description: "Get clear guidance on US and UK rules.",
       },
       {
         icon: "layers",
-        title: "One Plan and One Team",
-        description: "Keep formation and tax in a single plan.",
+        title: "Single Point of Contact",
+        description: "One team handles every step for you.",
       },
       {
         icon: "calendar",

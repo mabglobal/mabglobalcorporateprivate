@@ -61,12 +61,12 @@ export function buildContactEmail(
     submission.message,
   ].join("\n");
 
-  const html = `<!doctype html><html lang="en"><body style="font-family:Arial,sans-serif;color:#202938">
+  const html = `<!doctype html><html lang="en"><body style="font-family:Arial,sans-serif;color:#0D1B33">
 <p>A new consultation request arrived from the ${escapeHtml(siteConfig.name)} website.</p>
 <table cellpadding="6" style="border-collapse:collapse">${rows
     .map(
       ([label, value]) =>
-        `<tr><th align="left" style="border-bottom:1px solid #CFD7E6">${escapeHtml(label)}</th><td style="border-bottom:1px solid #CFD7E6">${escapeHtml(value)}</td></tr>`,
+        `<tr><th align="left" style="border-bottom:1px solid #C8D3EA">${escapeHtml(label)}</th><td style="border-bottom:1px solid #C8D3EA">${escapeHtml(value)}</td></tr>`,
     )
     .join("")}</table>
 <h3>Message</h3>

@@ -73,7 +73,9 @@ export default function ContactPage() {
           <aside aria-label="Contact details" className="lg:col-span-4 lg:col-start-9">
             <div className="grid gap-5">
               <div className="frame rounded-card p-8">
-                <Mail aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                  <Mail className="size-4" />
+                </span>
                 <h2 className="mt-6 text-title text-navy">Email</h2>
                 <a
                   href={mailtoHref}
@@ -83,7 +85,9 @@ export default function ContactPage() {
                 </a>
               </div>
               <div className="frame rounded-card p-8">
-                <MapPin aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                  <MapPin className="size-4" />
+                </span>
                 <h2 className="mt-6 text-title text-navy">Office</h2>
                 <address className="mt-2 text-label not-italic text-ink">
                   {contactConfig.address.full}

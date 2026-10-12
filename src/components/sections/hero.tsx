@@ -30,11 +30,11 @@ export function Hero() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(90deg,var(--color-navy-deep)_0%,rgb(28_36_50/0.85)_24%,rgb(28_36_50/0)_52%)]"
+          className="absolute inset-0 bg-[linear-gradient(90deg,var(--color-navy-deep)_0%,color-mix(in_srgb,var(--color-navy-deep)_85%,transparent)_24%,transparent_52%)]"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(0deg,var(--color-navy-deep)_0%,rgb(28_36_50/0.6)_24%,rgb(28_36_50/0)_55%)]"
+          className="absolute inset-0 bg-[linear-gradient(0deg,var(--color-navy-deep)_0%,color-mix(in_srgb,var(--color-navy-deep)_60%,transparent)_24%,transparent_55%)]"
         />
       </div>
 

@@ -4,7 +4,7 @@ import { contactBand } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-/** Contact details with navy round icons and a framed request card. */
+/** Contact details with icons framed like the buttons and a framed request card. */
 export function ContactBand() {
   return (
     <section aria-labelledby="contact-band-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
@@ -18,7 +18,7 @@ export function ContactBand() {
           />
           <ul className="mt-8 grid gap-4">
             <li className="flex items-start gap-4">
-              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
                 <MapPin className="size-4" />
               </span>
               <div>
@@ -29,7 +29,7 @@ export function ContactBand() {
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
                 <Mail className="size-4" />
               </span>
               <div>

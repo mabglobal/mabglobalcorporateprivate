@@ -26,7 +26,7 @@ export function PageHero({ breadcrumb, title, description, actions }: PageHeroPr
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,var(--color-navy-deep)_38%,rgb(28_36_50/0)_85%)] lg:block"
+        className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,var(--color-navy-deep)_38%,transparent_85%)] lg:block"
       />
       <div className="container-page pb-14 pt-32 md:pb-20 md:pt-40">
         <Breadcrumb items={breadcrumb} tone="dark" />

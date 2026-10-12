@@ -33,7 +33,7 @@ test.describe("contact form", () => {
       "href",
       "mailto:info@mabglobalpartners.com",
     );
-    await expect(page.getByText("Your Request Has Reached Us")).toHaveCount(0);
+    await expect(page.getByText("Request Received")).toHaveCount(0);
   });
 
   test("shows success only after the API confirms receipt", async ({ page }) => {
@@ -50,9 +50,9 @@ test.describe("contact form", () => {
     await page.getByRole("button", { name: "Book a Consultation" }).click();
     // The response is held until the loading state has been observed.
     await expect(page.getByRole("button", { name: "Please Wait" })).toBeDisabled();
-    await expect(page.getByText("Your Request Has Reached Us")).toHaveCount(0);
+    await expect(page.getByText("Request Received")).toHaveCount(0);
     release();
-    await expect(page.getByRole("status")).toContainText("Your Request Has Reached Us");
+    await expect(page.getByRole("status")).toContainText("Request Received");
     expect(received).toMatchObject({
       values: { email: "jane@example.com", service: "us-company-formation" },
       meta: { website: "" },

@@ -37,12 +37,12 @@ describe("design tokens", () => {
 
   it("uses the authoritative brand palette", () => {
     expect(brandColors).toMatchObject({
-      navy: "#262F40",
+      navy: "#12264A",
       accent: "#F45800",
-      navyDeep: "#1C2432",
-      line: "#CFD7E6",
+      navyDeep: "#0A1A36",
+      line: "#C8D3EA",
       white: "#FFFFFF",
-      ink: "#202938",
+      ink: "#0D1B33",
     });
   });
 

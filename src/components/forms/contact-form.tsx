@@ -154,7 +154,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
       <div role="status" className="frame rounded-card p-8 md:p-10">
         <CircleCheck aria-hidden="true" className="size-8 text-navy" strokeWidth={1.6} />
         <h3 ref={successRef} tabIndex={-1} className="mt-6 text-title text-navy focus:outline-none">
-          Your Request Has Reached Us
+          Request Received
         </h3>
         <p className="mt-4 text-body text-navy">
           Our team reviews your request and replies to your email address.

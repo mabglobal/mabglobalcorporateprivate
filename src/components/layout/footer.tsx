@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { footerNavigation, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
 
-const footerDescription = "Company formation and tax support for the US and UK.";
+const footerDescription = "Your partner for doing business across borders.";
 
 const footerLink = "inline-flex min-h-9 items-center text-label text-white underline-offset-4 hover:underline";
 

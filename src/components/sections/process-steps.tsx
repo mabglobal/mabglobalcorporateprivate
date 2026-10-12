@@ -1,12 +1,13 @@
-import type { TitledText } from "@/types/content";
+import type { ProcessStep } from "@/types/content";
+import { IconTile } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { cn } from "@/lib/utilities/cn";
 
 /**
- * Staggered process boxes: numbered, alternating navy (white text) and
- * framed white boxes, as in the consulting reference.
+ * Staggered process boxes, each marked with its own framed icon in place of a
+ * step number, alternating navy (white text) and framed white boxes.
  */
-export function ProcessPanels({ steps }: { steps: readonly TitledText[] }) {
+export function ProcessPanels({ steps }: { steps: readonly ProcessStep[] }) {
   const columns = steps.length >= 4 ? "md:grid-cols-2 xl:grid-cols-4" : "md:grid-cols-3";
   return (
     <ol className={cn("grid gap-4", columns)}>
@@ -22,10 +23,8 @@ export function ProcessPanels({ steps }: { steps: readonly TitledText[] }) {
             )}
           >
             <div>
-              <span className={cn("text-caption font-medium", filled ? "text-white" : "text-navy")}>
-                [{index + 1}]
-              </span>
-              <h3 className={cn("mt-3 text-title", filled ? "text-white" : "text-navy")}>{step.title}</h3>
+              <IconTile name={step.icon} tone={filled ? "dark" : "light"} />
+              <h3 className={cn("mt-5 text-title", filled ? "text-white" : "text-navy")}>{step.title}</h3>
             </div>
             <p data-single-line="" className={cn("text-label", filled ? "text-white" : "text-navy")}>
               {step.description}
@@ -42,7 +41,7 @@ interface ProcessSectionProps {
   tag?: string;
   title: string;
   description?: string;
-  steps: readonly TitledText[];
+  steps: readonly ProcessStep[];
   /** "bottom" removes top padding when the section follows another white section. */
   padding?: "full" | "bottom";
 }

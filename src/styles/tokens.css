@@ -11,6 +11,8 @@
  *  - Navy surfaces carry white only. Never orange on navy.
  *  - Orange is used on white surfaces only.
  *  - No grey anywhere: text is navy or ink on white and white on navy.
+ *  - Navy is a deep, saturated dark navy (client decision, 2026-10-12). The
+ *    brief's #262F40 and #1C2432 read as grey and were replaced.
  *    The brief's slate, muted and grey surface tokens are removed; box
  *    borders use a light navy tint (line).
  *
@@ -23,11 +25,11 @@
   /* Remove Tailwind's default palette so only brand colors are available. */
   --color-*: initial;
 
-  --color-navy: #262f40;
-  --color-navy-deep: #1c2432;
-  --color-line: #cfd7e6;
+  --color-navy: #12264a;
+  --color-navy-deep: #0a1a36;
+  --color-line: #c8d3ea;
   --color-white: #ffffff;
-  --color-ink: #202938;
+  --color-ink: #0d1b33;
   --color-accent: #f45800;
   --color-accent-hover: #db4f00;
   --color-accent-strong: #c24a00;
@@ -44,7 +46,7 @@
   --radius-tile: 0.5rem;
   --radius-chip: 0.375rem;
 
-  --shadow-frame: 0 1px 2px rgb(28 36 50 / 0.04), 0 4px 16px -8px rgb(28 36 50 / 0.08);
+  --shadow-frame: 0 1px 2px rgb(10 26 54 / 0.05), 0 4px 16px -8px rgb(10 26 54 / 0.1);
 
   --text-display: clamp(2.375rem, 1.8rem + 2vw, 3.5rem);
   --text-display--line-height: 1.08;

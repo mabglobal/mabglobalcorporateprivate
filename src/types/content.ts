@@ -33,11 +33,35 @@ export type IconName =
   | "layers"
   | "calendar"
   | "file-check"
-  | "help";
+  | "help"
+  | "message"
+  | "drafting-compass"
+  | "badge-check"
+  | "map"
+  | "file-signature"
+  | "users"
+  | "fingerprint"
+  | "search"
+  | "folder"
+  | "send"
+  | "book"
+  | "arrow-left-right"
+  | "chart"
+  | "user-check"
+  | "inbox"
+  | "clipboard"
+  | "target"
+  | "scale"
+  | "route";
 
 export interface TitledText {
   title: string;
   description: string;
+}
+
+/** Process step with its own icon in place of a step number. */
+export interface ProcessStep extends TitledText {
+  icon: IconName;
 }
 
 export type ServiceSlug =
@@ -73,7 +97,7 @@ export interface Service {
   intro: string[];
   audience: TitledText[];
   scope: TitledText[];
-  process: TitledText[];
+  process: ProcessStep[];
   documents?: string[];
   considerations: string[];
   relatedServices: ServiceSlug[];

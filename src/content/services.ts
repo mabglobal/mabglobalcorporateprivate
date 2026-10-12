@@ -36,10 +36,10 @@ const allServices: Service[] = [
       { title: "Bank Application Preparation", description: "Prepare documents for bank and payment provider applications." },
     ],
     process: [
-      { title: "Initial Consultation", description: "Share your business model and goals." },
-      { title: "Structure and State", description: "Choose the entity type and the state." },
-      { title: "Filing", description: "Complete the formation filing." },
-      { title: "EIN and Calendar", description: "Get your EIN and compliance calendar." },
+      { icon: "message", title: "Initial Consultation", description: "Share your business model and goals." },
+      { icon: "map", title: "Structure and State", description: "Choose the entity type and the state." },
+      { icon: "file-signature", title: "Filing", description: "Complete the formation filing." },
+      { icon: "calendar", title: "EIN and Calendar", description: "Get your EIN and compliance calendar." },
     ],
     documents: [
       "Valid passport details for each owner",
@@ -95,10 +95,10 @@ const allServices: Service[] = [
       { title: "Tax and Accounting", description: "Plan Corporation Tax registration with annual accounts and returns." },
     ],
     process: [
-      { title: "Initial Consultation", description: "Share your market and ownership plans." },
-      { title: "Company Details", description: "Confirm the name and officers." },
-      { title: "Verification and Filing", description: "Verify identities and file the application." },
-      { title: "After Formation", description: "Register for Corporation Tax on time." },
+      { icon: "message", title: "Initial Consultation", description: "Share your market and ownership plans." },
+      { icon: "users", title: "Company Details", description: "Confirm the name and officers." },
+      { icon: "fingerprint", title: "Verification and Filing", description: "Verify identities and file the application." },
+      { icon: "receipt", title: "After Formation", description: "Register for Corporation Tax on time." },
     ],
     documents: [
       "Passport details for directors and shareholders",
@@ -154,10 +154,10 @@ const allServices: Service[] = [
       { title: "Tax Planning", description: "Classify your expenses in line with the rules." },
     ],
     process: [
-      { title: "Current Position", description: "Share your entity type and past filings." },
-      { title: "Obligation Calendar", description: "Collect every deadline in one calendar." },
-      { title: "Document Preparation", description: "Match documents with your books." },
-      { title: "Filing and Follow-Up", description: "File returns and update the next cycle." },
+      { icon: "search", title: "Current Position", description: "Share your entity type and past filings." },
+      { icon: "calendar", title: "Obligation Calendar", description: "Collect every deadline in one calendar." },
+      { icon: "folder", title: "Document Preparation", description: "Match documents with your books." },
+      { icon: "send", title: "Filing and Follow-Up", description: "File returns and update the next cycle." },
     ],
     considerations: [
       "Tax obligations depend on the entity type and the residency of the owners along with the place of business.",
@@ -205,10 +205,10 @@ const allServices: Service[] = [
       { title: "UK Annual Accounts", description: "Prepare annual accounts for Companies House and HMRC." },
     ],
     process: [
-      { title: "Scope", description: "Share your volume and reporting needs." },
-      { title: "Bookkeeping Setup", description: "Agree on accounts and file sharing." },
-      { title: "Records and Reconciliation", description: "Record and reconcile each period." },
-      { title: "Reporting", description: "Get reports and plan year end." },
+      { icon: "search", title: "Scope", description: "Share your volume and reporting needs." },
+      { icon: "book", title: "Bookkeeping Setup", description: "Agree on accounts and file sharing." },
+      { icon: "arrow-left-right", title: "Records and Reconciliation", description: "Record and reconcile each period." },
+      { icon: "chart", title: "Reporting", description: "Get reports and plan year end." },
     ],
     considerations: [
       "Accounting scope and record frequency depend on transaction volume.",
@@ -255,9 +255,9 @@ const allServices: Service[] = [
       { title: "Annual Compliance Tracking", description: "Track annual report dates and keep good standing." },
     ],
     process: [
-      { title: "State and Entity Type", description: "Share your state and entity type." },
-      { title: "Appointment", description: "Add the agent to your filing or records." },
-      { title: "Correspondence", description: "Receive official documents regularly." },
+      { icon: "map-pin", title: "State and Entity Type", description: "Share your state and entity type." },
+      { icon: "user-check", title: "Appointment", description: "Add the agent to your filing or records." },
+      { icon: "inbox", title: "Correspondence", description: "Receive official documents regularly." },
     ],
     considerations: [
       "A registered agent keeps a physical address in the state where the company is registered.",
@@ -306,9 +306,9 @@ const allServices: Service[] = [
       { title: "Trademark Registration", description: "File trademark applications in the US and the UK." },
     ],
     process: [
-      { title: "Your Request", description: "Share your company status and plans." },
-      { title: "Action Plan", description: "Confirm documents and filing order." },
-      { title: "Execution", description: "Complete filings and update records." },
+      { icon: "message", title: "Your Request", description: "Share your company status and plans." },
+      { icon: "clipboard", title: "Action Plan", description: "Confirm documents and filing order." },
+      { icon: "badge-check", title: "Execution", description: "Complete filings and update records." },
     ],
     considerations: [
       "Banks and marketplaces set their own rules for business address use.",
@@ -355,9 +355,9 @@ const allServices: Service[] = [
       { title: "Structure Review", description: "Review the records and compliance of your company abroad." },
     ],
     process: [
-      { title: "Goals", description: "Share your product and customer goals." },
-      { title: "Options", description: "Compare countries and sales channels." },
-      { title: "Roadmap", description: "Receive a plan with clear priorities." },
+      { icon: "target", title: "Goals", description: "Share your product and customer goals." },
+      { icon: "scale", title: "Options", description: "Compare countries and sales channels." },
+      { icon: "route", title: "Roadmap", description: "Receive a plan with clear priorities." },
     ],
     considerations: [
       "Sessions serve information and planning purposes. Legal and tax decisions need a detailed review.",

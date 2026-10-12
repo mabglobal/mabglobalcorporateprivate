@@ -4,11 +4,11 @@
  * src/styles/tokens.css; tests/unit/brand-tokens.test.ts keeps both in sync.
  */
 export const brandColors = {
-  navy: "#262F40",
-  navyDeep: "#1C2432",
-  line: "#CFD7E6",
+  navy: "#12264A",
+  navyDeep: "#0A1A36",
+  line: "#C8D3EA",
   white: "#FFFFFF",
-  ink: "#202938",
+  ink: "#0D1B33",
   accent: "#F45800",
 } as const;
 
