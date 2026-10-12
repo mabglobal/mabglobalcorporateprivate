@@ -3,6 +3,7 @@ import { articleCategoryLabels, articles } from "@/content/articles";
 import { staticPages } from "@/content/pages";
 import { ArticleCard } from "@/components/knowledge/article-card";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import {
@@ -72,6 +73,7 @@ export default function KnowledgeCenterPage() {
           </p>
         </div>
       </div>
+      <ContactBand />
     </>
   );
 }

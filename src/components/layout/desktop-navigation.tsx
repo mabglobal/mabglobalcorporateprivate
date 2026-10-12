@@ -29,8 +29,8 @@ export function NavigationList({
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "inline-flex min-h-10 items-center whitespace-nowrap rounded-tile px-3 text-label transition-colors",
-                active ? "bg-white/12 text-white" : "text-white/70 hover:text-white",
+                "inline-flex min-h-10 items-center whitespace-nowrap rounded-chip border px-3 text-label transition-colors",
+                active ? "border-line text-navy" : "border-transparent text-slate hover:text-navy",
               )}
             >
               {item.label}

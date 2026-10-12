@@ -7,7 +7,7 @@ import { formatDate } from "@/lib/utilities/format-date";
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <article className="group relative flex h-full flex-col rounded-card bg-surface p-7 transition-colors duration-200 hover:bg-surface-strong">
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
       <p className="text-caption font-medium text-slate">
         {articleCategoryLabels[article.category]}
       </p>

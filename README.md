@@ -2,7 +2,7 @@
 
 Turkish-language corporate website for MAB Global Partners: international company formation, tax, accounting and registered agent services for the United States and the United Kingdom.
 
-Built with Next.js 16 (App Router, Cache Components), React 19, TypeScript, Tailwind CSS 4 and Google Sans Flex. All pages are prerendered; the contact API is the only request-time route.
+Built with Next.js 16 (App Router, Cache Components), React 19, TypeScript and Tailwind CSS 4, set in Cal Sans and Geist. All pages are prerendered; the contact API is the only request-time route.
 
 ## Getting started
 

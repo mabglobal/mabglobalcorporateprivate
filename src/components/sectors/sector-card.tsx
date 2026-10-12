@@ -13,7 +13,7 @@ export function SectorCard({
 }) {
   const Heading = headingLevel;
   return (
-    <article className="group relative flex h-full flex-col rounded-card bg-surface p-7 transition-colors duration-200 hover:bg-surface-strong">
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
       <div className="flex items-center justify-between">
         <Icon name={sector.icon} className="size-6 text-accent-strong" />
         <ArrowRight

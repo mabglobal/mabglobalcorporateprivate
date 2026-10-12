@@ -43,7 +43,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center rounded-control border border-white/20 text-white lg:hidden"
+        className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy lg:hidden"
       >
         <Menu aria-hidden="true" className="size-5" strokeWidth={1.8} />
         <span className="sr-only">Menüyü aç</span>
@@ -65,7 +65,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
           <button
             type="button"
             onClick={close}
-            className="inline-flex size-11 items-center justify-center rounded-control bg-surface text-navy"
+            className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy"
           >
             <X aria-hidden="true" className="size-5" strokeWidth={1.8} />
             <span className="sr-only">Menüyü kapat</span>
@@ -86,7 +86,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
                     <Link
                       href={item.href}
                       onClick={close}
-                      className="flex min-h-10 items-center rounded-control px-4 text-label text-navy hover:bg-surface"
+                      className="flex min-h-10 items-center rounded-control px-4 text-label text-slate hover:text-navy"
                     >
                       {item.label}
                     </Link>
@@ -135,8 +135,8 @@ function PrimaryLinks({ items, onNavigate, pathname }: PrimaryLinksProps) {
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex min-h-12 items-center rounded-control px-4 text-title",
-                active ? "bg-surface text-navy" : "text-ink hover:bg-surface",
+                "flex min-h-12 items-center rounded-control border px-4 text-title",
+                active ? "border-line text-navy" : "border-transparent text-ink hover:text-navy",
               )}
             >
               {item.label}

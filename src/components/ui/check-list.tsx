@@ -1,20 +1,20 @@
 import { Check } from "lucide-react";
 import type { TitledText } from "@/types/content";
 
-/** Grid of titled items, each in a rounded light box with a check mark. */
+/** Grid of titled items, each in a framed box with a check mark. */
 export function TitledCheckList({ items }: { items: TitledText[] }) {
   return (
     <ul className="grid gap-3 md:grid-cols-2">
       {items.map((item) => (
-        <li key={item.title} className="flex gap-4 rounded-panel bg-surface p-5">
+        <li key={item.title} className="frame flex gap-4 rounded-panel p-5">
           <span
             aria-hidden="true"
-            className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-tile bg-navy text-white"
+            className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-chip border border-line text-navy"
           >
             <Check className="size-4" strokeWidth={2} />
           </span>
           <div>
-            <h3 className="text-body font-medium text-navy">{item.title}</h3>
+            <h3 className="text-title text-navy">{item.title}</h3>
             <p className="mt-1 text-label text-slate">{item.description}</p>
           </div>
         </li>

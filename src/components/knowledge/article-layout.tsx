@@ -4,6 +4,7 @@ import { routes } from "@/config/routes";
 import { articleCategoryLabels } from "@/content/articles";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { TextLink } from "@/components/ui/text-link";
 import {
@@ -45,7 +46,7 @@ export function ArticleLayout({ article }: { article: Article }) {
       <div className="section-y bg-white">
         <div className="container-page grid gap-14 lg:grid-cols-12">
           <aside className="order-2 lg:order-1 lg:col-span-3">
-            <dl className="grid gap-5 rounded-card bg-surface p-6 text-label lg:sticky lg:top-8">
+            <dl className="grid gap-5 frame rounded-card p-6 text-label lg:sticky lg:top-8">
               <div>
                 <dt className="text-caption text-slate">Kategori</dt>
                 <dd className="mt-1 text-navy">{articleCategoryLabels[article.category]}</dd>
@@ -88,7 +89,7 @@ export function ArticleLayout({ article }: { article: Article }) {
               ))}
             </div>
 
-            <section aria-labelledby="sources-title" className="mt-16 rounded-card bg-surface p-7">
+            <section aria-labelledby="sources-title" className="mt-16 frame rounded-card p-7">
               <h2 id="sources-title" className="text-title text-navy">
                 Kaynaklar
               </h2>
@@ -137,6 +138,7 @@ export function ArticleLayout({ article }: { article: Article }) {
         </div>
       </div>
 
+      <ContactBand />
     </>
   );
 }

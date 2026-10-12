@@ -1,45 +1,45 @@
 import { routes } from "@/config/routes";
-import type { IconName, TitledText } from "@/types/content";
+import type { IconName, ServiceSlug, TitledText } from "@/types/content";
 
 /**
- * Homepage copy. Layout mirrors the reference composition: hero, why,
- * process panels, services, sectors, facts panel, market comparison, FAQ.
- * The closing call to action and footer live in the site footer.
+ * Homepage copy. The layout follows the consulting reference: framed badge,
+ * two-tone heading over an architectural photo, grouped service list,
+ * staggered process boxes, about block with figures, working principles,
+ * sectors, FAQ and a contact band.
  */
 export const homeContent = {
   hero: {
-    title: "Global işinizi sağlam temeller üzerine kurun.",
+    badge: "ABD ve Birleşik Krallık · Türkçe danışmanlık",
+    titleLead: "Global işinizi",
+    titleRest: "sağlam temeller üzerine kurun.",
     description:
       "Amerika ve İngiltere'de şirket kuruluşundan vergi ve muhasebe süreçlerine kadar uluslararası operasyonlarınızı yönetin.",
     primaryCta: { label: "Danışmanlık Talep Edin", href: routes.contactForm },
-    marketsLabel: "Odak pazarlar",
-    markets: [
-      { code: "ABD", name: "Amerika Birleşik Devletleri" },
-      { code: "UK", name: "Birleşik Krallık" },
-    ],
+    secondaryCta: { label: "Hizmetleri İnceleyin", href: routes.services },
+    imageAlt: "Bir çayırda yan yana yükselen klasik sütunlar",
   },
-  why: {
-    title: "Neden MAB Global Partners",
-    description: "Kuruluştan yıllık uyuma kadar tüm adımları tek ekiple yönetin.",
-    items: [
+  services: {
+    tag: "Hizmet alanları",
+    titleLead: "Uluslararası işinize",
+    titleAccent: "uygun hizmeti seçin",
+    allServicesLabel: "Tüm hizmetler",
+    groups: [
       {
-        icon: "globe",
-        title: "Uluslararası uzmanlık",
-        description: "ABD ve İngiltere süreçlerini deneyimli ekiple yürütün.",
+        label: "Şirket kuruluşu",
+        description: "ABD veya Birleşik Krallık'ta şirketinizi kurun.",
+        services: ["amerika-sirket-kurulusu", "ingiltere-sirket-kurulusu"],
+        featured: "registered-agent",
       },
       {
-        icon: "layers",
-        title: "Tek plan, tek ekip",
-        description: "Kuruluş, muhasebe ve vergiyi tek planda toplayın.",
+        label: "Vergi ve operasyon",
+        description: "Kuruluştan sonraki yükümlülükleri düzenli yönetin.",
+        services: ["vergi-danismanligi", "muhasebe-hizmetleri", "is-adresi-ve-sirket-operasyonlari"],
+        featured: "uluslararasi-is-danismanligi",
       },
-      {
-        icon: "calendar",
-        title: "Düzenli takip",
-        description: "Beyan ve yenileme tarihlerini önceden öğrenin.",
-      },
-    ] satisfies (TitledText & { icon: IconName })[],
+    ] satisfies { label: string; description: string; services: ServiceSlug[]; featured: ServiceSlug }[],
   },
   process: {
+    tag: "Çalışma süreci",
     title: "Nasıl çalışır",
     description: "Üç adımda net bir yol haritası oluşturun.",
     steps: [
@@ -57,84 +57,67 @@ export const homeContent = {
       },
     ] satisfies TitledText[],
   },
-  services: {
-    title: "Hizmetler",
-    description: "İhtiyacınız olan hizmeti seçin, kuruluş sonrasıyla birlikte planlayın.",
-    allServicesLabel: "Tüm hizmetler",
+  about: {
+    tag: "Hakkımızda",
+    title: "MAB Global Partners",
+    subtitle: "Uluslararası şirket süreçlerinde Türkçe danışmanlık",
+    paragraphs: [
+      "MAB Global Partners, Amerika ve Birleşik Krallık'ta iş yapmak isteyen girişimcilere ve şirketlere destek veren kurumsal hizmetler markasıdır.",
+      "Şirket kuruluşu, registered agent, vergi ve muhasebe adımlarını tek bir çatı altında planlayın.",
+    ],
+    stats: [
+      { value: "50", label: "Eyalette registered agent" },
+      { value: "2", label: "Odak pazar" },
+      { value: "7", label: "Hizmet alanı" },
+    ],
+    linkLabel: "Bizi tanıyın",
+    imageAlt: "Klasik sütunların yakından görünümü",
   },
-  sectors: {
-    title: "Kimler için",
-    description: "İş modelinize en yakın alanı seçin.",
-    allSectorsLabel: "Tüm sektörler",
-  },
-  facts: {
-    title: "Kurumsal çerçeve",
-    description: "İki ana pazarda kuruluş ve uyum süreçlerini aynı düzenle yönetin.",
+  principles: {
+    tag: "Neden MAB Global Partners",
+    title: "Çalışma ilkeleri",
     items: [
       {
-        value: "ABD",
-        title: "Amerika Birleşik Devletleri",
-        description: "LLC ve corporation kuruluşu, EIN, vergi beyanları ve yıllık uyum.",
+        icon: "globe",
+        title: "Uluslararası uzmanlık",
+        description: "ABD ve İngiltere süreçlerini deneyimli ekiple yürütün.",
       },
       {
-        value: "UK",
-        title: "Birleşik Krallık",
-        description: "Companies House kaydı, Corporation Tax ve yıllık hesaplar.",
+        icon: "layers",
+        title: "Tek plan, tek ekip",
+        description: "Kuruluş, muhasebe ve vergiyi tek planda toplayın.",
       },
       {
-        value: "50",
-        title: "Eyalette registered agent",
-        description: "MAB Registered Agent Inc. ile 50 eyalet ve Washington D.C.",
+        icon: "calendar",
+        title: "Düzenli takip",
+        description: "Beyan ve yenileme tarihlerini önceden öğrenin.",
       },
-    ],
+    ] satisfies (TitledText & { icon: IconName })[],
+    cta: {
+      title: "Ön görüşme talep edin",
+      description: "İhtiyacınızı paylaşın, uygun yapıyı birlikte belirleyin.",
+      href: routes.contactForm,
+    },
   },
-  comparison: {
-    title: "Pazarınızı seçin",
-    description: "Amerika ve Birleşik Krallık seçeneklerini karşılaştırın.",
-    plans: [
-      {
-        key: "us",
-        name: "Amerika",
-        tagline: "ABD pazarına satış ve yatırım için",
-        label: "LLC ve Corporation",
-        tone: "dark",
-        features: [
-          "LLC ve corporation kuruluşu",
-          "Registered agent ataması",
-          "EIN başvurusu",
-          "ABD iş adresi",
-          "Federal ve eyalet beyanları",
-          "Muhasebe ve yıllık uyum",
-        ],
-        cta: { label: "Amerika'da Şirket Kurun", href: routes.service("amerika-sirket-kurulusu") },
-      },
-      {
-        key: "uk",
-        name: "Birleşik Krallık",
-        tagline: "Birleşik Krallık ve Avrupa pazarı için",
-        label: "Private Limited Company",
-        tone: "light",
-        features: [
-          "Limited şirket kuruluşu",
-          "Companies House başvurusu",
-          "Kimlik doğrulama adımları",
-          "Registered office planı",
-          "Corporation Tax kaydı",
-          "Yıllık hesaplar ve muhasebe",
-        ],
-        cta: { label: "İngiltere'de Şirket Kurun", href: routes.service("ingiltere-sirket-kurulusu") },
-      },
-    ],
+  sectors: {
+    tag: "Kimler için",
+    title: "İş modelinize uygun yapı",
+    description: "Size en yakın alanı seçin.",
+    allSectorsLabel: "Tüm sektörler",
   },
   faq: {
-    title: "Sıkça sorulan sorular",
+    tag: "Sıkça sorulan sorular",
+    title: "Merak edilen konular",
     description: "Merak edilen konuların kısa yanıtları.",
   },
 } as const;
 
-/** Closing call to action shown above the footer on every page. */
-export const closingCta = {
-  title: "Uluslararası iş planınızı paylaşın.",
-  description: "İhtiyaçlarınızı iletin, işletmeniz için uygun hizmetleri ve sonraki adımları öğrenin.",
-  cta: { label: "İletişime Geçin", href: routes.contactForm },
+/** Contact band shown above the footer on most pages. */
+export const contactBand = {
+  tag: "İletişim",
+  title: "İletişime geçin",
+  description: "Uluslararası iş planınızı paylaşın, uygun hizmetleri ve sonraki adımları öğrenin.",
+  cardTitle: "Görüşme talep edin",
+  cardDescription: "Formu doldurun, ekibimiz e-posta ile size dönüş yapsın.",
+  cta: { label: "Danışmanlık Talep Edin", href: routes.contactForm },
 } as const;

@@ -49,8 +49,8 @@ export function Icon({ name, className }: { name: IconName; className?: string }
 }
 
 /**
- * Rounded square icon box. Navy with a white icon on light surfaces,
- * translucent white with a white icon on navy surfaces. Never orange on navy.
+ * Small framed icon box: white with a thin border and a navy icon on white
+ * surfaces, translucent white with a white icon on navy surfaces.
  */
 export function IconTile({
   name,
@@ -64,9 +64,9 @@ export function IconTile({
   return (
     <span
       className={cn(
-        "inline-flex shrink-0 items-center justify-center rounded-tile text-white",
-        size === "md" ? "size-10" : "size-8",
-        tone === "light" ? "bg-navy" : "bg-white/12",
+        "inline-flex shrink-0 items-center justify-center rounded-tile",
+        size === "md" ? "size-10" : "size-9",
+        tone === "light" ? "border border-line bg-white text-navy" : "bg-white/12 text-white",
       )}
     >
       <Icon name={name} className={size === "md" ? "size-5" : "size-4"} />

@@ -4,6 +4,7 @@ import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { services } from "@/content/services";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
 import { ServiceCard } from "@/components/services/service-card";
@@ -48,7 +49,7 @@ export default function ServicesPage() {
         title="Hizmetler"
         description="Amerika ve İngiltere'de şirketinizi kurun, vergi, muhasebe ve uyum süreçlerinizi tek planda yönetin."
         actions={
-          <ButtonLink href={primaryCta.href} variant="light">
+          <ButtonLink href={primaryCta.href} variant="accent">
             {primaryCta.label}
           </ButtonLink>
         }
@@ -71,6 +72,7 @@ export default function ServicesPage() {
         steps={process.steps}
         padding="bottom"
       />
+      <ContactBand />
     </>
   );
 }

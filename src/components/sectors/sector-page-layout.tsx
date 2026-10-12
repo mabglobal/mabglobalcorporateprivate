@@ -5,6 +5,7 @@ import { staticPages } from "@/content/pages";
 import { getSector } from "@/content/sectors";
 import { getServices } from "@/content/services";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { ServiceCard } from "@/components/services/service-card";
@@ -50,16 +51,16 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
         title={sector.title}
         description={sector.intro[0]}
         actions={
-          <ButtonLink href={primaryCta.href} variant="light">
+          <ButtonLink href={primaryCta.href} variant="accent">
             {primaryCta.label}
           </ButtonLink>
         }
         aside={
-          <div className="rounded-card bg-white p-7">
+          <div className="frame rounded-card p-7">
             <p className="text-caption font-medium text-slate">Kimler için</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {sector.examples.map((example) => (
-                <li key={example} className="rounded-tile bg-surface px-3 py-1.5 text-caption text-navy">
+                <li key={example} className="rounded-chip border border-line px-3 py-1.5 text-caption text-navy">
                   {example}
                 </li>
               ))}
@@ -70,10 +71,10 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
 
       <section aria-labelledby="needs-title" className="section-y bg-white">
         <div className="container-page">
-          <SectionHeading id="needs-title" icon={sector.icon} title="Öne çıkan ihtiyaçlar" description={sector.intro[1]} />
+          <SectionHeading id="needs-title" tag="İhtiyaçlar" title="Öne çıkan ihtiyaçlar" description={sector.intro[1]} />
           <ul className="mt-14 grid gap-4 md:grid-cols-2">
             {sector.needs.map((need) => (
-              <li key={need.title} className="flex gap-5 rounded-card bg-surface p-7">
+              <li key={need.title} className="flex gap-5 frame rounded-card p-7">
                 <IconTile name="file-check" size="sm" />
                 <div>
                   <h3 className="text-title text-navy">{need.title}</h3>
@@ -87,7 +88,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
 
       <section aria-labelledby="services-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="services-title" icon="building" title="İlgili hizmetler" />
+          <SectionHeading id="services-title" tag="Hizmetler" title="İlgili hizmetler" />
           <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {relevantServices.map((service) => (
               <li key={service.slug}>
@@ -100,7 +101,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
 
       <section aria-labelledby="operations-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <div className="rounded-card bg-surface p-7 md:p-10">
+          <div className="frame rounded-card p-7 md:p-10">
             <h2 id="operations-title" className="text-title text-navy">
               Operasyonel konular
             </h2>
@@ -112,6 +113,7 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
       </section>
 
       <FaqSection items={faqs} padding="bottom" />
+      <ContactBand />
     </>
   );
 }

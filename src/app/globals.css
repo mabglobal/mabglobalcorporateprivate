@@ -2,20 +2,25 @@
 @import "../styles/tokens.css";
 
 /*
- * Metric-matched fallback for Google Sans Flex, computed from the font's hhea
- * metrics and the average advance width of Turkish sample text versus Arial.
+ * Typefaces follow popupsmart.com: Cal Sans for headings, Geist for text.
+ * Both are loaded through next/font/google in src/app/layout.tsx.
+ */
+/*
+ * Metric-matched fallback for Cal Sans (next/font has no override values for
+ * it), computed from the font's hhea metrics and Turkish heading text widths.
  */
 @font-face {
-  font-family: "Google Sans Flex Fallback";
+  font-family: "Cal Sans Fallback";
   src: local("Arial"), local("ArialMT"), local("Helvetica");
-  size-adjust: 100%;
-  ascent-override: 96.63%;
-  descent-override: 28.61%;
+  size-adjust: 97.31%;
+  ascent-override: 102.76%;
+  descent-override: 30.83%;
   line-gap-override: 0%;
 }
 
 @theme inline {
-  --font-sans: var(--font-gsf), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cal-sans), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -39,7 +44,8 @@
   h3,
   h4 {
     text-wrap: balance;
-    font-weight: 500;
+    font-family: var(--font-display);
+    font-weight: 400;
     color: inherit;
   }
 
@@ -100,6 +106,13 @@
     background-color: var(--color-white);
     color: var(--color-navy);
   }
+}
+
+/* Framed box: white surface, thin border, soft shadow. */
+@utility frame {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-frame);
 }
 
 @utility prose-mab {

@@ -191,6 +191,12 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
         ],
       },
       {
+        heading: "Görseller",
+        paragraphs: [
+          "Web sitesindeki sütun fotoğrafları Carol M. Highsmith tarafından çekilmiştir ve Library of Congress arşivinde kamu malı olarak yayımlanmıştır.",
+        ],
+      },
+      {
         heading: "Dış bağlantılar",
         paragraphs: [
           "Web sitemizde resmi kurumların ve iş ortaklarımızın sayfalarına bağlantılar bulunur. Bu sayfaların içeriğinden ilgili kurumlar sorumludur.",

@@ -5,6 +5,7 @@ import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { getService, getServices } from "@/content/services";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
@@ -53,16 +54,16 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
         description={service.intro[0]}
         actions={
           <>
-            <ButtonLink href={primaryCta.href} variant="light">
+            <ButtonLink href={primaryCta.href} variant="accent">
               {primaryCta.label}
             </ButtonLink>
-            <ButtonLink href="#hizmet-kapsami" variant="outline-light">
+            <ButtonLink href="#hizmet-kapsami" variant="outline">
               Kapsamı İnceleyin
             </ButtonLink>
           </>
         }
         aside={
-          <div className="rounded-card bg-white p-7">
+          <div className="frame rounded-card p-7">
             <p className="text-caption font-medium text-slate">Bu hizmet nedir</p>
             <p className="mt-3 text-label text-ink">{service.definition}</p>
             {service.externalReference ? (
@@ -81,10 +82,10 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
 
       <section aria-labelledby="audience-title" className="section-y bg-white">
         <div className="container-page">
-          <SectionHeading id="audience-title" icon="globe" title="Kimler için" description={service.intro[1]} />
+          <SectionHeading id="audience-title" tag="Hedef kitle" title="Kimler için" description={service.intro[1]} />
           <ul className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {service.audience.map((item) => (
-              <li key={item.title} className="rounded-card bg-surface p-7">
+              <li key={item.title} className="frame rounded-card p-7">
                 <h3 className="text-title text-navy">{item.title}</h3>
                 <p className="mt-2 text-label text-slate">{item.description}</p>
               </li>
@@ -95,18 +96,18 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
 
       <section id="hizmet-kapsami" aria-labelledby="scope-title" className="scroll-mt-6 bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="scope-title" icon="file-check" title="Hizmet kapsamı" />
+          <SectionHeading id="scope-title" tag="Kapsam" title="Hizmet kapsamı" />
           <div className="mt-14">
             <TitledCheckList items={service.scope} />
           </div>
         </div>
       </section>
 
-      <ProcessSection id="process-title" icon="calendar" title="Süreç nasıl işler" steps={service.process} padding="bottom" />
+      <ProcessSection id="process-title" tag="Süreç" title="Süreç nasıl işler" steps={service.process} padding="bottom" />
 
       <section aria-labelledby="considerations-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page grid gap-4 lg:grid-cols-2">
-          <div className="rounded-card bg-surface p-7 md:p-8">
+          <div className="frame rounded-card p-7 md:p-8">
             <h2 id="considerations-title" className="text-title text-navy">
               Dikkat edilmesi gerekenler
             </h2>
@@ -115,7 +116,7 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
             </div>
           </div>
           {service.documents ? (
-            <div className="rounded-card bg-surface p-7 md:p-8">
+            <div className="frame rounded-card p-7 md:p-8">
               <h2 className="text-title text-navy">Gerekebilecek belgeler</h2>
               <div className="mt-6">
                 <BulletList items={service.documents} />
@@ -127,7 +128,7 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
 
       <section aria-labelledby="related-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="related-title" icon="layers" title="İlgili hizmetler" />
+          <SectionHeading id="related-title" tag="Diğer hizmetler" title="İlgili hizmetler" />
           <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {relatedServices.slice(0, 3).map((related) => (
               <li key={related.slug}>
@@ -139,6 +140,7 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
       </section>
 
       <FaqSection items={faqs} padding="bottom" />
+      <ContactBand />
     </>
   );
 }

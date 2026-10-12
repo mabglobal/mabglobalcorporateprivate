@@ -12,7 +12,7 @@ export function SectorsGrid() {
       <div className="container-page">
         <SectionHeading
           id="sectors-title"
-          icon="globe"
+          tag={content.tag}
           title={content.title}
           description={content.description}
           action={<TextLink href={routes.sectors}>{content.allSectorsLabel}</TextLink>}

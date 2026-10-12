@@ -3,6 +3,7 @@ import { aboutContent } from "@/content/about";
 import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { ButtonLink } from "@/components/ui/button-link";
 import { IconTile } from "@/components/ui/icon";
@@ -47,7 +48,7 @@ export default function AboutPage() {
         title={hero.title}
         description={hero.description}
         actions={
-          <ButtonLink href={primaryCta.href} variant="light">
+          <ButtonLink href={primaryCta.href} variant="accent">
             {primaryCta.label}
           </ButtonLink>
         }
@@ -56,7 +57,7 @@ export default function AboutPage() {
       <section aria-labelledby="intro-title" className="section-y bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionHeading id="intro-title" icon="building" title={introduction.title} />
+            <SectionHeading id="intro-title" tag="Kurumsal" title={introduction.title} />
           </div>
           <div className="grid gap-5 lg:col-span-7 lg:col-start-6">
             {introduction.paragraphs.map((paragraph) => (
@@ -96,10 +97,10 @@ export default function AboutPage() {
 
       <section aria-labelledby="focus-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="focus-title" icon="globe" title={focus.title} />
+          <SectionHeading id="focus-title" tag="Pazarlar" title={focus.title} />
           <ul className="mt-14 grid gap-4 md:grid-cols-2">
             {focus.items.map((item) => (
-              <li key={item.title} className="rounded-card bg-surface p-7 md:p-8">
+              <li key={item.title} className="frame rounded-card p-7 md:p-8">
                 <h3 className="text-title text-navy">{item.title}</h3>
                 <p className="mt-2 text-label text-slate">{item.description}</p>
               </li>
@@ -110,10 +111,10 @@ export default function AboutPage() {
 
       <section aria-labelledby="approach-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <SectionHeading id="approach-title" icon="layers" title={approach.title} />
+          <SectionHeading id="approach-title" tag="Yaklaşım" title={approach.title} />
           <ol className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {approach.items.map((item, index) => (
-              <li key={item.title} className="rounded-card bg-surface p-7">
+              <li key={item.title} className="frame rounded-card p-7">
                 <span className="text-caption font-medium text-slate">{String(index + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 text-title text-navy">{item.title}</h3>
                 <p className="mt-2 text-label text-slate">{item.description}</p>
@@ -126,7 +127,7 @@ export default function AboutPage() {
       <section aria-labelledby="founder-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionHeading id="founder-title" icon="rocket" title={founder.name} description={founder.role} />
+            <SectionHeading id="founder-title" tag={founder.title} title={founder.name} />
           </div>
           <div className="grid gap-5 lg:col-span-7 lg:col-start-6">
             {founder.paragraphs.map((paragraph) => (
@@ -137,6 +138,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <ContactBand />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { sectors } from "@/content/sectors";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectorCard } from "@/components/sectors/sector-card";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -45,7 +46,7 @@ export default function SectorsPage() {
         title="Sektörler"
         description="İş modelinizi seçin, kuruluş, vergi ve muhasebe ihtiyaçlarınızı kendi koşullarınızla planlayın."
         actions={
-          <ButtonLink href={primaryCta.href} variant="light">
+          <ButtonLink href={primaryCta.href} variant="accent">
             {primaryCta.label}
           </ButtonLink>
         }
@@ -61,6 +62,7 @@ export default function SectorsPage() {
           </ul>
         </div>
       </section>
+      <ContactBand />
     </>
   );
 }

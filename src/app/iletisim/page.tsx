@@ -72,7 +72,7 @@ export default function ContactPage() {
 
           <aside aria-label="İletişim bilgileri" className="lg:col-span-4 lg:col-start-9">
             <div className="grid gap-5">
-              <div className="rounded-card bg-surface p-8">
+              <div className="frame rounded-card p-8">
                 <Mail aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
                 <h2 className="mt-6 text-title text-navy">E-posta</h2>
                 <a
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   {contactConfig.email}
                 </a>
               </div>
-              <div className="rounded-card bg-surface p-8">
+              <div className="frame rounded-card p-8">
                 <MapPin aria-hidden="true" className="size-6 text-navy" strokeWidth={1.6} />
                 <h2 className="mt-6 text-title text-navy">Ofis</h2>
                 <address className="mt-2 text-label not-italic text-ink">
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <ArrowUpRight aria-hidden="true" className="size-4 text-accent-strong" />
                 </a>
               </div>
-              <div className="rounded-card bg-surface p-8">
+              <div className="frame rounded-card p-8">
                 <h2 className="text-title text-navy">Ön görüşme konuları</h2>
                 <div className="mt-6">
                   <BulletList items={consultationTopics} />

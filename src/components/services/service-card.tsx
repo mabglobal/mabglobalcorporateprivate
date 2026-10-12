@@ -3,26 +3,18 @@ import { ArrowRight } from "lucide-react";
 import { routes } from "@/config/routes";
 import { IconTile } from "@/components/ui/icon";
 import type { Service } from "@/types/content";
-import { cn } from "@/lib/utilities/cn";
 
-/** Light grey rounded card; the whole card is clickable through the title link. */
+/** Framed white card; the whole card is clickable through the title link. */
 export function ServiceCard({
   service,
-  tone = "surface",
   headingLevel = "h3",
 }: {
   service: Service;
-  tone?: "surface" | "white";
   headingLevel?: "h2" | "h3";
 }) {
   const Heading = headingLevel;
   return (
-    <article
-      className={cn(
-        "group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200",
-        tone === "surface" ? "bg-surface hover:bg-surface-strong" : "bg-white hover:bg-surface-strong",
-      )}
-    >
+    <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-slate">
       <IconTile name={service.icon} size="sm" />
       <Heading className="mt-8 text-title text-navy">
         <Link

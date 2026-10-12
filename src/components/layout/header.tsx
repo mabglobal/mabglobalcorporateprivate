@@ -10,12 +10,12 @@ import { DesktopNavigation, NavigationList } from "./desktop-navigation";
 import { MobileNavigation } from "./mobile-navigation";
 import { SiteLogo } from "./site-logo";
 
-/** Header sits on the navy band that opens every page, as in the reference. */
+/** White header with a framed call to action, as in the consulting reference. */
 export function Header() {
   return (
-    <header className="on-dark relative z-40 bg-navy-deep">
+    <header className="relative z-40 bg-white">
       <div className="container-page flex h-20 items-center justify-between gap-6">
-        <SiteLogo tone="dark" />
+        <SiteLogo />
 
         <nav aria-label="Ana menü" className="hidden lg:block">
           <Suspense fallback={<NavigationList items={mainNavigation} />}>
@@ -24,8 +24,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
-            <ButtonLink href={primaryCta.href} variant="light" size="sm">
+          <div className="hidden sm:block lg:hidden xl:block">
+            <ButtonLink href={primaryCta.href} variant="outline" size="sm">
               {primaryCta.label}
             </ButtonLink>
           </div>

@@ -9,7 +9,7 @@ import { cn } from "@/lib/utilities/cn";
  */
 export function Breadcrumb({
   items,
-  tone = "dark",
+  tone = "light",
 }: {
   items: BreadcrumbTrailItem[];
   tone?: "light" | "dark";

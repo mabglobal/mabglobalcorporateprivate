@@ -2,15 +2,15 @@ import { getFaqs, homepageFaqIds } from "@/content/faqs";
 import { homeContent } from "@/content/home";
 import { staticPages } from "@/content/pages";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Comparison } from "@/components/sections/comparison";
-import { Facts } from "@/components/sections/facts";
+import { AboutBlock } from "@/components/sections/about-block";
+import { ContactBand } from "@/components/sections/contact-band";
 import { FaqSection } from "@/components/sections/faq-section";
 import { Hero } from "@/components/sections/hero";
+import { Principles } from "@/components/sections/principles";
 import { ProcessSection } from "@/components/sections/process-steps";
 import { SectorsGrid } from "@/components/sections/sectors-grid";
-import { ServicesGrid } from "@/components/sections/services-grid";
+import { ServiceGroups } from "@/components/sections/service-groups";
 import { Testimonials } from "@/components/sections/testimonials";
-import { WhySection } from "@/components/sections/why-section";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import { faqNode, graph, organizationNode, webPageNode, websiteNode } from "@/lib/seo/structured-data";
 
@@ -33,20 +33,21 @@ export default function HomePage() {
         ])}
       />
       <Hero />
-      <WhySection />
+      <ServiceGroups />
       <ProcessSection
         id="process-title"
+        tag={process.tag}
         title={process.title}
         description={process.description}
         steps={process.steps}
         padding="bottom"
       />
-      <ServicesGrid />
+      <AboutBlock />
+      <Principles />
       <SectorsGrid />
-      <Facts />
-      <Comparison />
       <Testimonials />
-      <FaqSection items={faqs} title={faq.title} description={faq.description} padding="bottom" />
+      <FaqSection items={faqs} tag={faq.tag} title={faq.title} description={faq.description} padding="bottom" />
+      <ContactBand />
     </>
   );
 }

@@ -8,14 +8,14 @@ import type { FaqItem } from "@/types/content";
  */
 export function FaqAccordion({ items }: { items: FaqItem[] }) {
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-2">
       {items.map((item) => (
-        <details key={item.id} className="group rounded-panel bg-surface px-5 transition-colors open:bg-surface-strong">
+        <details key={item.id} className="frame group rounded-panel px-5 transition-colors open:border-slate">
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-6 py-4 text-body font-medium text-navy marker:content-none [&::-webkit-details-marker]:hidden">
             <span>{item.question}</span>
             <span
               aria-hidden="true"
-              className="inline-flex size-7 shrink-0 items-center justify-center rounded-tile bg-white text-navy transition-transform duration-200 group-open:rotate-45"
+              className="inline-flex size-7 shrink-0 items-center justify-center rounded-chip border border-line text-navy transition-transform duration-200 group-open:rotate-45"
             >
               <Plus className="size-4" strokeWidth={1.8} />
             </span>

@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import { aboutContent } from "@/content/about";
 import { articles } from "@/content/articles";
 import { faqs } from "@/content/faqs";
-import { closingCta, homeContent } from "@/content/home";
+import { contactBand, homeContent } from "@/content/home";
 import { legalDocuments } from "@/content/legal";
 import { footerNavigation, legalNavigation, mainNavigation } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
@@ -62,7 +62,7 @@ const sources: Record<string, unknown> = {
   // Source titles are quoted from official English pages and are exempt.
   articles: articles.map((article) => ({ ...article, sources: [] })),
   home: homeContent,
-  closingCta,
+  contactBand,
   about: aboutContent,
   legal: legalDocuments,
   pages: Object.values(staticPages).map(({ title, description }) => ({

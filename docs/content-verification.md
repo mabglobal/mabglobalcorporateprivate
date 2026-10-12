@@ -45,6 +45,12 @@ Sources:
 | Customer testimonials and client logos | None supplied; the section is hidden |
 | Leadership or team members beyond the founder | None supplied |
 
+## Images
+
+| Image | Source | License |
+|---|---|---|
+| `src/assets/images/hero-columns.jpg`, `about-columns.jpg` | "National Capitol columns at the United States National Arboretum", Carol M. Highsmith, Library of Congress (LCCN 2010641854), via Wikimedia Commons | Public domain. Converted to grayscale and cropped. Credited on the Yasal Uyarı page |
+
 ## Legal texts
 
 `src/content/legal.ts` describes only what the site does today: no analytics or advertising cookies, self-hosted fonts, form data sent by email through the delivery provider, hosting logs. Have a lawyer review the privacy policy, cookie policy, KVKK notice and legal notice before launch, and add the legal entity name. Update the texts if analytics, chat, maps embeds or other third-party tools are added.

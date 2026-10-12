@@ -1,92 +1,76 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { Plus } from "lucide-react";
 import { contactConfig, mailtoHref } from "@/config/contact";
 import { siteConfig } from "@/config/site";
-import { closingCta, homeContent } from "@/content/home";
-import { footerNavigation, legalNavigation, primaryCta } from "@/content/navigation";
-import { ButtonLink } from "@/components/ui/button-link";
-import { IconTile } from "@/components/ui/icon";
+import { footerNavigation, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
-import { SiteLogo } from "./site-logo";
+
+const footerDescription = "Amerika ve İngiltere'de şirket kuruluşu, vergi, muhasebe ve registered agent danışmanlığı.";
 
 /**
- * Closing call to action, white footer card and bottom bar on one navy band,
- * following the reference composition.
+ * Navy footer band with the brand name set large, link columns and the legal
+ * bar, following the consulting reference. White only on navy.
  */
 export function Footer() {
   return (
-    <footer className="on-dark bg-[linear-gradient(180deg,var(--color-navy-deep)_0%,var(--color-navy)_100%)]">
-      <section aria-labelledby="closing-cta-title" className="container-page pb-16 pt-24 md:pt-28">
-        <IconTile name="globe" tone="dark" />
-        <h2 id="closing-cta-title" className="mt-5 max-w-2xl text-heading text-white">
-          {closingCta.title}
-        </h2>
-        <p className="mt-3 max-w-xl text-body text-white/75">{closingCta.description}</p>
-        <div className="mt-8">
-          <ButtonLink href={closingCta.cta.href} variant="light">
-            {closingCta.cta.label}
-          </ButtonLink>
+    <footer className="on-dark overflow-hidden bg-navy">
+      <div aria-hidden="true" className="flex items-center gap-8 whitespace-nowrap py-10 md:py-14">
+        {Array.from({ length: 4 }, (_, index) => (
+          <span key={index} className="flex shrink-0 items-center gap-8">
+            <span className="font-display text-[clamp(2.75rem,2rem+3vw,5rem)] leading-none text-white">
+              {siteConfig.name}
+            </span>
+            <Plus className="size-8 shrink-0 text-white md:size-10" strokeWidth={2.5} />
+          </span>
+        ))}
+      </div>
+
+      <div className="container-page grid gap-12 pb-14 pt-4 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <p className="font-display text-title text-white">{siteConfig.name}</p>
+          <p className="mt-3 max-w-xs text-label text-white/70">{footerDescription}</p>
         </div>
-      </section>
 
-      <div className="container-page">
-        <div className="rounded-card bg-white p-8 text-ink [--focus-ring:var(--color-navy)] md:p-12">
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <SiteLogo />
-              <p className="mt-6 max-w-sm text-heading text-navy">{homeContent.hero.title}</p>
-              <div className="mt-8">
-                <ButtonLink href={primaryCta.href} variant="dark">
-                  {primaryCta.label}
-                </ButtonLink>
-              </div>
-            </div>
-
-            <div className="grid gap-10 sm:grid-cols-[1.15fr_0.7fr_1.35fr] lg:col-span-8">
-              {footerNavigation.map((group) => (
-                <nav key={group.title} aria-label={group.title}>
-                  <h2 className="text-label font-medium text-navy">{group.title}</h2>
-                  <ul className="mt-4 grid gap-0.5">
-                    {group.items.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="inline-flex min-h-9 items-center text-label text-slate transition-colors hover:text-navy"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              ))}
-
-              <div>
-                <h2 className="text-label font-medium text-navy">İletişim</h2>
-                <ul className="mt-4 grid gap-4 text-label">
-                  <li>
-                    <a href={mailtoHref} className="inline-flex min-h-9 items-center whitespace-nowrap text-slate hover:text-navy">
-                      {contactConfig.email}
-                    </a>
+        <div className="grid gap-10 sm:grid-cols-[1.15fr_0.7fr_1.35fr] lg:col-span-8">
+          {footerNavigation.map((group) => (
+            <nav key={group.title} aria-label={group.title}>
+              <h2 className="text-label text-white">{group.title}</h2>
+              <ul className="mt-4 grid gap-0.5">
+                {group.items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="inline-flex min-h-9 items-center text-label text-white/70 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
                   </li>
-                  <li>
-                    <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="group text-slate hover:text-navy">
-                      <address className="not-italic">{contactConfig.address.full}</address>
-                      <span className="mt-2 inline-flex items-center gap-1 font-medium text-navy">
-                        Haritada görüntüleyin
-                        <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                ))}
+              </ul>
+            </nav>
+          ))}
+
+          <div>
+            <h2 className="text-label text-white">İletişim</h2>
+            <ul className="mt-4 grid gap-4 text-label">
+              <li>
+                <a href={mailtoHref} className="inline-flex min-h-9 items-center whitespace-nowrap text-white/70 hover:text-white">
+                  {contactConfig.email}
+                </a>
+              </li>
+              <li>
+                <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  <address className="not-italic">{contactConfig.address.full}</address>
+                  <span className="mt-2 inline-flex text-white underline underline-offset-4">Haritada görüntüleyin</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div className="container-page flex flex-col gap-4 py-8 md:flex-row md:items-center md:justify-between">
-        <p className="text-caption text-white/60">
+      <div className="container-page flex flex-col gap-4 pb-10 md:flex-row md:items-center md:justify-between">
+        <p className="text-caption text-white/70">
           © <CopyrightYear /> {siteConfig.name}. Tüm hakları saklıdır.
         </p>
         <nav aria-label="Yasal bilgiler">
@@ -95,7 +79,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-9 items-center whitespace-nowrap text-caption text-white/60 hover:text-white"
+                  className="inline-flex min-h-9 items-center whitespace-nowrap text-caption text-white/70 hover:text-white"
                 >
                   {item.label}
                 </Link>

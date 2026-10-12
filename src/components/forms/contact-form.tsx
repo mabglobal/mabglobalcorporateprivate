@@ -151,7 +151,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
 
   if (status === "success") {
     return (
-      <div role="status" className="rounded-card bg-surface p-8 md:p-10">
+      <div role="status" className="frame rounded-card p-8 md:p-10">
         <CircleCheck aria-hidden="true" className="size-8 text-navy" strokeWidth={1.6} />
         <h3 ref={successRef} tabIndex={-1} className="mt-6 text-title text-navy focus:outline-none">
           Talebiniz bize ulaştı.
@@ -181,14 +181,14 @@ export function ContactForm({ options }: { options: ContactOptions }) {
       onSubmit={handleSubmit}
       onFocus={() => void loadValidator()}
       aria-describedby={`${formId}-note`}
-      className="rounded-card bg-surface p-6 sm:p-8 md:p-10"
+      className="frame rounded-card p-6 sm:p-8 md:p-10"
     >
       {status === "error" && errorMessage ? (
         <div
           ref={errorRef}
           role="alert"
           tabIndex={-1}
-          className="mb-8 flex gap-3 rounded-panel bg-white p-4 text-label text-ink focus:outline-none"
+          className="mb-8 flex gap-3 rounded-panel border border-accent-strong/40 bg-white p-4 text-label text-ink focus:outline-none"
         >
           <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent-strong" />
           <p>

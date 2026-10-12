@@ -40,7 +40,7 @@ export default function ErrorPage({
           </button>
           <Link
             href={routes.home}
-            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control bg-surface px-6 text-label font-medium text-navy hover:bg-surface-strong"
+            className="inline-flex min-h-12 items-center whitespace-nowrap rounded-control border border-line bg-white px-6 text-label font-medium text-navy shadow-frame hover:border-slate"
           >
             Ana Sayfaya Dönün
           </Link>
