@@ -6,8 +6,7 @@ import { articleCategoryLabels, articles } from "@/content/articles";
 import { staticPages } from "@/content/pages";
 import { primaryCta } from "@/content/navigation";
 import { ButtonLink } from "@/components/ui/button-link";
-import { FactCards, FeaturePanel } from "@/components/ui/feature-panel";
-import { TextLink } from "@/components/ui/text-link";
+import { FeaturePanel } from "@/components/ui/feature-panel";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
@@ -78,18 +77,14 @@ export default function KnowledgeCenterPage() {
                   text: `Written from guidance published by ${[...new Set(featured.sources.map((source) => `the ${source.publisher}`))].join(" and ")}.`,
                 },
               ]}
-              action={<TextLink href={routes.article(featured.slug)}>Read the Guide</TextLink>}
+              action={
+                <ButtonLink href={routes.article(featured.slug)} icon="arrow-right">
+                  Read the Guide
+                </ButtonLink>
+              }
               image={heroArchitecture}
               imageAlt=""
               imageClassName="object-[72%_60%]"
-              details={
-                <FactCards
-                  groups={[
-                    [{ label: "Updated", value: formatDate(featured.updatedAt) }],
-                    [{ label: "Official Sources", value: String(featured.sources.length) }],
-                  ]}
-                />
-              }
             />
           </div>
         </section>

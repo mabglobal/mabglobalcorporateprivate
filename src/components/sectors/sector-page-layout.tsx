@@ -15,7 +15,6 @@ import { BulletList } from "@/components/ui/check-list";
 import { IconTile } from "@/components/ui/icon";
 import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { TextLink } from "@/components/ui/text-link";
 import {
   breadcrumbNode,
   faqNode,
@@ -75,7 +74,11 @@ export function SectorPageLayout({ slug }: { slug: SectorSlug }) {
               { title: "The Starting Point", text: sector.intro[0] ?? "" },
               { title: "The Plan", text: sector.intro[1] ?? "" },
             ]}
-            action={<TextLink href={primaryCta.href}>Book a Consultation</TextLink>}
+            action={
+              <ButtonLink href={primaryCta.href} icon="calendar">
+                Book a Consultation
+              </ButtonLink>
+            }
             image={heroArchitecture}
             imageAlt=""
             imageClassName="object-[72%_60%]"

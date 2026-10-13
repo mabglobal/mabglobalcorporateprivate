@@ -1,4 +1,3 @@
-import { ExternalLink } from "lucide-react";
 import heroArchitecture from "@/assets/images/hero-architecture.jpg";
 import { routes } from "@/config/routes";
 import { getFaqs } from "@/content/faqs";
@@ -15,7 +14,6 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList, TitledCheckList } from "@/components/ui/check-list";
 import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { TextLink } from "@/components/ui/text-link";
 import {
   breadcrumbNode,
   faqNode,
@@ -79,16 +77,13 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
             ]}
             action={
               service.externalReference ? (
-                <a
-                  href={service.externalReference.href}
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center gap-2 text-label font-medium text-accent-strong underline-offset-4 hover:underline"
-                >
+                <ButtonLink href={service.externalReference.href} external>
                   {service.externalReference.label}
-                  <ExternalLink aria-hidden="true" className="size-4" />
-                </a>
+                </ButtonLink>
               ) : (
-                <TextLink href="#related-services">Related Services</TextLink>
+                <ButtonLink href="#related-services" icon="arrow-right">
+                  Related Services
+                </ButtonLink>
               )
             }
             image={heroArchitecture}

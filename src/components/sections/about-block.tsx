@@ -1,8 +1,8 @@
 import aboutColumns from "@/assets/images/about-columns.jpg";
 import { routes } from "@/config/routes";
 import { homeContent } from "@/content/home";
+import { ButtonLink } from "@/components/ui/button-link";
 import { FeaturePanel } from "@/components/ui/feature-panel";
-import { TextLink } from "@/components/ui/text-link";
 
 /** Company profile in the framed feature panel. */
 export function AboutBlock() {
@@ -15,7 +15,11 @@ export function AboutBlock() {
           label={about.label}
           title={about.title}
           features={about.features}
-          action={<TextLink href={routes.about}>{about.linkLabel}</TextLink>}
+          action={
+            <ButtonLink href={routes.about} icon="arrow-right">
+              {about.linkLabel}
+            </ButtonLink>
+          }
           image={aboutColumns}
           imageAlt={about.imageAlt}
           imageClassName="object-[50%_30%]"
