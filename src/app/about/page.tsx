@@ -81,10 +81,10 @@ export default function AboutPage() {
 
       <section aria-labelledby="philosophy-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
         <div className="container-page">
-          <div className="on-dark grid gap-10 rounded-card bg-accent-strong p-8 md:p-12 lg:grid-cols-12">
+          <div className="on-dark grid gap-10 rounded-card bg-accent p-8 md:p-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <IconTile name="compass" tone="dark" />
-              <h2 id="philosophy-title" className="mt-5 text-title text-white">
+              <h2 id="philosophy-title" className="mt-5 text-[1.3125rem] font-bold text-white">
                 {philosophy.title}
               </h2>
               <figure className="mt-4">
@@ -95,7 +95,7 @@ export default function AboutPage() {
             </div>
             <div className="grid content-end gap-4 lg:col-span-5 lg:col-start-8">
               {philosophy.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-body text-white">
+                <p key={paragraph} className="text-[1.1875rem] font-bold leading-relaxed text-white">
                   {paragraph}
                 </p>
               ))}
