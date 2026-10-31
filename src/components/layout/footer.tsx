@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { footerLinks, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
-import { SiteLogo } from "./site-logo";
+import { HeaderLogo } from "./site-logo";
 
 const tagline = "Your partner for doing business across borders.";
 
@@ -20,7 +20,7 @@ export function Footer() {
     <footer className="border-t border-line bg-white">
       <div className="container-page grid gap-12 py-14 md:py-20 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <SiteLogo tone="light" variant="lockup" size="footer" />
+          <HeaderLogo size="footer" />
           <p className="mt-4 font-display text-title font-bold text-navy">{tagline}</p>
           <div className="mt-8 grid max-w-2xl gap-4 text-label text-navy">
             <p>
