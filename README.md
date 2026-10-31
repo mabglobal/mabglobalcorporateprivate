@@ -48,6 +48,6 @@ To preview production behavior locally (indexable metadata, full sitemap), build
 
 ## Outstanding before launch
 
-1. Provision Resend and set the contact email variables (the form reports "not configured" until then).
+1. Contact form submissions go to Formspree (`https://formspree.io/f/xwllrpnr`); see docs/deployment.md.
 2. Decide the domain: `www.mabglobalpartners.com` currently serves the partner portal.
 3. Confirm the pending items in `docs/content-verification.md` and have the legal texts reviewed.

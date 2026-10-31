@@ -1,5 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
-import { contactConfig, mailtoHref } from "@/config/contact";
+import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
 import { contactBand } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -34,8 +34,11 @@ export function ContactBand() {
               </span>
               <div className="min-w-0">
                 <p className="text-caption font-medium text-navy">Email</p>
-                <a href={mailtoHref} className="text-label text-navy [overflow-wrap:anywhere] hover:underline">
+                <a href={mailtoHref} className="flex min-h-6 items-center text-label text-navy [overflow-wrap:anywhere] hover:underline">
                   {contactConfig.email}
+                </a>
+                <a href={secondaryMailtoHref} className="flex min-h-6 items-center text-label text-navy [overflow-wrap:anywhere] hover:underline">
+                  {contactConfig.secondaryEmail}
                 </a>
               </div>
             </li>

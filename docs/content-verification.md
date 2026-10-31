@@ -13,7 +13,8 @@ Sources:
 | Fact on the site | Where used | Source |
 |---|---|---|
 | Brand name MAB Global Partners | Everywhere | S2, S3 |
-| Email info@mabglobalpartners.com, office address, Google Maps link | Footer, contact, structured data, llms | S3 |
+| Email info@mabglobalpartners.com, office address, Google Maps link | Contact page, contact band, structured data, llms | S3 |
+| Second email info@mehmetakifbirkan.com | Contact page, contact band, llms | Client request, 2026-10-31 |
 | Founded in Türkiye | About | S2 ("Originally established in Türkiye") |
 | Grew from US market support into formation, tax, accounting and business address services | About | S2 timeline |
 | MAB Registered Agent Inc. is a brand within MAB Global Partners | Registered agent service, about, llms | S2 |
@@ -70,6 +71,8 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 
 The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12. It was traced to vector with potrace into `src/config/logo.ts` (mark, mark without ®, and lockup with the tagline "Formation | Tax | Accounting | Investment | Business Advisory"). `public/images/brand/` holds navy SVG versions for structured data. The header, the footer and the social image use the full lockup with the tagline (client decision, 2026-10-12; in the header the tagline is about 4 px tall); the favicon and home screen icon use the letters without ®.
 
+On 2026-10-31 the client supplied a horizontal two-color wordmark, `MAB GLOBAL PARTNERS.jpeg` (3200 x 3200 px JPEG, orange MAB and navy GLOBAL PARTNERS on white). It was split by color and traced with potrace into `wordmarkArt` in `src/config/logo.ts`, filled with the brand orange (#F45800) and deep navy (#0A1A36). The header is white and uses this wordmark; the footer, the social image and the icons keep the MAB monogram artwork. A vector master from the designer would give sharper edges than a trace of a JPEG.
+
 ## Images
 
 | Image | Source | License |
@@ -79,7 +82,7 @@ The client supplied `mab new.png` (6250 x 6250 px, white on black) on 2026-10-12
 
 ## Legal texts
 
-`src/content/legal.ts` describes only what the site does today: no analytics or advertising cookies, self-hosted fonts, form data sent by email through the delivery provider, hosting logs. Have a lawyer review the privacy policy, cookie policy, KVKK notice and legal notice before launch, and add the legal entity name. Update the texts if analytics, chat, maps embeds or other third-party tools are added.
+`src/content/legal.ts` describes only what the site does today: no analytics or advertising cookies, self-hosted fonts, form data received and stored by Formspree and emailed to the team, hosting logs. Have a lawyer review the privacy policy, cookie policy, KVKK notice and legal notice before launch, and add the legal entity name. Update the texts if analytics, chat, maps embeds or other third-party tools are added.
 
 ## Article fact checks
 

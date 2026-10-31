@@ -6,6 +6,7 @@ import {
   readDeliveryConfig,
   type SendContactEmail,
 } from "@/lib/contact/email-delivery";
+import { createFormspreeSender, readFormspreeEndpoint } from "@/lib/contact/formspree-delivery";
 import {
   contactErrorMessages,
   handleContactRequest,
@@ -195,5 +196,55 @@ describe("Resend delivery", () => {
     expect(html).not.toContain("<script>");
     expect(html).toContain("&lt;script&gt;");
     expect(text).toContain("Tax Advisory");
+  });
+});
+
+describe("Formspree delivery", () => {
+  it("uses the configured form by default and accepts only Formspree form URLs", () => {
+    expect(readFormspreeEndpoint(testEnv({}))).toBe("https://formspree.io/f/xwllrpnr");
+    expect(readFormspreeEndpoint(testEnv({ FORMSPREE_ENDPOINT: "https://formspree.io/f/abc123" }))).toBe(
+      "https://formspree.io/f/abc123",
+    );
+    expect(readFormspreeEndpoint(testEnv({ FORMSPREE_ENDPOINT: "" }))).toBeNull();
+    expect(readFormspreeEndpoint(testEnv({ FORMSPREE_ENDPOINT: "off" }))).toBeNull();
+    expect(readFormspreeEndpoint(testEnv({ FORMSPREE_ENDPOINT: "https://example.com/f/abc" }))).toBeNull();
+    expect(readFormspreeEndpoint(testEnv({ FORMSPREE_ENDPOINT: "http://formspree.io/f/abc" }))).toBeNull();
+  });
+
+  it("posts the submission as JSON with readable labels", async () => {
+    const fetchImpl = vi.fn(async () => Response.json({ ok: true, next: "/thanks" }));
+    const send = createFormspreeSender(
+      "https://formspree.io/f/abc123",
+      contactOptions,
+      fetchImpl as unknown as typeof fetch,
+    );
+    expect(await send(values, { idempotencyKey: "x" })).toEqual({ ok: true, id: "formspree" });
+    const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit];
+    expect(url).toBe("https://formspree.io/f/abc123");
+    expect(init.method).toBe("POST");
+    expect(new Headers(init.headers).get("accept")).toBe("application/json");
+    expect(JSON.parse(init.body as string)).toMatchObject({
+      email: values.email,
+      service: "Tax Advisory",
+      industry: "Freelancers and Digital Professionals",
+      message: values.message,
+    });
+  });
+
+  it("never reports success when Formspree rejects the submission or is unreachable", async () => {
+    const rejected = createFormspreeSender(
+      "https://formspree.io/f/abc123",
+      contactOptions,
+      (async () => Response.json({ errors: [{ message: "Form not found" }] }, { status: 404 })) as unknown as typeof fetch,
+    );
+    expect((await rejected(values, { idempotencyKey: "x" })).ok).toBe(false);
+    const offline = createFormspreeSender(
+      "https://formspree.io/f/abc123",
+      contactOptions,
+      (async () => {
+        throw new Error("offline");
+      }) as unknown as typeof fetch,
+    );
+    expect(await offline(values, { idempotencyKey: "x" })).toEqual({ ok: false, reason: "network_error" });
   });
 });

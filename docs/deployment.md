@@ -23,20 +23,21 @@ Every page is prerendered at build time. Only `/api/contact` runs per request.
 | `SITE_ENV` | Self-hosting only | `production` enables indexing outside Vercel |
 | `VERCEL_ENV` | Set by Vercel | `production` enables indexing |
 | `ALLOW_AI_TRAINING_CRAWLERS` | Optional | `false` disallows training crawlers |
-| `RESEND_API_KEY` | For the form | Resend API key |
-| `CONTACT_FROM_EMAIL` | For the form | Sender on a verified domain |
-| `CONTACT_TO_EMAIL` | For the form | Recipient inbox, normally `info@mabglobalpartners.com` |
+| `FORMSPREE_ENDPOINT` | Optional | Overrides the Formspree form in `src/config/contact.ts`; `off` disables delivery |
+| `RESEND_API_KEY` | Fallback only | Resend API key, used only when Formspree is off |
+| `CONTACT_FROM_EMAIL` | Fallback only | Sender on a verified domain |
+| `CONTACT_TO_EMAIL` | Fallback only | Recipient inbox, normally `info@mabglobalpartners.com` |
 | `CONTACT_ALLOWED_ORIGINS` | Optional | Extra origins allowed to post the form |
 
-## Contact form integration (outstanding)
+## Contact form delivery (Formspree)
 
-The form is implemented end to end, but **email delivery is not active until Resend is provisioned**. Until then the API answers `503 not_configured` and the form shows an error with the email address. It never shows a success message.
+Since 2026-10-31 the form delivers to the client's Formspree form `https://formspree.io/f/xwllrpnr` (set in `src/config/contact.ts`). Submissions appear in the Formspree dashboard and are emailed to the account owner. No environment variable is needed in production.
 
-1. Install the Vercel CLI and link the project: `npm i -g vercel`, then `vercel link`.
-2. Provision Resend from the Vercel Marketplace: `vercel integration add resend/resend-email`. This needs the account owner's approval in the browser and provisions `RESEND_API_KEY`.
-3. In Resend, verify the sending domain (`mabglobalpartners.com`) by adding the DNS records it shows.
-4. Set `CONTACT_FROM_EMAIL` (for example `MAB Global Partners <form@mabglobalpartners.com>`) and `CONTACT_TO_EMAIL` for Production and Preview: `vercel env add CONTACT_FROM_EMAIL`.
-5. Redeploy, submit a test request and confirm it arrives. Replies go to the visitor because `reply_to` is set to their address.
+* The browser posts to the site's own `POST /api/contact`. That route checks the origin, body size, honeypot, completion time and rate limit, validates the fields, and then posts the submission to Formspree as JSON from the server. The form shows success only when Formspree answers with a success status.
+* Formspree uses the visitor's `email` field as reply-to, so replying from the Formspree email answers the visitor.
+* If "Restrict to domain" is turned on in the Formspree form settings, server-side submissions carry no browser origin and may be rejected; leave that setting off or test after enabling it.
+* The end-to-end tests set `FORMSPREE_ENDPOINT` to an empty value so they never create real submissions.
+* Resend remains as an optional fallback when Formspree is set to `off` and the three Resend variables are present.
 
 The rate limiter is in-memory and applies per server instance. If spam becomes a problem, add Vercel Firewall rate limiting for `POST /api/contact` or Vercel BotID.
 

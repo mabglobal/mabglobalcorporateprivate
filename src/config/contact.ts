@@ -7,6 +7,14 @@
  */
 export const contactConfig = {
   email: "info@mabglobalpartners.com",
+  /** Second address shown next to the main one (client request, 2026-10-31). */
+  secondaryEmail: "info@mehmetakifbirkan.com",
+  /**
+   * Formspree form that receives contact submissions (client form, 2026-10-31).
+   * Not a secret: a form endpoint is public by design. FORMSPREE_ENDPOINT can
+   * override or disable it; see src/lib/contact/formspree-delivery.ts.
+   */
+  formspreeEndpoint: "https://formspree.io/f/xwllrpnr",
   address: {
     full: "Sultan Selim, Hümeyra Sokagi NEF 09 B Blok No: 7 İç Kapı No: 35, 34415 Kağıthane/İstanbul",
     streetAddress: "Sultan Selim, Hümeyra Sokagi NEF 09 B Blok No: 7 İç Kapı No: 35",
@@ -21,3 +29,4 @@ export const contactConfig = {
 } as const;
 
 export const mailtoHref = `mailto:${contactConfig.email}`;
+export const secondaryMailtoHref = `mailto:${contactConfig.secondaryEmail}`;

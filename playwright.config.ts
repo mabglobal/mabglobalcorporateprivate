@@ -32,6 +32,8 @@ export default defineConfig({
     env: {
       SITE_ENV: "production",
       CONTACT_ALLOWED_ORIGINS: `http://localhost:${PORT}`,
+      // Disables Formspree so the tests never post real submissions.
+      FORMSPREE_ENDPOINT: "",
       RESEND_API_KEY: "",
       CONTACT_FROM_EMAIL: "",
       CONTACT_TO_EMAIL: "",

@@ -10,10 +10,11 @@ import { cn } from "@/lib/utilities/cn";
  *  - dark: navy fill, white text.
  *  - light: white fill, navy text. For navy surfaces.
  *  - outline-light: translucent navy with a thin white border. For navy surfaces.
- *  - outline-white: transparent with a solid white border (header button).
+ *  - outline-white: transparent with a solid white border. For navy surfaces.
+ *  - outline-navy: transparent with a solid navy border (header button).
  * Labels are uppercase with wide tracking, following behringeb5.com.
  */
-type Variant = "accent" | "outline" | "dark" | "light" | "outline-light" | "outline-white";
+type Variant = "accent" | "outline" | "dark" | "light" | "outline-light" | "outline-white" | "outline-navy";
 
 const variants: Record<Variant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
@@ -22,6 +23,7 @@ const variants: Record<Variant, string> = {
   light: "bg-white text-navy hover:bg-white/90",
   "outline-light": "border border-white/25 bg-navy-deep/40 text-white hover:border-white/60",
   "outline-white": "border border-white text-white hover:bg-white hover:text-navy",
+  "outline-navy": "border border-navy text-navy hover:bg-navy hover:text-white",
 };
 
 interface ButtonLinkProps {

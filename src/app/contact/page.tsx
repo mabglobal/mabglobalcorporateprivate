@@ -1,6 +1,6 @@
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { CONTACT_FORM_ANCHOR, routes } from "@/config/routes";
-import { contactConfig, mailtoHref } from "@/config/contact";
+import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
 import { staticPages } from "@/content/pages";
 import { ContactForm } from "@/components/forms/contact-form";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -79,9 +79,15 @@ export default function ContactPage() {
                 <h2 className="mt-6 text-title text-navy">Email</h2>
                 <a
                   href={mailtoHref}
-                  className="mt-2 inline-flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4 [overflow-wrap:anywhere]"
+                  className="mt-2 flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4 [overflow-wrap:anywhere]"
                 >
                   {contactConfig.email}
+                </a>
+                <a
+                  href={secondaryMailtoHref}
+                  className="flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4 [overflow-wrap:anywhere]"
+                >
+                  {contactConfig.secondaryEmail}
                 </a>
               </div>
               <div className="frame rounded-card p-8">

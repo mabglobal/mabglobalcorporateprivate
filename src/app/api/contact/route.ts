@@ -2,7 +2,9 @@ import { siteConfig } from "@/config/site";
 import {
   createResendSender,
   readDeliveryConfig,
+  type SendContactEmail,
 } from "@/lib/contact/email-delivery";
+import { createFormspreeSender, readFormspreeEndpoint } from "@/lib/contact/formspree-delivery";
 import { handleContactRequest } from "@/lib/contact/handle-contact-request";
 import { createRateLimiter } from "@/lib/security/rate-limit";
 import { createContactValidator } from "@/lib/validation/contact";
@@ -31,12 +33,19 @@ function allowedOrigins(): string[] {
   return [...origins];
 }
 
+/** Formspree first (client's inbox), Resend when only Resend is configured. */
+function deliveryChannel(): SendContactEmail | null {
+  const formspree = readFormspreeEndpoint();
+  if (formspree) return createFormspreeSender(formspree, contactOptions);
+  const resend = readDeliveryConfig();
+  return resend ? createResendSender(resend, contactOptions) : null;
+}
+
 export async function POST(request: Request) {
-  const config = readDeliveryConfig();
   return handleContactRequest(request, {
     validate,
     rateLimiter,
-    sendEmail: config ? createResendSender(config, contactOptions) : null,
+    sendEmail: deliveryChannel(),
     allowedOrigins: allowedOrigins(),
     log: (event, details) => {
       console.info(JSON.stringify({ event, ...details }));

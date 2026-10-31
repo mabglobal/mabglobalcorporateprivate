@@ -43,7 +43,7 @@ export function MobileNavigation({ items, groups, cta }: MobileNavigationProps) 
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center rounded-control border border-white/30 text-white lg:hidden"
+        className="inline-flex size-11 items-center justify-center rounded-control border border-line text-navy lg:hidden"
       >
         <Menu aria-hidden="true" className="size-5" strokeWidth={1.8} />
         <span className="sr-only">Open menu</span>

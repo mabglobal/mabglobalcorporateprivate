@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { logoArt, type LogoVariant } from "@/config/logo";
+import { logoArt, wordmarkArt, type LogoVariant } from "@/config/logo";
 import { routes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utilities/cn";
@@ -15,6 +15,35 @@ export function LogoArt({ variant, className }: { variant: LogoVariant; classNam
         ))}
       </g>
     </svg>
+  );
+}
+
+/** Two-color horizontal wordmark: orange MAB, navy GLOBAL PARTNERS. White backgrounds only. */
+export function WordmarkArt({ className }: { className?: string }) {
+  const art = wordmarkArt;
+  return (
+    <svg aria-hidden="true" viewBox={art.viewBox} className={cn("block w-auto", className)}>
+      <g transform={art.transform} className="fill-accent">
+        {art.accentPaths.map((d) => (
+          <path key={d.slice(0, 24)} d={d} />
+        ))}
+      </g>
+      <g transform={art.transform} className="fill-navy-deep">
+        {art.basePaths.map((d) => (
+          <path key={d.slice(0, 24)} d={d} />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+/** Links home with the two-color wordmark, sized to leave room for the menu. */
+export function HeaderLogo() {
+  return (
+    <Link href={routes.home} className="inline-flex min-h-11 shrink-0 items-center">
+      <WordmarkArt className="h-[14px] min-[375px]:h-4 sm:h-[18px] lg:h-4 xl:h-5 2xl:h-7" />
+      <span className="sr-only">{siteConfig.name} home</span>
+    </Link>
   );
 }
 

@@ -39,7 +39,7 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
         heading: "Sharing Information",
         paragraphs: [
           "We never sell your personal data or share it with third parties for marketing.",
-          "We work with service providers for website hosting and for the email delivery of form messages. Their servers may be located outside Türkiye. Transfers follow the provisions of Turkish Personal Data Protection Law No. 6698 on transfers abroad.",
+          "We work with service providers for website hosting and for receiving and storing form messages, which are then delivered to our team by email. Their servers may be located outside Türkiye. Transfers follow the provisions of Turkish Personal Data Protection Law No. 6698 on transfers abroad.",
         ],
       },
       {
@@ -128,7 +128,7 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
       {
         heading: "Transfers",
         paragraphs: [
-          "We may transfer your personal data in line with Article 9 of the Law to service providers for website hosting and for the email delivery of form messages. Their servers may be located outside Türkiye. Where a legal obligation exists we may share data with authorized public bodies.",
+          "We may transfer your personal data in line with Article 9 of the Law to service providers for website hosting and for receiving and storing form messages and delivering them by email. Their servers may be located outside Türkiye. Where a legal obligation exists we may share data with authorized public bodies.",
         ],
       },
       {

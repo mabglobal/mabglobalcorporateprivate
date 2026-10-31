@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contactConfig, mailtoHref } from "@/config/contact";
+import { Heart } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { footerLinks, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
@@ -43,15 +43,7 @@ export function Footer() {
             </p>
             <p>
               Content on this website is general information and is no substitute for personal legal or
-              tax advice. Office{" "}
-              <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="underline underline-offset-4">
-                {contactConfig.address.full}
-              </a>
-              . Email{" "}
-              <a href={mailtoHref} className="underline underline-offset-4">
-                {contactConfig.email}
-              </a>
-              .
+              tax advice.
             </p>
           </div>
         </div>
@@ -89,6 +81,19 @@ export function Footer() {
             </nav>
             <p className="text-caption text-navy">
               © <CopyrightYear /> {siteConfig.name}. All rights reserved.
+            </p>
+            <p className="inline-flex items-center gap-1 text-caption text-navy">
+              Built with
+              <Heart aria-hidden="true" className="size-3 fill-accent-strong text-accent-strong" strokeWidth={0} />
+              <span className="sr-only">love</span>
+              by
+              <a
+                href="https://www.toganworks.com"
+                rel="noopener"
+                className="font-bold underline-offset-4 hover:underline"
+              >
+                Toganworks
+              </a>
             </p>
           </div>
         </div>
