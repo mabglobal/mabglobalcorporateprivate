@@ -38,7 +38,7 @@ On 2026-10-12 the client asked for the USPTO logo and an "EIN logo" (the EIN is 
 
 ## Bank and payment platform logos
 
-On 2026-10-12 the client asked for logos of Bank of America, Capital One, Mercury, Wise and Payoneer in the strip under the hero, without presenting them as partners. They are shown in single-color navy under the caption "Banking and Payment Platforms" with the note "Logos belong to their respective owners and show no partnership or endorsement." Sources: Wikimedia Commons for Bank of America, Capital One, Wise and Payoneer (marked public domain there, trademarks still apply) and the mercury.com header for Mercury. Most of these brands restrict logo use without written permission; the client accepted that risk. Remove a logo on request from its owner, and replace the row with the brands' official partner assets if a partnership is signed.
+On 2026-10-12 the client asked for logos of Bank of America, Capital One, Mercury, Wise and Payoneer in the strip under the hero, without presenting them as partners. They are shown in single-color navy under the caption "Banking and Payment Platforms" with the note "Logos belong to their respective owners and show no partnership or endorsement." Sources: Wikimedia Commons for Bank of America, Capital One, Wise and Payoneer (marked public domain there, trademarks still apply) and the mercury.com header for Mercury. On 2026-11-03 WorldFirst (worldfirst.com header asset), Zyla (zyla.com header asset) and Intuit QuickBooks (Wikimedia Commons, marked public domain there, trademark still applies) were added the same way, and the caption became "Banking and Accounting Platforms". The client asked for the IRS logo in the same row as well; it was not added, for the reasons under Official logos and seals. Most of these brands restrict logo use without written permission; the client accepted that risk. Remove a logo on request from its owner, and replace the row with the brands' official partner assets if a partnership is signed.
 
 ## Official logos and seals
 
@@ -59,7 +59,7 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 | "Operating as an international CPA firm" (S2) | CPA is a regulated credential. Publish only with license details |
 | "400'den fazla danışana %100 memnuniyetle" (S1), "Serving thousands of businesses" (S2) | Unverified statistics |
 | Response time commitments ("24 saat içinde", S1 and S2) | Service-level commitment; confirm before publishing |
-| Legal entity name (ticari unvan), MERSİS or tax number | Needed for the KVKK data controller statement; legal pages currently name "MAB Global Partners" |
+| Legal entity name (ticari unvan), MERSİS or tax number | Needed for the data controller statement in the data protection notice (Law No. 6698); legal pages currently name "MAB Global Partners" |
 | Telephone number, social media accounts | None supplied |
 | Whether the S1 service list (FDA, DUNS, warehouse, trademark, dissolution, share transfer, Amazon services) is offered under the MAB Global Partners brand | Listed on the founder's site; confirm scope and wording |
 | Taking over maintenance of existing foreign companies (FAQ `mevcut-sirket-devralma`) | Reasonable extension of accounting and tax services; confirm |
@@ -82,7 +82,7 @@ On 2026-10-31 the client supplied the horizontal wordmark `mab global partners 2
 
 ## Legal texts
 
-`src/content/legal.ts` describes only what the site does today: no analytics or advertising cookies, self-hosted fonts, form data received and stored by Formspree and emailed to the team, hosting logs. Have a lawyer review the privacy policy, cookie policy, KVKK notice and legal notice before launch, and add the legal entity name. Update the texts if analytics, chat, maps embeds or other third-party tools are added.
+`src/content/legal.ts` describes only what the site does today: no analytics or advertising cookies, self-hosted fonts, form data received and stored by Formspree and emailed to the team, hosting logs. Have a lawyer review the privacy policy, cookie policy, data protection notice and legal notice before launch, and add the legal entity name. Update the texts if analytics, chat, maps embeds or other third-party tools are added.
 
 ## Article fact checks
 

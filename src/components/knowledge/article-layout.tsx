@@ -102,7 +102,7 @@ export function ArticleLayout({ article }: { article: Article }) {
                       className="inline-flex items-start gap-2 font-medium text-navy underline-offset-4 hover:underline"
                     >
                       {source.title}
-                      <ExternalLink aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 text-accent-strong" />
+                      <ExternalLink aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 text-accent" />
                     </a>
                     <span className="block text-navy">
                       {source.publisher} · accessed{" "}

@@ -96,7 +96,7 @@ export function FactCards({ groups }: { groups: readonly (readonly FactRow[])[] 
               <dd className="shrink-0 text-title font-medium text-navy">
                 {row.value ?? (
                   <>
-                    <Check aria-hidden="true" className="size-4 text-accent-strong" strokeWidth={2.2} />
+                    <Check aria-hidden="true" className="size-4 text-accent" strokeWidth={2.2} />
                     <span className="sr-only">Included</span>
                   </>
                 )}

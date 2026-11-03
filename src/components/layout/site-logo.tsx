@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { wordmarkArt } from "@/config/logo";
-import { routes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utilities/cn";
+import { HomeLink } from "./home-link";
 
 /** Horizontal wordmark with tagline: orange MAB, navy text. White backgrounds only. */
 export function WordmarkArt({ className }: { className?: string }) {
@@ -34,12 +33,12 @@ const wordmarkSizes = {
   footer: "h-9 sm:h-12 md:h-16",
 } as const;
 
-/** Links home with the wordmark. */
+/** Links home with the wordmark and returns to the top of the homepage. */
 export function HeaderLogo({ size = "header" }: { size?: keyof typeof wordmarkSizes }) {
   return (
-    <Link href={routes.home} className="inline-flex min-h-11 shrink-0 items-center">
+    <HomeLink className="inline-flex min-h-11 shrink-0 items-center">
       <WordmarkArt className={wordmarkSizes[size]} />
       <span className="sr-only">{siteConfig.name} home</span>
-    </Link>
+    </HomeLink>
   );
 }

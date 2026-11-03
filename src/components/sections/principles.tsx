@@ -14,7 +14,7 @@ export function Principles() {
         <ul className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {principles.items.map((item) => (
             <li key={item.title} className="frame flex min-h-[220px] flex-col justify-between gap-8 rounded-card p-6">
-              <Icon name={item.icon} className="size-6 text-accent-strong" />
+              <Icon name={item.icon} className="size-6 text-accent" />
               <div>
                 <h3 className="text-title text-navy">{item.title}</h3>
                 <p data-single-line="" className="mt-2 text-label text-navy">

@@ -19,7 +19,8 @@
  * Contrast notes (WCAG 2.2 AA):
  *  - White on accent (#F45800) is 3.4:1, below 4.5:1 for normal text.
  *    This is an explicit client decision for buttons; see docs/architecture.md.
- *  - accent-strong is reserved for small orange icons and text on white.
+ *  - accent-strong is reserved for small orange text on white (form error
+ *    messages), where the brighter accent would fall below 4.5:1.
  */
 @theme {
   /* Remove Tailwind's default palette so only brand colors are available. */

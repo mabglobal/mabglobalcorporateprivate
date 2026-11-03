@@ -4,7 +4,8 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utilities/cn";
 
 /**
- * Text link with a framed arrow tile shaped like the header buttons.
+ * Text link with a framed arrow tile shaped like the header buttons. The
+ * label stays navy for legible small text; the tile carries the orange.
  * Orange on white surfaces; white on navy surfaces, where orange never sits.
  */
 export function TextLink({
@@ -23,7 +24,7 @@ export function TextLink({
       href={href}
       className={cn(
         "group inline-flex min-h-11 items-center gap-3 whitespace-nowrap text-label font-medium",
-        tone === "light" ? "text-accent-strong" : "text-white",
+        tone === "light" ? "text-navy" : "text-white",
         className,
       )}
     >
@@ -33,7 +34,7 @@ export function TextLink({
         className={cn(
           "inline-flex size-10 shrink-0 items-center justify-center rounded-control border transition-colors duration-200",
           tone === "light"
-            ? "border-accent-strong group-hover:bg-accent-strong group-hover:text-white"
+            ? "border-accent text-accent group-hover:bg-accent group-hover:text-white"
             : "border-white/40 group-hover:bg-white group-hover:text-navy",
         )}
       >

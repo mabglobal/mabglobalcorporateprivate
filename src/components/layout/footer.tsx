@@ -84,7 +84,7 @@ export function Footer() {
             </p>
             <p className="inline-flex items-center gap-1 text-caption text-navy">
               Built with
-              <Heart aria-hidden="true" className="size-3 fill-accent-strong text-accent-strong" strokeWidth={0} />
+              <Heart aria-hidden="true" className="size-3 fill-accent text-accent" strokeWidth={0} />
               <span className="sr-only">love</span>
               by
               <a

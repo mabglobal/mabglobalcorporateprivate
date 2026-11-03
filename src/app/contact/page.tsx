@@ -105,7 +105,7 @@ export default function ContactPage() {
                   className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-label font-medium text-navy underline underline-offset-4"
                 >
                   Open in Maps
-                  <ArrowUpRight aria-hidden="true" className="size-4 text-accent-strong" />
+                  <ArrowUpRight aria-hidden="true" className="size-4 text-accent" />
                 </a>
               </div>
               <div className="frame rounded-card p-8">

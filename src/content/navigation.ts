@@ -71,6 +71,6 @@ export const footerNavigation: NavGroup[] = [
 export const legalNavigation: NavItem[] = [
   { label: "Privacy Policy", href: routes.privacy },
   { label: "Cookie Policy", href: routes.cookies },
-  { label: "KVKK Notice", href: routes.kvkk },
+  { label: "Data Protection Notice", href: routes.dataProtection },
   { label: "Legal Notice", href: routes.legalNotice },
 ];

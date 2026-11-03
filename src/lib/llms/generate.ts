@@ -65,7 +65,7 @@ export function generateLlmsTxt(): string {
     ),
     link("Legal Notice", routes.legalNotice, staticPages.legalNotice.description),
     link("Privacy Policy", routes.privacy, staticPages.privacy.description),
-    link("KVKK Privacy Notice", routes.kvkk, staticPages.kvkk.description),
+    link("Data Protection Notice", routes.dataProtection, staticPages.dataProtection.description),
     "",
   ];
   return lines.join("\n");

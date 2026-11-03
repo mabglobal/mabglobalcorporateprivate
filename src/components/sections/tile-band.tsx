@@ -109,7 +109,7 @@ export function TileBand({
                   className={cn(
                     "inline-flex size-10 items-center justify-center rounded-control border transition-colors",
                     tile.highlight
-                      ? "border-white/70 text-white group-hover:bg-white group-hover:text-accent-strong"
+                      ? "border-white/70 text-white group-hover:bg-white group-hover:text-accent"
                       : dark
                         ? "border-white/40 text-white group-hover:bg-white group-hover:text-navy"
                         : "border-line text-navy group-hover:bg-navy group-hover:text-white",

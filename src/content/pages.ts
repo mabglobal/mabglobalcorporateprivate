@@ -26,14 +26,14 @@ export type StaticPageKey =
   | "contact"
   | "privacy"
   | "cookies"
-  | "kvkk"
+  | "dataProtection"
   | "legalNotice";
 
 export const staticPages: Record<StaticPageKey, StaticPage> = {
   home: {
     key: "home",
     path: routes.home,
-    title: "MAB Global Partners | Company Formation and Tax Support in the United States",
+    title: "MAB Global Partners | Invest in the United States With the Right Company Structure",
     description:
       "Form your US company and manage tax and accounting with registered agent support from one team.",
     updatedAt: "2026-10-12",
@@ -111,10 +111,10 @@ export const staticPages: Record<StaticPageKey, StaticPage> = {
     changeFrequency: "yearly",
     priority: 0.3,
   },
-  kvkk: {
-    key: "kvkk",
-    path: routes.kvkk,
-    title: "KVKK Privacy Notice",
+  dataProtection: {
+    key: "dataProtection",
+    path: routes.dataProtection,
+    title: "Data Protection Notice",
     description:
       "Notice under Turkish Personal Data Protection Law No. 6698 for data you share through the contact form and email.",
     updatedAt: "2026-10-12",

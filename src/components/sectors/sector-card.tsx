@@ -15,7 +15,7 @@ export function SectorCard({
   return (
     <article className="frame group relative flex h-full flex-col rounded-card p-7 transition-colors duration-200 hover:border-navy">
       <div className="flex items-center justify-between">
-        <Icon name={sector.icon} className="size-6 text-accent-strong" />
+        <Icon name={sector.icon} className="size-6 text-accent" />
         <ArrowRight
           aria-hidden="true"
           className="size-5 text-navy transition-transform duration-200 group-hover:translate-x-1"

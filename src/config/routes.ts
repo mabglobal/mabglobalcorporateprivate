@@ -15,7 +15,7 @@ export const routes = {
   contactForm: "/contact#consultation-form",
   privacy: "/privacy-policy",
   cookies: "/cookie-policy",
-  kvkk: "/kvkk-notice",
+  dataProtection: "/data-protection-notice",
   legalNotice: "/legal-notice",
 } as const;
 

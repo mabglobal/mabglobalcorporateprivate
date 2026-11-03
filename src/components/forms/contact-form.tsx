@@ -215,9 +215,9 @@ export function ContactForm({ options }: { options: ContactOptions }) {
           ref={errorRef}
           role="alert"
           tabIndex={-1}
-          className="mb-8 flex gap-3 rounded-panel border border-accent-strong/40 bg-white p-4 text-label text-ink focus:outline-none"
+          className="mb-8 flex gap-3 rounded-panel border border-accent/50 bg-white p-4 text-label text-ink focus:outline-none"
         >
-          <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent-strong" />
+          <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent" />
           <p>
             {errorMessage}{" "}
             <a href={mailtoHref} className="font-medium text-navy underline underline-offset-4">
@@ -249,7 +249,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             onChange={(event) => update("name", event.target.value)}
             aria-invalid={errors.name ? true : undefined}
             aria-describedby={errors.name ? errorId("name") : undefined}
-            className={cn(inputClasses, "h-12", errors.name ? "border-accent-strong" : "border-line")}
+            className={cn(inputClasses, "h-12", errors.name ? "border-accent" : "border-line")}
           />
         </Field>
 
@@ -275,7 +275,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             onChange={(event) => update("email", event.target.value)}
             aria-invalid={errors.email ? true : undefined}
             aria-describedby={errors.email ? errorId("email") : undefined}
-            className={cn(inputClasses, "h-12", errors.email ? "border-accent-strong" : "border-line")}
+            className={cn(inputClasses, "h-12", errors.email ? "border-accent" : "border-line")}
           />
         </Field>
 
@@ -300,7 +300,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             onChange={(event) => update("company", event.target.value)}
             aria-invalid={errors.company ? true : undefined}
             aria-describedby={errors.company ? errorId("company") : undefined}
-            className={cn(inputClasses, "h-12", errors.company ? "border-accent-strong" : "border-line")}
+            className={cn(inputClasses, "h-12", errors.company ? "border-accent" : "border-line")}
           />
         </Field>
 
@@ -323,7 +323,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
               onChange={(event) => update("service", event.target.value)}
               aria-invalid={errors.service ? true : undefined}
               aria-describedby={errors.service ? errorId("service") : undefined}
-              className={cn(inputClasses, selectClasses, errors.service ? "border-accent-strong" : "border-line")}
+              className={cn(inputClasses, selectClasses, errors.service ? "border-accent" : "border-line")}
             >
               <option value="">Select an Option</option>
               {options.services.map((option) => (
@@ -359,7 +359,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
               onChange={(event) => update("sector", event.target.value)}
               aria-invalid={errors.sector ? true : undefined}
               aria-describedby={errors.sector ? errorId("sector") : undefined}
-              className={cn(inputClasses, selectClasses, errors.sector ? "border-accent-strong" : "border-line")}
+              className={cn(inputClasses, selectClasses, errors.sector ? "border-accent" : "border-line")}
             >
               <option value="">Select an Option</option>
               {options.sectors.map((option) => (
@@ -398,7 +398,7 @@ export function ContactForm({ options }: { options: ContactOptions }) {
             onChange={(event) => update("message", event.target.value)}
             aria-invalid={errors.message ? true : undefined}
             aria-describedby={errors.message ? errorId("message") : undefined}
-            className={cn(inputClasses, "py-3", errors.message ? "border-accent-strong" : "border-line")}
+            className={cn(inputClasses, "py-3", errors.message ? "border-accent" : "border-line")}
           />
         </Field>
       </div>
@@ -411,8 +411,8 @@ export function ContactForm({ options }: { options: ContactOptions }) {
       <div className="mt-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <p id={`${formId}-note`} className="max-w-md text-caption text-navy">
           By sending the form you confirm that you have read the{" "}
-          <Link href={routes.kvkk} className="text-navy underline underline-offset-4">
-            KVKK Privacy Notice
+          <Link href={routes.dataProtection} className="text-navy underline underline-offset-4">
+            Data Protection Notice
           </Link>
           .
         </p>
@@ -459,7 +459,7 @@ function Field({ id, errorId, label, hint, error, required, className, counter, 
         <label htmlFor={id} className="text-label font-medium text-navy">
           {label}
           {required ? (
-            <span aria-hidden="true" className="ml-1 text-accent-strong">
+            <span aria-hidden="true" className="ml-1 text-accent">
               *
             </span>
           ) : null}

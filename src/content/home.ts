@@ -20,12 +20,13 @@ export const homeContent = {
     imageAlt: "Classical colonnades and a domed building in navy tones",
   },
   /**
-   * Banks and payment platforms named by the client (2026-10-12). Shown as
+   * Banks, payment platforms and accounting software named by the client
+   * (2026-10-12 and 2026-11-03). Shown as
    * logos without any partner claim, with an ownership note. Files in
    * public/images/platforms are single-color navy versions of each logo.
    */
   platforms: {
-    caption: "Banking and Payment Platforms",
+    caption: "Banking and Accounting Platforms",
     note: "Logos belong to their respective owners and show no partnership or endorsement.",
     items: [
       { name: "Bank of America", src: "/images/platforms/bank-of-america.svg", width: 180, height: 18 },
@@ -33,6 +34,9 @@ export const homeContent = {
       { name: "Mercury", src: "/images/platforms/mercury.svg", width: 126, height: 29 },
       { name: "Wise", src: "/images/platforms/wise.svg", width: 114, height: 26 },
       { name: "Payoneer", src: "/images/platforms/payoneer.svg", width: 128, height: 27 },
+      { name: "WorldFirst", src: "/images/platforms/worldfirst.svg", width: 133, height: 18 },
+      { name: "Zyla", src: "/images/platforms/zyla.svg", width: 106, height: 30 },
+      { name: "QuickBooks", src: "/images/platforms/quickbooks.svg", width: 129, height: 33 },
     ],
   },
   servicesBand: {

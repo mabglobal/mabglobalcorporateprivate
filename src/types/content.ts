@@ -201,7 +201,7 @@ export interface LegalSection {
 }
 
 export interface LegalDocument {
-  key: "privacy" | "cookies" | "kvkk" | "legalNotice";
+  key: "privacy" | "cookies" | "dataProtection" | "legalNotice";
   intro: string;
   sections: LegalSection[];
 }

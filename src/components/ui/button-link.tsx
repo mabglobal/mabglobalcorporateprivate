@@ -28,7 +28,7 @@ type Variant =
 
 const variants: Record<Variant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
-  "accent-invert": "border border-accent bg-accent text-white hover:bg-white hover:text-accent-strong",
+  "accent-invert": "border border-accent bg-accent text-white hover:bg-white hover:text-accent",
   outline: "border border-line bg-white text-navy shadow-frame hover:border-navy",
   dark: "bg-navy text-white hover:bg-navy-deep",
   light: "bg-white text-navy hover:bg-white/90",

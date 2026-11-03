@@ -51,7 +51,7 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
       {
         heading: "Your Rights",
         paragraphs: [
-          "You can find your rights regarding personal data and how to apply in the KVKK Privacy Notice.",
+          "You can find your rights regarding personal data and how to apply in the Data Protection Notice.",
         ],
       },
       {
@@ -92,10 +92,10 @@ export const legalDocuments: Record<LegalDocument["key"], LegalDocument> = {
       },
     ],
   },
-  kvkk: {
-    key: "kvkk",
+  dataProtection: {
+    key: "dataProtection",
     intro:
-      "This notice is provided under Article 10 of Turkish Personal Data Protection Law No. 6698 (KVKK) for personal data you share through the contact form and by email.",
+      "This notice is provided under Article 10 of Turkish Personal Data Protection Law No. 6698 for personal data you share through the contact form and by email.",
     sections: [
       {
         heading: "Data Controller",
