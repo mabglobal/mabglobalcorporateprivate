@@ -15,6 +15,7 @@ Sources:
 | Brand name MAB Global Partners | Everywhere | S2, S3 |
 | Email info@mabglobalpartners.com, office address, Google Maps link | Contact page, contact band, structured data, llms | S3 |
 | Second email info@mehmetakifbirkan.com | Contact page, contact band, llms | Client request, 2026-10-31 |
+| Headquarters in Istanbul (full address); US offices in New Jersey and Florida, shown by state only without street addresses | About, contact page, contact band, structured data (`location`), llms | Client request, 2026-11-03 |
 | Founded in Türkiye | About | S2 ("Originally established in Türkiye") |
 | Grew from US market support into formation, tax, accounting and business address services | About | S2 timeline |
 | MAB Registered Agent Inc. is a brand within MAB Global Partners | Registered agent service, about, llms | S2 |
@@ -56,7 +57,6 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 |---|---|
 | Founding year | S2 states 2019 for MAB Global Partners; S1 states 2020 for "MAB Danışmanlık". Confirm the correct year and entity before publishing |
 | "Operating as an international CPA firm" (S2) | CPA is a regulated credential. Publish only with license details |
-| "Strategic offices in the United States and the United Kingdom" (S2) | No addresses provided; brief says not to invent offices |
 | "400'den fazla danışana %100 memnuniyetle" (S1), "Serving thousands of businesses" (S2) | Unverified statistics |
 | Response time commitments ("24 saat içinde", S1 and S2) | Service-level commitment; confirm before publishing |
 | Legal entity name (ticari unvan), MERSİS or tax number | Needed for the KVKK data controller statement; legal pages currently name "MAB Global Partners" |

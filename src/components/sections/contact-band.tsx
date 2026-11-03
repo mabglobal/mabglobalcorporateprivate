@@ -1,4 +1,4 @@
-import { Mail, MapPin } from "lucide-react";
+import { Building2, Mail, MapPin } from "lucide-react";
 import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
 import { contactBand } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -22,10 +22,21 @@ export function ContactBand() {
                 <MapPin className="size-4" />
               </span>
               <div className="min-w-0">
-                <p className="text-caption font-medium text-navy">Address</p>
+                <p className="text-caption font-medium text-navy">Headquarters</p>
                 <a href={contactConfig.mapsUrl} rel="noopener noreferrer" className="text-label text-navy [overflow-wrap:anywhere] hover:underline">
                   {contactConfig.address.full}
                 </a>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                <Building2 className="size-4" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-caption font-medium text-navy">US Offices</p>
+                <p className="text-label text-navy">
+                  {contactConfig.usOffices.map((office) => office.name).join(" and ")}
+                </p>
               </div>
             </li>
             <li className="flex items-start gap-4">

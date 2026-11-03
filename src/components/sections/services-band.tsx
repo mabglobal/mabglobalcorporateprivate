@@ -26,6 +26,8 @@ export function ServicesBand() {
           href: routes.contactForm,
           title: servicesBand.consultationLabel,
           description: servicesBand.consultationDescription,
+          highlight: true,
+          icon: "phone",
         },
       ]}
     />

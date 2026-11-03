@@ -22,6 +22,7 @@ import {
   Laptop,
   Layers,
   Map as MapIcon,
+  PhoneCall,
   MapPin,
   MessagesSquare,
   ReceiptText,
@@ -79,6 +80,7 @@ const icons: Record<IconName, LucideIcon> = {
   target: Target,
   scale: Scale,
   route: Route,
+  phone: PhoneCall,
 };
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {

@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utilities/cn";
+import type { IconName } from "@/types/content";
 
 export interface Tile {
   href: string;
   title: string;
   description: string;
+  /** Orange call-to-action tile with white text, like the orange buttons. */
+  highlight?: boolean;
+  /** Icon shown in the corner box in place of the arrow. */
+  icon?: IconName;
 }
 
 interface TileBandProps {
@@ -64,45 +70,60 @@ export function TileBand({
             columns === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3",
           )}
         >
-          {tiles.map((tile) => (
-            <li
-              key={tile.href + tile.title}
-              className={cn(
-                "group relative flex min-h-56 flex-col justify-between gap-8 rounded-panel p-7 transition-colors",
-                dark ? "border border-white/15 hover:bg-navy" : "frame hover:border-navy",
-              )}
-            >
-              <div>
-                <TileHeading
-                  className={cn("text-title font-bold", dark ? "text-white" : "text-navy")}
-                >
-                  <Link
-                    href={tile.href}
-                    className={cn(
-                      "after:absolute after:inset-0 after:rounded-panel focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2",
-                      dark ? "focus-visible:after:outline-white" : "focus-visible:after:outline-navy",
-                    )}
-                  >
-                    {tile.title}
-                  </Link>
-                </TileHeading>
-                <p className={cn("mt-3 text-label", dark ? "text-white" : "text-navy")}>
-                  {tile.description}
-                </p>
-              </div>
-              <span
-                aria-hidden="true"
+          {tiles.map((tile) => {
+            const onColor = dark || tile.highlight;
+            return (
+              <li
+                key={tile.href + tile.title}
+                // White on the button orange is the documented client exception (3.4:1), as for buttons.
+                {...(tile.highlight ? { "data-brand-accent": "" } : {})}
                 className={cn(
-                  "inline-flex size-10 items-center justify-center rounded-control border transition-colors",
-                  dark
-                    ? "border-white/40 text-white group-hover:bg-white group-hover:text-navy"
-                    : "border-line text-navy group-hover:bg-navy group-hover:text-white",
+                  "group relative flex min-h-56 flex-col justify-between gap-8 rounded-panel p-7 transition-colors",
+                  tile.highlight
+                    ? "on-dark border border-accent bg-accent hover:bg-accent-hover"
+                    : dark
+                      ? "border border-white/15 hover:bg-navy"
+                      : "frame hover:border-navy",
                 )}
               >
-                <ArrowRight className="size-4" strokeWidth={1.8} />
-              </span>
-            </li>
-          ))}
+                <div>
+                  <TileHeading
+                    className={cn("text-title font-bold", onColor ? "text-white" : "text-navy")}
+                  >
+                    <Link
+                      href={tile.href}
+                      className={cn(
+                        "after:absolute after:inset-0 after:rounded-panel focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2",
+                        onColor ? "focus-visible:after:outline-white" : "focus-visible:after:outline-navy",
+                      )}
+                    >
+                      {tile.title}
+                    </Link>
+                  </TileHeading>
+                  <p className={cn("mt-3 text-label", onColor ? "text-white" : "text-navy")}>
+                    {tile.description}
+                  </p>
+                </div>
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "inline-flex size-10 items-center justify-center rounded-control border transition-colors",
+                    tile.highlight
+                      ? "border-white/70 text-white group-hover:bg-white group-hover:text-accent-strong"
+                      : dark
+                        ? "border-white/40 text-white group-hover:bg-white group-hover:text-navy"
+                        : "border-line text-navy group-hover:bg-navy group-hover:text-white",
+                  )}
+                >
+                  {tile.icon ? (
+                    <Icon name={tile.icon} className="size-4" />
+                  ) : (
+                    <ArrowRight className="size-4" strokeWidth={1.8} />
+                  )}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

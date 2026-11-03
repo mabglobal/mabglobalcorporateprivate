@@ -52,7 +52,8 @@ export type IconName =
   | "clipboard"
   | "target"
   | "scale"
-  | "route";
+  | "route"
+  | "phone";
 
 export interface TitledText {
   title: string;

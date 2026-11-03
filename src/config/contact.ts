@@ -26,6 +26,14 @@ export const contactConfig = {
   },
   mapsUrl:
     "https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cab7f8896c6d39:0xc9fd9bf14f451176?sa=X&ved=1t:8290&ictx=111",
+  /**
+   * US offices named by the client (2026-11-03). Shown by state only: the
+   * client asked not to publish street addresses for them.
+   */
+  usOffices: [
+    { name: "New Jersey", regionCode: "NJ" },
+    { name: "Florida", regionCode: "FL" },
+  ],
 } as const;
 
 export const mailtoHref = `mailto:${contactConfig.email}`;

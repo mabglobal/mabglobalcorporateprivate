@@ -32,7 +32,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block lg:hidden xl:block">
-            <ButtonLink href={headerCta.href} variant="outline-navy" size="sm" icon="none">
+            <ButtonLink href={headerCta.href} variant="accent-invert" size="sm" icon="none">
               {headerCta.label}
             </ButtonLink>
           </div>

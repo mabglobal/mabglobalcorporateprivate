@@ -16,7 +16,7 @@ export const aboutContent = {
     paragraphs: [
       "MAB Global Partners was founded in Türkiye to support entrepreneurs entering the US market.",
       "The service range grew over time to cover company formation and tax along with accounting and business address services. Registered agent services run under the MAB Registered Agent Inc. brand.",
-      "The Istanbul office coordinates formation and compliance work for the United States.",
+      "Our headquarters in Istanbul works together with our US offices in New Jersey and Florida on formation and compliance work in the United States.",
     ],
   },
   philosophy: {

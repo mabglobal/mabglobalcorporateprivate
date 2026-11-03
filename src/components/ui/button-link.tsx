@@ -11,13 +11,24 @@ import { cn } from "@/lib/utilities/cn";
  *  - light: white fill, navy text. For navy surfaces.
  *  - outline-light: translucent navy with a thin white border. For navy surfaces.
  *  - outline-white: transparent with a solid white border. For navy surfaces.
- *  - outline-navy: transparent with a solid navy border (header button).
+ *  - outline-navy: transparent with a solid navy border.
+ *  - accent-invert: orange fill that turns white with orange text on hover
+ *    (header button, client request 2026-11-03). White surfaces only.
  * Labels are uppercase with wide tracking, following behringeb5.com.
  */
-type Variant = "accent" | "outline" | "dark" | "light" | "outline-light" | "outline-white" | "outline-navy";
+type Variant =
+  | "accent"
+  | "accent-invert"
+  | "outline"
+  | "dark"
+  | "light"
+  | "outline-light"
+  | "outline-white"
+  | "outline-navy";
 
 const variants: Record<Variant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
+  "accent-invert": "border border-accent bg-accent text-white hover:bg-white hover:text-accent-strong",
   outline: "border border-line bg-white text-navy shadow-frame hover:border-navy",
   dark: "bg-navy text-white hover:bg-navy-deep",
   light: "bg-white text-navy hover:bg-white/90",
@@ -73,7 +84,7 @@ export function ButtonLink({
     </>
   );
 
-  const brandAccent = variant === "accent" ? { "data-brand-accent": "" } : {};
+  const brandAccent = variant === "accent" || variant === "accent-invert" ? { "data-brand-accent": "" } : {};
 
   if (external) {
     return (

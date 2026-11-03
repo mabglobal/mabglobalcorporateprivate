@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Building2, Mail, MapPin } from "lucide-react";
 import { CONTACT_FORM_ANCHOR, routes } from "@/config/routes";
 import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
 import { staticPages } from "@/content/pages";
@@ -94,7 +94,8 @@ export default function ContactPage() {
                 <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
                   <MapPin className="size-4" />
                 </span>
-                <h2 className="mt-6 text-title text-navy">Office</h2>
+                <h2 className="mt-6 text-title text-navy">Headquarters</h2>
+                <p className="mt-1 text-label font-medium text-navy">Istanbul, Türkiye</p>
                 <address className="mt-2 text-label not-italic text-ink">
                   {contactConfig.address.full}
                 </address>
@@ -106,6 +107,17 @@ export default function ContactPage() {
                   Open in Maps
                   <ArrowUpRight aria-hidden="true" className="size-4 text-accent-strong" />
                 </a>
+              </div>
+              <div className="frame rounded-card p-8">
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                  <Building2 className="size-4" />
+                </span>
+                <h2 className="mt-6 text-title text-navy">US Offices</h2>
+                <ul className="mt-2 grid gap-1 text-label text-ink">
+                  {contactConfig.usOffices.map((office) => (
+                    <li key={office.regionCode}>{office.name}, United States</li>
+                  ))}
+                </ul>
               </div>
               <div className="frame rounded-card p-8">
                 <h2 className="text-title text-navy">Topics for the First Call</h2>

@@ -53,12 +53,24 @@ export function organizationNode(): Organization {
       addressRegion: contactConfig.address.region,
       addressCountry: contactConfig.address.countryCode,
     },
-    location: {
-      "@type": "Place",
-      name: `${siteConfig.name} Istanbul office`,
-      address: contactConfig.address.full,
-      hasMap: contactConfig.mapsUrl,
-    },
+    location: [
+      {
+        "@type": "Place",
+        name: `${siteConfig.name} headquarters, Istanbul`,
+        address: contactConfig.address.full,
+        hasMap: contactConfig.mapsUrl,
+      },
+      // US offices are published by state only, without street addresses.
+      ...contactConfig.usOffices.map((office) => ({
+        "@type": "Place" as const,
+        name: `${siteConfig.name} ${office.name} office`,
+        address: {
+          "@type": "PostalAddress" as const,
+          addressRegion: office.regionCode,
+          addressCountry: "US",
+        },
+      })),
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
