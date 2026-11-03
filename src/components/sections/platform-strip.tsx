@@ -3,8 +3,9 @@ import { homeContent } from "@/content/home";
 
 /**
  * White strip under the hero, laid out like the "As seen on" wall of
- * behringeb5.com: banks and payment platforms as single-color logos with a
- * note that they show no partnership.
+ * behringeb5.com: banks and payment platforms as single-color logos with an
+ * ownership note. Logos with an href lead to the client's referral sign-up
+ * pages and carry rel="sponsored"; the note discloses them.
  */
 export function PlatformStrip() {
   const { platforms } = homeContent;
@@ -14,19 +15,35 @@ export function PlatformStrip() {
         <h2 id="platforms-title" className="text-center font-sans text-label font-medium text-navy">
           {platforms.caption}
         </h2>
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
-          {platforms.items.map((platform) => (
-            <li key={platform.name} className="flex items-center">
+        {/* One row from lg: logos shrink in proportion when the row is tight. */}
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 lg:flex-nowrap lg:justify-between lg:gap-x-8 xl:gap-x-10">
+          {platforms.items.map((platform) => {
+            const logo = (
               <Image
                 src={platform.src}
-                alt={platform.name}
+                alt={platform.href ? `${platform.name} Sign-Up` : platform.name}
                 width={platform.width}
                 height={platform.height}
                 unoptimized
                 className="h-auto max-w-full"
               />
-            </li>
-          ))}
+            );
+            return (
+              <li key={platform.name} className="flex min-w-0 shrink items-center">
+                {platform.href ? (
+                  <a
+                    href={platform.href}
+                    rel="sponsored noopener"
+                    className="flex min-h-11 min-w-0 items-center rounded-control"
+                  >
+                    {logo}
+                  </a>
+                ) : (
+                  logo
+                )}
+              </li>
+            );
+          })}
         </ul>
         <p className="mt-8 text-center text-caption text-navy">{platforms.note}</p>
       </div>

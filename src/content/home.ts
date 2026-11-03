@@ -1,6 +1,39 @@
 import { routes } from "@/config/routes";
 import type { IconName, ProcessStep, TitledText } from "@/types/content";
 
+/** Single-color logo in the strip under the hero. */
+export interface PlatformLogo {
+  name: string;
+  src: string;
+  width: number;
+  height: number;
+  /** Referral sign-up page the logo links to. */
+  href?: string;
+}
+
+const platformLogos: readonly PlatformLogo[] = [
+  { name: "Bank of America", src: "/images/platforms/bank-of-america.svg", width: 180, height: 18 },
+  { name: "Capital One", src: "/images/platforms/capital-one.svg", width: 117, height: 42 },
+  { name: "Mercury", src: "/images/platforms/mercury.svg", width: 126, height: 29 },
+  { name: "Wise", src: "/images/platforms/wise.svg", width: 114, height: 26 },
+  { name: "Payoneer", src: "/images/platforms/payoneer.svg", width: 128, height: 27 },
+  {
+    name: "WorldFirst",
+    src: "/images/platforms/worldfirst.svg",
+    width: 133,
+    height: 18,
+    href: "https://portal.worldfirst.com/register?affiliate_id=11418&region=TR&step=0",
+  },
+  {
+    name: "Zyla",
+    src: "/images/platforms/zyla.svg",
+    width: 106,
+    height: 30,
+    href: "https://portal.zyla.com/register?affiliate_id=11418&region=US&step=0",
+  },
+  { name: "QuickBooks", src: "/images/platforms/quickbooks.svg", width: 129, height: 33 },
+];
+
 /**
  * Homepage copy. The hero, the platform strip and the navy services band
  * follow behringeb5.com; the sections below keep the staggered process boxes,
@@ -24,20 +57,13 @@ export const homeContent = {
    * (2026-10-12 and 2026-11-03). Shown as
    * logos without any partner claim, with an ownership note. Files in
    * public/images/platforms are single-color navy versions of each logo.
+   * Zyla and WorldFirst link to the client's referral sign-up pages, which
+   * the note discloses.
    */
   platforms: {
     caption: "Banking and Accounting Platforms",
-    note: "Logos belong to their respective owners and show no partnership or endorsement.",
-    items: [
-      { name: "Bank of America", src: "/images/platforms/bank-of-america.svg", width: 180, height: 18 },
-      { name: "Capital One", src: "/images/platforms/capital-one.svg", width: 117, height: 42 },
-      { name: "Mercury", src: "/images/platforms/mercury.svg", width: 126, height: 29 },
-      { name: "Wise", src: "/images/platforms/wise.svg", width: 114, height: 26 },
-      { name: "Payoneer", src: "/images/platforms/payoneer.svg", width: 128, height: 27 },
-      { name: "WorldFirst", src: "/images/platforms/worldfirst.svg", width: 133, height: 18 },
-      { name: "Zyla", src: "/images/platforms/zyla.svg", width: 106, height: 30 },
-      { name: "QuickBooks", src: "/images/platforms/quickbooks.svg", width: 129, height: 33 },
-    ],
+    note: "Logos belong to their respective owners. Zyla and WorldFirst logos lead to our referral sign-up pages.",
+    items: platformLogos,
   },
   servicesBand: {
     title: "Explore Our Company Services",
