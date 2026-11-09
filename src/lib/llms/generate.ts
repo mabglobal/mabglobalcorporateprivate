@@ -1,4 +1,4 @@
-import { contactConfig } from "@/config/contact";
+import { branchOffices, contactConfig } from "@/config/contact";
 import { routes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 import { aboutContent } from "@/content/about";
@@ -15,6 +15,11 @@ import { absoluteUrl } from "@/lib/seo/canonical";
  * an H1, a blockquote summary, optional prose and H2 link lists.
  */
 
+function officeSummary(): string {
+  const entries = branchOffices.map((office) => office.address ?? office.location);
+  return `Offices in ${entries.join("; ")}.`;
+}
+
 function link(label: string, path: string, note?: string): string {
   return `- [${label}](${absoluteUrl(path)})${note ? `: ${note}` : ""}`;
 }
@@ -25,9 +30,9 @@ export function generateLlmsTxt(): string {
     "",
     `> ${siteConfig.description}`,
     "",
-    "MAB Global Partners is a corporate services brand based in Istanbul. Its focus market is the United States. Registered agent services run under MAB Registered Agent Inc., a brand within MAB Global Partners. Service pages describe what the company offers. Insights guides contain general information based on official sources. The content is no substitute for personal legal or tax advice.",
+    "MAB Global Partners is an international consulting and company services brand based in Istanbul. It serves the United States, the United Kingdom and Europe. Registered agent services run under MAB Registered Agent Inc., a brand within MAB Global Partners, and US business addresses under US Company Address at uscompanyaddress.com. Service pages describe what the company offers. Insights guides contain general information based on official sources. The content is no substitute for personal legal or tax advice.",
     "",
-    `Contact email ${contactConfig.email} or ${contactConfig.secondaryEmail}. Headquarters ${contactConfig.address.full}. US offices in ${contactConfig.usOffices.map((office) => office.name).join(" and ")}.`,
+    `Contact email ${contactConfig.email} or ${contactConfig.secondaryEmail}. Phone ${contactConfig.phone.display}. Headquarters ${contactConfig.address.full}. ${officeSummary()}`,
     "",
     "## Company",
     "",
@@ -92,8 +97,9 @@ export function generateLlmsFullTxt(): string {
     ...aboutContent.introduction.paragraphs,
     "",
     `Contact email ${contactConfig.email} or ${contactConfig.secondaryEmail}.`,
+    `Phone ${contactConfig.phone.display}.`,
     `Headquarters ${contactConfig.address.full}.`,
-    `US offices in ${contactConfig.usOffices.map((office) => office.name).join(" and ")}.`,
+    officeSummary(),
     `Canonical address ${absoluteUrl(routes.about)}`,
     "",
     "## Services",
@@ -122,6 +128,16 @@ export function generateLlmsFullTxt(): string {
         "Process",
         service.process.map((p, i) => `${i + 1}. ${p.title}. ${p.description}`),
       ),
+      ...(service.catalog
+        ? section(
+            service.catalog.title,
+            bullets(
+              service.catalog.groups.flatMap((group) =>
+                group.items.map((item) => `${item.title}. ${item.description}`),
+              ),
+            ),
+          )
+        : []),
       ...(service.documents
         ? section("Documents You May Need", bullets(service.documents))
         : []),

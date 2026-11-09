@@ -4,8 +4,8 @@ import { homeContent } from "@/content/home";
 /**
  * White strip under the hero, laid out like the "As seen on" wall of
  * behringeb5.com: banks and payment platforms as single-color logos with an
- * ownership note. Logos with an href lead to the client's referral sign-up
- * pages and carry rel="sponsored"; the note discloses them.
+ * ownership note. Referral sign-up links carry rel="sponsored"; the note
+ * discloses every linked logo.
  */
 export function PlatformStrip() {
   const { platforms } = homeContent;
@@ -21,7 +21,7 @@ export function PlatformStrip() {
             const logo = (
               <Image
                 src={platform.src}
-                alt={platform.href ? `${platform.name} Sign-Up` : platform.name}
+                alt={platform.link ? platform.link.label : platform.name}
                 width={platform.width}
                 height={platform.height}
                 unoptimized
@@ -30,10 +30,10 @@ export function PlatformStrip() {
             );
             return (
               <li key={platform.name} className="flex min-w-0 shrink items-center">
-                {platform.href ? (
+                {platform.link ? (
                   <a
-                    href={platform.href}
-                    rel="sponsored noopener"
+                    href={platform.link.href}
+                    rel={platform.link.sponsored ? "sponsored noopener" : "noopener"}
                     className="flex min-h-11 min-w-0 items-center rounded-control"
                   >
                     {logo}

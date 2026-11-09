@@ -3,20 +3,20 @@ import type { TitledText } from "@/types/content";
 /**
  * About page content. Company background is limited to statements published
  * on the business's own websites (see docs/content-verification.md).
- * Founding year and office network are omitted until confirmed.
+ * The founding year is omitted until confirmed.
  */
 export const aboutContent = {
   hero: {
-    title: "Helping You Build and Run Your US Company",
-    description: "Form your US company and keep every filing on schedule with one team.",
+    title: "Helping You Build and Run Your Company Abroad",
+    description: "Form your company abroad and keep every filing on schedule with one team.",
   },
   introduction: {
     tag: "Company",
     title: "Company Overview",
     paragraphs: [
-      "MAB Global Partners was founded in Türkiye to support entrepreneurs entering the US market.",
-      "The service range grew over time to cover company formation and tax along with accounting and business address services. Registered agent services run under the MAB Registered Agent Inc. brand.",
-      "Our headquarters in Istanbul works together with our US offices in New Jersey and Florida on formation and compliance work in the United States.",
+      "MAB Global Partners was founded in Türkiye to support entrepreneurs entering the US market and has grown into an international consulting and company services brand.",
+      "The service range covers company formation and tax along with accounting and bank account support in the United States and the United Kingdom and across Europe. Registered agent services run under the MAB Registered Agent Inc. brand and US business addresses under US Company Address.",
+      "Our headquarters in Istanbul works together with our office in Oxford and our US offices in New Jersey and Florida.",
     ],
   },
   philosophy: {

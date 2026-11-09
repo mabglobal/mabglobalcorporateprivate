@@ -71,7 +71,12 @@ export type ServiceSlug =
   | "accounting"
   | "registered-agent"
   | "business-address-and-operations"
-  | "international-business-consulting";
+  | "international-business-consulting"
+  | "uk-company-formation"
+  | "uk-company-services"
+  | "europe-company-services"
+  | "international-bank-account-opening"
+  | "amazon-and-e-commerce";
 
 export type SectorSlug =
   | "e-commerce"
@@ -81,7 +86,29 @@ export type SectorSlug =
   | "entrepreneurs-and-investors"
   | "smes-and-enterprises";
 
-export type Jurisdiction = "us";
+export type Jurisdiction = "us" | "uk" | "europe" | "us-uk" | "international";
+
+/** One itemized service on a service page. */
+export interface CatalogItem {
+  title: string;
+  description: string;
+  /** How often the item applies, for example "One-Time" or "Every 3 Months". */
+  frequency: string;
+  /** Deliverables that come with the item. */
+  includes?: string;
+}
+
+export interface CatalogGroup {
+  title: string;
+  items: CatalogItem[];
+}
+
+export interface ServiceCatalog {
+  title: string;
+  description: string;
+  groups: CatalogGroup[];
+  note: string;
+}
 
 export interface Service {
   slug: ServiceSlug;
@@ -105,6 +132,8 @@ export interface Service {
   faqIds: string[];
   /** Optional outbound reference to a verified sister brand. */
   externalReference?: { label: string; href: string };
+  /** Optional itemized list of services shown on the service page. */
+  catalog?: ServiceCatalog;
   /** Shown on the homepage services grid. */
   featured: boolean;
   seo: SeoFields;
@@ -153,6 +182,7 @@ export interface ArticleSection {
 
 export type ArticleCategory =
   | "us-company-formation"
+  | "uk-company-formation"
   | "international-tax"
   | "accounting-and-compliance"
   | "e-commerce"

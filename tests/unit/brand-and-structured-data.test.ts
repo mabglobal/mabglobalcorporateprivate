@@ -60,8 +60,8 @@ describe("structured data", () => {
     expect(organization.name).toBe(siteConfig.name);
     expect(organization.url).toBe(siteConfig.url);
     expect(organization.email).toBe(contactConfig.email);
+    expect(organization.telephone).toBe("+15513279241");
     for (const field of [
-      "telephone",
       "aggregateRating",
       "review",
       "foundingDate",
@@ -73,6 +73,17 @@ describe("structured data", () => {
     ]) {
       expect(organization[field], field).toBeUndefined();
     }
+  });
+
+  it("lists every office and the three markets served", () => {
+    const places = organization.location as { address: { addressCountry: string }; hasMap?: string }[];
+    expect(places.map((place) => place.address.addressCountry)).toEqual(["TR", "GB", "US", "US"]);
+    expect(places.filter((place) => place.hasMap)).toHaveLength(2);
+    expect(organization.areaServed).toEqual([
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Continent", name: "Europe" },
+    ]);
   });
 
   it("produces serializable graphs with absolute URLs", () => {

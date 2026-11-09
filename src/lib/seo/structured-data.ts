@@ -9,17 +9,17 @@ import type {
   WebPage,
   WebSite,
 } from "schema-dts";
-import { contactConfig } from "@/config/contact";
+import { contactConfig, offices } from "@/config/contact";
 import { siteConfig } from "@/config/site";
 import { jurisdictionLabels } from "@/content/services";
 import type { Article, FaqItem, Service } from "@/types/content";
 import { absoluteUrl } from "./canonical";
 
 /**
- * Centralized JSON-LD generation. Entity facts (name, address, email)
+ * Centralized JSON-LD generation. Entity facts (name, address, email, phone)
  * come from src/config so structured data, footer, contact page and llms.txt
- * always agree. No ratings, reviews, legal identifiers or phone numbers are
- * emitted because none are verified.
+ * always agree. No ratings, reviews or legal identifiers are emitted because
+ * none are verified.
  */
 
 export const organizationId = `${siteConfig.url}/#organization`;
@@ -32,8 +32,16 @@ export interface BreadcrumbTrailItem {
 
 type PageType = "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
 
-const countryNodes = {
-  us: [{ "@type": "Country", name: "United States" }],
+const unitedStates = { "@type": "Country", name: "United States" } as const;
+const unitedKingdom = { "@type": "Country", name: "United Kingdom" } as const;
+const europe = { "@type": "Continent", name: "Europe" } as const;
+
+const areaNodes = {
+  us: [unitedStates],
+  uk: [unitedKingdom],
+  europe: [europe],
+  "us-uk": [unitedStates, unitedKingdom],
+  international: [unitedStates, unitedKingdom, europe],
 } as const;
 
 export function organizationNode(): Organization {
@@ -45,6 +53,7 @@ export function organizationNode(): Organization {
     logo: absoluteUrl("/images/brand/mab-global-partners-logo.svg"),
     description: siteConfig.description,
     email: contactConfig.email,
+    telephone: contactConfig.phone.e164,
     address: {
       "@type": "PostalAddress",
       streetAddress: contactConfig.address.streetAddress,
@@ -53,33 +62,31 @@ export function organizationNode(): Organization {
       addressRegion: contactConfig.address.region,
       addressCountry: contactConfig.address.countryCode,
     },
-    location: [
-      {
-        "@type": "Place",
-        name: `${siteConfig.name} headquarters, Istanbul`,
-        address: contactConfig.address.full,
-        hasMap: contactConfig.mapsUrl,
+    location: offices.map((office) => ({
+      "@type": "Place" as const,
+      name: `${siteConfig.name} ${office.heading}, ${office.location}`,
+      address: {
+        "@type": "PostalAddress" as const,
+        ...(office.postal.streetAddress ? { streetAddress: office.postal.streetAddress } : {}),
+        ...(office.postal.postalCode ? { postalCode: office.postal.postalCode } : {}),
+        ...(office.postal.locality ? { addressLocality: office.postal.locality } : {}),
+        ...(office.postal.region ? { addressRegion: office.postal.region } : {}),
+        addressCountry: office.postal.countryCode,
       },
-      // US offices are published by state only, without street addresses.
-      ...contactConfig.usOffices.map((office) => ({
-        "@type": "Place" as const,
-        name: `${siteConfig.name} ${office.name} office`,
-        address: {
-          "@type": "PostalAddress" as const,
-          addressRegion: office.regionCode,
-          addressCountry: "US",
-        },
-      })),
-    ],
+      ...(office.mapsUrl ? { hasMap: office.mapsUrl } : {}),
+    })),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: contactConfig.email,
+      telephone: contactConfig.phone.e164,
       availableLanguage: ["English", "Turkish"],
     },
-    areaServed: [...countryNodes.us],
+    areaServed: [...areaNodes.international],
     knowsAbout: [
       "US company formation",
+      "UK company formation",
+      "International bank account opening",
       "Tax advisory",
       "Accounting",
       "Registered agent",
@@ -146,8 +153,7 @@ export function serviceNode(service: Service, path: string): ServiceSchema {
     serviceType: service.title,
     url: absoluteUrl(path),
     provider: { "@id": organizationId },
-    areaServed: [...countryNodes[service.jurisdiction]],
-    availableLanguage: ["Turkish"],
+    areaServed: [...areaNodes[service.jurisdiction]],
     audience: {
       "@type": "BusinessAudience",
       audienceType: service.audience.map((entry) => entry.title).join(", "),

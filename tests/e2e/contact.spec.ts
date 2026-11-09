@@ -12,6 +12,24 @@ async function fillValidForm(page: Page) {
     .fill("We plan to form a company to sell on Amazon in the US market.");
 }
 
+test("contact page lists the phone and links offices to their map locations", async ({ page }) => {
+  await page.goto("/contact");
+  const main = page.getByRole("main");
+  await expect(main.getByRole("link", { name: "+1 (551) 327-9241" }).first()).toHaveAttribute(
+    "href",
+    "tel:+15513279241",
+  );
+  await expect(main.getByText("Oxford, United Kingdom").first()).toBeVisible();
+  await expect(main.getByText("Kağıthane/İstanbul, Türkiye").first()).toBeVisible();
+  const visit = main.getByRole("link", { name: "Visit Our Office" });
+  await expect(visit).toHaveCount(2);
+  await expect(visit.first()).toHaveAttribute("href", /google\.com\/maps\/place/);
+  await expect(visit.last()).toHaveAttribute(
+    "href",
+    "https://www.google.com/maps/search/?api=1&query=311%2060th%20Street%2C%20West%20New%20York%2C%20New%20Jersey%2007093%2C%20United%20States",
+  );
+});
+
 test.describe("contact form", () => {
   test("shows validation messages and focuses the first invalid field", async ({ page }) => {
     await page.goto("/contact");
@@ -80,16 +98,16 @@ test.describe("contact form", () => {
     await expect(page.getByLabel("Email Address")).toHaveAttribute("aria-invalid", "true");
   });
 
-  test("contact details link to email and Google Maps", async ({ page }) => {
+  test("contact details link to email and phone", async ({ page }) => {
     await page.goto("/contact");
     const aside = page.getByRole("complementary", { name: "Contact details" });
     await expect(aside.getByRole("link", { name: "info@mabglobalpartners.com" })).toHaveAttribute(
       "href",
       "mailto:info@mabglobalpartners.com",
     );
-    await expect(aside.getByRole("link", { name: /Open in Maps/ })).toHaveAttribute(
+    await expect(aside.getByRole("link", { name: "+1 (551) 327-9241" })).toHaveAttribute(
       "href",
-      /google\.com\/maps/,
+      "tel:+15513279241",
     );
   });
 });

@@ -21,9 +21,9 @@ export const siteConfig = {
   locale: "en_US",
   language: "en",
   description:
-    "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States with company formation and registered agent services along with tax and accounting support.",
+    "MAB Global Partners helps entrepreneurs and companies set up and run businesses in the United States and the United Kingdom and across Europe with company formation and bank account services along with tax and accounting support.",
   shortDescription:
-    "US company formation and registered agent services with tax and accounting support.",
+    "International company formation and bank account services with tax and accounting support.",
   relatedBrands: [
     {
       name: "MAB Registered Agent Inc.",
@@ -31,8 +31,13 @@ export const siteConfig = {
       description:
         "The MAB Global Partners brand for registered agent services.",
     },
+    {
+      name: "US Company Address",
+      url: "https://uscompanyaddress.com",
+      description: "US business address service connected with MAB Global Partners.",
+    },
   ],
-  focusMarkets: ["United States"],
+  focusMarkets: ["United States", "United Kingdom", "Europe"],
 } as const;
 
 /**

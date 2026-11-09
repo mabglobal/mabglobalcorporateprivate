@@ -10,6 +10,7 @@ import { FaqSection } from "@/components/sections/faq-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { ProcessSection } from "@/components/sections/process-steps";
 import { TileBand } from "@/components/sections/tile-band";
+import { ServiceCatalog } from "@/components/services/service-catalog";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BulletList, TitledCheckList } from "@/components/ui/check-list";
 import { FactCards, FeaturePanel, splitInTwo } from "@/components/ui/feature-panel";
@@ -128,6 +129,8 @@ export function ServicePageLayout({ slug }: { slug: ServiceSlug }) {
           </div>
         </div>
       </section>
+
+      {service.catalog ? <ServiceCatalog catalog={service.catalog} /> : null}
 
       <ProcessSection id="process-title" tag="Process" title="How the Process Works" steps={service.process} padding="bottom" />
 

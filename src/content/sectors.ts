@@ -26,38 +26,39 @@ const allSectors: Sector[] = [
     ],
     needs: [
       { title: "Seller-Ready Structure", description: "Set up company and address records that match marketplace checks." },
-      { title: "Sales Tax Tracking", description: "Track registration and filing needs in the states where you sell." },
+      { title: "Sales Tax and VAT Tracking", description: "Track sales tax and VAT duties in the markets where you sell." },
       { title: "Marketplace Accounting", description: "Record fees and refunds apart from advertising and logistics costs." },
       { title: "Brand and Product Registrations", description: "Plan trademark filings and FDA registration where products need it." },
     ],
     services: [
+      "amazon-and-e-commerce",
       "us-company-formation",
+      "uk-company-formation",
+      "international-bank-account-opening",
       "tax-advisory",
       "accounting",
-      "international-business-consulting",
-      "business-address-and-operations",
     ],
     considerations: [
       "Marketplaces expect consistent company and address details along with matching bank information during verification.",
       "In many states the marketplace collects sales tax for the seller. Your own registration needs a separate review.",
       "Consistent documents speed up the resolution of account suspensions.",
-      "Check US rules for products such as food and cosmetics before you start selling.",
+      "Check local rules for products such as food and cosmetics before you start selling.",
     ],
     faqIds: ["amazon-us-company", "sales-tax", "amazon-account-support", "marketplace-bookkeeping"],
     seo: {
       title: "Company Formation and Tax for E-Commerce Businesses",
       description:
-        "Form a US company for your Amazon and Shopify sales. Track sales tax duties and keep marketplace accounting in order.",
+        "Form a US or UK company for your Amazon and Shopify sales. Track sales tax and VAT duties and keep marketplace accounting in order.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
   {
     slug: "export-and-logistics",
     title: "Export and Logistics",
     shortTitle: "Export and Logistics",
     icon: "ship",
-    summary: "Work with US buyers through a local company.",
+    summary: "Work with foreign buyers through a local company.",
     intro: [
       "A local company can simplify contracts and invoicing with buyers in your target market.",
       "Plan company formation and accounting along with tax tracking around your trade flows.",
@@ -80,10 +81,11 @@ const allSectors: Sector[] = [
     ],
     services: [
       "us-company-formation",
+      "uk-company-formation",
+      "europe-company-services",
       "accounting",
       "tax-advisory",
       "business-address-and-operations",
-      "international-business-consulting",
     ],
     considerations: [
       "Customs and product standards along with import permits vary by product group.",
@@ -92,12 +94,12 @@ const allSectors: Sector[] = [
     ],
     faqIds: ["us-state-choice", "intercompany-transactions", "service-scope"],
     seo: {
-      title: "US Company Structures for Export and Logistics Businesses",
+      title: "Company Structures for Export and Logistics Businesses",
       description:
-        "Form a US company for your export or logistics business. Plan DUNS registration and accounting along with operational steps.",
+        "Form a US or UK company for your export or logistics business. Plan DUNS and EORI registration and accounting along with operational steps.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
   {
     slug: "freelancers",
@@ -123,9 +125,16 @@ const allSectors: Sector[] = [
       { title: "The Right Structure", description: "Compare working as an individual with a company for income and tax." },
       { title: "Payments and Invoicing", description: "Manage international payments in line with company records." },
       { title: "Platform Tax Forms", description: "Complete the tax forms platforms request for your structure." },
-      { title: "Annual Filing Calendar", description: "File federal and state returns on time." },
+      { title: "Annual Filing Calendar", description: "File your company returns on time in every market." },
     ],
-    services: ["us-company-formation", "tax-advisory", "accounting", "international-business-consulting"],
+    services: [
+      "us-company-formation",
+      "uk-company-formation",
+      "international-bank-account-opening",
+      "tax-advisory",
+      "accounting",
+      "international-business-consulting",
+    ],
     considerations: [
       "Income from a company abroad may be taxable in your country of residence. Review this with your local advisor.",
       "Forms such as W-8 or W-9 that platforms request depend on your company structure.",
@@ -138,7 +147,7 @@ const allSectors: Sector[] = [
         "Plan your company structure along with tax and accounting steps when you work with foreign clients on Fiverr and Upwork or directly.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
   {
     slug: "technology-companies",
@@ -147,7 +156,7 @@ const allSectors: Sector[] = [
     icon: "cpu",
     summary: "Form an investor-ready structure for your startup.",
     intro: [
-      "Technology companies targeting the US market need the right entity type and ownership structure along with payment setup from the start.",
+      "Technology companies targeting the US or UK market need the right entity type and ownership structure along with payment setup from the start.",
       "Choose the structure that fits your investment plan and team along with your revenue model.",
     ],
     examples: [
@@ -167,10 +176,11 @@ const allSectors: Sector[] = [
     ],
     services: [
       "us-company-formation",
+      "uk-company-formation",
+      "international-bank-account-opening",
       "accounting",
       "tax-advisory",
       "registered-agent",
-      "business-address-and-operations",
     ],
     considerations: [
       "Institutional investors may prefer a specific entity type and state. Decide the structure together with your investment plan.",
@@ -179,19 +189,19 @@ const allSectors: Sector[] = [
     ],
     faqIds: ["us-state-choice", "entity-type", "accounting-scope"],
     seo: {
-      title: "US Company Structures for Technology Companies and Startups",
+      title: "Company Structures for Technology Companies and Startups",
       description:
         "Choose the entity type for your SaaS or AI startup. Organize subscription accounting and tax along with brand protection.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
   {
     slug: "entrepreneurs-and-investors",
     title: "Entrepreneurs and Investors",
     shortTitle: "Entrepreneurs and Investors",
     icon: "rocket",
-    summary: "Settle state and structure for your first company.",
+    summary: "Settle market and structure for your first company.",
     intro: [
       "Ask the right questions early before you form your first company abroad.",
       "Clarify the target market and ownership structure along with your long-term plan to give your first decisions a solid base.",
@@ -201,28 +211,35 @@ const allSectors: Sector[] = [
       "Startup Founders",
       "Entrepreneurs Going Global",
       "Investors Reviewing Structures Abroad",
-      "Businesses Entering the US",
+      "Businesses Entering New Markets",
     ],
     needs: [
-      { title: "State and Entity Type", description: "Compare state and entity options for your model." },
+      { title: "Market and Entity Type", description: "Compare market and entity options for your model." },
       { title: "Ownership Structure", description: "Reflect shares and authority along with decision rules in documents." },
       { title: "First-Year Calendar", description: "See filing and report dates after formation in advance." },
       { title: "Annual Cost Plan", description: "Forecast formation and renewal costs with accounting and tax." },
     ],
-    services: ["international-business-consulting", "us-company-formation", "registered-agent", "tax-advisory"],
+    services: [
+      "international-business-consulting",
+      "us-company-formation",
+      "uk-company-formation",
+      "international-bank-account-opening",
+      "registered-agent",
+      "tax-advisory",
+    ],
     considerations: [
       "A company abroad brings tax advantages only in some cases. Advantages and obligations depend on each situation.",
       "Investor expectations for structure vary by type of investment.",
       "Include annual costs after formation in your plan from the start.",
     ],
-    faqIds: ["entity-type", "us-state-choice", "pricing"],
+    faqIds: ["us-or-uk", "entity-type", "pricing"],
     seo: {
-      title: "US Company Formation for Entrepreneurs and Investors",
+      title: "Company Formation for Entrepreneurs and Investors",
       description:
-        "Choose the state and entity type for your first US company. Plan ownership and first-year compliance along with costs.",
+        "Choose the market and entity type for your first company abroad. Plan ownership and first-year compliance along with costs.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
   {
     slug: "smes-and-enterprises",
@@ -242,17 +259,18 @@ const allSectors: Sector[] = [
       "Companies Seeking Ongoing Compliance",
     ],
     needs: [
-      { title: "Foreign Subsidiary", description: "Form a US company that fits your parent company." },
+      { title: "Foreign Subsidiary", description: "Form a company abroad that fits your parent company." },
       { title: "Existing Company Follow-Up", description: "Hand over accounting and tax along with compliance for your company." },
       { title: "Management Reports", description: "Receive periodic financial reports and a compliance calendar." },
       { title: "Intercompany Transactions", description: "Document transactions between the parent and the subsidiary." },
     ],
     services: [
       "us-company-formation",
+      "uk-company-formation",
+      "europe-company-services",
       "accounting",
       "tax-advisory",
       "registered-agent",
-      "business-address-and-operations",
     ],
     considerations: [
       "Transactions between the parent and the subsidiary need a review under the rules of both countries.",
@@ -266,7 +284,7 @@ const allSectors: Sector[] = [
         "Form your foreign subsidiary and keep tax and accounting along with compliance for your existing foreign company in order.",
     },
     status: "published",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-09",
   },
 ];
 

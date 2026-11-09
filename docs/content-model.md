@@ -16,7 +16,7 @@ All public content lives in typed modules under `src/content`. Types are defined
 | `navigation.ts` | `NavItem[]` | Header, mobile menu, footer |
 | `testimonials.ts` | `Testimonial[]` | Homepage section, hidden while empty |
 
-Shared business facts (name, URL, email, address, maps link) live in `src/config/site.ts` and `src/config/contact.ts`.
+Shared business facts (name, URL, email, phone, offices, maps links) live in `src/config/site.ts` and `src/config/contact.ts`.
 
 ## Publication status
 
@@ -24,7 +24,7 @@ Every service, sector, FAQ, article and testimonial has `status: "published" | "
 
 ## Service fields
 
-`slug`, `title`, `shortTitle`, `icon`, `jurisdiction`, `summary` (card text), `definition` (one-sentence factual definition used at the top of the page and in llms-full.txt), `intro[]`, `audience[]`, `scope[]`, `process[]`, `documents[]` (optional), `considerations[]`, `relatedServices[]`, `relatedSectors[]`, `faqIds[]`, `externalReference` (optional verified sister brand), `featured`, `seo { title, description }`, `status`, `updatedAt`.
+`slug`, `title`, `shortTitle`, `icon`, `jurisdiction`, `summary` (card text), `definition` (one-sentence factual definition used at the top of the page and in llms-full.txt), `intro[]`, `audience[]`, `scope[]`, `process[]`, `documents[]` (optional), `considerations[]`, `relatedServices[]`, `relatedSectors[]`, `faqIds[]`, `externalReference` (optional verified sister brand), `catalog` (optional itemized services), `featured`, `seo { title, description }`, `status`, `updatedAt`.
 
 ## Sector fields
 

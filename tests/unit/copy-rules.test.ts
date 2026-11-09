@@ -15,7 +15,7 @@ import {
 } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
 import { sectors } from "@/content/sectors";
-import { services } from "@/content/services";
+import { serviceGroups, services } from "@/content/services";
 import { contactErrorMessages } from "@/lib/contact/handle-contact-request";
 import { contactMessages } from "@/lib/validation/contact";
 import { contactOptions } from "@/lib/validation/contact-options";
@@ -122,6 +122,7 @@ const sources: Record<string, unknown> = {
     shortDescription: siteConfig.shortDescription,
   },
   services,
+  serviceGroups,
   sectors,
   faqs,
   // Source titles are quoted from official English pages and are exempt.

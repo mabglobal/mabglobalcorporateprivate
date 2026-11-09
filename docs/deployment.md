@@ -52,7 +52,7 @@ On 2026-10-12, `mabglobalpartners.com` redirected to `www.mabglobalpartners.com`
 ## Launch checklist
 
 * Production deployment shows `index, follow` in page source and robots.txt allows crawling.
-* `https://www.mabglobalpartners.com/sitemap.xml` lists 26 URLs; submit it in Google Search Console and Bing Webmaster Tools.
+* `https://www.mabglobalpartners.com/sitemap.xml` lists 30 URLs; submit it in Google Search Console and Bing Webmaster Tools.
 * Validate structured data on a service and an article page with validator.schema.org and the Rich Results Test.
 * Submit a test contact request in production.
 * Confirm the items in `content-verification.md` with the business.

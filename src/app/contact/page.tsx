@@ -1,11 +1,18 @@
-import { ArrowUpRight, Building2, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Building2, Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT_FORM_ANCHOR, routes } from "@/config/routes";
-import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
+import {
+  contactConfig,
+  mailtoHref,
+  offices,
+  phoneHref,
+  secondaryMailtoHref,
+} from "@/config/contact";
 import { staticPages } from "@/content/pages";
 import { ContactForm } from "@/components/forms/contact-form";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { BulletList } from "@/components/ui/check-list";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { buildStaticPageMetadata } from "@/lib/seo/metadata";
 import {
   breadcrumbNode,
@@ -51,7 +58,7 @@ export default function ContactPage() {
       <PageHero
         breadcrumb={breadcrumb}
         title="Contact"
-        description="Fill in the form or send us an email directly."
+        description="Fill in the form or reach us by email or phone."
       />
 
       <section
@@ -92,32 +99,15 @@ export default function ContactPage() {
               </div>
               <div className="frame rounded-card p-8">
                 <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
-                  <MapPin className="size-4" />
+                  <Phone className="size-4" />
                 </span>
-                <h2 className="mt-6 text-title text-navy">Headquarters</h2>
-                <p className="mt-1 text-label font-medium text-navy">Istanbul, Türkiye</p>
-                <address className="mt-2 text-label not-italic text-ink">
-                  {contactConfig.address.full}
-                </address>
+                <h2 className="mt-6 text-title text-navy">Phone</h2>
                 <a
-                  href={contactConfig.mapsUrl}
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-label font-medium text-navy underline underline-offset-4"
+                  href={phoneHref}
+                  className="mt-2 flex min-h-11 items-center text-label font-medium text-navy underline underline-offset-4"
                 >
-                  Open in Maps
-                  <ArrowUpRight aria-hidden="true" className="size-4 text-accent" />
+                  {contactConfig.phone.display}
                 </a>
-              </div>
-              <div className="frame rounded-card p-8">
-                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
-                  <Building2 className="size-4" />
-                </span>
-                <h2 className="mt-6 text-title text-navy">US Offices</h2>
-                <ul className="mt-2 grid gap-1 text-label text-ink">
-                  {contactConfig.usOffices.map((office) => (
-                    <li key={office.regionCode}>{office.name}, United States</li>
-                  ))}
-                </ul>
               </div>
               <div className="frame rounded-card p-8">
                 <h2 className="text-title text-navy">Topics for the First Call</h2>
@@ -127,6 +117,43 @@ export default function ContactPage() {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section aria-labelledby="offices-title" className="bg-white pb-20 md:pb-28 lg:pb-34">
+        <div className="container-page">
+          <SectionHeading
+            id="offices-title"
+            tag="Offices"
+            title="Our Offices"
+            description="Find us in Türkiye and the United Kingdom and the United States."
+          />
+          <ul className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {offices.map((office) => (
+              <li key={office.id} className="frame flex flex-col rounded-card p-7">
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                  {office.id === "istanbul" ? <MapPin className="size-4" /> : <Building2 className="size-4" />}
+                </span>
+                <h3 className="mt-6 text-title text-navy">{office.heading}</h3>
+                <p className="mt-1 text-label font-medium text-navy">{office.location}</p>
+                {office.address ? (
+                  <address className="mt-2 text-label not-italic text-ink [overflow-wrap:anywhere]">
+                    {office.address}
+                  </address>
+                ) : null}
+                {office.mapsUrl ? (
+                  <a
+                    href={office.mapsUrl}
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex min-h-11 items-center gap-1.5 pt-4 text-label font-medium text-navy underline underline-offset-4"
+                  >
+                    Visit Our Office
+                    <ArrowUpRight aria-hidden="true" className="size-4 text-accent" />
+                  </a>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

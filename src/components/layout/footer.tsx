@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Heart } from "lucide-react";
+import { contactConfig, phoneHref } from "@/config/contact";
 import { siteConfig } from "@/config/site";
 import { footerLinks, legalNavigation } from "@/content/navigation";
 import { CopyrightYear } from "./copyright-year";
@@ -7,7 +8,7 @@ import { HeaderLogo } from "./site-logo";
 
 const tagline = "Your partner for doing business across borders.";
 
-const registeredAgentBrand = siteConfig.relatedBrands[0];
+const [registeredAgentBrand, businessAddressBrand] = siteConfig.relatedBrands;
 
 /**
  * White footer following the EY-Parthenon reference: the logo lockup with a
@@ -24,26 +25,35 @@ export function Footer() {
           <p className="mt-4 font-display text-title font-bold text-navy">{tagline}</p>
           <div className="mt-8 grid max-w-2xl gap-4 text-label text-navy">
             <p>
-              {siteConfig.name} is a corporate services brand for entrepreneurs and companies that do
-              business in the United States.
-              {registeredAgentBrand ? (
-                <>
-                  {" "}
-                  Registered agent services are provided by{" "}
-                  <a
-                    href={registeredAgentBrand.url}
-                    rel="noopener noreferrer"
-                    className="font-bold underline underline-offset-4"
-                  >
-                    {registeredAgentBrand.name}
-                  </a>
-                  {registeredAgentBrand.name.endsWith(".") ? null : "."}
-                </>
-              ) : null}
+              {siteConfig.name} is an international consulting and company services brand for
+              entrepreneurs and companies that do business in the United States and the United Kingdom
+              and across Europe. Registered agent services are provided by{" "}
+              <a
+                href={registeredAgentBrand.url}
+                rel="noopener noreferrer"
+                className="font-bold underline underline-offset-4"
+              >
+                {registeredAgentBrand.name}
+              </a>{" "}
+              and US business addresses by{" "}
+              <a
+                href={businessAddressBrand.url}
+                rel="noopener noreferrer"
+                className="font-bold underline underline-offset-4"
+              >
+                {businessAddressBrand.name}
+              </a>
+              .
             </p>
             <p>
               Content on this website is general information and is no substitute for personal legal or
               tax advice.
+            </p>
+            <p>
+              Call us at{" "}
+              <a href={phoneHref} className="font-bold underline underline-offset-4">
+                {contactConfig.phone.display}
+              </a>
             </p>
           </div>
         </div>

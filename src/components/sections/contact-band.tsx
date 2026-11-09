@@ -1,5 +1,11 @@
-import { Building2, Mail, MapPin } from "lucide-react";
-import { contactConfig, mailtoHref, secondaryMailtoHref } from "@/config/contact";
+import { Building2, Mail, MapPin, Phone } from "lucide-react";
+import {
+  branchOffices,
+  contactConfig,
+  mailtoHref,
+  phoneHref,
+  secondaryMailtoHref,
+} from "@/config/contact";
 import { contactBand } from "@/content/home";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -33,10 +39,31 @@ export function ContactBand() {
                 <Building2 className="size-4" />
               </span>
               <div className="min-w-0">
-                <p className="text-caption font-medium text-navy">US Offices</p>
-                <p className="text-label text-navy">
-                  {contactConfig.usOffices.map((office) => office.name).join(" and ")}
-                </p>
+                <p className="text-caption font-medium text-navy">Offices</p>
+                <ul className="text-label text-navy">
+                  {branchOffices.map((office) => (
+                    <li key={office.id}>
+                      {office.mapsUrl ? (
+                        <a href={office.mapsUrl} rel="noopener noreferrer" className="hover:underline">
+                          {office.location}
+                        </a>
+                      ) : (
+                        office.location
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span aria-hidden="true" className="inline-flex size-10 shrink-0 items-center justify-center rounded-control border border-line bg-white text-navy shadow-frame">
+                <Phone className="size-4" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-caption font-medium text-navy">Phone</p>
+                <a href={phoneHref} className="flex min-h-6 items-center text-label text-navy hover:underline">
+                  {contactConfig.phone.display}
+                </a>
               </div>
             </li>
             <li className="flex items-start gap-4">

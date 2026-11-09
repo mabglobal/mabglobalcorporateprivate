@@ -7,6 +7,8 @@ Sources:
 * **S1** `https://mehmetakifbirkan.com` (home, `/hakkimizda`, `/amerika-sirket-kurulumu`, `/ingilterede-sirket-kurmak`, `/amerika-vergi-ve-muhasebesel-danismanlik`, `/iletisim` service options)
 * **S2** `https://www.mabregisteredagent.com` (MAB Registered Agent Inc.)
 * **S3** Contact details supplied in the project brief
+* **S4** Client brochure "MAB İngiltere Danışmanlık Hizmetleri" (UK services and fees), supplied 2026-11-09. Fees are kept out of the site
+* **S5** Client change list "Web Sitesi Düzenleme ve Geliştirme Talepleri", supplied 2026-11-09
 
 ## Published facts
 
@@ -15,7 +17,8 @@ Sources:
 | Brand name MAB Global Partners | Everywhere | S2, S3 |
 | Email info@mabglobalpartners.com, office address, Google Maps link | Contact page, contact band, structured data, llms | S3 |
 | Second email info@mehmetakifbirkan.com | Contact page, contact band, llms | Client request, 2026-10-31 |
-| Headquarters in Istanbul (full address); US offices in New Jersey and Florida, shown by state only without street addresses | About, contact page, contact band, structured data (`location`), llms | Client request, 2026-11-03 |
+| Headquarters in Istanbul (full address with the country); office in Oxford, United Kingdom; New Jersey office at 311 60th Street, West New York, New Jersey 07093; Florida office by state only | About, contact page, contact band, structured data (`location`), llms | Client requests, 2026-11-03 and S5. The New Jersey street address reverses the state-only decision of 2026-11-03 |
+| Phone +1 (551) 327-9241, shown without a person's name | Contact page, contact band, footer, structured data, llms | S5 |
 | Founded in Türkiye | About | S2 ("Originally established in Türkiye") |
 | Grew from US market support into formation, tax, accounting and business address services | About | S2 timeline |
 | MAB Registered Agent Inc. is a brand within MAB Global Partners | Registered agent service, about, llms | S2 |
@@ -26,11 +29,23 @@ Sources:
 | US business address, annual compliance | Address and operations service | S2 |
 | Company dissolution (US), share and company transfer (US), DUNS number, trademark (US), FDA registration, warehouse services | Address and operations service, e-commerce and export sectors | S1 service options |
 | Amazon account opening, suspension support, hourly consultations, e-commerce business development | International consulting, e-commerce sector, FAQ | S1 menu and home |
+| UK company services (16 items), every brochure row except the monthly director salary, without prices | UK Company Services, UK Company Formation (package) | S4, client decisions 2026-11-09 |
+| International bank account opening as a separate service | Bank Account Opening service | S5, S1 (`Amerika Banka Hesap Açılışları`), S4 (UK package) |
+| Amazon account opening, private label, wholesale and arbitrage, suspension solutions, e-commerce growth program, hourly sessions | Amazon and E-Commerce service | S1 menu, S5 item 7 |
+| Europe coverage | European Company Services, market copy | S5 item 8 and client decision 2026-11-09: general coverage without a country list |
 | Philosophy line "Everyone has the right to accurate information." (from the founder's quote "Herkesin doğru bilgiye ulaşma hakkı vardır.", published without attribution) | About | S1 `/hakkimizda` (translated) |
 
-## United States only
+## Market coverage
 
-On 2026-10-12 the client asked to remove everything related to the United Kingdom. The UK company formation service, the UK limited company guide and the UK FAQs were deleted, and every other page now covers the United States only. The "US or UK" FAQ became an LLC or corporation FAQ.
+On 2026-10-12 the client asked to remove everything related to the United Kingdom, and the site covered the United States only. On 2026-11-09 the client reversed this (S5 items 8 and 9): services now cover the United States, the United Kingdom and Europe, and the site presents an international consulting and company services structure. The UK company formation service, the UK limited company guide and the UK FAQs were restored from git history (commit before `9a8e06d`), and the UK identity verification rule was re-checked on GOV.UK on 2026-11-09.
+
+## UK services
+
+The brochure (S4) lists 17 rows. All are published except "Direktör Maaş" (monthly director salary), which the client excluded on 2026-11-09. "Onay Vergisi Beyanı" is published under its UK name, Confirmation Statement. The client decided on 2026-11-09 that prices stay off the site, so the fee column is left out and a unit test rejects currency amounts in service and FAQ copy.
+
+## Europe
+
+On 2026-11-09 the client decided that the Europe page stays general and names no individual countries.
 
 ## USPTO and IRS
 
@@ -40,9 +55,15 @@ On 2026-10-12 the client asked for the USPTO logo and an "EIN logo" (the EIN is 
 
 On 2026-10-12 the client asked for logos of Bank of America, Capital One, Mercury, Wise and Payoneer in the strip under the hero, without presenting them as partners. They are shown in single-color navy under the caption "Banking and Payment Platforms" with the note "Logos belong to their respective owners and show no partnership or endorsement." Sources: Wikimedia Commons for Bank of America, Capital One, Wise and Payoneer (marked public domain there, trademarks still apply) and the mercury.com header for Mercury. On 2026-11-03 WorldFirst (worldfirst.com header asset), Zyla (zyla.com header asset) and Intuit QuickBooks (Wikimedia Commons, marked public domain there, trademark still applies) were added the same way, and the caption became "Banking and Accounting Platforms". On 2026-11-03 the client asked for the Zyla logo to link to https://portal.zyla.com/register?affiliate_id=11418&region=US&step=0 and the WorldFirst logo to https://portal.worldfirst.com/register?affiliate_id=11418&region=TR&step=0. These are referral links, so they carry rel="sponsored" and the note became "Logos belong to their respective owners. Zyla and WorldFirst logos lead to our referral sign-up pages." The client asked for the IRS logo in the same row as well; it was not added, for the reasons under Official logos and seals. Most of these brands restrict logo use without written permission; the client accepted that risk. Remove a logo on request from its owner, and replace the row with the brands' official partner assets if a partnership is signed.
 
+On 2026-11-09 (S5 items 5 and 10) the WorldFirst logo moved from the referral sign-up to the client's partner profile `https://www.global-voyage.worldfirst.com/cn/partner-resources/mab-global-partners`, so it no longer carries `rel="sponsored"`. The client confirmed the Chinese-language `/cn/` address on 2026-11-09. The client asked to remove the phrase "Bank of U" and its bank section. No such phrase exists on the site, so the Bank of America logo, the only close match, was removed. The WorldFirst logo has to stay clickable, so the strip itself remains.
+
 ## Official logos and seals
 
 On 2026-10-12 the client asked for the IRS logo in the header and the New Jersey and Florida state seals in the footer. They were not added. Agency logos and state seals are official insignia; showing them on a private company's site suggests a government affiliation or endorsement, the IRS forbids third-party use of its logo and seal, and both states restrict use of their great seals (for Florida, section 15.03 of the Florida Statutes). Permitted alternatives: an "Authorized IRS e-file Provider" or Certifying Acceptance Agent statement only if the firm holds that authorization, and plain state names or map outlines with a factual statement of what the firm does in each state.
+
+## Email and form routing check (2026-11-09)
+
+Public DNS, checked through 1.1.1.1 and 8.8.8.8: `mabglobalpartners.com` and `uscompanyaddress.com` publish no MX record, so mail to `info@mabglobalpartners.com` cannot be delivered until mail hosting is configured. `mehmetakifbirkan.com` uses Google Workspace and `mabregisteredagent.com` uses kurumsaleposta.com. Forwarding rules and the inbox behind the Formspree form sit in those accounts and could not be read from here.
 
 ## Language
 
@@ -60,8 +81,9 @@ On 2026-10-12 the client switched the site from Turkish to English. All copy was
 | "400'den fazla danışana %100 memnuniyetle" (S1), "Serving thousands of businesses" (S2) | Unverified statistics |
 | Response time commitments ("24 saat içinde", S1 and S2) | Service-level commitment; confirm before publishing |
 | Legal entity name (ticari unvan), MERSİS or tax number | Needed for the data controller statement in the data protection notice (Law No. 6698); legal pages currently name "MAB Global Partners" |
-| Telephone number, social media accounts | None supplied |
-| Whether the S1 service list (FDA, DUNS, warehouse, trademark, dissolution, share transfer, Amazon services) is offered under the MAB Global Partners brand | Listed on the founder's site; confirm scope and wording |
+| Social media accounts | None supplied |
+| Street addresses for Oxford and Florida | Needed for a map link; only the city or state was supplied |
+| Whether the rest of the S1 service list (FDA, DUNS, warehouse) is offered under the MAB Global Partners brand | Listed on the founder's site; confirm scope and wording. Trademark, dissolution, share transfer and Amazon services are confirmed by S4 and S5 |
 | Taking over maintenance of existing foreign companies (FAQ `mevcut-sirket-devralma`) | Reasonable extension of accounting and tax services; confirm |
 | Registered trademark sign | The logo supplied on 2026-10-12 carries the ® sign. Use ® only for a registered mark; confirm the registration (office and number) or remove the sign from the artwork |
 | Customer testimonials and client logos | None supplied; the section is hidden |

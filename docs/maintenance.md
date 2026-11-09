@@ -8,9 +8,10 @@ Run `npm run verify` after every change. The tests catch most inconsistencies: m
 2. Add the entry to `src/content/services.ts` with `status: "review"` and fill every field. Write content unique to the service.
 3. Create `src/app/services/<slug>/page.tsx` by copying an existing service page and changing the slug.
 4. Add any new FAQs to `src/content/faqs.ts` and reference them in `faqIds`.
-5. Record the source of each claim in `docs/content-verification.md`, then set `status: "published"`.
+5. Add the slug to one market in `serviceGroups` at the end of `src/content/services.ts`.
+6. Record the source of each claim in `docs/content-verification.md`, then set `status: "published"`.
 
-Navigation, footer, sitemap, contact form options, llms.txt and llms-full.txt update automatically. Set `featured: true` to show it in the homepage grid (the grid is designed for six cards).
+Navigation, footer, sitemap, contact form options, llms.txt and llms-full.txt update automatically. Set `featured: true` to show it in the homepage band, which is a 4 x 3 grid: ten featured services plus the two link tiles fill it.
 
 ## Add a sector
 

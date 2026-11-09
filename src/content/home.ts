@@ -7,12 +7,11 @@ export interface PlatformLogo {
   src: string;
   width: number;
   height: number;
-  /** Referral sign-up page the logo links to. */
-  href?: string;
+  /** Destination of the logo. Referral sign-ups are marked sponsored. */
+  link?: { href: string; label: string; sponsored: boolean };
 }
 
 const platformLogos: readonly PlatformLogo[] = [
-  { name: "Bank of America", src: "/images/platforms/bank-of-america.svg", width: 180, height: 18 },
   { name: "Capital One", src: "/images/platforms/capital-one.svg", width: 117, height: 42 },
   { name: "Mercury", src: "/images/platforms/mercury.svg", width: 126, height: 29 },
   { name: "Wise", src: "/images/platforms/wise.svg", width: 114, height: 26 },
@@ -22,14 +21,22 @@ const platformLogos: readonly PlatformLogo[] = [
     src: "/images/platforms/worldfirst.svg",
     width: 133,
     height: 18,
-    href: "https://portal.worldfirst.com/register?affiliate_id=11418&region=TR&step=0",
+    link: {
+      href: "https://www.global-voyage.worldfirst.com/cn/partner-resources/mab-global-partners",
+      label: "WorldFirst Partner Profile",
+      sponsored: false,
+    },
   },
   {
     name: "Zyla",
     src: "/images/platforms/zyla.svg",
     width: 106,
     height: 30,
-    href: "https://portal.zyla.com/register?affiliate_id=11418&region=US&step=0",
+    link: {
+      href: "https://portal.zyla.com/register?affiliate_id=11418&region=US&step=0",
+      label: "Zyla Sign-Up",
+      sponsored: true,
+    },
   },
   { name: "QuickBooks", src: "/images/platforms/quickbooks.svg", width: 129, height: 33 },
 ];
@@ -43,26 +50,25 @@ const platformLogos: readonly PlatformLogo[] = [
  */
 export const homeContent = {
   hero: {
-    title: "Invest in the United States With the Right Company Structure",
+    title: "Build Your Global Business With the Right Company Structure",
     // Same service areas as the tagline in the MAB logo.
     proofPoints: ["Formation", "Tax", "Accounting", "Investment", "Business Advisory"],
     description:
-      "MAB Global Partners helps entrepreneurs and companies set up and run their business in the United States. Plan company formation together with tax and accounting under one roof.",
+      "MAB Global Partners helps entrepreneurs and companies set up and run their business in the United States and the United Kingdom and across Europe. Plan company formation together with tax and accounting under one roof.",
     primaryCta: { label: "Explore Our Services", href: routes.services },
     secondaryCta: { label: "Schedule a Consultation", href: routes.contactForm },
     imageAlt: "Classical colonnades and a domed building in navy tones",
   },
   /**
    * Banks, payment platforms and accounting software named by the client
-   * (2026-10-12 and 2026-11-03). Shown as
-   * logos without any partner claim, with an ownership note. Files in
-   * public/images/platforms are single-color navy versions of each logo.
-   * Zyla and WorldFirst link to the client's referral sign-up pages, which
-   * the note discloses.
+   * (2026-10-12 and 2026-11-03). Shown as logos with an ownership note. Files
+   * in public/images/platforms are single-color navy versions of each logo.
+   * Zyla links to the client's referral sign-up page and WorldFirst to the
+   * client's partner profile (2026-11-09), which the note discloses.
    */
   platforms: {
     caption: "Banking and Accounting Platforms",
-    note: "Logos belong to their respective owners. Zyla and WorldFirst logos lead to our referral sign-up pages.",
+    note: "Logos belong to their respective owners. The Zyla logo leads to our referral sign-up page and the WorldFirst logo to our partner profile.",
     items: platformLogos,
   },
   servicesBand: {
@@ -97,15 +103,15 @@ export const homeContent = {
   },
   about: {
     label: "About MAB Global Partners",
-    title: "One Partner for Your US Business",
+    title: "One Partner for Your International Business",
     features: [
       {
         title: "Formation and Compliance",
-        text: "Form your US company and keep annual filings on schedule with registered agent support.",
+        text: "Form your company in the US or the UK and keep annual filings on schedule.",
       },
       {
         title: "Tax and Accounting",
-        text: "Keep clean books and file your federal and state returns on time.",
+        text: "Keep clean books and file your tax returns on time in every market.",
       },
     ],
     linkLabel: "Learn About Us",
@@ -118,7 +124,7 @@ export const homeContent = {
       {
         icon: "globe",
         title: "International Expertise",
-        description: "Get clear guidance on US rules.",
+        description: "Get clear guidance on US and UK rules.",
       },
       {
         icon: "layers",

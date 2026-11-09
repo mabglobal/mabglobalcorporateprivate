@@ -35,6 +35,9 @@ describe("llms.txt", () => {
   it("states the official contact details", () => {
     expect(text).toContain(contactConfig.email);
     expect(text).toContain(contactConfig.address.full);
+    expect(text).toContain(contactConfig.phone.display);
+    expect(text).toContain("311 60th Street, West New York, New Jersey 07093, United States");
+    expect(text).toContain("Oxford, United Kingdom");
   });
 });
 

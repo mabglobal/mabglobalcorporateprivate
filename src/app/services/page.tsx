@@ -2,7 +2,7 @@ import { routes } from "@/config/routes";
 import { homeContent } from "@/content/home";
 import { primaryCta } from "@/content/navigation";
 import { staticPages } from "@/content/pages";
-import { services } from "@/content/services";
+import { getServices, serviceGroups } from "@/content/services";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactBand } from "@/components/sections/contact-band";
 import { PageHero } from "@/components/sections/page-hero";
@@ -47,7 +47,7 @@ export default function ServicesPage() {
       <PageHero
         breadcrumb={breadcrumb}
         title="Services"
-        description="Form your US company and manage tax and compliance in one plan."
+        description="Form and run your company in the US and the UK and across Europe."
         actions={
           <>
           <ButtonLink href={primaryCta.href} variant="light" icon="calendar">
@@ -59,18 +59,36 @@ export default function ServicesPage() {
           </>
         }
       />
-      <TileBand
-        id="service-list-title"
-        tone="light"
-        columns={3}
-        title="Explore Our Company Services"
-        description="Choose the service you need and plan every step with one team."
-        tiles={services.map((service) => ({
-          href: routes.service(service.slug),
-          title: service.shortTitle,
-          description: service.summary,
-        }))}
-      />
+      {serviceGroups.map((group, index) => (
+        <TileBand
+          key={group.id}
+          id={`${group.id}-title`}
+          sectionId={group.id}
+          tone="light"
+          columns={3}
+          title={group.title}
+          description={group.description}
+          tiles={[
+            ...getServices(group.slugs).map((service) => ({
+              href: routes.service(service.slug),
+              title: service.shortTitle,
+              description: service.summary,
+            })),
+            // The last group has five services; this tile completes its grid.
+            ...(index === serviceGroups.length - 1
+              ? [
+                  {
+                    href: routes.contactForm,
+                    title: homeContent.servicesBand.consultationLabel,
+                    description: homeContent.servicesBand.consultationDescription,
+                    highlight: true,
+                    icon: "phone" as const,
+                  },
+                ]
+              : []),
+          ]}
+        />
+      ))}
       <ProcessSection
         id="process-title"
         tag={process.tag}

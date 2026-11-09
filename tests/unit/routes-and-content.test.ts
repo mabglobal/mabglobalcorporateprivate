@@ -12,8 +12,10 @@ import {
   serviceNavigation,
 } from "@/content/navigation";
 import { sectors } from "@/content/sectors";
-import { services } from "@/content/services";
+import { homeContent } from "@/content/home";
+import { featuredServices, serviceGroups, services } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
+import { ukServiceGroups } from "@/content/uk-service-items";
 import { collectSitemapRecords } from "@/lib/seo/sitemap-utils";
 
 const appDir = join(process.cwd(), "src/app");
@@ -76,6 +78,61 @@ describe("route registry", () => {
   it("keeps the contact form anchor on an existing page", () => {
     expect(resolvesToPage(routes.contactForm)).toBe(true);
     expect(existsSync(join(appDir, "api/contact/route.ts"))).toBe(true);
+  });
+});
+
+describe("international coverage", () => {
+  it("places every published service in exactly one market group", () => {
+    const grouped = serviceGroups.flatMap((group) => group.slugs);
+    expect(new Set(grouped).size).toBe(grouped.length);
+    expect([...grouped].sort()).toEqual(services.map((service) => service.slug).sort());
+  });
+
+  it("fills the homepage band with ten featured services", () => {
+    expect(featuredServices).toHaveLength(10);
+  });
+
+  it("lists every UK brochure service except the director salary", () => {
+    const titles = ukServiceGroups.flatMap((group) => group.items).map((item) => item.title);
+    expect([...titles].sort()).toEqual(
+      [
+        "Company Formation With Amazon and Bank Account",
+        "Director Appointment",
+        "Director Exit",
+        "Share Transfer",
+        "Corporation Tax Return",
+        "Confirmation Statement",
+        "VAT Return",
+        "Dormant Filing",
+        "VAT Registration",
+        "PAYE Registration",
+        "EORI Number",
+        "Authentication Code",
+        "UTR Number",
+        "Registered Office Address",
+        "Trademark Registration",
+        "Company Closure",
+      ].sort(),
+    );
+  });
+
+  it("publishes no prices (client decision, 2026-11-09)", () => {
+    expect(JSON.stringify([services, faqs])).not.toMatch(/[£$€]\s?\d/);
+  });
+
+  it("links WorldFirst to the partner profile and drops Bank of America", () => {
+    const names = homeContent.platforms.items.map((item) => item.name);
+    expect(names).not.toContain("Bank of America");
+    const worldFirst = homeContent.platforms.items.find((item) => item.name === "WorldFirst");
+    expect(worldFirst?.link).toMatchObject({
+      href: "https://www.global-voyage.worldfirst.com/cn/partner-resources/mab-global-partners",
+      sponsored: false,
+    });
+  });
+
+  it("links the business address service to US Company Address", () => {
+    const service = services.find((entry) => entry.slug === "business-address-and-operations");
+    expect(service?.externalReference?.href).toBe("https://uscompanyaddress.com");
   });
 });
 

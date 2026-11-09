@@ -8,10 +8,10 @@
 export const seoDefaults = {
   titleTemplate: "%s | MAB Global Partners",
   defaultTitle:
-    "MAB Global Partners | Invest in the United States With the Right Company Structure",
+    "MAB Global Partners | Build Your Global Business With the Right Company Structure",
   twitterCard: "summary_large_image",
   socialImageAlt:
-    "MAB Global Partners company formation and tax support in the United States",
+    "MAB Global Partners international company formation and tax support",
 } as const;
 
 /** Paths that no crawler should request. */
